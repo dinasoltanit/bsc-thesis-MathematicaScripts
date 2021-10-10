@@ -1,0 +1,1263 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     29873,        770]*)
+(*NotebookOutlinePosition[     47098,       1119]*)
+(*  CellTagsIndexPosition[     46954,       1111]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["OrthogonalPolynomials`Christoffel`", "Subsection",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->"christoffel"],
+
+Cell["OrthogonalPolynomials`Christoffel`aChristoffelAlgorithm", "Subsection",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aChristoffelAlgorithm",
+    FontSlant->"Italic"],
+  " performs Christoffel modification in a given measure, as a result lists \
+of three term recurrence coefficients for modified measure are returned. \
+Format of the function is the following"
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aChristoffelAlgorithm[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"{mod\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"modPar1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns lists of \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\
+\"TI\\\"]\\) three term recurrence coefficients for modified measure, where \
+modification is given by \\!\\(\\*StyleBox[\\\"\\\\\\\"mod\\\\\\\"\\\", \
+\\\"TI\\\"]\\) with modification parameters given with \\!\\(\\*StyleBox[\\\"\
+\\\\\\\"modPar1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"modPar2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\[Ellipsis], where unmodified measure is
+given by lists of three term recurrence coefficients \[Alpha], \[Beta], \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell["OrthogonalPolynomials`Christoffel`aModify", "Subsection",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aModify",
+    FontSlant->"Italic"],
+  " returns information about three term recurrence coefficients for modified \
+measure. Function has two calling conventions"
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aModify[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{mod\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"modPar1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns lists of \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\
+\"TI\\\"]\\) three term recurrence coefficients for modified measure, where \
+modification is given by \\!\\(\\*StyleBox[\\\"\\\\\\\"mod\\\\\\\"\\\", \
+\\\"TI\\\"]\\) with modification parameters given with \\!\\(\\*StyleBox[\\\"\
+\\\\\\\"modPar1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"modPar2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\[Ellipsis], where unmodified measure is
+given by lists of three term recurrence coefficients \[Alpha], \[Beta], \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+and another which can be used with supported polynomial classes\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aModify[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{mod\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"modPar1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsName\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"clsPar1\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"clsPar2\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns lists of \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\
+\"TI\\\"]\\) three term recurrence coefficients for modified measure, where \
+modification is given by \\!\\(\\*StyleBox[\\\"\\\\\\\"mod\\\\\\\"\\\", \
+\\\"TI\\\"]\\) with modification parameters given with \\!\\(\\*StyleBox[\\\"\
+\\\\\\\"modPar1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"modPar2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\[Ellipsis], where unmodified measure is
+given by \\!\\(\\*StyleBox[\\\"\\\\\\\"clsName\\\\\\\"\\\", \\\"TI\\\"]\\) \
+and class parameters \\!\\(\\*StyleBox[\\\"\\\\\\\"clsPar1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"clsPar2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\
+\\\"]\\) if there is any, last argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\
+\\\"\\\", \\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellFrame->False,
+  ShowSelection->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+Modifications are determined by key words. Each key word represents certain \
+modification. List of key word, where modification are given also, is the \
+following\
+\>", "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"key word\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"mod parameters\\\\\\\
+\"\\\", \\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"modification\
+\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLinear\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"modifies the measure with linear factor \
+(t-x)\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aQuadratic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"x,y\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\" modifies the measure with factor \
+(t-x\\!\\(\\()\\^2\\)\\)+\\!\\(y\\^2\\)\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aQuadraticSymmetric\\\\\\\
+\"\\\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"y\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("modifies symmetric measure on symmetric interval with factor \!\(t\^2\)+\!\
+\(y\^2\)"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLinearDivisor\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"x or x,h\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \("modifies the measure with factor 1/(t-x), where \
+value h is the value of integral for modified measure may or may not be \
+supplied"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aQuadraticDivisor\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"x,y or \
+x,y,hr,hi\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("modifies the measure with \
+factor 1/((t-x\!\(\()\^2\)\)+\!\(y\^2\)), where hr and hi are integrals of \
+modified measure may or may not be supplied"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"\
+aQuadraticDivisorSymmetric\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"y,hi\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("modifies symmetric measure on a symmetric interval with factor 1/(\!\(t\^2\
+\)+\!\(y\^2\)), where hi is value of integral for modified measure"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aQuadraticReal\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"modifies the measure with factor \
+(t-x\\!\\(\\()\\^2\\)\\) \"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell["\<\
+Function also has number if options, which has different meanings depends on \
+the modification being performed\
+\>", "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation. This option affects calculation only if argument of the \
+option Algorithm is not set to Symbolic."\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$Machineprecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("specifies number of exact decimal digits \
+to be returned in the result if modification is of type aLinearDivisor or \
+aQuadratic Divisor when values h are missing"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Type\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", \("specifies how deep to start recursion backwards when modification \
+is of the type aLinearDivisor or aQuadraticDivisor is performed for supported \
+classes of polynomials, which are aJacobi, aGegenbauer, aLegendre, \
+aChebyshevI and aChebyshevII"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Start\\\\\\\"\\\", \\\"MR\
+\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("determines how deep to start recursion backward, if \
+value is Automatic value is obtained automatically"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"5\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("specifies the amount for which to increase number of \
+evaluations backward"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("specifies wether to apply symbolic version of \
+algorithms, option set to Symbolic, or numerical version"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Extension\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine extension of set of integers used \
+in factorization"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"GaussianIntegers\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("\<used to determine whether to apply factorization over ring Z+i Z\>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Trig\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply factorization \
+and cancellation of factors over trigonometric polynomials\>"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell["\<\
+All modifications can be done symbolically. Symbolic versions of algorithms \
+are performed when option Algorithm is set to Symbolic. When  symbolic \
+calculation is performed all other options do not influence calculation. For \
+symbolic versions of algorithms exact numbers for lists of three term \
+recurrence coefficients has to be supplied. Otherwise, if three term \
+recurrence coefficients are given as numerical quantities results are also \
+numerical.\
+\>", "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell["This starts package", "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[TextData[{
+  "In this example Legendre measure is symbolically modified with linear \
+factor at point ",
+  StyleBox["x",
+    FontSlant->"Italic"],
+  " with pair of complex roots at point x+\[ImaginaryI] y"
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 200]];\)\)], "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[8, {aLinear, x}, al, be, 
+      Algorithm \[Rule] Symbolic]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[8, {aLinear, x}, {aLegendre}, 
+      Algorithm \[Rule] Symbolic]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+Note that three term recurrence coefficients can be expressed in terms of \
+Legendre polynomials\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aLegendre[8, x, ReturnList \[Rule] True]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[TextData[{
+  "In the next example Legendre measure is modified by real quadratic factor \
+",
+  Cell[BoxData[
+      \(TraditionalForm\`\((t - x)\)\^2\)]]
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[8, {aQuadraticReal, x}, al, be, 
+      Algorithm \[Rule] Symbolic]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[8, {aQuadraticReal, x}, {aLegendre}, 
+      Algorithm \[Rule] Symbolic]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+In this case also we can guess for three term recurrence coefficients.\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[TextData[{
+  "Numerical construction is performed every time option ",
+  StyleBox["Algorithm",
+    FontSlant->"Italic"],
+  " is not set to ",
+  StyleBox["Symbolic",
+    FontSlant->"Italic"],
+  ". Every modification can be performed numerically. For example, we can \
+construct three term recurrence coefficients Legendre measure modified by \
+factor ",
+  Cell[BoxData[
+      \(TraditionalForm\`t - 10\)]],
+  ", we have"
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[8, {aLinear, 10}, al, be]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[8, {aLinear, \ 10}, {aLegendre}]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+This result can easily be verified using bigger value for option \
+WorkingPrecision\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[8, {aLinear, 10}, al, be]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[8, {aLinear, 10}, {aLegendre}, 
+      WorkingPrecision \[Rule] 34]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[TextData[{
+  "Similar procedures can be taken for all other modifications. For example, \
+we can modify Legendre measure with factor ",
+  Cell[BoxData[
+      \(TraditionalForm\`1/\((t - 10  \[ImaginaryI])\)\)]],
+  ", but we will need value of integral"
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(h = Integrate[1/\((t - 10  I)\), {t, \(-1\), 1}]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aLinearDivisor, 10  I, h}, al, 
+      be]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aLinearDivisor, 10  I, h}, {aLegendre}]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[TextData[{
+  "It can be proven that this values are inaccurate. Increasing ",
+  StyleBox["WorkingPrecision,",
+    FontSlant->"Italic"],
+  " we get "
+}], "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aLinearDivisor, 10  I, h}, al, be, 
+      WorkingPrecision \[Rule] 34]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aLinearDivisor, 10  I, h}, {aLegendre}, 
+      WorkingPrecision \[Rule] 34]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+Since, values are not the same last are more accurate. This situation can be \
+improved by calling function without value of integral, now we have\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aLinearDivisor, 10  I}, al, be, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aLinearDivisor, 10  I}, {aLegendre}, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[TextData[{
+  "Similar situation occurs with calculation of modification performed by \
+divisor in form of polynomial with complex roots. We have for modification by \
+factor ",
+  Cell[BoxData[
+      \(TraditionalForm\`1/\((\((x - 1)\)\^2 + 4)\)\)]]
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(h = 
+      NIntegrate[1/\((t - 1 - 2  I)\), {t, \(-1\), 1}, 
+        WorkingPrecision \[Rule] 34, PrecisionGoal \[Rule] 34]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aQuadraticDivisor, 1, 2, Re[h], Im[h]}, al, 
+      be]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[
+      12, {aQuadraticDivisor, 1, 2, Re[h], Im[h]}, {aLegendre}]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aQuadraticDivisor, 1, 2, Re[h], Im[h]}, al, 
+      be, WorkingPrecision \[Rule] 34]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aQuadraticDivisor, 1, 2, Re[h], Im[h]}, {aLegendre}, 
+      WorkingPrecision \[Rule] 34]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+It can be also seen that calculation is ill-conditioned. In this case we can \
+also improve results of calculation if we do not supply values of integrals\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aQuadraticDivisor, 1, 2}, al, be, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aQuadraticDivisor, 1, 2}, {aLegendre}, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[TextData[{
+  "Calculation is more accurate when values of integrals are not supplied \
+because in these cases another algorithm is used. All options listed above \
+helps to dill with this more accurate version of algorithm. Option ",
+  StyleBox["Precision",
+    FontSlant->"Italic"],
+  " as it can be seen from previous examples is used to determine number of \
+exact decimal digits in result. Option ",
+  StyleBox["IterationDepth ",
+    FontSlant->"Italic"],
+  "is used to set maximal number of iterations to be used in achieving \
+requested precision. Option ",
+  StyleBox["Type",
+    FontSlant->"Italic"],
+  " is used to specify class of polynomials which are modified. This option \
+takes effect when following measures ",
+  ButtonBox["aJacobi",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aGegenbauer",
+    ButtonData:>{"aGegenbauer", "Gegenbauer"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLegendre",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aChebyshevI",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aChebyshevII",
+    ButtonData:>{"aChebyshevII", "ChebyshevII"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aHermite",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLaguerre",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aLaguerreG",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"],
+  " are modified . Accurate version of  algorithm needs big number of three \
+term recurrence coefficients. If we increase option ",
+  StyleBox["IterationDepth",
+    FontSlant->"Italic"],
+  " algorithm needs more three term recurrence coefficients. Maximal values \
+of length for lists of three term recurrence coefficients are \
+5*IterationDepth+3 n, where n is number of desired three term recurrence \
+coefficients. When we use option ",
+  StyleBox["Start ",
+    FontSlant->"Italic"],
+  "then maximal number of three term recurrence needed is \
+5*IterationDepth+Start."
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell["Previous discussion is illustrated in the following example", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 13]];\)\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aQuadraticDivisor, 1, 2}, al, be, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aQuadraticDivisor, 1, 2}, al, be, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+If number of three term recurrence coefficients is increased to value \
+specified above, function works\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 61]];\)\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aQuadraticDivisor, 1, 2}, al, be, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aQuadraticDivisor, 1, 2}, al, be, 
+      Precision \[Rule] 16]\)], "Input",
+  CellFrame->False,
+  ShowCellBracket->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell[TextData[{
+  "In some cases option ",
+  StyleBox["Type",
+    FontSlant->"Italic"],
+  " can be set to specify measure being modified. For example, function can \
+be called using following format"
+}], "MathCaption",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[BoxData[
+    \(aChristoffelAlgorithm[12, {aQuadraticDivisor, 1, 2}, al, be, 
+      Precision \[Rule] 16, Type \[Rule] {aLegendre}]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+
+Cell[BoxData[
+    \(aModify[12, {aQuadraticDivisor, 1, 2}, al, be, Precision \[Rule] 16, 
+      Type \[Rule] {aLegendre}]\)], "Input",
+  CellFrame->False,
+  CellTags->{"christoffel", "modify"}],
+
+Cell["\<\
+In this format function may need less three term recurrence coefficients.\
+\>", "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+
+Cell[TextData[{
+  "Argument ",
+  StyleBox["Type ",
+    FontSlant->"Italic"],
+  "is",
+  " option type and is always used when function aModify is called for \
+supported classes of polynomials"
+}], "Text",
+  CellFrame->False,
+  ShowSelection->True,
+  CellTags->{"christoffel", "modify"}]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+CellGrouping->Manual,
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowCellTags->True,
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "christoffel"->{
+    Cell[1776, 53, 126, 3, 53, "Subsection",
+      CellTags->"christoffel"],
+    Cell[1905, 58, 173, 3, 53, "Subsection",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[2081, 63, 401, 10, 70, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[2485, 75, 1950, 35, 91, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[4438, 112, 145, 3, 53, "Subsection",
+      CellTags->{"christoffel", "modify"}],
+    Cell[4586, 117, 306, 9, 53, "MathCaption",
+      CellTags->{"christoffel", "modify"}],
+    Cell[4895, 128, 1945, 36, 91, "Text",
+      CellTags->{"christoffel", "modify"}],
+    Cell[6843, 166, 169, 5, 39, "Text",
+      CellTags->{"christoffel", "modify"}],
+    Cell[7015, 173, 2476, 44, 91, "Text",
+      CellTags->{"christoffel", "modify"}],
+    Cell[9494, 219, 300, 7, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[9797, 228, 2681, 47, 329, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[12481, 277, 248, 6, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[12732, 285, 3399, 56, 507, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16134, 343, 597, 11, 87, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16734, 356, 148, 3, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16885, 361, 121, 2, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17009, 365, 335, 9, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17347, 376, 169, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17519, 381, 187, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[17709, 387, 164, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[17876, 393, 226, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18105, 401, 156, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18264, 406, 282, 8, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18549, 416, 194, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[18746, 422, 171, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[18920, 428, 200, 5, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[19123, 435, 549, 16, 70, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[19675, 453, 153, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[19831, 458, 132, 3, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[19966, 463, 213, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[20182, 471, 153, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[20338, 476, 166, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[20507, 482, 382, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[20892, 493, 164, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[21059, 498, 174, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[21236, 504, 144, 3, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[21383, 509, 271, 8, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[21657, 519, 203, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[21863, 525, 180, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[22046, 531, 276, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[22325, 539, 193, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[22521, 545, 170, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[22694, 551, 378, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[23075, 562, 239, 5, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[23317, 569, 187, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[23507, 575, 164, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[23674, 581, 216, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[23893, 587, 193, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[24089, 593, 284, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[24376, 601, 195, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[24574, 607, 172, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[24749, 613, 2303, 62, 147, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27055, 677, 181, 3, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27239, 682, 188, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27430, 688, 195, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[27628, 694, 167, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[27798, 700, 233, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28034, 708, 188, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28225, 714, 195, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[28423, 720, 193, 5, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[28619, 727, 324, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28946, 738, 221, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[29170, 744, 193, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[29366, 750, 203, 5, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[29572, 757, 285, 10, 39, "Text",
+      CellTags->{"christoffel", "modify"}]},
+  "ChristoffelAlgorithm"->{
+    Cell[1905, 58, 173, 3, 53, "Subsection",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[2081, 63, 401, 10, 70, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[2485, 75, 1950, 35, 91, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[9494, 219, 300, 7, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[9797, 228, 2681, 47, 329, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[12481, 277, 248, 6, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[12732, 285, 3399, 56, 507, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16134, 343, 597, 11, 87, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16734, 356, 148, 3, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16885, 361, 121, 2, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17009, 365, 335, 9, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17347, 376, 169, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17519, 381, 187, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[17876, 393, 226, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18105, 401, 156, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18264, 406, 282, 8, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18549, 416, 194, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[18920, 428, 200, 5, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[19123, 435, 549, 16, 70, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[19675, 453, 153, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[19966, 463, 213, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[20182, 471, 153, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[20507, 482, 382, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[20892, 493, 164, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[21059, 498, 174, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[21383, 509, 271, 8, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[21657, 519, 203, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[22046, 531, 276, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[22325, 539, 193, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[22694, 551, 378, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[23075, 562, 239, 5, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[23317, 569, 187, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[23674, 581, 216, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[24089, 593, 284, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[24376, 601, 195, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[24749, 613, 2303, 62, 147, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27055, 677, 181, 3, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27239, 682, 188, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27430, 688, 195, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[27798, 700, 233, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28034, 708, 188, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28225, 714, 195, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[28619, 727, 324, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28946, 738, 221, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+    Cell[29366, 750, 203, 5, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}]},
+  "modify"->{
+    Cell[4438, 112, 145, 3, 53, "Subsection",
+      CellTags->{"christoffel", "modify"}],
+    Cell[4586, 117, 306, 9, 53, "MathCaption",
+      CellTags->{"christoffel", "modify"}],
+    Cell[4895, 128, 1945, 36, 91, "Text",
+      CellTags->{"christoffel", "modify"}],
+    Cell[6843, 166, 169, 5, 39, "Text",
+      CellTags->{"christoffel", "modify"}],
+    Cell[7015, 173, 2476, 44, 91, "Text",
+      CellTags->{"christoffel", "modify"}],
+    Cell[9494, 219, 300, 7, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[9797, 228, 2681, 47, 329, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[12481, 277, 248, 6, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[12732, 285, 3399, 56, 507, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16134, 343, 597, 11, 87, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16734, 356, 148, 3, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[16885, 361, 121, 2, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17009, 365, 335, 9, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17347, 376, 169, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[17709, 387, 164, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[17876, 393, 226, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18105, 401, 156, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18264, 406, 282, 8, 53, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[18746, 422, 171, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[18920, 428, 200, 5, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[19123, 435, 549, 16, 70, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[19831, 458, 132, 3, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[19966, 463, 213, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[20338, 476, 166, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[20507, 482, 382, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[20892, 493, 164, 3, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[21236, 504, 144, 3, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[21383, 509, 271, 8, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[21863, 525, 180, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[22046, 531, 276, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[22521, 545, 170, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[22694, 551, 378, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[23075, 562, 239, 5, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[23507, 575, 164, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[23893, 587, 193, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[24089, 593, 284, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[24574, 607, 172, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[24749, 613, 2303, 62, 147, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27055, 677, 181, 3, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27239, 682, 188, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[27628, 694, 167, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[27798, 700, 233, 6, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28034, 708, 188, 4, 43, "Input",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[28423, 720, 193, 5, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[28619, 727, 324, 9, 45, "MathCaption",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[29170, 744, 193, 4, 43, "Input",
+      CellTags->{"christoffel", "modify"}],
+    Cell[29366, 750, 203, 5, 39, "Text",
+      CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+    Cell[29572, 757, 285, 10, 39, "Text",
+      CellTags->{"christoffel", "modify"}]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"christoffel", 30549, 788},
+  {"ChristoffelAlgorithm", 37157, 919},
+  {"modify", 42033, 1010}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 126, 3, 53, "Subsection",
+  CellTags->"christoffel"],
+Cell[1905, 58, 173, 3, 53, "Subsection",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[2081, 63, 401, 10, 70, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[2485, 75, 1950, 35, 91, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[4438, 112, 145, 3, 53, "Subsection",
+  CellTags->{"christoffel", "modify"}],
+Cell[4586, 117, 306, 9, 53, "MathCaption",
+  CellTags->{"christoffel", "modify"}],
+Cell[4895, 128, 1945, 36, 91, "Text",
+  CellTags->{"christoffel", "modify"}],
+Cell[6843, 166, 169, 5, 39, "Text",
+  CellTags->{"christoffel", "modify"}],
+Cell[7015, 173, 2476, 44, 91, "Text",
+  CellTags->{"christoffel", "modify"}],
+Cell[9494, 219, 300, 7, 53, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[9797, 228, 2681, 47, 329, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[12481, 277, 248, 6, 53, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[12732, 285, 3399, 56, 507, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[16134, 343, 597, 11, 87, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[16734, 356, 148, 3, 53, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[16885, 361, 121, 2, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[17009, 365, 335, 9, 53, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[17347, 376, 169, 3, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[17519, 381, 187, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[17709, 387, 164, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[17876, 393, 226, 6, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[18105, 401, 156, 3, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[18264, 406, 282, 8, 53, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[18549, 416, 194, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[18746, 422, 171, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[18920, 428, 200, 5, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[19123, 435, 549, 16, 70, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[19675, 453, 153, 3, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[19831, 458, 132, 3, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[19966, 463, 213, 6, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[20182, 471, 153, 3, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[20338, 476, 166, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[20507, 482, 382, 9, 45, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[20892, 493, 164, 3, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[21059, 498, 174, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[21236, 504, 144, 3, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[21383, 509, 271, 8, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[21657, 519, 203, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[21863, 525, 180, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[22046, 531, 276, 6, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[22325, 539, 193, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[22521, 545, 170, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[22694, 551, 378, 9, 45, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[23075, 562, 239, 5, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[23317, 569, 187, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[23507, 575, 164, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[23674, 581, 216, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[23893, 587, 193, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[24089, 593, 284, 6, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[24376, 601, 195, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[24574, 607, 172, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[24749, 613, 2303, 62, 147, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[27055, 677, 181, 3, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[27239, 682, 188, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[27430, 688, 195, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[27628, 694, 167, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[27798, 700, 233, 6, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[28034, 708, 188, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[28225, 714, 195, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[28423, 720, 193, 5, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[28619, 727, 324, 9, 45, "MathCaption",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[28946, 738, 221, 4, 43, "Input",
+  CellTags->{"christoffel", "ChristoffelAlgorithm"}],
+Cell[29170, 744, 193, 4, 43, "Input",
+  CellTags->{"christoffel", "modify"}],
+Cell[29366, 750, 203, 5, 39, "Text",
+  CellTags->{"christoffel", "ChristoffelAlgorithm", "modify"}],
+Cell[29572, 757, 285, 10, 39, "Text",
+  CellTags->{"christoffel", "modify"}]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,4557 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     77754,       2133]*)
+(*NotebookOutlinePosition[    174183,       4009]*)
+(*  CellTagsIndexPosition[    173128,       3971]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+OrthogonalPolynomials`Discrete`Charlier`aCharlier (Charlier Polynomials)\
+\>", "Subsection",
+  CellTags->"Charlier"],
+
+Cell[TextData[{
+  "Package supports class of Charlier polynomials. Information, about \
+Charlier polynomials, can be retrieved using key-word ",
+  StyleBox["aCharlier",
+    FontSlant->"Italic"],
+  ". Function ",
+  StyleBox["aCharlier",
+    FontSlant->"Italic"],
+  " can be used for evaluation of Charlier polynomials  in some specific \
+point ",
+  StyleBox["x.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Charlier"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aCharlier[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"a\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of Charlier polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with parameter \
+of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"a\\\\\\\"\\\", \\\"TI\\\"]\
+\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), forth parameter \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Charlier"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aCharlier.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Charlier"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Complex`Bessel`aBessel (Bessel Polynomials)\
+\>", "Subsection",
+  CellTags->"Bessel"],
+
+Cell[TextData[{
+  "Package supports Bessel polynomials, Information about Bessel polynomials \
+can be retrieved using key-word ",
+  StyleBox["aBessel. ",
+    FontSlant->"Italic"],
+  StyleBox["Function ",
+    FontVariations->{"CompatibilityType"->0}],
+  StyleBox["aBessel",
+    FontSlant->"Italic",
+    FontVariations->{"CompatibilityType"->0}],
+  StyleBox[" returns the value of the Bessel polynomial at specific point ",
+    FontVariations->{"CompatibilityType"->0}],
+  StyleBox["x",
+    FontSlant->"Italic",
+    FontVariations->{"CompatibilityType"->0}]
+}], "Text",
+  CellTags->"Bessel"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aBessel[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Bessel polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third parameter \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and is \
+used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Bessel"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aBessel.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Bessel"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Complex`BesselG`aBesselG 
+(Generalized Bessel Polynomials)\
+\>", "Subsection",
+  CellTags->"BesselG"],
+
+Cell[TextData[{
+  "Package supports generalized Bessel polynomials. Information about \
+generalized Bessel polynomials can be retrieved using key-word ",
+  StyleBox["aBesselG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"BesselG"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aBesselG[\\\\\\\"\\\", \\\
+\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\
+\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the generalized Bessel polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with parameter \
+of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), forth parameter \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"BesselG"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aBesselG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Bessel"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Complex`GautschiMiovanovic`aGautschiMilovanovic
+(Gautschi-Milovanovic Polynomials)\
+\>", "Subsection",
+  CellTags->"GautschiMilovanovic"],
+
+Cell[TextData[{
+  "Package supports Gautschi-Milovanovic polynomials. Information about \
+Gautschi-Milovanovic can be retrieved using key-word ",
+  StyleBox["aGautschiMilovanovic",
+    FontSlant->"Italic"],
+  "."
+}], "Text",
+  CellTags->"GautschiMilovanovic"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGautschiMilovanovic[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Lambda]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Gautschi-Milovanovic polynomial of \
+degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameter of the family set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Lambda]\\\\\\\"\\\", \\\"TI\\\"]\\), at the \
+point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), forth \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is \
+optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"GautschiMilovanovic"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aGautschiMilovanovic.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"GautschiMilovanovic"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Abel`aAbel (Abel Polynomials)\
+\>", "Subsection",
+  CellTags->"Abel"],
+
+Cell[TextData[{
+  "Package supports Abel polynomials. Information about Abel polynomials can \
+be retrieved using key-word ",
+  StyleBox["aAbel.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Abel"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aAbel[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Abel polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third parameter \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and is \
+used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Abel"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aAbel.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Abel"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`AssociatedLegendre`aAssociatedLegendre \
+(Associated Legendre Polynomials)\
+\>", "Subsection",
+  CellTags->"AssociatedLegendre"],
+
+Cell[TextData[{
+  "Package supports associated Legendre polynomials. Information about \
+associated Legendre polynomials can be retrieved using key-word ",
+  StyleBox["aAssociatedLegendre.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"AssociatedLegendre"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aAssociatedLegendre[\\\\\\\
+\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Nu]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the associated Legendre polynomial of \
+degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameter of the family set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Nu]\\\\\\\"\\\", \\\"TP\\\"]\\), at the point \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), forth parameter \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"AssociatedLegendre"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aAssociatedLegendre.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"AssociatedLegendre"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Carlitz`aCarlitz (Carlitz Polynomials)\
+\>", "Subsection",
+  CellTags->"Carlitz"],
+
+Cell[TextData[{
+  "Package supports Carlitz polynomials. Information about Carlitz \
+polynomials can be retrieved using key-word ",
+  StyleBox["aCarlitz.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Carlitz"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aCarlitz[\\\\\\\"\\\", \\\
+\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\
+\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Lambda]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Carlitz polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with parameter \
+of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Lambda]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), forth parameter \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Carlitz"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aCarlitz..",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Carlitz"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`ChebyshevI`aChebyshevI 
+(Chebyshev Polynomials of the first kind)\
+\>", "Subsection",
+  CellTags->"ChebyshevI"],
+
+Cell[TextData[{
+  "Package supports Chebyshev polynomials of the first kind. Information \
+about Chebyshev polynomials of the first kind can be retrieved using key-word \
+",
+  StyleBox["aChebyshevI.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"ChebyshevI"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aChebyshevI[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Chebyshev polynomial of the first kind \
+of degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\),  at \
+the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is \
+optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"ChebyshevI"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aChebyshevI.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"ChebyshevI"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`ChebyshevII`aChebyshevII 
+(Chebyshev Polynomials of the second kind)\
+\>", "Subsection",
+  CellTags->"ChebyshevII"],
+
+Cell[TextData[{
+  "Package supports Chebyshev polynomials of the second kind. Information \
+about Chebyshev polynomials of the second kind can be retrieved using \
+key-word ",
+  StyleBox["aChebyshevII.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"ChebyshevII"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aChebyshevII[\\\\\\\"\\\",\
+ \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\
+\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\
+\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Chebyshev polynomial of the second kind \
+of degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the \
+point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is \
+optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"ChebyshevII"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aChebyshevII.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"ChebyshevII"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Gegenbauer`aGegenbauer (Gegenbauer \
+Polynomials)\
+\>", "Subsection",
+  CellTags->"Gegenbauer"],
+
+Cell[TextData[{
+  "Package supports Gegenbauer polynomials. Information about Gegenbauer \
+polynomials can be retrieved using key-word ",
+  StyleBox["aGegenbauer.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Gegenbauer"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGegenbauer[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Lambda]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Gegenbauer polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with parameter \
+of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Lambda]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), forth parameter \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Gegenbauer"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aGegenbauer.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Gegenbauer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`GegenbauerG`aGegenbauerG (Generalized \
+Gegenbauer Polynomials)\
+\>", "Subsection",
+  CellTags->"GegenbauerG"],
+
+Cell[TextData[{
+  "Package supports generalized Gegenbauer polynomials. Information about \
+generalized Gegenbauer polynomials ca be retrieved using key-word ",
+  StyleBox["aGegenbauerG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"GegenbauerG"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGegenbauerG[\\\\\\\"\\\",\
+ \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\
+\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\
+\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the generalized Gegenbauer polynomial of \
+degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameters of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\
+\\\", \\\"TP\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), fifth argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) is optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"GegenbauerG"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aGegenbauerG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"GegenbauerG"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Hermite`aHermite (Hermite Polynomials)\
+\>", "Subsection",
+  CellTags->"Hermite"],
+
+Cell[TextData[{
+  "Package supports Hermite polynomials. Information about Hermite \
+polynomials can be retrieved using key-word ",
+  StyleBox["aHermite.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Hermite"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aHermite[\\\\\\\"\\\", \\\
+\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\
+\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\
+\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\
+\\\"]\\) \"\>", "\<\" returns the value of the Hermite polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third argument \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Hermite"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aHermite.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Hermite"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`HermiteG`aHermiteG 
+(Generalized Hermite Polynomials)\
+\>", "Subsection",
+  CellTags->"HermiteG"],
+
+Cell[TextData[{
+  "Package supports generalized Hermite polynomials. Information about \
+generalized Hermite polynomials can be retrieved using key-word ",
+  StyleBox["aHermiteG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"HermiteG"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aHermiteG[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Mu]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the generalized Hermite polynomial of \
+degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameter of the family set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Mu]\\\\\\\"\\\", \\\"TP\\\"]\\), at the point \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), forth argument \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"HermiteG"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aHermiteG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"HermiteG"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Jacobi`aJacobi (Jacobi Polynomials)\
+\>", "Subsection",
+  CellTags->"Jacobi"],
+
+Cell[TextData[{
+  "Package supports Jacobi polynomials. Information about Jacobi polynomials \
+can be retrieved using key-word ",
+  StyleBox["aJacobi.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Jacobi"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aJacobi[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Jacobi polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with parameters \
+of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), fifth argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) is optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Jacobi"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aJacobi..",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Jacobi"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Laguerre`aLaguerre 
+(Laguerre Polynomials)\
+\>", "Subsection",
+  CellTags->"Laguerre"],
+
+Cell[TextData[{
+  "Package supports Laguerre polynomials. Information about Laguerre \
+polynomials can be retrieved using key-word ",
+  StyleBox["aLaguerre.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Laguerre"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLaguerre[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Laguerre polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third argument \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Laguerre"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aLaguerre.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Laguerre"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`LaguerreG`aLaguerreG 
+(Generalized Laguerre Polynomials)\
+\>", "Subsection",
+  CellTags->"LaguerreG"],
+
+Cell[TextData[{
+  "Package supports generalized Laguerre polynomials. Information about \
+generalized Laguerre polynomials can be retrieved using key-word ",
+  StyleBox["aLaguerreG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"LaguerreG"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLaguerreG[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the generalized Laguerre polynomial of \
+degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameter of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \
+\\\"TI\\\"]\\), at the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), forth argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) is optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"LaguerreG"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aLaguerreG.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"LaguerreG"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Legendre`aLegendre 
+(Legendre Polynomials)\
+\>", "Subsection",
+  CellTags->"Legendre"],
+
+Cell[TextData[{
+  "Package supports Legendre polynomials. Information about Legendre \
+polynomials can be retrieved using key-word ",
+  StyleBox["aLegendre.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Legendre"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLegendre[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Legendre polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third argument \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Legendre"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aLegendre.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Legendre"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Lindelof`aLindelof (Lindelof Polynomials)\
+\>", "Subsection",
+  CellTags->"Lindelof"],
+
+Cell[TextData[{
+  "Package supports Lindelof polynomials. Information about Lindelof \
+polynomials can be retrieved using key-word ",
+  StyleBox["aLindelof.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Lindelof"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLindelof[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Lindelof polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third argument \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Lindelof"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aLindelof.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Lindelof"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`Logistic`aLogistic (Logistic Polynomials)\
+\>", "Subsection",
+  CellTags->"Logistic"],
+
+Cell[TextData[{
+  "Package supports Logistic polynomials. Information about Logistic \
+polynomials can be retrieved using key-word ",
+  StyleBox["aLogistic.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Logistic"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLogistic[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Logistic polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), at the point \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), third argument \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is optional and \
+is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"Logistic"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aLogistic.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"Logistic"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`Continuous`StieltjesWigert`aStieltjesWigert 
+(Stieltjes-Wigert Polynomials)\
+\>", "Subsection",
+  CellTags->"StieltjesWigert"],
+
+Cell[TextData[{
+  "Package supports Stieltjes-Wigert polynomials. Information about \
+Stieltjes-Wigert polynomials can be retrieved using key-word ",
+  StyleBox["aStieltjes-Wigert",
+    FontSlant->"Italic"],
+  "."
+}], "Text",
+  CellTags->"StieltjesWigert"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aStieltjesWigert[\\\\\\\"\
+\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"p\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"q\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns the value of the Stieltjes-Wigert polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with parameters \
+of the family set to \\!\\(\\*StyleBox[\\\"\\\\\\\"p\\\\\\\"\\\", \\\"TI\\\"]\
+\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"q\\\\\\\"\\\", \\\"TI\\\"]\\), at the \
+point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \\\"TI\\\"]\\), fifth \
+argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) is \
+optional and is used to set options \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"StieltjesWigert"],
+
+Cell[TextData[{
+  "Following options can be used with function ",
+  StyleBox["aStieltjesWigert.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"StieltjesWigert"]
+}, Open  ]],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set length of mantissa in calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ReturnList\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine weather to return only polynomial \
+of specified degree, or list of all polynomials with degree less then or \
+equal to requested"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Numerator\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"0\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("determines order of numerator polynomial to be \
+returned"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{
+  "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", "Charlier", 
+    "ChebyshevI", "ChebyshevII", "DualHan", "GautschiMilovanovic", 
+    "Gegenbauer", "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", 
+    "Laguerre", "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", 
+    "MeixnerI", "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson"}],
+
+Cell[CellGroupData[{
+
+Cell["Orthogonality relation", "Subsubsection",
+  CellTags->{
+  "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+    "ChebyshevI", "ChebyshevII", "DualHan", "GautschiMilovanovic", 
+    "Gegenbauer", "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", 
+    "Laguerre", "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", 
+    "MeixnerI", "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson", "OrtEquation"}],
+
+Cell[TextData[{
+  "Charlier polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(C\_n\%a\)(x), \ \[Alpha] > 0, \)]],
+  " are orthogonal with respect to positive measure, supported on the set of \
+natural numbers, including zero. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Charlier", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Sum]\+\(i = 0\)\%\[Infinity]\(\(\( 
+                    a\^i\) \[ExponentialE]\^\(-a\)\)\/\(i!\)\) \(C\_n\%a\) \
+\((i)\) \(C\_m\%a\) \((i)\) = \(\(||\)\(C\_n\%a\)\( || \^2\)\(\ \
+\)\(\(\[Delta]\_\(m, n\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Charlier", "OrtEquation"}],
+
+Cell[TextData[{
+  "Bessel polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(y\_n\)(x)\)]],
+  ", are orthogonal with respect to absolutely continuous measure on the unit \
+circle in the complex plain. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Bessel", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[ClockwiseContourIntegral]\_\(\(\(|\)\(x\)\(|\)\) = 1\)\(y\_n\) \
+\((x)\) \(y\_m\) \((x)\) \(\[ExponentialE]\^\(\(-2\)/
+                x\)\) \[DifferentialD]x = \(\(||\)\(y\_n\)\( || \^2\)\(\
+\[Delta]\_\(m, n\)\)\)\)], "DisplayMath",
+  CellTags->{"Bessel", "OrtEquation"}],
+
+Cell[TextData[{
+  "Generalized Bessel polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(Y\_n\%\[Alpha]\)(x), \ \[Alpha]\)]],
+  " is not negative integer, are orthogonal with respect to absolutely \
+continuous measure on the unit circle in the complex plain. Namely, \
+orthogonality relation is,"
+}], "Text",
+  CellTags->{"BesselG", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[ClockwiseContourIntegral]\_\(\(\(|\)\(x\)\(|\)\) = \
+1\)\(Y\_n\%\[Alpha]\) \((x)\) \(Y\_m\%\[Alpha]\) \((x)\) \(\[Rho]\^\[Alpha]\) \
+\((x)\) \[DifferentialD]x = \(\(||\)\(\(Y\^\[Alpha]\)\_n\)\( || \^2\)\(\(\
+\[Delta]\_\(m, n\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"BesselG", "OrtEquation"}],
+
+Cell[TextData[{
+  "Function ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\^\[Alpha]\)]],
+  ", is defined by"
+}], "Text",
+  CellTags->{"BesselG", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\(\[Rho]\^\[Alpha]\) \((x)\) = \[Sum]\+\(i = 0\)\%\[Infinity]\(\( \
+\[CapitalGamma] \((\[Alpha] + 1)\)\)\/\(\[CapitalGamma] \((\[Alpha] + 1 + 
+                    i)\)\)\) \(\(\((\(-\(2\/x\)\))\)\^i\)\(.\)\)\)], \
+"DisplayMath",
+  CellTags->{"BesselG", "OrtEquation"}],
+
+Cell[TextData[{
+  "Gautschi-Milovanovic polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Pi]\_n\%\[Lambda], \ \[Lambda] > \
+\(-\(1\/2\)\)\)]],
+  ", are orthogonal with respect to absolutely continuous complex measure, \
+over upper half of unit circle. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\(-\[ImaginaryI]\) \(\[Integral]\_C\(\((1 - z\^2)\)\^\(\[Lambda] - \
+1/2\)\/z\) \(\[Pi]\_n\%\[Lambda]\) \((z)\) \(\[Pi]\_m\%\[Lambda]\) \((z)\) \
+\[DifferentialD]z\) = \(\(||\)\(\[Pi]\_n\%\[Lambda]\)\( || \
+\^2\)\(\[Delta]\_\(n, \(\(m\)\(.\)\)\)\)\)\)], "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+
+Cell["Contour C is the upper half of the unit circle.", "Text",
+  CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+
+Cell[TextData[{
+  "Abel polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`P\_n\)]],
+  ", are orthogonal with respect to absolutely continuous positive measure, \
+supported on the real line. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Abel", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-\[Infinity]\)\%\[Infinity]\( 
+              P\_n\) \((x)\) \(P\_m\) \((x)\) \(x \[DifferentialD]x\)\/\(\
+\[ExponentialE]\^\(\[Pi]\ x\) - \[ExponentialE]\^\(\(-\[Pi]\)\ x\)\) = \(\(||\
+\)\(P\_n\)\( || \^2\)\(\(\[Delta]\_\(n, m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Abel", "OrtEquation"}],
+
+Cell[TextData[{
+  "Associated Legendre polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(P\_n\)(\[Nu], \ x), \ \[Nu] > 0\)]],
+  ", are orthogonal with respect to absolutely continuous positive measure \
+supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality  relation is"
+}], "Text",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\( P\_m\) \((\[Nu], x)\) \(P\_m\) \((\[Nu], \ 
+            x)\) w \((\[Nu], 
+            x)\) \[DifferentialD]x = \(\(||\)\(P\_n\)\( || \
+\^2\)\(\[Delta]\_\(n, \(\(m\)\(.\)\)\)\)\)\)], "DisplayMath",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+
+Cell["Function w is defined by", "Text",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\(\(w \((\[Nu], x)\) = 
+      1\/\(\((\(\[Nu]Q\_\(\[Nu] - 1\)\) \((x)\))\)\^2 + \((\(\[Nu]\[Pi]\/2\) \
+\(P\_\(\[Nu] - 1\)\) \((x)\))\)\^2\)\)\(,\)\)\)], "DisplayMath",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+
+Cell[TextData[{
+  "where ",
+  Cell[BoxData[
+      \(TraditionalForm\`Q\_\(\[Nu] - 1\)\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`P\_\(\[Nu] - 1\)\)]],
+  " are Legendre functions of second and first kind, respectively."
+}], "Text",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+
+Cell[TextData[{
+  "Carlitz polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(G\_n\%\[Lambda]\)(x), \ \(-1\) < \[Lambda] < 
+        1\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, which is supported on the real numbers. Namely, orthogonality \
+relation is"
+}], "Text",
+  CellTags->{"Carlitz", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-\[Infinity]\)\%\[Infinity]\( 
+              G\_n\%\[Lambda]\) \((x)\) \(G\_m\%\[Lambda]\) \((x)\) \
+\[DifferentialD]x\/\(cos \((\[Pi]\[Lambda])\) + cosh \((\[Pi]x)\)\) = \
+\(\(||\)\(G\_n\%\[Lambda]\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Carlitz", "OrtEquation"}],
+
+Cell[TextData[{
+  "Chebyshev polynomials of the first kind, ",
+  Cell[BoxData[
+      \(TraditionalForm\`T\_n\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"ChebyshevI", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\( 
+              T\_n\) \((x)\) \(T\_m\) \((x)\) \[DifferentialD]x\/\@\(1 - x\^2\
+\) = \(\(||\)\(T\_n\)\( || \^2\)\(\ \)\(\(\[Delta]\_\(m, 
+              n\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"ChebyshevI", "OrtEquation"}],
+
+Cell[TextData[{
+  "Chebyshev polynomials of the second kind, ",
+  Cell[BoxData[
+      \(TraditionalForm\`U\_n\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"ChebyshevII", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\( 
+              U\_n\) \((x)\) \(U\_m\) \((x)\) \(\@\(1 - 
+                x\^2\)\) \[DifferentialD]x = \(\(||\)\(U\_n\)\( || \^2\)\(\ \
+\)\(\(\[Delta]\_\(n, m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"ChebyshevII", "OrtEquation"}],
+
+Cell[TextData[{
+  "Gegenbauer polynomial, ",
+  Cell[BoxData[
+      \(TraditionalForm\`G\_n\%\[Lambda], \ \[Lambda] > \(-\(1\/2\)\)\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Gegenbauer", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\(\((1 - x)\)\^\(\[Lambda] - 
+                1/2\)\) \(G\_n\%\[Lambda]\) \((x)\) \(G\_m\%\[Lambda]\) \((x)\
+\) \[DifferentialD]x = \(\(||\)\(G\_n\%\[Lambda]\)\( || \
+\^2\)\(\(\[Delta]\_\(m, n\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Gegenbauer", "OrtEquation"}],
+
+Cell[TextData[{
+  "Generalized Gegenbauer polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`G\_n\%\(\[Beta], \[Alpha]\), \[Beta] > \(-1\), \ \
+\[Alpha] > \(-1\)\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"GegenbauerG", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\((1 - x\^2)\)\^\[Alpha] \[SquareSuperset] 
+        x\( \[SquareSuperset] \^\(1 + 
+              2  \[Beta]\)\)\(G\_n\%\(\[Beta], \[Alpha]\)\) \((x)\) \
+\(G\_m\%\(\[Beta], \[Alpha]\)\) \((x)\) \[DifferentialD]x = \
+\(\(||\)\(G\_n\%\(\[Beta], \[Alpha]\)\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"GegenbauerG", "OrtEquation"}],
+
+Cell[TextData[{
+  "Hermite polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`H\_n\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the real line. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Hermite", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-\[Infinity]\)\%\[Infinity]\( \[ExponentialE]\^\(-x\^2\)\
+\) \(H\_n\) \((x)\) \(H\_m\) \((x)\) \[DifferentialD]x = \(\(||\)\(H\_n\)\( || \
+\^2\)\(\(\[Delta]\_\(n, m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Hermite", "OrtEquation"}],
+
+Cell[TextData[{
+  "Generalized Hermite polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`H\_n\%\[Mu], \ \[Mu] > \(-\(1\/2\)\)\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the real line. Namely, orthogonality relation is "
+}], "Text",
+  CellTags->{"HermiteG", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-\[Infinity]\)\%\[Infinity]\(\(\[SquareSuperset]\)\(x\)\(\
+ \[SquareSuperset] \^\(2  \[Mu]\)\)\(\(\[ExponentialE]\^\(-x\^2\)\) \(H\_n\%\
+\[Mu]\) \((x)\) \(H\_m\%\[Mu]\) \((x)\) \[DifferentialD]x\)\) = \
+\(\(||\)\(H\_n\%\[Mu]\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"HermiteG", "OrtEquation"}],
+
+Cell[TextData[{
+  "Jacobi polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`P\_n\%\(\[Alpha], \ \[Beta]\), \ \[Alpha] > \(-1\), \
+\ \[Beta] > \(-1\)\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Jacobi", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\(\((1 - x)\)\^\[Alpha]\) \(\((1 + 
+                  x)\)\^\[Beta]\) \(P\_n\%\(\[Alpha], \ \[Beta]\)\) \((x)\) \
+\(P\_m\%\(\[Alpha], \ \[Beta]\)\) \((x)\) \[DifferentialD]x = \
+\(\(||\)\(P\_n\%\(\[Alpha], \[Beta]\)\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Jacobi", "OrtEquation"}],
+
+Cell[TextData[{
+  "Laguerre polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`L\_n\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the positive half of the real line. Namely, \
+orthogonality relation is"
+}], "Text",
+  CellTags->{"Laguerre", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+0\%\[Infinity]\( \[ExponentialE]\^\(-x\)\) \(L\_n\) \
+\((x)\) \(L\_m\) \((x)\) = \(\(||\)\(L\_n\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Laguerre", "OrtEquation"}],
+
+Cell[TextData[{
+  "Generalized Laguerre polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`L\_n\%s, \ s > \(-1\)\)]],
+  ", are orthogonal with respect to absolutely continuous positive measure, \
+supported on the positive half of the real line. Namely, orthogonality \
+relation is"
+}], "Text",
+  CellTags->{"LaguerreG", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+0\%\[Infinity]\( 
+              x\^s\) \(\[ExponentialE]\^\(-x\)\) \(L\_n\%s\) \((x)\) \
+\(L\_m\%s\) \((x)\) \[DifferentialD]x = \(\(||\)\(L\_n\%s\)\( || \^2\)\(\(\
+\[Delta]\_\(n, m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"LaguerreG", "OrtEquation"}],
+
+Cell[TextData[{
+  "Legendre polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`P\_n\)]],
+  ", are orthogonal with  respect to absolutely continuous positive measure, \
+supported on the interval ",
+  Cell[BoxData[
+      \(TraditionalForm\`\((\(-1\), 1)\)\)]],
+  ". Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Legendre", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-1\)\%1\( 
+              P\_n\) \((x)\) \(P\_m\) \((x)\) \[DifferentialD]x = \(\(||\)\(P\
+\_n\)\( || \^2\)\(\(\[Delta]\_\(n, m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Legendre", "OrtEquation"}],
+
+Cell[TextData[{
+  "Lindelof polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`L\_n\)]],
+  ", are orthogonal with respect to absolutely continuous positive measure, \
+supported on the real line. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Lindelof", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-\[Infinity]\)\%\[Infinity]\( 
+              L\_n\) \((x)\) \(L\_m\) \((x)\) \[DifferentialD]x\/\(2  cosh \
+\((\[Pi]\ x)\)\) = \(\(||\)\(L\_n\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"Lindelof", "OrtEquation"}],
+
+Cell[TextData[{
+  "Logistic polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`L\_n\)]],
+  ", are orthogonal with respect to the absolutely continuous positive \
+measure, supported on the real line. Namely, orthogonality relation is"
+}], "Text",
+  CellTags->{"Logistic", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+\(-\[Infinity]\)\%\[Infinity]\( 
+              L\_n\) \((x)\) \(L\_m\) \((x)\) \(\(\[ExponentialE]\^\(-x\)\) \
+\[DifferentialD]x\)\/\((1 + \[ExponentialE]\^\(-x\))\)\^2 = \
+\(\(||\)\(L\_n\)\( || \^2\)\(\(\[Delta]\_\(n, m\)\)\(.\)\)\)\)], "DisplayMath",\
+
+  CellTags->{"Logistic", "OrtEquation"}],
+
+Cell[TextData[{
+  "Stieltjes-Wigert polynomials, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(\(S\_n\%\(p, \ q\)\)\(,\)\)\)]],
+  " are generalization of Stieltjes polynomials. Stieltjes polynomials are \
+first one proved to have indeterminated moment problem. Orthogonality \
+relation is"
+}], "Text",
+  CellTags->{"StieltjesWigert", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\[Integral]\+0\%\[Infinity]\( S\_n\%\(p, \ q\)\) \((x)\) \(S\_m\%\(p, \ 
+              q\)\) \((x)\) \(\[Rho]\^\(p, \ 
+              q\)\) \((x)\) \[DifferentialD]x = \(\(||\)\(S\_n\%\(p, 
+            q\)\)\( || \^2\)\(\(\[Delta]\_\(n, 
+              m\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"StieltjesWigert", "OrtEquation"}],
+
+Cell["Where function \[Rho] is defined by", "Text",
+  CellTags->{"StieltjesWigert", "OrtEquation"}],
+
+Cell[BoxData[
+    \(\(\[Rho]\^\(p, \ 
+            q\)\) \((x)\) = \(\(Exp \((\(-\(\(Log \((x)\)\^2\)\/\(4 \( \
+\[Pi]\^2\) Log \((q)\)\^2\)\)\))\) \(\[Product]\+\(i = 0\)\%\[Infinity]\((1 - 
+                    p\ q\^i)\)\)\)\/\@\(\(-2\) \[Pi]\ Log \((q)\)\)\) \
+\(\[Sum]\+\(i = 0\)\%\[Infinity]\(\(\(\( 
+                      q\^\(1/2  
+                        i \((i - 
+                            2)\)\)\) \((p/x)\)\^i\)\/\(\[Product]\+\(j = \
+1\)\%i\((1 - q\^j)\)\)\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"StieltjesWigert", "OrtEquation"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recurrence relation", "Subsubsection",
+  CellTags->{
+  "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+    "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+    "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+    "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI", 
+    "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+
+Cell["\<\
+Charlier polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Charlier", "TTR"}],
+
+Cell[BoxData[
+    \(\(C\_\(n + 1\)\%a\) \((x)\) = \((x - a - n)\) \(C\_n\%a\) \((x)\) - 
+        a\ n\ \(C\_\(n - 1\)\%a\) \((x)\), \ \(C\_0\%a\) \((x)\) = 
+      1, \ \(C\_\(-1\)\%a\) \((x)\) = 0\)], "DisplayMath",
+  CellTags->{"Charlier", "TTR"}],
+
+Cell["\<\
+Bessel polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Bessel", "TTR"}],
+
+Cell[BoxData[
+    \(\(y\_\(n + 1\)\) \((x)\) = 
+      x\ \(y\_n\) \((x)\) + \(1\/\(4  n\^2 - 1\)\) \(y\_\(n - 
+                1\)\) \((x)\), \ \(y\_0\) \((x)\) = 
+      1, \ \(y\_\(-1\)\) \((x)\) = 0\)], "DisplayMath",
+  CellTags->{"Bessel", "TTR"}],
+
+Cell["\<\
+Generalized Bessel polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"BesselG", "TTR"}],
+
+Cell[BoxData[
+    \(\(\(Y\^\[Alpha]\)\_\(n + 1\)\) \((x)\) = \((x\  + 
+              1\/\(\((2  n + \[Alpha] + 2)\) \((2  n + \[Alpha])\)\))\) \(\(Y\
+\^\[Alpha]\)\_n\) \((x)\) + \(\(4  
+                n \((n + \[Alpha])\)\)\/\(\((\((2  n + \[Alpha])\)\^2 - 
+                    1)\) \((2  n + \[Alpha])\)\^2\)\) \(\(Y\^\[Alpha]\)\_\(n \
+- 1\)\) \((x)\), \ \(\(Y\^\[Alpha]\)\_0\) \((x)\) = 
+      1, \ \(\(Y\^\[Alpha]\)\_\(-1\)\) \((x)\) = 0\)], "DisplayMath",
+  CellTags->{"BesselG", "TTR"}],
+
+Cell["\<\
+Gautschi-Milovanovic polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+
+Cell[BoxData[
+    \(\(\[Pi]\_\(n + 
+              1\)\%\[Lambda]\) \((x)\) = \((x - \[ImaginaryI] \
+\((\[Theta]\_\(n + 1\) - \[Theta]\_n)\))\)\ \(\[Pi]\_n\%\[Lambda]\) \((x)\) - \
+\(\[Theta]\_n\^2\) \(\[Pi]\_\(n - 
+                1\)\%\[Lambda]\) \((x)\), \ \(\[Pi]\_0\%\[Lambda]\) \((x)\) = 
+      1, \ \(\[Pi]\_\(-1\)\%\[Lambda]\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+
+Cell["Where ", "Text",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+
+Cell[BoxData[
+    \(\[Theta]\_k = \(\(\(\[CapitalGamma] \((\(k + 1\)\/2)\) \[CapitalGamma] \
+\((k\/2 + \[Lambda])\)\)\/\(\((\[Lambda] + k - 
+                  1)\) \[CapitalGamma] \((\(k - 1\)\/2 + \[Lambda])\) \
+\[CapitalGamma] \((k\/2)\)\)\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+
+Cell["\<\
+Abel polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Abel", "TTR"}],
+
+Cell[BoxData[
+    \(\(P\_\(n + 1\)\) \((x)\) = 
+      x\ \(P\_n\) \((x)\) - \(n \((n + 1)\)\)\/4\ \(P\_\(n - 
+                1\)\) \((x)\), \ \(P\_0\) \((x)\) = 
+      1, \ \(P\_\(-1\)\) \((x)\) = 0\)], "DisplayMath",
+  CellTags->{"Abel", "TTR"}],
+
+Cell["\<\
+Associated Legendre polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"AssociatedLegendre", "TTR"}],
+
+Cell[BoxData[
+    \(\(P\_\(n + 1\)\) \((\[Nu], x)\) = 
+      x\ \(P\_n\) \((\[Nu], 
+            x)\) - \((n + \[Nu])\)\^2\/\(4 \((n + \[Nu])\)\^2 - 1\)\ \(P\_\(n \
+- 1\)\) \((\[Nu], x)\), \ \(P\_0\) \((\[Nu], x)\) = 
+      1, \ \(P\_\(-1\)\) \((\[Nu], x)\) = 0\)], "DisplayMath",
+  CellTags->{"AssociatedLegendre", "TTR"}],
+
+Cell["\<\
+Carlitz polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Carlitz", "TTR"}],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(\(G\_\(n + 1\)\%\[Lambda]\) \((x)\)\), "=", 
+        RowBox[{\(x\ \(G\_n\%\[Lambda]\) \((x)\)\), "-", 
+          RowBox[{
+            FractionBox[
+              
+              RowBox[{\(n\^2\), \((n\^2 - \[Lambda]\^2)\), Cell[
+                ""]}], \(4  n\^2 - 
+                1\)], \(G\_\(n - 1\)\%\[Lambda]\), \((x)\)}]}]}], ",", 
+      " ", \(\(G\_0\%\[Lambda]\) \((x)\) = 1\), ",", 
+      " ", \(\(G\_\(-1\)\%\[Lambda]\) \((x)\) = 0\)}]], "DisplayMath",
+  CellTags->{"Carlitz", "TTR"}],
+
+Cell["\<\
+Chebyshev polynomials of the first kind satisfy following three term \
+recurrence relation\
+\>", "Text",
+  CellTags->{"ChebyshevI", "TTR"}],
+
+Cell[BoxData[
+    \(\(T\_\(n + 1\)\) \((x)\) = 
+      x\ \(T\_n\) \((x)\) - \[Beta]\_n\ \(T\_\(n - 
+                1\)\) \((x)\), \ \(T\_0\) \((x)\) = 
+      1, \ \(T\_\(-1\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"ChebyshevI", "TTR"}],
+
+Cell["Where sequence \[Beta] is given by", "Text",
+  CellTags->{"ChebyshevI", "TTR"}],
+
+Cell[BoxData[
+    \(\[Beta]\_1 = 1\/2, \ \[Beta]\_n = 1\/4\ for\ n > 1\)], "DisplayMath",
+  CellTags->{"ChebyshevI", "TTR"}],
+
+Cell["\<\
+Chebyshev polynomials of the second kind satisfy following three term \
+recurrence relation\
+\>", "Text",
+  CellTags->{"ChebyshevII", "TTR"}],
+
+Cell[BoxData[
+    \(\(U\_\(n + 1\)\) \((x)\) = 
+      x\ \(U\_n\) \((x)\) - 
+        1\/4\ \(U\_\(n - 1\)\) \((x)\), \ \(U\_0\) \((x)\) = 
+      1, \ \(U\_\(-1\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"ChebyshevII", "TTR"}],
+
+Cell["\<\
+Gegenbauer polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Gegenbauer", "TTR"}],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(\(G\_\(n + 1\)\%\[Lambda]\) \((x)\)\), "=", 
+        RowBox[{\(x\ \(G\_n\%\[Lambda]\) \((x)\)\), "-", 
+          RowBox[{
+            FractionBox[
+              RowBox[{
+              "n", \((n + 2  \[Lambda] - 1)\), Cell[
+                ""]}], \(4 \((k + \[Lambda])\) \((k + \[Lambda] - 
+                    1)\)\)], \(G\_\(n - 1\)\%\[Lambda]\), \((x)\)}]}]}], ",", 
+      " ", \(\(G\_0\%\[Lambda]\) \((x)\) = 1\), ",", 
+      " ", \(\(G\_\(-1\)\%\[Lambda]\) \((x)\) = 0\)}]], "DisplayMath",
+  CellTags->{"Gegenbauer", "TTR"}],
+
+Cell["\<\
+Generalized Gegenbauer polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"GegenbauerG", "TTR"}],
+
+Cell[BoxData[
+    \(\(G\_\(n + 1\)\%\(\[Beta], \[Alpha]\)\) \((x)\) = 
+      x\ \(G\_n\%\(\[Beta], \[Alpha]\)\) \((x)\) - \(\[Gamma]\_n\/\(\((k + \
+\[Alpha] + \[Beta])\) \((k + \[Alpha] + \[Beta] + 1)\)\)\) \(G\_\(n - 
+                1\)\%\(\[Beta], \[Alpha]\)\) \((x)\), \ \(G\_0\%\(\[Beta], \
+\[Alpha]\)\) \((x)\) = 1, \ \(G\_\(-1\)\%\(\[Beta], \[Alpha]\)\) \((x)\) = 
+      0. \)], "DisplayMath",
+  CellTags->{"GegenbauerG", "TTR"}],
+
+Cell["Where sequence \[Gamma] is given by", "Text",
+  CellTags->{"GegenbauerG", "TTR"}],
+
+Cell[BoxData[
+    RowBox[{\(\[Gamma]\_n\), "=", 
+      TagBox[
+        StyleBox[
+          RowBox[{"{", 
+            StyleBox[GridBox[{
+                  {\(\((\(n + 1\)\/2 + \[Beta])\) \((\(n + 1\)\/2 + \[Beta] + \
+\[Alpha])\), \ for\ odd\ n\)},
+                  {\(\(n\/2\) \((n\/2 + \[Alpha])\), \ for\ even\ n\)}
+                  }],
+              ShowAutoStyles->True]}],
+          ShowAutoStyles->False],
+        (#&)]}]], "DisplayMath",
+  CellTags->{"GegenbauerG", "TTR"}],
+
+Cell["\<\
+Hermite polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Hermite", "TTR"}],
+
+Cell[BoxData[
+    \(\(H\_\(n + 1\)\) \((x)\) = 
+      x\ \(H\_n\) \((x)\) - \(k\/2\) \(H\_\(n - 
+                1\)\) \((x)\), \ \(H\_0\) \((x)\) = 
+      1, \ \(H\_\(-1\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"Hermite", "TTR"}],
+
+Cell["\<\
+Generalized Hermite polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"HermiteG", "TTR"}],
+
+Cell[BoxData[
+    \(\(H\_\(n + 1\)\%\[Mu]\) \((x)\) = 
+      x\ \(H\_n\%\[Mu]\) \((x)\) - \(\[Gamma]\_n\/2\) \(H\_\(n - 
+                1\)\%\[Mu]\) \((x)\), \ \(H\_0\%\[Mu]\) \((x)\) = 
+      1, \ \(H\_\(-1\)\%\[Mu]\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"HermiteG", "TTR"}],
+
+Cell["Where sequence \[Gamma] is given by", "Text",
+  CellTags->{"HermiteG", "TTR"}],
+
+Cell[BoxData[
+    RowBox[{\(\[Gamma]\_n\), "=", 
+      TagBox[
+        StyleBox[
+          RowBox[{"{", 
+            StyleBox[GridBox[{
+                  {\(k + 2  \[Mu], \ for\ odd\ n\)},
+                  {\(k, \ for\ even\ n\)}
+                  }],
+              ShowAutoStyles->True]}],
+          ShowAutoStyles->False],
+        (#&)]}]], "DisplayMath",
+  CellTags->{"HermiteG", "TTR"}],
+
+Cell["\<\
+Generalized Hermite polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"Jacobi", "TTR"}],
+
+Cell[BoxData[
+    \(\(P\_\(n + 
+              1\)\%\(\[Alpha], \[Beta]\)\) \((x)\) = \((x - \(\[Beta]\^2 - \
+\[Alpha]\^2\)\/\(\((2  k + \[Alpha] + \[Beta])\) \((2  k + \[Alpha] + \[Beta] \
++ 2)\)\))\)\ \(P\_n\%\(\[Alpha], \[Beta]\)\) \((x)\) - \(\(4  
+                k \((k + \[Alpha])\) \((k + \[Beta])\) \((k + \[Alpha] + \
+\[Beta])\)\)\/\(\(\((2  
+                          k + \[Alpha] + \[Beta])\)\^2\) \((\((2  k + \
+\[Alpha] + \[Beta])\)\^2 - 1)\)\)\) \(P\_\(n - 
+                1\)\%\(\[Alpha], \[Beta]\)\) \((x)\), \ \(P\_0\%\(\[Alpha], \
+\[Beta]\)\) \((x)\) = 1, \ \(P\_\(-1\)\%\(\[Alpha], \[Beta]\)\) \((x)\) = 
+      0. \)], "DisplayMath",
+  CellTags->{"Jacobi", "TTR"}],
+
+Cell["\<\
+Laguerre polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Laguerre", "TTR"}],
+
+Cell[BoxData[
+    \(\(L\_\(n + 1\)\) \((x)\) = \((x - \((2  n + 1)\))\)\ \(L\_n\) \((x)\) - 
+        n\^2\ \(L\_\(n - 1\)\) \((x)\), \ \(L\_0\) \((x)\) = 
+      1, \ \(L\_\(-1\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"Laguerre", "TTR"}],
+
+Cell["\<\
+Generalized Laguerre polynomials satisfy following three term recurrence \
+relation\
+\>", "Text",
+  CellTags->{"LaguerreG", "TTR"}],
+
+Cell[BoxData[
+    \(\(L\_\(n + 
+              1\)\%s\) \((x)\) = \((x - \((2  n + s + 
+                  1)\))\)\ \(L\_n\%s\) \((x)\) - 
+        n \((n + s)\)\ \(L\_\(n - 1\)\%s\) \((x)\), \ \(L\_0\%s\) \((x)\) = 
+      1, \ \(L\_\(-1\)\%s\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"LaguerreG", "TTR"}],
+
+Cell["\<\
+Legendre polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Legendre", "TTR"}],
+
+Cell[BoxData[
+    \(\(P\_\(n + 1\)\) \((x)\) = 
+      x\ \(P\_n\) \((x)\) - \(n\^2\/\(4  n\^2 - 1\)\) \(P\_\(n - 
+                1\)\) \((x)\), \ \(P\_0\) \((x)\) = 
+      1, \ \(P\_\(-1\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"Legendre", "TTR"}],
+
+Cell["\<\
+Lindelof polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Lindelof", "TTR"}],
+
+Cell[BoxData[
+    \(\(L\_\(n + 1\)\) \((x)\) = 
+      x\ \(L\_n\) \((x)\) - 
+        n\^2\/4\ \(L\_\(n - 1\)\) \((x)\), \ \(L\_0\) \((x)\) = 
+      1, \ \(L\_\(-1\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"Lindelof", "TTR"}],
+
+Cell["\<\
+Lindelof polynomials satisfy following three term recurrence relation\
+\>", "Text",
+  CellTags->{"Logistic", "TTR"}],
+
+Cell[BoxData[
+    \(\(L\_\(n + 1\)\) \((x)\) = 
+      x\ \(L\_n\) \((x)\) - \(\(n\^4\) \[Pi]\^2\)\/\(4  n\^2 - 1\)\ \(L\_\(n \
+- 1\)\) \((x)\), \ \(L\_0\) \((x)\) = 1, \ \(L\_\(-1\)\) \((x)\) = 
+      0. \)], "DisplayMath",
+  CellTags->{"Logistic", "TTR"}],
+
+Cell["\<\
+Stieltjes-Wigert polynomials satisfy following three term recurrence relation\
+\
+\>", "Text",
+  CellTags->{"StieltjesWigert", "TTR"}],
+
+Cell[BoxData[
+    \(\(S\_\(n + 1\)\%\(p, 
+            q\)\) \((x)\) = \((x - \(q\^\(\(-3\)/2 - n\)\) \((p + 
+                    q - \(q\^\(-n\)\) \((1 + q)\))\))\) \(S\_n\%\(p, 
+              q\)\) \((x)\) - \(q\^\(\(-4\) n\)\) \((1 - 
+              pq\^\(n - 1\))\) \((1 - q\^n)\) \(S\_\(n - 1\)\%\(p, 
+              q\)\) \((x)\), \ \(S\_0\%\(p, q\)\) \((x)\) = 
+      1, \ \(S\_\(-1\)\%\(p, q\)\) \((x)\) = 0. \)], "DisplayMath",
+  CellTags->{"StieltjesWigert", "TTR"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Norm", "Subsubsection",
+  CellTags->{
+  "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+    "ChebyshevI", "ChebyshevII", "DualHan", "GautschiMilovanovic", 
+    "Gegenbauer", "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", 
+    "Laguerre", "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", 
+    "MeixnerI", "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson", "Norm"}],
+
+Cell["\<\
+Norm of Charlier polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Charlier", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(C\_n\%a\)\( || \^2\)\) = \ \(a\^n\) \(\(n!\)\(.\)\)\)], \
+"DisplayMath",
+  CellTags->{"Charlier", "Norm"}],
+
+Cell["\<\
+Norm of Bessel polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Bessel", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(y\_n\)\( || \^2\)\) = \(\(2\^\(2 - 2  n\)\) \[ImaginaryI]\ \
+\[Pi] \((\(-1\))\)\^\(n + 1\)\)\/\(\((1 + 2  n)\) \[CapitalGamma] \((n + \
+1\/2)\)\^2\)\)], "DisplayMath",
+  CellTags->{"Bessel", "Norm"}],
+
+Cell["\<\
+Norm of Bessel polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"BesselG", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(\(Y\^\[Alpha]\)\_n\)\( || \^2\)\) = \(\(2\^\(2 - 2  n\)\) \
+\[ImaginaryI]\ \[Pi] \(\((\(-1\))\)\^\(n + 1\)\) \(n!\) \[CapitalGamma] \(\((\
+\(1 + \[Alpha]\)\/2)\)\^2\) \[CapitalGamma] \(\((\(2 + \[Alpha]\)\/2)\)\^2\) \
+\[CapitalGamma] \((1 + \[Alpha] + n)\)\)\/\(\((1 + \[Alpha] + 2  n)\) \
+\[CapitalGamma] \(\((n + \(1 + \[Alpha]\)\/2)\)\^2\) \[CapitalGamma] \(\((n + \
+\(2 + \[Alpha]\)\/2)\)\^2\) \[CapitalGamma] \((1 + \[Alpha])\)\)\)], \
+"DisplayMath",
+  CellTags->{"BesselG", "Norm"}],
+
+Cell["\<\
+Norm of Gautschi-Milovanovic polynomials is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"GautschiMilovanovic", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(\[Pi]\_n\%\[Lambda]\)\( || \^2\)\(\(=\)\(\(\[CapitalGamma] \(\
+\((\(n + 1\)\/2)\)\^2\) \[CapitalGamma] \((n\/2 + \[Lambda])\)\^2\)\/\(\
+\[CapitalGamma] \((n + \[Lambda])\)\^2\)\)\)\)\)], "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "Norm"}],
+
+Cell["\<\
+Norm of Abel polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Abel", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(P\_n\)\( || \^2\)\) = \ \(2\^\(\(-2\) - 2  n\)\) \((n + 
+            1)\) \(\(\((\(n!\))\)\^2\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"Abel", "Norm"}],
+
+Cell["\<\
+Norm of Associated Legendre polynomials is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"AssociatedLegendre", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(P\_n\)\( || \^2\)\) = \ \(\(\(\(2\^\(1 - 
+                    2  n\)\) \[CapitalGamma] \(\((\[Nu] + 
+                      1\/2)\)\^2\) \[CapitalGamma] \((1 + n + \[Nu])\)\^2\)\/\
+\(\((2  n + 2  \[Nu] - 
+                  1)\) \[CapitalGamma] \(\((\[Nu] + 
+                      1)\)\^2\) \[CapitalGamma] \((\[Nu] + n + 1\/2)\)\^2\)\)\
+\(.\)\)\)], "DisplayMath",
+  CellTags->{"AssociatedLegendre", "Norm"}],
+
+Cell["\<\
+Norm of Carlitz polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Carlitz", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(G\_n\%\[Lambda]\)\( || \^2\)\) = \(\(\(2 \(\((\(n!\))\)\^2\) \
+\[CapitalGamma] \((1 + n - \[Lambda])\) \[CapitalGamma] \((1 + 
+                  n + \[Lambda])\)\)\/\(\[Pi] \((2  n + 
+                  1)\) \((\(\((2  n - 1)\)!!\))\)\^2\)\)\(.\)\)\)], \
+"DisplayMath",
+  CellTags->{"Carlitz", "Norm"}],
+
+Cell["\<\
+Norm of Chebyshev polynomials of the first kind is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"ChebyshevI", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(T\_n\)\( || \^2\)\) = \(2\^\(1 - 
+              2  n\)\) \(\(\[Pi]\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"ChebyshevI", "Norm"}],
+
+Cell["\<\
+Norm of Chebyshev polynomials of the first kind is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"ChebyshevII", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(U\_n\)\( || \^2\)\) = \(2\^\(\(-2\) - 
+              2  n\)\) \(\(\[Pi]\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"ChebyshevII", "Norm"}],
+
+Cell["\<\
+Norm of Gegenbauer polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Gegenbauer", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(G\_n\%\[Lambda]\)\( || \^2\)\) = \(\(\(\(2\^\(\(-2\) 
+                    n\)\) \(\@\[Pi]\) \(n!\) \[CapitalGamma] \((\[Lambda])\) \
+\[CapitalGamma] \((\[Lambda] + 1\/2)\) \[CapitalGamma] \((n + 
+                  2  \[Lambda])\)\)\/\(\((n + \[Lambda])\) \[CapitalGamma] \
+\((2  \[Lambda])\) \[CapitalGamma] \((n + \[Lambda])\)\^2\)\)\(.\)\)\)], \
+"DisplayMath",
+  CellTags->{"Gegenbauer", "Norm"}],
+
+Cell["\<\
+Norm of generalized Gegenbauer polynomials is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"GegenbauerG", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(G\_n\%\(\[Beta], \[Alpha]\)\)\( || \^2\)\) = \(\(\(\(K\_n\) \
+\((\[Alpha], \[Beta])\) \[Delta]\_\(n, m\)\)\/\(\[CapitalGamma] \((1 + 
+                  n + \[Alpha] + \[Beta])\) \[CapitalGamma] \((2 + 
+                  n + \[Alpha] + \[Beta])\)\)\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"GegenbauerG", "Norm"}],
+
+Cell[TextData[{
+  "Function ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(K\_n\)(\[Alpha], \[Beta])\)]],
+  " is given by"
+}], "Text",
+  CellTags->{"GegenbauerG", "Norm"}],
+
+Cell[BoxData[
+    RowBox[{\(\(K\_n\) \((\[Alpha], \[Beta])\)\), "=", 
+      TagBox[
+        StyleBox[
+          RowBox[{"{", 
+            StyleBox[GridBox[{
+                  {\(\(\((\(n - 1\)\/2)\)!\) \[CapitalGamma] \((1 + \[Alpha] \
++ \(n - 1\)\/2)\) \[CapitalGamma] \((2 + \[Beta] + \(n - 1\)\/2)\) \
+\[CapitalGamma] \((2 + \[Alpha] + \[Beta] + \(n - 1\)\/2)\), \ 
+                    when\ n\ is\ Odd\)},
+                  {\(\(\((n\/2)\)!\) \[CapitalGamma] \((1 + \[Alpha] + 
+                          n\/2)\) \[CapitalGamma] \((1 + \[Beta] + 
+                          n\/2)\) \[CapitalGamma] \((1 + \[Alpha] + \[Beta] + 
+                          n\/2)\), \ when\ n\ is\ even\)}
+                  }],
+              ShowAutoStyles->True]}],
+          ShowAutoStyles->False],
+        (#&)]}]], "DisplayMath",
+  CellTags->{"GegenbauerG", "Norm"}],
+
+Cell["\<\
+Norm of Hermite polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Hermite", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(H\_n\)\( || \^2\)\) = \(2\^\(-n\)\) \(\@\[Pi]\) \(\(n!\)\(.\)\
+\)\)], "DisplayMath",
+  CellTags->{"Hermite", "Norm"}],
+
+Cell["\<\
+Norm of generalized Hermite polynomials is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"HermiteG", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(H\_n\%\[Mu]\)\( || \^2\)\) = \[CapitalGamma] \((1 + \
+\([n\/2]\))\) \[CapitalGamma] \(\((1\/2 + \[Mu] + \([\(n + \
+1\)\/2]\))\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"HermiteG", "Norm"}],
+
+Cell["\<\
+Norm of Jacobi polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Jacobi", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(P\_n\%\(\[Alpha], \[Beta]\)\)\( || \^2\)\) = \(\(\(\(2\^\(1 + \
+\[Alpha] + \[Beta] + 2  n\)\) \(n!\) \[CapitalGamma] \((1 + \[Alpha] + 
+                  n)\) \[CapitalGamma] \((1 + \[Beta] + 
+                  n)\) \[CapitalGamma] \((1 + \[Alpha] + \[Beta] + 
+                  n)\)\)\/\(\((1 + \[Alpha] + \[Beta] + 
+                  2  n)\) \[CapitalGamma] \((1 + \[Alpha] + \[Beta] + 2  n)\)\
+\^2\)\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"Jacobi", "Norm"}],
+
+Cell["\<\
+Norm of Laguerre polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Laguerre", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(L\_n\)\( || \^2\)\) = \(\(\((\(n!\))\)\^2\)\(.\)\)\)], \
+"DisplayMath",
+  CellTags->{"Laguerre", "Norm"}],
+
+Cell["\<\
+Norm of generalized Laguerre polynomials is given with the following \
+expression\
+\>", "Text",
+  CellTags->{"LaguerreG", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(L\_n\%s\)\( || \^2\)\) = \(n!\) \[CapitalGamma] \(\((1 + s + 
+              n)\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"LaguerreG", "Norm"}],
+
+Cell["\<\
+Norm of Legendre polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Legendre", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(P\_n\)\( || \^2\)\) = \(\(\(\(2\^\(1 + 
+                    2  n\)\) \((\(n!\))\)\^4\)\/\(\((2  n + 
+                  1)\) \((2 \( n!\))\)\^2\)\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"Legendre", "Norm"}],
+
+Cell["\<\
+Norm of Lindelof polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Lindelof", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(L\_n\)\( || \^2\)\) = \(2\^\(\(-2\) n - 
+              1\)\) \(\(\((\(n!\))\)\^2\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"Lindelof", "Norm"}],
+
+Cell["\<\
+Norm of Lindelof polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"Logistic", "Norm"}],
+
+Cell[BoxData[
+    RowBox[{\(\(||\)\(L\_n\)\( || \^2\)\), "=", 
+      RowBox[{
+        FractionBox[\(\(\[Pi]\^\(2  n\)\) \((\(n!\))\)\^4\), 
+          RowBox[{\((2  n + 1)\), 
+            SuperscriptBox[
+              RowBox[{"(", 
+                RowBox[{\((2  n - 1)\), 
+                  RowBox[{Cell[""], "!!"}]}], ")"}], "2"]}]], 
+        "."}]}]], "DisplayMath",
+  CellTags->{"Logistic", "Norm"}],
+
+Cell["\<\
+Norm of Stieltjes-Wigert polynomials is given with the following expression\
+\>", "Text",
+  CellTags->{"StieltjesWigert", "Norm"}],
+
+Cell[BoxData[
+    \(\(\(||\)\(S\_n\%\(p, 
+            q\)\)\( || \^2\)\) = \(q\^\(\(-1\)/
+                2 \((2  n + 1)\)\^2\)\) \(\[Product]\+\(i = 0\)\%\(n - \
+1\)\((1 - p\ q\^i)\) \(\((1 - q\^\(i + 1\))\)\(.\)\)\)\)], "DisplayMath",
+  CellTags->{"StieltjesWigert", "Norm"}]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+ShowPageBreaks->False,
+CellGrouping->Manual,
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+IndexCreationOptions->{"Format"->"Text"},
+ShowCellBracket->True,
+ShowCellTags->True,
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Charlier"->{
+    Cell[1776, 53, 126, 3, 53, "Subsection",
+      CellTags->"Charlier"],
+    Cell[1905, 58, 423, 13, 56, "Text",
+      CellTags->"Charlier"],
+    Cell[2331, 73, 1297, 25, 73, "Text",
+      CellTags->"Charlier"],
+    Cell[3631, 100, 151, 5, 39, "Text",
+      CellTags->"Charlier"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[40831, 1096, 322, 7, 39, "Text",
+      CellTags->{"Charlier", "OrtEquation"}],
+    Cell[41156, 1105, 296, 5, 75, "DisplayMath",
+      CellTags->{"Charlier", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[56565, 1515, 126, 3, 39, "Text",
+      CellTags->{"Charlier", "TTR"}],
+    Cell[56694, 1520, 248, 4, 46, "DisplayMath",
+      CellTags->{"Charlier", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[68505, 1860, 125, 3, 39, "Text",
+      CellTags->{"Charlier", "Norm"}],
+    Cell[68633, 1865, 136, 3, 45, "DisplayMath",
+      CellTags->{"Charlier", "Norm"}]},
+  "Bessel"->{
+    Cell[3819, 110, 117, 3, 53, "Subsection",
+      CellTags->"Bessel"],
+    Cell[3939, 115, 589, 16, 56, "Text",
+      CellTags->"Bessel"],
+    Cell[4531, 133, 1071, 21, 51, "Text",
+      CellTags->"Bessel"],
+    Cell[5605, 156, 147, 5, 39, "Text",
+      CellTags->"Bessel"],
+    Cell[7491, 207, 148, 5, 39, "Text",
+      CellTags->"Bessel"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[41455, 1112, 294, 7, 39, "Text",
+      CellTags->{"Bessel", "OrtEquation"}],
+    Cell[41752, 1121, 294, 5, 59, "DisplayMath",
+      CellTags->{"Bessel", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[56945, 1526, 122, 3, 39, "Text",
+      CellTags->{"Bessel", "TTR"}],
+    Cell[57070, 1531, 250, 5, 58, "DisplayMath",
+      CellTags->{"Bessel", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[68772, 1870, 121, 3, 39, "Text",
+      CellTags->{"Bessel", "Norm"}],
+    Cell[68896, 1875, 229, 4, 71, "DisplayMath",
+      CellTags->{"Bessel", "Norm"}]},
+  "BesselG"->{
+    Cell[5789, 166, 133, 4, 74, "Subsection",
+      CellTags->"BesselG"],
+    Cell[5925, 172, 237, 6, 39, "Text",
+      CellTags->"BesselG"],
+    Cell[6165, 180, 1323, 25, 73, "Text",
+      CellTags->"BesselG"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[42049, 1128, 356, 8, 56, "Text",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[42408, 1138, 318, 5, 59, "DisplayMath",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[42729, 1145, 165, 6, 39, "Text",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[42897, 1153, 288, 5, 65, "DisplayMath",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[57323, 1538, 137, 4, 39, "Text",
+      CellTags->{"BesselG", "TTR"}],
+    Cell[57463, 1544, 492, 8, 60, "DisplayMath",
+      CellTags->{"BesselG", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[69128, 1881, 122, 3, 39, "Text",
+      CellTags->{"BesselG", "Norm"}],
+    Cell[69253, 1886, 518, 8, 77, "DisplayMath",
+      CellTags->{"BesselG", "Norm"}]},
+  "GautschiMilovanovic"->{
+    Cell[7676, 217, 169, 4, 74, "Subsection",
+      CellTags->"GautschiMilovanovic"],
+    Cell[7848, 223, 259, 7, 39, "Text",
+      CellTags->"GautschiMilovanovic"],
+    Cell[8110, 232, 1351, 25, 73, "Text",
+      CellTags->"GautschiMilovanovic"],
+    Cell[9464, 259, 173, 5, 39, "Text",
+      CellTags->"GautschiMilovanovic"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[43188, 1160, 360, 8, 43, "Text",
+      CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+    Cell[43551, 1170, 340, 5, 62, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+    Cell[43894, 1177, 115, 1, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[57958, 1554, 151, 4, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58112, 1560, 410, 7, 46, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58525, 1569, 66, 1, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58594, 1572, 313, 5, 75, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[69774, 1896, 150, 4, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "Norm"}],
+    Cell[69927, 1902, 276, 4, 69, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "Norm"}]},
+  "Abel"->{
+    Cell[9674, 269, 112, 3, 53, "Subsection",
+      CellTags->"Abel"],
+    Cell[9789, 274, 203, 6, 39, "Text",
+      CellTags->"Abel"],
+    Cell[9995, 282, 1065, 21, 51, "Text",
+      CellTags->"Abel"],
+    Cell[11063, 305, 143, 5, 39, "Text",
+      CellTags->"Abel"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[44012, 1180, 280, 7, 39, "Text",
+      CellTags->{"Abel", "OrtEquation"}],
+    Cell[44295, 1189, 330, 5, 72, "DisplayMath",
+      CellTags->{"Abel", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[58910, 1579, 118, 3, 39, "Text",
+      CellTags->{"Abel", "TTR"}],
+    Cell[59031, 1584, 247, 5, 58, "DisplayMath",
+      CellTags->{"Abel", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[70206, 1908, 117, 3, 39, "Text",
+      CellTags->{"Abel", "Norm"}],
+    Cell[70326, 1913, 181, 3, 45, "DisplayMath",
+      CellTags->{"Abel", "Norm"}]},
+  "AssociatedLegendre"->{
+    Cell[11243, 315, 171, 4, 53, "Subsection",
+      CellTags->"AssociatedLegendre"],
+    Cell[11417, 321, 261, 6, 39, "Text",
+      CellTags->"AssociatedLegendre"],
+    Cell[11681, 329, 1340, 25, 73, "Text",
+      CellTags->"AssociatedLegendre"],
+    Cell[13024, 356, 171, 5, 39, "Text",
+      CellTags->"AssociatedLegendre"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[44628, 1196, 406, 10, 39, "Text",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45037, 1208, 292, 5, 75, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45332, 1215, 91, 1, 39, "Text",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45426, 1218, 238, 4, 68, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45667, 1224, 295, 9, 39, "Text",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[59281, 1591, 149, 4, 39, "Text",
+      CellTags->{"AssociatedLegendre", "TTR"}],
+    Cell[59433, 1597, 322, 6, 63, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[70510, 1918, 148, 4, 39, "Text",
+      CellTags->{"AssociatedLegendre", "Norm"}],
+    Cell[70661, 1924, 436, 8, 77, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "Norm"}]},
+  "Carlitz"->{
+    Cell[13232, 366, 124, 3, 53, "Subsection",
+      CellTags->"Carlitz"],
+    Cell[13359, 371, 215, 6, 39, "Text",
+      CellTags->"Carlitz"],
+    Cell[13577, 379, 1314, 25, 73, "Text",
+      CellTags->"Carlitz"],
+    Cell[14894, 406, 150, 5, 39, "Text",
+      CellTags->"Carlitz"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[45965, 1235, 357, 9, 39, "Text",
+      CellTags->{"Carlitz", "OrtEquation"}],
+    Cell[46325, 1246, 353, 6, 72, "DisplayMath",
+      CellTags->{"Carlitz", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[59758, 1605, 124, 3, 39, "Text",
+      CellTags->{"Carlitz", "TTR"}],
+    Cell[59885, 1610, 534, 12, 66, "DisplayMath",
+      CellTags->{"Carlitz", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[71100, 1934, 123, 3, 39, "Text",
+      CellTags->{"Carlitz", "Norm"}],
+    Cell[71226, 1939, 331, 6, 63, "DisplayMath",
+      CellTags->{"Carlitz", "Norm"}]},
+  "ChebyshevI"->{
+    Cell[15081, 416, 154, 4, 74, "Subsection",
+      CellTags->"ChebyshevI"],
+    Cell[15238, 422, 263, 7, 39, "Text",
+      CellTags->"ChebyshevI"],
+    Cell[15504, 431, 1101, 21, 73, "Text",
+      CellTags->"ChebyshevI"],
+    Cell[16608, 454, 155, 5, 39, "Text",
+      CellTags->"ChebyshevI"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[46681, 1254, 381, 10, 39, "Text",
+      CellTags->{"ChebyshevI", "OrtEquation"}],
+    Cell[47065, 1266, 273, 5, 75, "DisplayMath",
+      CellTags->{"ChebyshevI", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[60422, 1624, 149, 4, 39, "Text",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[60574, 1630, 245, 5, 45, "DisplayMath",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[60822, 1637, 85, 1, 39, "Text",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[60910, 1640, 124, 2, 58, "DisplayMath",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[71560, 1947, 148, 4, 39, "Text",
+      CellTags->{"ChebyshevI", "Norm"}],
+    Cell[71711, 1953, 160, 3, 45, "DisplayMath",
+      CellTags->{"ChebyshevI", "Norm"}]},
+  "ChebyshevII"->{
+    Cell[16800, 464, 158, 4, 74, "Subsection",
+      CellTags->"ChebyshevII"],
+    Cell[16961, 470, 267, 7, 39, "Text",
+      CellTags->"ChebyshevII"],
+    Cell[17231, 479, 1103, 21, 73, "Text",
+      CellTags->"ChebyshevII"],
+    Cell[18337, 502, 157, 5, 39, "Text",
+      CellTags->"ChebyshevII"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[47341, 1273, 383, 10, 39, "Text",
+      CellTags->{"ChebyshevII", "OrtEquation"}],
+    Cell[47727, 1285, 279, 5, 75, "DisplayMath",
+      CellTags->{"ChebyshevII", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[61037, 1644, 151, 4, 39, "Text",
+      CellTags->{"ChebyshevII", "TTR"}],
+    Cell[61191, 1650, 232, 5, 58, "DisplayMath",
+      CellTags->{"ChebyshevII", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[71874, 1958, 149, 4, 39, "Text",
+      CellTags->{"ChebyshevII", "Norm"}],
+    Cell[72026, 1964, 166, 3, 45, "DisplayMath",
+      CellTags->{"ChebyshevII", "Norm"}]},
+  "Gegenbauer"->{
+    Cell[18531, 512, 138, 4, 53, "Subsection",
+      CellTags->"Gegenbauer"],
+    Cell[18672, 518, 227, 6, 39, "Text",
+      CellTags->"Gegenbauer"],
+    Cell[18902, 526, 1323, 25, 73, "Text",
+      CellTags->"Gegenbauer"],
+    Cell[20228, 553, 155, 5, 39, "Text",
+      CellTags->"Gegenbauer"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[48009, 1292, 403, 10, 43, "Text",
+      CellTags->{"Gegenbauer", "OrtEquation"}],
+    Cell[48415, 1304, 309, 5, 75, "DisplayMath",
+      CellTags->{"Gegenbauer", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[61426, 1657, 130, 3, 39, "Text",
+      CellTags->{"Gegenbauer", "TTR"}],
+    Cell[61559, 1662, 571, 12, 68, "DisplayMath",
+      CellTags->{"Gegenbauer", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[72195, 1969, 129, 3, 39, "Text",
+      CellTags->{"Gegenbauer", "Norm"}],
+    Cell[72327, 1974, 428, 7, 70, "DisplayMath",
+      CellTags->{"Gegenbauer", "Norm"}]},
+  "GegenbauerG"->{
+    Cell[20420, 563, 153, 4, 53, "Subsection",
+      CellTags->"GegenbauerG"],
+    Cell[20576, 569, 252, 6, 39, "Text",
+      CellTags->"GegenbauerG"],
+    Cell[20831, 577, 1534, 27, 73, "Text",
+      CellTags->"GegenbauerG"],
+    Cell[22368, 606, 157, 5, 39, "Text",
+      CellTags->"GegenbauerG"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[48727, 1311, 441, 11, 56, "Text",
+      CellTags->{"GegenbauerG", "OrtEquation"}],
+    Cell[49171, 1324, 418, 7, 75, "DisplayMath",
+      CellTags->{"GegenbauerG", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[62133, 1676, 145, 4, 39, "Text",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[62281, 1682, 436, 7, 58, "DisplayMath",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[62720, 1691, 87, 1, 39, "Text",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[62810, 1694, 481, 13, 75, "DisplayMath",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[72758, 1983, 144, 4, 39, "Text",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[72905, 1989, 342, 5, 60, "DisplayMath",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[73250, 1996, 170, 6, 39, "Text",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[73423, 2004, 851, 18, 75, "DisplayMath",
+      CellTags->{"GegenbauerG", "Norm"}]},
+  "Hermite"->{
+    Cell[22562, 616, 124, 3, 53, "Subsection",
+      CellTags->"Hermite"],
+    Cell[22689, 621, 215, 6, 39, "Text",
+      CellTags->"Hermite"],
+    Cell[22907, 629, 1071, 20, 51, "Text",
+      CellTags->"Hermite"],
+    Cell[23981, 651, 149, 5, 39, "Text",
+      CellTags->"Hermite"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[49592, 1333, 290, 7, 39, "Text",
+      CellTags->{"Hermite", "OrtEquation"}],
+    Cell[49885, 1342, 271, 4, 72, "DisplayMath",
+      CellTags->{"Hermite", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[63294, 1709, 124, 3, 39, "Text",
+      CellTags->{"Hermite", "TTR"}],
+    Cell[63421, 1714, 239, 5, 58, "DisplayMath",
+      CellTags->{"Hermite", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[74277, 2024, 123, 3, 39, "Text",
+      CellTags->{"Hermite", "Norm"}],
+    Cell[74403, 2029, 147, 3, 46, "DisplayMath",
+      CellTags->{"Hermite", "Norm"}]},
+  "HermiteG"->{
+    Cell[24167, 661, 140, 4, 74, "Subsection",
+      CellTags->"HermiteG"],
+    Cell[24310, 667, 241, 6, 39, "Text",
+      CellTags->"HermiteG"],
+    Cell[24554, 675, 1319, 25, 73, "Text",
+      CellTags->"HermiteG"],
+    Cell[25876, 702, 151, 5, 39, "Text",
+      CellTags->"HermiteG"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[50159, 1348, 336, 7, 43, "Text",
+      CellTags->{"HermiteG", "OrtEquation"}],
+    Cell[50498, 1357, 380, 6, 72, "DisplayMath",
+      CellTags->{"HermiteG", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[63663, 1721, 139, 4, 39, "Text",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[63805, 1727, 285, 5, 56, "DisplayMath",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[64093, 1734, 84, 1, 39, "Text",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[64180, 1737, 391, 12, 57, "DisplayMath",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[74553, 2034, 138, 4, 39, "Text",
+      CellTags->{"HermiteG", "Norm"}],
+    Cell[74694, 2040, 217, 4, 58, "DisplayMath",
+      CellTags->{"HermiteG", "Norm"}]},
+  "Jacobi"->{
+    Cell[26064, 712, 120, 3, 53, "Subsection",
+      CellTags->"Jacobi"],
+    Cell[26187, 717, 211, 6, 39, "Text",
+      CellTags->"Jacobi"],
+    Cell[26401, 725, 1508, 27, 73, "Text",
+      CellTags->"Jacobi"],
+    Cell[27912, 754, 148, 5, 39, "Text",
+      CellTags->"Jacobi"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[50881, 1365, 424, 11, 39, "Text",
+      CellTags->{"Jacobi", "OrtEquation"}],
+    Cell[51308, 1378, 376, 6, 75, "DisplayMath",
+      CellTags->{"Jacobi", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[64574, 1751, 137, 4, 39, "Text",
+      CellTags->{"Jacobi", "TTR"}],
+    Cell[64714, 1757, 684, 12, 63, "DisplayMath",
+      CellTags->{"Jacobi", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[74914, 2046, 121, 3, 39, "Text",
+      CellTags->{"Jacobi", "Norm"}],
+    Cell[75038, 2051, 492, 8, 63, "DisplayMath",
+      CellTags->{"Jacobi", "Norm"}]},
+  "Laguerre"->{
+    Cell[28097, 764, 129, 4, 74, "Subsection",
+      CellTags->"Laguerre"],
+    Cell[28229, 770, 219, 6, 39, "Text",
+      CellTags->"Laguerre"],
+    Cell[28451, 778, 1076, 21, 51, "Text",
+      CellTags->"Laguerre"],
+    Cell[29530, 801, 151, 5, 39, "Text",
+      CellTags->"Laguerre"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[51687, 1386, 315, 8, 39, "Text",
+      CellTags->{"Laguerre", "OrtEquation"}],
+    Cell[52005, 1396, 249, 4, 73, "DisplayMath",
+      CellTags->{"Laguerre", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[65401, 1771, 126, 3, 39, "Text",
+      CellTags->{"Laguerre", "TTR"}],
+    Cell[65530, 1776, 245, 4, 45, "DisplayMath",
+      CellTags->{"Laguerre", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[75533, 2061, 125, 3, 39, "Text",
+      CellTags->{"Laguerre", "Norm"}],
+    Cell[75661, 2066, 135, 3, 45, "DisplayMath",
+      CellTags->{"Laguerre", "Norm"}]},
+  "LaguerreG"->{
+    Cell[29718, 811, 144, 4, 74, "Subsection",
+      CellTags->"LaguerreG"],
+    Cell[29865, 817, 245, 6, 39, "Text",
+      CellTags->"LaguerreG"],
+    Cell[30113, 825, 1312, 24, 73, "Text",
+      CellTags->"LaguerreG"],
+    Cell[31428, 851, 153, 5, 39, "Text",
+      CellTags->"LaguerreG"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[52257, 1402, 341, 8, 39, "Text",
+      CellTags->{"LaguerreG", "OrtEquation"}],
+    Cell[52601, 1412, 288, 5, 73, "DisplayMath",
+      CellTags->{"LaguerreG", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[65778, 1782, 141, 4, 39, "Text",
+      CellTags->{"LaguerreG", "TTR"}],
+    Cell[65922, 1788, 308, 6, 46, "DisplayMath",
+      CellTags->{"LaguerreG", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[75799, 2071, 140, 4, 39, "Text",
+      CellTags->{"LaguerreG", "Norm"}],
+    Cell[75942, 2077, 171, 3, 45, "DisplayMath",
+      CellTags->{"LaguerreG", "Norm"}]},
+  "Legendre"->{
+    Cell[31618, 861, 129, 4, 74, "Subsection",
+      CellTags->"Legendre"],
+    Cell[31750, 867, 219, 6, 39, "Text",
+      CellTags->"Legendre"],
+    Cell[31972, 875, 1076, 21, 73, "Text",
+      CellTags->"Legendre"],
+    Cell[33051, 898, 151, 5, 39, "Text",
+      CellTags->"Legendre"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[52892, 1419, 357, 10, 39, "Text",
+      CellTags->{"Legendre", "OrtEquation"}],
+    Cell[53252, 1431, 234, 4, 75, "DisplayMath",
+      CellTags->{"Legendre", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[66233, 1796, 126, 3, 39, "Text",
+      CellTags->{"Legendre", "TTR"}],
+    Cell[66362, 1801, 257, 5, 61, "DisplayMath",
+      CellTags->{"Legendre", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[76116, 2082, 125, 3, 39, "Text",
+      CellTags->{"Legendre", "Norm"}],
+    Cell[76244, 2087, 236, 4, 63, "DisplayMath",
+      CellTags->{"Legendre", "Norm"}]},
+  "Lindelof"->{
+    Cell[33239, 908, 128, 3, 53, "Subsection",
+      CellTags->"Lindelof"],
+    Cell[33370, 913, 219, 6, 39, "Text",
+      CellTags->"Lindelof"],
+    Cell[33592, 921, 1076, 21, 51, "Text",
+      CellTags->"Lindelof"],
+    Cell[34671, 944, 151, 5, 39, "Text",
+      CellTags->"Lindelof"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[53489, 1437, 288, 7, 39, "Text",
+      CellTags->{"Lindelof", "OrtEquation"}],
+    Cell[53780, 1446, 297, 5, 72, "DisplayMath",
+      CellTags->{"Lindelof", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[66622, 1808, 126, 3, 39, "Text",
+      CellTags->{"Lindelof", "TTR"}],
+    Cell[66751, 1813, 232, 5, 61, "DisplayMath",
+      CellTags->{"Lindelof", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[76483, 2093, 125, 3, 39, "Text",
+      CellTags->{"Lindelof", "Norm"}],
+    Cell[76611, 2098, 172, 3, 45, "DisplayMath",
+      CellTags->{"Lindelof", "Norm"}]},
+  "Logistic"->{
+    Cell[34859, 954, 128, 3, 53, "Subsection",
+      CellTags->"Logistic"],
+    Cell[34990, 959, 219, 6, 39, "Text",
+      CellTags->"Logistic"],
+    Cell[35212, 967, 1076, 21, 51, "Text",
+      CellTags->"Logistic"],
+    Cell[36291, 990, 151, 5, 39, "Text",
+      CellTags->"Logistic"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[54080, 1453, 292, 7, 39, "Text",
+      CellTags->{"Logistic", "OrtEquation"}],
+    Cell[54375, 1462, 328, 6, 72, "DisplayMath",
+      CellTags->{"Logistic", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[66986, 1820, 126, 3, 39, "Text",
+      CellTags->{"Logistic", "TTR"}],
+    Cell[67115, 1825, 256, 5, 61, "DisplayMath",
+      CellTags->{"Logistic", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[76786, 2103, 125, 3, 39, "Text",
+      CellTags->{"Logistic", "Norm"}],
+    Cell[76914, 2108, 401, 10, 73, "DisplayMath",
+      CellTags->{"Logistic", "Norm"}]},
+  "StieltjesWigert"->{
+    Cell[36479, 1000, 158, 4, 74, "Subsection",
+      CellTags->"StieltjesWigert"],
+    Cell[36640, 1006, 256, 7, 39, "Text",
+      CellTags->"StieltjesWigert"],
+    Cell[36899, 1015, 1510, 27, 73, "Text",
+      CellTags->"StieltjesWigert"],
+    Cell[38412, 1044, 165, 5, 39, "Text",
+      CellTags->"StieltjesWigert"],
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[54706, 1470, 349, 8, 39, "Text",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[55058, 1480, 352, 6, 73, "DisplayMath",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[55413, 1488, 99, 1, 39, "Text",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[55515, 1491, 546, 10, 82, "DisplayMath",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[67374, 1832, 143, 4, 39, "Text",
+      CellTags->{"StieltjesWigert", "TTR"}],
+    Cell[67520, 1838, 473, 8, 46, "DisplayMath",
+      CellTags->{"StieltjesWigert", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[77318, 2120, 140, 3, 39, "Text",
+      CellTags->{"StieltjesWigert", "Norm"}],
+    Cell[77461, 2125, 277, 5, 67, "DisplayMath",
+      CellTags->{"StieltjesWigert", "Norm"}]},
+  "DualHan"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "Han"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "Lommel"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "MeixnerI"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "MeixnerII"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "Pollaczek"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "PollaczekII"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "PollaczekIII"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "TricomiCarlitz"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "Wilson"->{
+    Cell[38592, 1052, 1714, 31, 147, "Text",
+      CellTags->{
+      "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+        "Charlier", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson"}],
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}]},
+  "OrtEquation"->{
+    Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "OrtEquation"}],
+    Cell[40831, 1096, 322, 7, 39, "Text",
+      CellTags->{"Charlier", "OrtEquation"}],
+    Cell[41156, 1105, 296, 5, 75, "DisplayMath",
+      CellTags->{"Charlier", "OrtEquation"}],
+    Cell[41455, 1112, 294, 7, 39, "Text",
+      CellTags->{"Bessel", "OrtEquation"}],
+    Cell[41752, 1121, 294, 5, 59, "DisplayMath",
+      CellTags->{"Bessel", "OrtEquation"}],
+    Cell[42049, 1128, 356, 8, 56, "Text",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[42408, 1138, 318, 5, 59, "DisplayMath",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[42729, 1145, 165, 6, 39, "Text",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[42897, 1153, 288, 5, 65, "DisplayMath",
+      CellTags->{"BesselG", "OrtEquation"}],
+    Cell[43188, 1160, 360, 8, 43, "Text",
+      CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+    Cell[43551, 1170, 340, 5, 62, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+    Cell[43894, 1177, 115, 1, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+    Cell[44012, 1180, 280, 7, 39, "Text",
+      CellTags->{"Abel", "OrtEquation"}],
+    Cell[44295, 1189, 330, 5, 72, "DisplayMath",
+      CellTags->{"Abel", "OrtEquation"}],
+    Cell[44628, 1196, 406, 10, 39, "Text",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45037, 1208, 292, 5, 75, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45332, 1215, 91, 1, 39, "Text",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45426, 1218, 238, 4, 68, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45667, 1224, 295, 9, 39, "Text",
+      CellTags->{"AssociatedLegendre", "OrtEquation"}],
+    Cell[45965, 1235, 357, 9, 39, "Text",
+      CellTags->{"Carlitz", "OrtEquation"}],
+    Cell[46325, 1246, 353, 6, 72, "DisplayMath",
+      CellTags->{"Carlitz", "OrtEquation"}],
+    Cell[46681, 1254, 381, 10, 39, "Text",
+      CellTags->{"ChebyshevI", "OrtEquation"}],
+    Cell[47065, 1266, 273, 5, 75, "DisplayMath",
+      CellTags->{"ChebyshevI", "OrtEquation"}],
+    Cell[47341, 1273, 383, 10, 39, "Text",
+      CellTags->{"ChebyshevII", "OrtEquation"}],
+    Cell[47727, 1285, 279, 5, 75, "DisplayMath",
+      CellTags->{"ChebyshevII", "OrtEquation"}],
+    Cell[48009, 1292, 403, 10, 43, "Text",
+      CellTags->{"Gegenbauer", "OrtEquation"}],
+    Cell[48415, 1304, 309, 5, 75, "DisplayMath",
+      CellTags->{"Gegenbauer", "OrtEquation"}],
+    Cell[48727, 1311, 441, 11, 56, "Text",
+      CellTags->{"GegenbauerG", "OrtEquation"}],
+    Cell[49171, 1324, 418, 7, 75, "DisplayMath",
+      CellTags->{"GegenbauerG", "OrtEquation"}],
+    Cell[49592, 1333, 290, 7, 39, "Text",
+      CellTags->{"Hermite", "OrtEquation"}],
+    Cell[49885, 1342, 271, 4, 72, "DisplayMath",
+      CellTags->{"Hermite", "OrtEquation"}],
+    Cell[50159, 1348, 336, 7, 43, "Text",
+      CellTags->{"HermiteG", "OrtEquation"}],
+    Cell[50498, 1357, 380, 6, 72, "DisplayMath",
+      CellTags->{"HermiteG", "OrtEquation"}],
+    Cell[50881, 1365, 424, 11, 39, "Text",
+      CellTags->{"Jacobi", "OrtEquation"}],
+    Cell[51308, 1378, 376, 6, 75, "DisplayMath",
+      CellTags->{"Jacobi", "OrtEquation"}],
+    Cell[51687, 1386, 315, 8, 39, "Text",
+      CellTags->{"Laguerre", "OrtEquation"}],
+    Cell[52005, 1396, 249, 4, 73, "DisplayMath",
+      CellTags->{"Laguerre", "OrtEquation"}],
+    Cell[52257, 1402, 341, 8, 39, "Text",
+      CellTags->{"LaguerreG", "OrtEquation"}],
+    Cell[52601, 1412, 288, 5, 73, "DisplayMath",
+      CellTags->{"LaguerreG", "OrtEquation"}],
+    Cell[52892, 1419, 357, 10, 39, "Text",
+      CellTags->{"Legendre", "OrtEquation"}],
+    Cell[53252, 1431, 234, 4, 75, "DisplayMath",
+      CellTags->{"Legendre", "OrtEquation"}],
+    Cell[53489, 1437, 288, 7, 39, "Text",
+      CellTags->{"Lindelof", "OrtEquation"}],
+    Cell[53780, 1446, 297, 5, 72, "DisplayMath",
+      CellTags->{"Lindelof", "OrtEquation"}],
+    Cell[54080, 1453, 292, 7, 39, "Text",
+      CellTags->{"Logistic", "OrtEquation"}],
+    Cell[54375, 1462, 328, 6, 72, "DisplayMath",
+      CellTags->{"Logistic", "OrtEquation"}],
+    Cell[54706, 1470, 349, 8, 39, "Text",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[55058, 1480, 352, 6, 73, "DisplayMath",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[55413, 1488, 99, 1, 39, "Text",
+      CellTags->{"StieltjesWigert", "OrtEquation"}],
+    Cell[55515, 1491, 546, 10, 82, "DisplayMath",
+      CellTags->{"StieltjesWigert", "OrtEquation"}]},
+  "TTR"->{
+    Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+        "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+        "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+        "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI",
+         "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+        "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+    Cell[56565, 1515, 126, 3, 39, "Text",
+      CellTags->{"Charlier", "TTR"}],
+    Cell[56694, 1520, 248, 4, 46, "DisplayMath",
+      CellTags->{"Charlier", "TTR"}],
+    Cell[56945, 1526, 122, 3, 39, "Text",
+      CellTags->{"Bessel", "TTR"}],
+    Cell[57070, 1531, 250, 5, 58, "DisplayMath",
+      CellTags->{"Bessel", "TTR"}],
+    Cell[57323, 1538, 137, 4, 39, "Text",
+      CellTags->{"BesselG", "TTR"}],
+    Cell[57463, 1544, 492, 8, 60, "DisplayMath",
+      CellTags->{"BesselG", "TTR"}],
+    Cell[57958, 1554, 151, 4, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58112, 1560, 410, 7, 46, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58525, 1569, 66, 1, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58594, 1572, 313, 5, 75, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "TTR"}],
+    Cell[58910, 1579, 118, 3, 39, "Text",
+      CellTags->{"Abel", "TTR"}],
+    Cell[59031, 1584, 247, 5, 58, "DisplayMath",
+      CellTags->{"Abel", "TTR"}],
+    Cell[59281, 1591, 149, 4, 39, "Text",
+      CellTags->{"AssociatedLegendre", "TTR"}],
+    Cell[59433, 1597, 322, 6, 63, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "TTR"}],
+    Cell[59758, 1605, 124, 3, 39, "Text",
+      CellTags->{"Carlitz", "TTR"}],
+    Cell[59885, 1610, 534, 12, 66, "DisplayMath",
+      CellTags->{"Carlitz", "TTR"}],
+    Cell[60422, 1624, 149, 4, 39, "Text",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[60574, 1630, 245, 5, 45, "DisplayMath",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[60822, 1637, 85, 1, 39, "Text",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[60910, 1640, 124, 2, 58, "DisplayMath",
+      CellTags->{"ChebyshevI", "TTR"}],
+    Cell[61037, 1644, 151, 4, 39, "Text",
+      CellTags->{"ChebyshevII", "TTR"}],
+    Cell[61191, 1650, 232, 5, 58, "DisplayMath",
+      CellTags->{"ChebyshevII", "TTR"}],
+    Cell[61426, 1657, 130, 3, 39, "Text",
+      CellTags->{"Gegenbauer", "TTR"}],
+    Cell[61559, 1662, 571, 12, 68, "DisplayMath",
+      CellTags->{"Gegenbauer", "TTR"}],
+    Cell[62133, 1676, 145, 4, 39, "Text",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[62281, 1682, 436, 7, 58, "DisplayMath",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[62720, 1691, 87, 1, 39, "Text",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[62810, 1694, 481, 13, 75, "DisplayMath",
+      CellTags->{"GegenbauerG", "TTR"}],
+    Cell[63294, 1709, 124, 3, 39, "Text",
+      CellTags->{"Hermite", "TTR"}],
+    Cell[63421, 1714, 239, 5, 58, "DisplayMath",
+      CellTags->{"Hermite", "TTR"}],
+    Cell[63663, 1721, 139, 4, 39, "Text",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[63805, 1727, 285, 5, 56, "DisplayMath",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[64093, 1734, 84, 1, 39, "Text",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[64180, 1737, 391, 12, 57, "DisplayMath",
+      CellTags->{"HermiteG", "TTR"}],
+    Cell[64574, 1751, 137, 4, 39, "Text",
+      CellTags->{"Jacobi", "TTR"}],
+    Cell[64714, 1757, 684, 12, 63, "DisplayMath",
+      CellTags->{"Jacobi", "TTR"}],
+    Cell[65401, 1771, 126, 3, 39, "Text",
+      CellTags->{"Laguerre", "TTR"}],
+    Cell[65530, 1776, 245, 4, 45, "DisplayMath",
+      CellTags->{"Laguerre", "TTR"}],
+    Cell[65778, 1782, 141, 4, 39, "Text",
+      CellTags->{"LaguerreG", "TTR"}],
+    Cell[65922, 1788, 308, 6, 46, "DisplayMath",
+      CellTags->{"LaguerreG", "TTR"}],
+    Cell[66233, 1796, 126, 3, 39, "Text",
+      CellTags->{"Legendre", "TTR"}],
+    Cell[66362, 1801, 257, 5, 61, "DisplayMath",
+      CellTags->{"Legendre", "TTR"}],
+    Cell[66622, 1808, 126, 3, 39, "Text",
+      CellTags->{"Lindelof", "TTR"}],
+    Cell[66751, 1813, 232, 5, 61, "DisplayMath",
+      CellTags->{"Lindelof", "TTR"}],
+    Cell[66986, 1820, 126, 3, 39, "Text",
+      CellTags->{"Logistic", "TTR"}],
+    Cell[67115, 1825, 256, 5, 61, "DisplayMath",
+      CellTags->{"Logistic", "TTR"}],
+    Cell[67374, 1832, 143, 4, 39, "Text",
+      CellTags->{"StieltjesWigert", "TTR"}],
+    Cell[67520, 1838, 473, 8, 46, "DisplayMath",
+      CellTags->{"StieltjesWigert", "TTR"}]},
+  "Norm"->{
+    Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+      CellTags->{
+      "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", 
+        "Carlitz", "ChebyshevI", "ChebyshevII", "DualHan", 
+        "GautschiMilovanovic", "Gegenbauer", "GegenbauerG", "Han", "Hermite", 
+        "HermiteG", "Jacobi", "Laguerre", "LaguerreG", "Legendre", "Lindelof",
+         "Logistic", "Lommel", "MeixnerI", "MeixnerII", "Pollaczek", 
+        "PollaczekII", "PollaczekIII", "StieltjesWigert", "TricomiCarlitz", 
+        "Wilson", "Norm"}],
+    Cell[68505, 1860, 125, 3, 39, "Text",
+      CellTags->{"Charlier", "Norm"}],
+    Cell[68633, 1865, 136, 3, 45, "DisplayMath",
+      CellTags->{"Charlier", "Norm"}],
+    Cell[68772, 1870, 121, 3, 39, "Text",
+      CellTags->{"Bessel", "Norm"}],
+    Cell[68896, 1875, 229, 4, 71, "DisplayMath",
+      CellTags->{"Bessel", "Norm"}],
+    Cell[69128, 1881, 122, 3, 39, "Text",
+      CellTags->{"BesselG", "Norm"}],
+    Cell[69253, 1886, 518, 8, 77, "DisplayMath",
+      CellTags->{"BesselG", "Norm"}],
+    Cell[69774, 1896, 150, 4, 39, "Text",
+      CellTags->{"GautschiMilovanovic", "Norm"}],
+    Cell[69927, 1902, 276, 4, 69, "DisplayMath",
+      CellTags->{"GautschiMilovanovic", "Norm"}],
+    Cell[70206, 1908, 117, 3, 39, "Text",
+      CellTags->{"Abel", "Norm"}],
+    Cell[70326, 1913, 181, 3, 45, "DisplayMath",
+      CellTags->{"Abel", "Norm"}],
+    Cell[70510, 1918, 148, 4, 39, "Text",
+      CellTags->{"AssociatedLegendre", "Norm"}],
+    Cell[70661, 1924, 436, 8, 77, "DisplayMath",
+      CellTags->{"AssociatedLegendre", "Norm"}],
+    Cell[71100, 1934, 123, 3, 39, "Text",
+      CellTags->{"Carlitz", "Norm"}],
+    Cell[71226, 1939, 331, 6, 63, "DisplayMath",
+      CellTags->{"Carlitz", "Norm"}],
+    Cell[71560, 1947, 148, 4, 39, "Text",
+      CellTags->{"ChebyshevI", "Norm"}],
+    Cell[71711, 1953, 160, 3, 45, "DisplayMath",
+      CellTags->{"ChebyshevI", "Norm"}],
+    Cell[71874, 1958, 149, 4, 39, "Text",
+      CellTags->{"ChebyshevII", "Norm"}],
+    Cell[72026, 1964, 166, 3, 45, "DisplayMath",
+      CellTags->{"ChebyshevII", "Norm"}],
+    Cell[72195, 1969, 129, 3, 39, "Text",
+      CellTags->{"Gegenbauer", "Norm"}],
+    Cell[72327, 1974, 428, 7, 70, "DisplayMath",
+      CellTags->{"Gegenbauer", "Norm"}],
+    Cell[72758, 1983, 144, 4, 39, "Text",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[72905, 1989, 342, 5, 60, "DisplayMath",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[73250, 1996, 170, 6, 39, "Text",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[73423, 2004, 851, 18, 75, "DisplayMath",
+      CellTags->{"GegenbauerG", "Norm"}],
+    Cell[74277, 2024, 123, 3, 39, "Text",
+      CellTags->{"Hermite", "Norm"}],
+    Cell[74403, 2029, 147, 3, 46, "DisplayMath",
+      CellTags->{"Hermite", "Norm"}],
+    Cell[74553, 2034, 138, 4, 39, "Text",
+      CellTags->{"HermiteG", "Norm"}],
+    Cell[74694, 2040, 217, 4, 58, "DisplayMath",
+      CellTags->{"HermiteG", "Norm"}],
+    Cell[74914, 2046, 121, 3, 39, "Text",
+      CellTags->{"Jacobi", "Norm"}],
+    Cell[75038, 2051, 492, 8, 63, "DisplayMath",
+      CellTags->{"Jacobi", "Norm"}],
+    Cell[75533, 2061, 125, 3, 39, "Text",
+      CellTags->{"Laguerre", "Norm"}],
+    Cell[75661, 2066, 135, 3, 45, "DisplayMath",
+      CellTags->{"Laguerre", "Norm"}],
+    Cell[75799, 2071, 140, 4, 39, "Text",
+      CellTags->{"LaguerreG", "Norm"}],
+    Cell[75942, 2077, 171, 3, 45, "DisplayMath",
+      CellTags->{"LaguerreG", "Norm"}],
+    Cell[76116, 2082, 125, 3, 39, "Text",
+      CellTags->{"Legendre", "Norm"}],
+    Cell[76244, 2087, 236, 4, 63, "DisplayMath",
+      CellTags->{"Legendre", "Norm"}],
+    Cell[76483, 2093, 125, 3, 39, "Text",
+      CellTags->{"Lindelof", "Norm"}],
+    Cell[76611, 2098, 172, 3, 45, "DisplayMath",
+      CellTags->{"Lindelof", "Norm"}],
+    Cell[76786, 2103, 125, 3, 39, "Text",
+      CellTags->{"Logistic", "Norm"}],
+    Cell[76914, 2108, 401, 10, 73, "DisplayMath",
+      CellTags->{"Logistic", "Norm"}],
+    Cell[77318, 2120, 140, 3, 39, "Text",
+      CellTags->{"StieltjesWigert", "Norm"}],
+    Cell[77461, 2125, 277, 5, 67, "DisplayMath",
+      CellTags->{"StieltjesWigert", "Norm"}]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Charlier", 78515, 2154},
+  {"Bessel", 81420, 2210},
+  {"BesselG", 84376, 2268},
+  {"GautschiMilovanovic", 87399, 2326},
+  {"Abel", 90701, 2388},
+  {"AssociatedLegendre", 93581, 2444},
+  {"Carlitz", 96394, 2498},
+  {"ChebyshevI", 99300, 2554},
+  {"ChebyshevII", 102407, 2614},
+  {"Gegenbauer", 105353, 2670},
+  {"GegenbauerG", 108291, 2726},
+  {"Hermite", 111583, 2790},
+  {"HermiteG", 114486, 2846},
+  {"Jacobi", 117564, 2906},
+  {"Laguerre", 120459, 2962},
+  {"LaguerreG", 123373, 3018},
+  {"Legendre", 126296, 3074},
+  {"Lindelof", 129210, 3130},
+  {"Logistic", 132123, 3186},
+  {"StieltjesWigert", 135044, 3242},
+  {"DualHan", 138227, 3302},
+  {"Han", 140328, 3338},
+  {"Lommel", 142432, 3374},
+  {"MeixnerI", 144538, 3410},
+  {"MeixnerII", 146645, 3446},
+  {"Pollaczek", 148752, 3482},
+  {"PollaczekII", 150861, 3518},
+  {"PollaczekIII", 152971, 3554},
+  {"TricomiCarlitz", 155083, 3590},
+  {"Wilson", 157187, 3626},
+  {"OrtEquation", 159296, 3662},
+  {"TTR", 164347, 3768},
+  {"Norm", 168957, 3873}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 126, 3, 53, "Subsection",
+  CellTags->"Charlier"],
+Cell[1905, 58, 423, 13, 56, "Text",
+  CellTags->"Charlier"],
+Cell[2331, 73, 1297, 25, 73, "Text",
+  CellTags->"Charlier"],
+Cell[3631, 100, 151, 5, 39, "Text",
+  CellTags->"Charlier"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3819, 110, 117, 3, 53, "Subsection",
+  CellTags->"Bessel"],
+Cell[3939, 115, 589, 16, 56, "Text",
+  CellTags->"Bessel"],
+Cell[4531, 133, 1071, 21, 51, "Text",
+  CellTags->"Bessel"],
+Cell[5605, 156, 147, 5, 39, "Text",
+  CellTags->"Bessel"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5789, 166, 133, 4, 74, "Subsection",
+  CellTags->"BesselG"],
+Cell[5925, 172, 237, 6, 39, "Text",
+  CellTags->"BesselG"],
+Cell[6165, 180, 1323, 25, 73, "Text",
+  CellTags->"BesselG"],
+Cell[7491, 207, 148, 5, 39, "Text",
+  CellTags->"Bessel"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7676, 217, 169, 4, 74, "Subsection",
+  CellTags->"GautschiMilovanovic"],
+Cell[7848, 223, 259, 7, 39, "Text",
+  CellTags->"GautschiMilovanovic"],
+Cell[8110, 232, 1351, 25, 73, "Text",
+  CellTags->"GautschiMilovanovic"],
+Cell[9464, 259, 173, 5, 39, "Text",
+  CellTags->"GautschiMilovanovic"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9674, 269, 112, 3, 53, "Subsection",
+  CellTags->"Abel"],
+Cell[9789, 274, 203, 6, 39, "Text",
+  CellTags->"Abel"],
+Cell[9995, 282, 1065, 21, 51, "Text",
+  CellTags->"Abel"],
+Cell[11063, 305, 143, 5, 39, "Text",
+  CellTags->"Abel"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11243, 315, 171, 4, 53, "Subsection",
+  CellTags->"AssociatedLegendre"],
+Cell[11417, 321, 261, 6, 39, "Text",
+  CellTags->"AssociatedLegendre"],
+Cell[11681, 329, 1340, 25, 73, "Text",
+  CellTags->"AssociatedLegendre"],
+Cell[13024, 356, 171, 5, 39, "Text",
+  CellTags->"AssociatedLegendre"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[13232, 366, 124, 3, 53, "Subsection",
+  CellTags->"Carlitz"],
+Cell[13359, 371, 215, 6, 39, "Text",
+  CellTags->"Carlitz"],
+Cell[13577, 379, 1314, 25, 73, "Text",
+  CellTags->"Carlitz"],
+Cell[14894, 406, 150, 5, 39, "Text",
+  CellTags->"Carlitz"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[15081, 416, 154, 4, 74, "Subsection",
+  CellTags->"ChebyshevI"],
+Cell[15238, 422, 263, 7, 39, "Text",
+  CellTags->"ChebyshevI"],
+Cell[15504, 431, 1101, 21, 73, "Text",
+  CellTags->"ChebyshevI"],
+Cell[16608, 454, 155, 5, 39, "Text",
+  CellTags->"ChebyshevI"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16800, 464, 158, 4, 74, "Subsection",
+  CellTags->"ChebyshevII"],
+Cell[16961, 470, 267, 7, 39, "Text",
+  CellTags->"ChebyshevII"],
+Cell[17231, 479, 1103, 21, 73, "Text",
+  CellTags->"ChebyshevII"],
+Cell[18337, 502, 157, 5, 39, "Text",
+  CellTags->"ChebyshevII"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[18531, 512, 138, 4, 53, "Subsection",
+  CellTags->"Gegenbauer"],
+Cell[18672, 518, 227, 6, 39, "Text",
+  CellTags->"Gegenbauer"],
+Cell[18902, 526, 1323, 25, 73, "Text",
+  CellTags->"Gegenbauer"],
+Cell[20228, 553, 155, 5, 39, "Text",
+  CellTags->"Gegenbauer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20420, 563, 153, 4, 53, "Subsection",
+  CellTags->"GegenbauerG"],
+Cell[20576, 569, 252, 6, 39, "Text",
+  CellTags->"GegenbauerG"],
+Cell[20831, 577, 1534, 27, 73, "Text",
+  CellTags->"GegenbauerG"],
+Cell[22368, 606, 157, 5, 39, "Text",
+  CellTags->"GegenbauerG"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[22562, 616, 124, 3, 53, "Subsection",
+  CellTags->"Hermite"],
+Cell[22689, 621, 215, 6, 39, "Text",
+  CellTags->"Hermite"],
+Cell[22907, 629, 1071, 20, 51, "Text",
+  CellTags->"Hermite"],
+Cell[23981, 651, 149, 5, 39, "Text",
+  CellTags->"Hermite"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[24167, 661, 140, 4, 74, "Subsection",
+  CellTags->"HermiteG"],
+Cell[24310, 667, 241, 6, 39, "Text",
+  CellTags->"HermiteG"],
+Cell[24554, 675, 1319, 25, 73, "Text",
+  CellTags->"HermiteG"],
+Cell[25876, 702, 151, 5, 39, "Text",
+  CellTags->"HermiteG"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[26064, 712, 120, 3, 53, "Subsection",
+  CellTags->"Jacobi"],
+Cell[26187, 717, 211, 6, 39, "Text",
+  CellTags->"Jacobi"],
+Cell[26401, 725, 1508, 27, 73, "Text",
+  CellTags->"Jacobi"],
+Cell[27912, 754, 148, 5, 39, "Text",
+  CellTags->"Jacobi"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[28097, 764, 129, 4, 74, "Subsection",
+  CellTags->"Laguerre"],
+Cell[28229, 770, 219, 6, 39, "Text",
+  CellTags->"Laguerre"],
+Cell[28451, 778, 1076, 21, 51, "Text",
+  CellTags->"Laguerre"],
+Cell[29530, 801, 151, 5, 39, "Text",
+  CellTags->"Laguerre"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[29718, 811, 144, 4, 74, "Subsection",
+  CellTags->"LaguerreG"],
+Cell[29865, 817, 245, 6, 39, "Text",
+  CellTags->"LaguerreG"],
+Cell[30113, 825, 1312, 24, 73, "Text",
+  CellTags->"LaguerreG"],
+Cell[31428, 851, 153, 5, 39, "Text",
+  CellTags->"LaguerreG"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[31618, 861, 129, 4, 74, "Subsection",
+  CellTags->"Legendre"],
+Cell[31750, 867, 219, 6, 39, "Text",
+  CellTags->"Legendre"],
+Cell[31972, 875, 1076, 21, 73, "Text",
+  CellTags->"Legendre"],
+Cell[33051, 898, 151, 5, 39, "Text",
+  CellTags->"Legendre"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[33239, 908, 128, 3, 53, "Subsection",
+  CellTags->"Lindelof"],
+Cell[33370, 913, 219, 6, 39, "Text",
+  CellTags->"Lindelof"],
+Cell[33592, 921, 1076, 21, 51, "Text",
+  CellTags->"Lindelof"],
+Cell[34671, 944, 151, 5, 39, "Text",
+  CellTags->"Lindelof"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[34859, 954, 128, 3, 53, "Subsection",
+  CellTags->"Logistic"],
+Cell[34990, 959, 219, 6, 39, "Text",
+  CellTags->"Logistic"],
+Cell[35212, 967, 1076, 21, 51, "Text",
+  CellTags->"Logistic"],
+Cell[36291, 990, 151, 5, 39, "Text",
+  CellTags->"Logistic"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[36479, 1000, 158, 4, 74, "Subsection",
+  CellTags->"StieltjesWigert"],
+Cell[36640, 1006, 256, 7, 39, "Text",
+  CellTags->"StieltjesWigert"],
+Cell[36899, 1015, 1510, 27, 73, "Text",
+  CellTags->"StieltjesWigert"],
+Cell[38412, 1044, 165, 5, 39, "Text",
+  CellTags->"StieltjesWigert"]
+}, Open  ]],
+Cell[38592, 1052, 1714, 31, 147, "Text",
+  CellTags->{
+  "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", "Charlier", 
+    "ChebyshevI", "ChebyshevII", "DualHan", "GautschiMilovanovic", 
+    "Gegenbauer", "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", 
+    "Laguerre", "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", 
+    "MeixnerI", "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson"}],
+
+Cell[CellGroupData[{
+Cell[40331, 1087, 497, 7, 49, "Subsubsection",
+  CellTags->{
+  "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+    "ChebyshevI", "ChebyshevII", "DualHan", "GautschiMilovanovic", 
+    "Gegenbauer", "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", 
+    "Laguerre", "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", 
+    "MeixnerI", "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson", "OrtEquation"}],
+Cell[40831, 1096, 322, 7, 39, "Text",
+  CellTags->{"Charlier", "OrtEquation"}],
+Cell[41156, 1105, 296, 5, 75, "DisplayMath",
+  CellTags->{"Charlier", "OrtEquation"}],
+Cell[41455, 1112, 294, 7, 39, "Text",
+  CellTags->{"Bessel", "OrtEquation"}],
+Cell[41752, 1121, 294, 5, 59, "DisplayMath",
+  CellTags->{"Bessel", "OrtEquation"}],
+Cell[42049, 1128, 356, 8, 56, "Text",
+  CellTags->{"BesselG", "OrtEquation"}],
+Cell[42408, 1138, 318, 5, 59, "DisplayMath",
+  CellTags->{"BesselG", "OrtEquation"}],
+Cell[42729, 1145, 165, 6, 39, "Text",
+  CellTags->{"BesselG", "OrtEquation"}],
+Cell[42897, 1153, 288, 5, 65, "DisplayMath",
+  CellTags->{"BesselG", "OrtEquation"}],
+Cell[43188, 1160, 360, 8, 43, "Text",
+  CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+Cell[43551, 1170, 340, 5, 62, "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+Cell[43894, 1177, 115, 1, 39, "Text",
+  CellTags->{"GautschiMilovanovic", "OrtEquation"}],
+Cell[44012, 1180, 280, 7, 39, "Text",
+  CellTags->{"Abel", "OrtEquation"}],
+Cell[44295, 1189, 330, 5, 72, "DisplayMath",
+  CellTags->{"Abel", "OrtEquation"}],
+Cell[44628, 1196, 406, 10, 39, "Text",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+Cell[45037, 1208, 292, 5, 75, "DisplayMath",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+Cell[45332, 1215, 91, 1, 39, "Text",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+Cell[45426, 1218, 238, 4, 68, "DisplayMath",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+Cell[45667, 1224, 295, 9, 39, "Text",
+  CellTags->{"AssociatedLegendre", "OrtEquation"}],
+Cell[45965, 1235, 357, 9, 39, "Text",
+  CellTags->{"Carlitz", "OrtEquation"}],
+Cell[46325, 1246, 353, 6, 72, "DisplayMath",
+  CellTags->{"Carlitz", "OrtEquation"}],
+Cell[46681, 1254, 381, 10, 39, "Text",
+  CellTags->{"ChebyshevI", "OrtEquation"}],
+Cell[47065, 1266, 273, 5, 75, "DisplayMath",
+  CellTags->{"ChebyshevI", "OrtEquation"}],
+Cell[47341, 1273, 383, 10, 39, "Text",
+  CellTags->{"ChebyshevII", "OrtEquation"}],
+Cell[47727, 1285, 279, 5, 75, "DisplayMath",
+  CellTags->{"ChebyshevII", "OrtEquation"}],
+Cell[48009, 1292, 403, 10, 43, "Text",
+  CellTags->{"Gegenbauer", "OrtEquation"}],
+Cell[48415, 1304, 309, 5, 75, "DisplayMath",
+  CellTags->{"Gegenbauer", "OrtEquation"}],
+Cell[48727, 1311, 441, 11, 56, "Text",
+  CellTags->{"GegenbauerG", "OrtEquation"}],
+Cell[49171, 1324, 418, 7, 75, "DisplayMath",
+  CellTags->{"GegenbauerG", "OrtEquation"}],
+Cell[49592, 1333, 290, 7, 39, "Text",
+  CellTags->{"Hermite", "OrtEquation"}],
+Cell[49885, 1342, 271, 4, 72, "DisplayMath",
+  CellTags->{"Hermite", "OrtEquation"}],
+Cell[50159, 1348, 336, 7, 43, "Text",
+  CellTags->{"HermiteG", "OrtEquation"}],
+Cell[50498, 1357, 380, 6, 72, "DisplayMath",
+  CellTags->{"HermiteG", "OrtEquation"}],
+Cell[50881, 1365, 424, 11, 39, "Text",
+  CellTags->{"Jacobi", "OrtEquation"}],
+Cell[51308, 1378, 376, 6, 75, "DisplayMath",
+  CellTags->{"Jacobi", "OrtEquation"}],
+Cell[51687, 1386, 315, 8, 39, "Text",
+  CellTags->{"Laguerre", "OrtEquation"}],
+Cell[52005, 1396, 249, 4, 73, "DisplayMath",
+  CellTags->{"Laguerre", "OrtEquation"}],
+Cell[52257, 1402, 341, 8, 39, "Text",
+  CellTags->{"LaguerreG", "OrtEquation"}],
+Cell[52601, 1412, 288, 5, 73, "DisplayMath",
+  CellTags->{"LaguerreG", "OrtEquation"}],
+Cell[52892, 1419, 357, 10, 39, "Text",
+  CellTags->{"Legendre", "OrtEquation"}],
+Cell[53252, 1431, 234, 4, 75, "DisplayMath",
+  CellTags->{"Legendre", "OrtEquation"}],
+Cell[53489, 1437, 288, 7, 39, "Text",
+  CellTags->{"Lindelof", "OrtEquation"}],
+Cell[53780, 1446, 297, 5, 72, "DisplayMath",
+  CellTags->{"Lindelof", "OrtEquation"}],
+Cell[54080, 1453, 292, 7, 39, "Text",
+  CellTags->{"Logistic", "OrtEquation"}],
+Cell[54375, 1462, 328, 6, 72, "DisplayMath",
+  CellTags->{"Logistic", "OrtEquation"}],
+Cell[54706, 1470, 349, 8, 39, "Text",
+  CellTags->{"StieltjesWigert", "OrtEquation"}],
+Cell[55058, 1480, 352, 6, 73, "DisplayMath",
+  CellTags->{"StieltjesWigert", "OrtEquation"}],
+Cell[55413, 1488, 99, 1, 39, "Text",
+  CellTags->{"StieltjesWigert", "OrtEquation"}],
+Cell[55515, 1491, 546, 10, 82, "DisplayMath",
+  CellTags->{"StieltjesWigert", "OrtEquation"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[56098, 1506, 464, 7, 49, "Subsubsection",
+  CellTags->{
+  "Charlier", "Abel", "Bessel", "BesselG", "Carlitz", "ChebyshevI", 
+    "ChebyshevII", "DualHan", "GautschiMilovanovic", "Gegenbauer", 
+    "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", "Laguerre", 
+    "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", "MeixnerI", 
+    "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson", "TTR"}],
+Cell[56565, 1515, 126, 3, 39, "Text",
+  CellTags->{"Charlier", "TTR"}],
+Cell[56694, 1520, 248, 4, 46, "DisplayMath",
+  CellTags->{"Charlier", "TTR"}],
+Cell[56945, 1526, 122, 3, 39, "Text",
+  CellTags->{"Bessel", "TTR"}],
+Cell[57070, 1531, 250, 5, 58, "DisplayMath",
+  CellTags->{"Bessel", "TTR"}],
+Cell[57323, 1538, 137, 4, 39, "Text",
+  CellTags->{"BesselG", "TTR"}],
+Cell[57463, 1544, 492, 8, 60, "DisplayMath",
+  CellTags->{"BesselG", "TTR"}],
+Cell[57958, 1554, 151, 4, 39, "Text",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+Cell[58112, 1560, 410, 7, 46, "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+Cell[58525, 1569, 66, 1, 39, "Text",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+Cell[58594, 1572, 313, 5, 75, "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "TTR"}],
+Cell[58910, 1579, 118, 3, 39, "Text",
+  CellTags->{"Abel", "TTR"}],
+Cell[59031, 1584, 247, 5, 58, "DisplayMath",
+  CellTags->{"Abel", "TTR"}],
+Cell[59281, 1591, 149, 4, 39, "Text",
+  CellTags->{"AssociatedLegendre", "TTR"}],
+Cell[59433, 1597, 322, 6, 63, "DisplayMath",
+  CellTags->{"AssociatedLegendre", "TTR"}],
+Cell[59758, 1605, 124, 3, 39, "Text",
+  CellTags->{"Carlitz", "TTR"}],
+Cell[59885, 1610, 534, 12, 66, "DisplayMath",
+  CellTags->{"Carlitz", "TTR"}],
+Cell[60422, 1624, 149, 4, 39, "Text",
+  CellTags->{"ChebyshevI", "TTR"}],
+Cell[60574, 1630, 245, 5, 45, "DisplayMath",
+  CellTags->{"ChebyshevI", "TTR"}],
+Cell[60822, 1637, 85, 1, 39, "Text",
+  CellTags->{"ChebyshevI", "TTR"}],
+Cell[60910, 1640, 124, 2, 58, "DisplayMath",
+  CellTags->{"ChebyshevI", "TTR"}],
+Cell[61037, 1644, 151, 4, 39, "Text",
+  CellTags->{"ChebyshevII", "TTR"}],
+Cell[61191, 1650, 232, 5, 58, "DisplayMath",
+  CellTags->{"ChebyshevII", "TTR"}],
+Cell[61426, 1657, 130, 3, 39, "Text",
+  CellTags->{"Gegenbauer", "TTR"}],
+Cell[61559, 1662, 571, 12, 68, "DisplayMath",
+  CellTags->{"Gegenbauer", "TTR"}],
+Cell[62133, 1676, 145, 4, 39, "Text",
+  CellTags->{"GegenbauerG", "TTR"}],
+Cell[62281, 1682, 436, 7, 58, "DisplayMath",
+  CellTags->{"GegenbauerG", "TTR"}],
+Cell[62720, 1691, 87, 1, 39, "Text",
+  CellTags->{"GegenbauerG", "TTR"}],
+Cell[62810, 1694, 481, 13, 75, "DisplayMath",
+  CellTags->{"GegenbauerG", "TTR"}],
+Cell[63294, 1709, 124, 3, 39, "Text",
+  CellTags->{"Hermite", "TTR"}],
+Cell[63421, 1714, 239, 5, 58, "DisplayMath",
+  CellTags->{"Hermite", "TTR"}],
+Cell[63663, 1721, 139, 4, 39, "Text",
+  CellTags->{"HermiteG", "TTR"}],
+Cell[63805, 1727, 285, 5, 56, "DisplayMath",
+  CellTags->{"HermiteG", "TTR"}],
+Cell[64093, 1734, 84, 1, 39, "Text",
+  CellTags->{"HermiteG", "TTR"}],
+Cell[64180, 1737, 391, 12, 57, "DisplayMath",
+  CellTags->{"HermiteG", "TTR"}],
+Cell[64574, 1751, 137, 4, 39, "Text",
+  CellTags->{"Jacobi", "TTR"}],
+Cell[64714, 1757, 684, 12, 63, "DisplayMath",
+  CellTags->{"Jacobi", "TTR"}],
+Cell[65401, 1771, 126, 3, 39, "Text",
+  CellTags->{"Laguerre", "TTR"}],
+Cell[65530, 1776, 245, 4, 45, "DisplayMath",
+  CellTags->{"Laguerre", "TTR"}],
+Cell[65778, 1782, 141, 4, 39, "Text",
+  CellTags->{"LaguerreG", "TTR"}],
+Cell[65922, 1788, 308, 6, 46, "DisplayMath",
+  CellTags->{"LaguerreG", "TTR"}],
+Cell[66233, 1796, 126, 3, 39, "Text",
+  CellTags->{"Legendre", "TTR"}],
+Cell[66362, 1801, 257, 5, 61, "DisplayMath",
+  CellTags->{"Legendre", "TTR"}],
+Cell[66622, 1808, 126, 3, 39, "Text",
+  CellTags->{"Lindelof", "TTR"}],
+Cell[66751, 1813, 232, 5, 61, "DisplayMath",
+  CellTags->{"Lindelof", "TTR"}],
+Cell[66986, 1820, 126, 3, 39, "Text",
+  CellTags->{"Logistic", "TTR"}],
+Cell[67115, 1825, 256, 5, 61, "DisplayMath",
+  CellTags->{"Logistic", "TTR"}],
+Cell[67374, 1832, 143, 4, 39, "Text",
+  CellTags->{"StieltjesWigert", "TTR"}],
+Cell[67520, 1838, 473, 8, 46, "DisplayMath",
+  CellTags->{"StieltjesWigert", "TTR"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[68030, 1851, 472, 7, 49, "Subsubsection",
+  CellTags->{
+  "Charlier", "Abel", "AssociatedLegendre", "Bessel", "BesselG", "Carlitz", 
+    "ChebyshevI", "ChebyshevII", "DualHan", "GautschiMilovanovic", 
+    "Gegenbauer", "GegenbauerG", "Han", "Hermite", "HermiteG", "Jacobi", 
+    "Laguerre", "LaguerreG", "Legendre", "Lindelof", "Logistic", "Lommel", 
+    "MeixnerI", "MeixnerII", "Pollaczek", "PollaczekII", "PollaczekIII", 
+    "StieltjesWigert", "TricomiCarlitz", "Wilson", "Norm"}],
+Cell[68505, 1860, 125, 3, 39, "Text",
+  CellTags->{"Charlier", "Norm"}],
+Cell[68633, 1865, 136, 3, 45, "DisplayMath",
+  CellTags->{"Charlier", "Norm"}],
+Cell[68772, 1870, 121, 3, 39, "Text",
+  CellTags->{"Bessel", "Norm"}],
+Cell[68896, 1875, 229, 4, 71, "DisplayMath",
+  CellTags->{"Bessel", "Norm"}],
+Cell[69128, 1881, 122, 3, 39, "Text",
+  CellTags->{"BesselG", "Norm"}],
+Cell[69253, 1886, 518, 8, 77, "DisplayMath",
+  CellTags->{"BesselG", "Norm"}],
+Cell[69774, 1896, 150, 4, 39, "Text",
+  CellTags->{"GautschiMilovanovic", "Norm"}],
+Cell[69927, 1902, 276, 4, 69, "DisplayMath",
+  CellTags->{"GautschiMilovanovic", "Norm"}],
+Cell[70206, 1908, 117, 3, 39, "Text",
+  CellTags->{"Abel", "Norm"}],
+Cell[70326, 1913, 181, 3, 45, "DisplayMath",
+  CellTags->{"Abel", "Norm"}],
+Cell[70510, 1918, 148, 4, 39, "Text",
+  CellTags->{"AssociatedLegendre", "Norm"}],
+Cell[70661, 1924, 436, 8, 77, "DisplayMath",
+  CellTags->{"AssociatedLegendre", "Norm"}],
+Cell[71100, 1934, 123, 3, 39, "Text",
+  CellTags->{"Carlitz", "Norm"}],
+Cell[71226, 1939, 331, 6, 63, "DisplayMath",
+  CellTags->{"Carlitz", "Norm"}],
+Cell[71560, 1947, 148, 4, 39, "Text",
+  CellTags->{"ChebyshevI", "Norm"}],
+Cell[71711, 1953, 160, 3, 45, "DisplayMath",
+  CellTags->{"ChebyshevI", "Norm"}],
+Cell[71874, 1958, 149, 4, 39, "Text",
+  CellTags->{"ChebyshevII", "Norm"}],
+Cell[72026, 1964, 166, 3, 45, "DisplayMath",
+  CellTags->{"ChebyshevII", "Norm"}],
+Cell[72195, 1969, 129, 3, 39, "Text",
+  CellTags->{"Gegenbauer", "Norm"}],
+Cell[72327, 1974, 428, 7, 70, "DisplayMath",
+  CellTags->{"Gegenbauer", "Norm"}],
+Cell[72758, 1983, 144, 4, 39, "Text",
+  CellTags->{"GegenbauerG", "Norm"}],
+Cell[72905, 1989, 342, 5, 60, "DisplayMath",
+  CellTags->{"GegenbauerG", "Norm"}],
+Cell[73250, 1996, 170, 6, 39, "Text",
+  CellTags->{"GegenbauerG", "Norm"}],
+Cell[73423, 2004, 851, 18, 75, "DisplayMath",
+  CellTags->{"GegenbauerG", "Norm"}],
+Cell[74277, 2024, 123, 3, 39, "Text",
+  CellTags->{"Hermite", "Norm"}],
+Cell[74403, 2029, 147, 3, 46, "DisplayMath",
+  CellTags->{"Hermite", "Norm"}],
+Cell[74553, 2034, 138, 4, 39, "Text",
+  CellTags->{"HermiteG", "Norm"}],
+Cell[74694, 2040, 217, 4, 58, "DisplayMath",
+  CellTags->{"HermiteG", "Norm"}],
+Cell[74914, 2046, 121, 3, 39, "Text",
+  CellTags->{"Jacobi", "Norm"}],
+Cell[75038, 2051, 492, 8, 63, "DisplayMath",
+  CellTags->{"Jacobi", "Norm"}],
+Cell[75533, 2061, 125, 3, 39, "Text",
+  CellTags->{"Laguerre", "Norm"}],
+Cell[75661, 2066, 135, 3, 45, "DisplayMath",
+  CellTags->{"Laguerre", "Norm"}],
+Cell[75799, 2071, 140, 4, 39, "Text",
+  CellTags->{"LaguerreG", "Norm"}],
+Cell[75942, 2077, 171, 3, 45, "DisplayMath",
+  CellTags->{"LaguerreG", "Norm"}],
+Cell[76116, 2082, 125, 3, 39, "Text",
+  CellTags->{"Legendre", "Norm"}],
+Cell[76244, 2087, 236, 4, 63, "DisplayMath",
+  CellTags->{"Legendre", "Norm"}],
+Cell[76483, 2093, 125, 3, 39, "Text",
+  CellTags->{"Lindelof", "Norm"}],
+Cell[76611, 2098, 172, 3, 45, "DisplayMath",
+  CellTags->{"Lindelof", "Norm"}],
+Cell[76786, 2103, 125, 3, 39, "Text",
+  CellTags->{"Logistic", "Norm"}],
+Cell[76914, 2108, 401, 10, 73, "DisplayMath",
+  CellTags->{"Logistic", "Norm"}],
+Cell[77318, 2120, 140, 3, 39, "Text",
+  CellTags->{"StieltjesWigert", "Norm"}],
+Cell[77461, 2125, 277, 5, 67, "DisplayMath",
+  CellTags->{"StieltjesWigert", "Norm"}]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

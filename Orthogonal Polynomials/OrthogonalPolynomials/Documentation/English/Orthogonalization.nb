@@ -1,0 +1,2884 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     71276,       2018]*)
+(*NotebookOutlinePosition[     92207,       2536]*)
+(*  CellTagsIndexPosition[     91671,       2512]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["OrthogonalPolynomials`", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Orthogonal polynomials", "Section"],
+
+Cell[TextData[{
+  "Primary purpose of package ",
+  "OrthogonalPolynomials",
+  " is to deal with the questions of orthogonal polynomials. Question of \
+orthogonal polynomials is mathematical discipline. Roots of this discipline \
+goes back to the work of Lagrange on planetary motion. However, since that \
+times only classical orthogonal polynomials, those are polynomials of ",
+  ButtonBox["Jacobi",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Laguerre",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["Hermite",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ", have been used in computations. Nowadays, development in computer \
+science enable us to construct classes of orthogonal polynomials for measures \
+different then classical, which can be used as powerfully tool in a variety \
+of computations. This package deals with questions of construction of \
+orthogonal polynomials."
+}], "MathCaption"],
+
+Cell[CellGroupData[{
+
+Cell["Moment functional and orthogonality relation", "SubsectionIcon",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "Let \[CapitalPsi]  be linear functional defined on the set of all \
+polynomials ",
+  StyleBox["P. ",
+    FontSlant->"Italic"],
+  "Values of this functional on the set ",
+  Cell[BoxData[
+      \(NumberedEquation\`{1, \ x, \ x\^2, \ \[Ellipsis]}\)]],
+  " are called moments and will be denoted by ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[Mu]\_k = \[CapitalPsi] \((x\^k)\), \ 
+      k \[Element] N\_0\)]],
+  ". Linear functional defined on the set of all polynomials  with moment \
+sequence ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[Mu]\_k\)]],
+  " is called ",
+  StyleBox["moment functional",
+    FontSlant->"Italic"],
+  "."
+}], "MathCaption",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Definition 1.",
+    FontWeight->"Bold"],
+  " Let \[CapitalPsi]  be moment functional. Sequence of polynomials ",
+  Cell[BoxData[
+      \(NumberedEquation\`{P\_k}\_\(k = 0\)\%\[Infinity]\)]],
+  " is called sequence of orthogonal polynomials with respect to moment \
+functional \[CapitalPsi] iff:\n1. ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[ForAll] n \[Element] N\_0\)]],
+  " ",
+  Cell[BoxData[
+      \(NumberedEquation\`P\_n\)]],
+  " is polynomial of degree n\n2. ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[CapitalPsi] \((\(P\_\(\(n\)\(\ \)\)\) P\_k)\) = 
+        0, \ n \[NotEqual] k\)]],
+  "\n3. ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[ForAll] n \[Element] N\_0\)]],
+  " ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[CapitalPsi](P\_n\%2) \[NotEqual] 0\)]]
+}], "DefinitionBox",
+  CellTags->{"def1", "mf"}],
+
+Cell[TextData[{
+  "Expression ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[CapitalPsi](P\_n\%2)\)]],
+  " is called square of ",
+  StyleBox["norm",
+    FontSlant->"Italic"],
+  " of polynomial ",
+  Cell[BoxData[
+      \(TraditionalForm\`P\_n\)]],
+  ". So norm can be defined as"
+}],
+  CellTags->{"norm", "mf"}],
+
+Cell[TextData[{
+  Cell[BoxData[
+      \(TraditionalForm\`\[CapitalPsi](P\_n\%2)\)]],
+  "=|| ",
+  Cell[BoxData[
+      FormBox[
+        RowBox[{
+          FormBox[\(P\_n\),
+            "TraditionalForm"], \( || \^2\)}], TraditionalForm]],
+    CellTags->{"norm", "mf"}]
+}], "NumberedEquation",
+  CellTags->{"norm", "mf"}],
+
+Cell[TextData[{
+  "Norms of the supported classes of orthogonal polynomials are  ",
+  ButtonBox["following",
+    ButtonData:>{"Norm", "Norm"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"mf"],
+
+Cell["\<\
+One of the most important examples of the moment functionals, are functionals \
+defined with measures \[Mu] on some subset S of the real line. Let \
+\[CapitalPsi] be defined as follows\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((P)\) = \[Integral]\_S 
+          P \[DifferentialD]\[Mu]\)\(,\)\)\)], "NumberedEquation",
+  CellTags->{"eq1", "mf"}],
+
+Cell[TextData[{
+  "then \[CapitalPsi] is moment functional iff set of all polynomials is \
+\[Mu]-integrable. If all moments are real, moment functional is called ",
+  StyleBox["real",
+    FontSlant->"Italic"],
+  ". For moment functionals defined with some measure \[Mu], moment \
+functional will be real provided measure \[Mu] is real. \nMoment functional \
+can also be given with any other linear functional. For example, differential \
+operator at some point ",
+  Cell[BoxData[
+      \(NumberedEquation\`x\_0\)]],
+  ", ",
+  Cell[BoxData[
+      \(NumberedEquation\`D\_\(x\_0\)\)]],
+  ", is linear functional and is defined and has limited values on the set of \
+all polynomials. Sequence of moments for this functional is given by"
+}], "Text",
+  CellTags->"mf"],
+
+Cell[BoxData[
+    \(\(D\_\(x\_0\)\) \((x\^k)\) = k\ x\_0\%\(k - 1\), \ 
+    k\  \[Element] \ \(\(N\_0\)\(.\)\)\)], "NumberedEquation",
+  CellTags->{"eq2", "mf"}],
+
+Cell[TextData[{
+  "However, sequence of orthogonal polynomials does not exist for all moment \
+functionals. If for some moment functional sequence of orthogonal polynomials \
+exists such moment functional is called ",
+  StyleBox["definite",
+    FontSlant->"Italic"],
+  ", otherwise moment functional is called ",
+  StyleBox["nondefinite",
+    FontSlant->"Italic"],
+  "."
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "For example, moment functional given with differential operator, ",
+  ButtonBox["equation (3)",
+    ButtonData:>"eq2",
+    ButtonStyle->"Hyperlink"],
+  ", is nondefinite, i.e. there is no sequence of polynomials with properties \
+given in ",
+  ButtonBox["definition 1",
+    ButtonData:>"def1",
+    ButtonStyle->"Hyperlink"],
+  " for operator ",
+  Cell[BoxData[
+      \(NumberedEquation\`D\_\(x\_0\)\)]],
+  ", given with ",
+  ButtonBox["equation (3)",
+    ButtonData:>"eq2",
+    ButtonStyle->"Hyperlink"],
+  ". As an example of the definite moment functional, we can take any linear \
+functional of the form"
+}], "Text",
+  CellTags->"mf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((P)\) = \[Integral]\_a\%b w \((x)\) 
+          P \((x)\) \[DifferentialD]x\)\(,\)\)\)], "NumberedEquation",
+  CellTags->{"eq3", "mf"}],
+
+Cell["\<\
+where function w is nonnegative and not identically equal zero on the \
+interval (a,b), which can be finite or infinite.\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Definition 2. ",
+    FontWeight->"Bold"],
+  "Real moment functional \[CapitalPsi]  is called ",
+  StyleBox["positive definite",
+    FontSlant->"Italic"],
+  " iff for all real polynomials ",
+  StyleBox["P",
+    FontSlant->"Italic"],
+  " which are nonnegative and nonidentically equal to zero on the real line, \
+value of the moment functional at the polynomial ",
+  StyleBox["P ",
+    FontSlant->"Italic"],
+  "is positive \[CapitalPsi](P)>0. \nDefinite moment functional, which is not \
+positive definite, is called quasi definite."
+}], "DefinitionBox",
+  CellTags->{"def2", "mf"}],
+
+Cell[TextData[{
+  "If measure \[Mu] in ",
+  ButtonBox["equation (2)",
+    ButtonData:>"eq1",
+    ButtonStyle->"Hyperlink"],
+  " is positive then moment functional \[CapitalPsi] is positive definite. \
+Positive definite moment functional is always definite. "
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "If measure \[Mu], with respect to which polynomials are orthogonal, is \
+absolutely continuous, then moment functional has representation given with \
+the ",
+  ButtonBox["equation (4)",
+    ButtonData:>"eq3",
+    ButtonStyle->"Hyperlink"],
+  ". In this case function w is called weight function, and we will say also \
+that sequence of polynomials is orthogonal with respect to the weight \
+function w."
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "If measure \[Mu] is not absolutely continuous and has atoms at points  ",
+  Cell[BoxData[
+      \(NumberedEquation\`x\_i, \ i \[Element] N\_0\)]],
+  " then moment functional has representation in the form"
+}], "Text",
+  CellTags->"mf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((P)\) = \[Sum]\_\(i = 0\)\%\[Infinity]\( w\_i\) 
+          P \((x\_i)\)\)\(,\)\)\)], "NumberedEquation",
+  CellTags->{"eq4", "mf"}],
+
+Cell[TextData[{
+  "provided by assumption that \[Mu] has no absolutely continuous part, where \
+",
+  Cell[BoxData[
+      \(NumberedEquation\`w\_i, \ i\  \[Element] \ N\_0\)]],
+  ", are masses of related atoms or in spirit of theory of orthogonal \
+polynomials weights of related atoms."
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "Supported sequences of orthogonal polynomials which are orthogonal with \
+respect to positive definite moment functional, given with ",
+  ButtonBox["equation 4",
+    ButtonData:>"eq3",
+    ButtonStyle->"Hyperlink"],
+  ",  are ",
+  ButtonBox["Legendre polynomials",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Chebyshev polynomials of the first kind",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Chebyshev polynomials of the second kind",
+    ButtonData:>{"aChebyshevII", "ChebyshevII"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Gegenbauer polynomials",
+    ButtonData:>{"aGegenbauer", "Gegenbauer"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["generalized Gegenbauer polynomials",
+    ButtonData:>{"aGegenbauerG", "GegenbauerG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Jacobi polynomials",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Laguerre polynomials",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["generalized Laguerre polynomials",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Hermite polynomials",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["generalized Hermite polynomials",
+    ButtonData:>{"aHermiteG", "HermiteG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Abel polynomials",
+    ButtonData:>{"aAbel", "Abel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Lindelof polynomials",
+    ButtonData:>{"aLindelof", "Lindelof"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Stieltjes-Wigert polynomials",
+    ButtonData:>{"aStieltjesWigert", "StieltjesWigert"},
+    ButtonStyle->"AddOnsLink"],
+  ",  ",
+  ButtonBox["Logistic polynomials,",
+    ButtonData:>{"aLogistic", "Logistic"},
+    ButtonStyle->"AddOnsLink"],
+  " ",
+  ButtonBox["Carlitz polynomials",
+    ButtonData:>{"aCarlitz", "Carlitz"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["associated Legendre polynomials",
+    ButtonData:>{"aAssociatedLegendre", "AssociatedLegendre"},
+    ButtonStyle->"AddOnsLink"],
+  ". Supported sequence of polynomials which is orthogonal with respect to \
+positive definite moment functional, given with  ",
+  ButtonBox["equation (5)",
+    ButtonData:>"eq4",
+    ButtonStyle->"Hyperlink"],
+  ", are ",
+  ButtonBox["Charlier polynomials.",
+    ButtonData:>{"aCharlier", "Charlier"},
+    ButtonStyle->"AddOnsLink"],
+  " Polynomials which are orthogonal with respect to quasi-definite moment \
+functional are ",
+  ButtonBox["Bessel polynomials",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["generalized Bessel polynomials",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  "  and ",
+  ButtonBox["Gautschi-Milovanovic polynomials",
+    ButtonData:>{"aGautschiMilovanovic", "GautschiMilovanovic"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "Sequences of orthogonal polynomials with  positive definite moment \
+functional which has representation of the form ",
+  ButtonBox["equation (3)",
+    ButtonData:>"eq2",
+    ButtonStyle->"Hyperlink"],
+  " we will call ",
+  StyleBox["continuous. ",
+    FontSlant->"Italic"],
+  "Polynomials orthogonal with respect to positive definite moment functional \
+which has representation of the form ",
+  ButtonBox["equation (5)",
+    ButtonData:>"eq4",
+    ButtonStyle->"Hyperlink"],
+  StyleBox[" ",
+    FontSlant->"Italic"],
+  " we will call ",
+  StyleBox["discrete",
+    FontSlant->"Italic"],
+  ", and polynomials which are orthogonal to some subset of the complex plane \
+or with respect to some complex measure, as in the case of Bessel, \
+generalized Bessel or Gautschi-Milovanovic polynomials we will call ",
+  StyleBox["complex polynomials",
+    FontSlant->"Italic"],
+  ". "
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "In the case moment functional \[CapitalPsi] is nondefinite, we can not \
+construct sequence of orthogonal polynomials. But, we may be able to \
+construct first few members of the sequence. For example, in the case of \
+differential operator ",
+  Cell[BoxData[
+      \(TraditionalForm\`D\_\(x\_0\)\)]],
+  ", given with ",
+  ButtonBox["equation (3)",
+    ButtonData:>"eq2",
+    ButtonStyle->"Hyperlink"],
+  ",  we are able to construct only first member of sequence of orthogonal \
+polynomials. But, if moment functional has representation as a finite sum of \
+weighted Dirac measures"
+}], "Text",
+  CellTags->"mf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((P)\) = \[Sum]\_\(i = 1\)\%n\( w\_i\) 
+          P \((x\_i)\)\)\(,\)\)\)], "NumberedEquation",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "it is possible to construct, under condition all weights ",
+  Cell[BoxData[
+      \(TraditionalForm\`w\_i\)]],
+  "are positive, first n+1 members of sequence of orthogonal polynomials. \
+Where n is number of Dirac measures included in the sum. For supported \
+classes of moment functionals orthogonality relations are ",
+  ButtonBox["following",
+    ButtonData:>{"Orthogonality equations", "OrthEquation"},
+    ButtonStyle->"AddOnsLink"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Representation of moment functional", "SubsubsectionIcon",
+  CellTags->"mf"],
+
+Cell["\<\
+An intriguing question is are there always representation of moment \
+functional with some integral taken with appropriate measure. Is there always \
+representation of positive definite moment functional with an integral taken \
+with appropriate measure?\
+\>", "MathCaption",
+  CellTags->"mf"],
+
+Cell["\<\
+Answer to the previous question is affirmative, and can be expressed in the \
+following theorem\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Theorem 1. ",
+    FontWeight->"Bold"],
+  "Let moment functional \[CapitalPsi]  be positive definite. There is a \
+nondecreasing function \[Phi], of limited variation defined over real line, \
+with infinite set of points supp\[Phi]={x | \[ForAll]\[Epsilon]>0,  \[Phi](x+\
+\[Epsilon])-\[Phi](x-\[Epsilon])>0}, such that\n\t\t\t\t\t",
+  Cell[BoxData[
+      \(NumberedEquation\`\[CapitalPsi] \((x\^k)\) = \[Integral]\_R\ \(x\^k\) \
+\[DifferentialD]\(\[Phi] \((x)\)\), \ k\  \[Element] \ \(\(N\_0\)\(.\)\)\)]]
+}], "Theorem",
+  CellTags->{"theorem1", "mf"}],
+
+Cell["\<\
+Set supp\[Phi] mentioned in the previous theorem is called supporting set for \
+function \[Phi], or it is also called supporting set for the Stieltjes \
+measure given with function \[Phi].\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "For general sequence of moments ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Mu]\_k, \ k\  \[Element] \ N\_0\)]],
+  ", we can state the following theorem"
+}], "MathCaption",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Theorem 2.",
+    FontWeight->"Bold"],
+  " Let moment functional \[CapitalPsi]  be defined by an arbitrary sequence \
+of moments ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[Mu]\_k\ , \ k\  \[Element] \ N\_0\)]],
+  ". Then there exist complex function \[Phi] of limited variation defined on \
+the real line, such that\n\t\t\t\t\t",
+  Cell[BoxData[
+      \(NumberedEquation\`\[Mu]\_k = \(\[CapitalPsi] \((x\^k)\) = \[Integral]\
+\_R\ \(x\^k\) \[DifferentialD]\(\[Phi] \((x)\)\)\), \ 
+      k\  \[Element] \ \(\(N\_0\)\(.\)\)\)]]
+}], "Theorem",
+  CellTags->{"theorem2", "mf"}],
+
+Cell["\<\
+If function of bounded variation is a step function then integral becomes \
+infinite sum. There are classes of orthogonal polynomials supported in the \
+package which has this type of function \[Phi]. If function \[Phi] is \
+nondecreasing and has countable supporting set it is called distribution \
+function. \
+\>", "Text"],
+
+Cell[TextData[{
+  "Function which can be used to retrieve weight with respect to which \
+polynomials are orthogonal is ",
+  ButtonBox["aWeight",
+    ButtonData:>{"aWeight", "weight"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which returns interval of orthogonality if there is any is ",
+  ButtonBox["aGetInterval",
+    ButtonData:>{"aGetInterval", "getInterval"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which returns distribution function is ",
+  ButtonBox["aDistribution",
+    ButtonData:>{"aDistribution", "distribution"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which returns set on which polynomials are orthogonal is ",
+  ButtonBox["aSupport",
+    ButtonData:>{"aSupport", "support"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which returns moments for supported classes of orthogonal \
+polynomials is ",
+  ButtonBox["aMoments",
+    ButtonData:>{"aMoments", "moments"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which returns norm of supported orthogonal polynomials is ",
+  ButtonBox["aNorm",
+    ButtonData:>{"aNorm", "norm"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Determination of the moment functional", "SubsubsectionIcon",
+  CellTags->"mf"],
+
+Cell["\<\
+According to last two theorems all moment functionals can be represented with \
+Stieltjes integral, with respect to some complex function of  bounded \
+variation. Another question which is important is: are there only one complex \
+function of bounded variation \[Phi], which appear in the previous \
+theorems.\
+\>", "MathCaption",
+  CellTags->"mf"],
+
+Cell["\<\
+We can say that answer is negative. For example, for nondecreasing function \
+\[Phi] of bounded variation, if we change function \[Phi] with function \
+\[Phi]+C, C\[Element] R, values of integrals of continuous functions, will \
+not be changed. \
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Definition 3.",
+    FontWeight->"Bold"],
+  " Two nondecreasing functions of bounded variation ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Phi]\_1\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Phi]\_2\)]],
+  " are said to be ",
+  StyleBox["substantially equal",
+    FontSlant->"Italic"],
+  " if and only if at all common points of continuity ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Phi]\_1 - \[Phi]\_2 = C\  \[Element] \ R\)]],
+  "."
+}], "DefinitionBox",
+  CellTags->{"def3", "mf"}],
+
+Cell[TextData[{
+  "Values of integrals of all continuous functions are the same with respect \
+to substantially equal functions ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Phi]\_1\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Phi]\_2\)]],
+  "."
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Definition 4",
+    FontWeight->"Bold"],
+  ". If positive definite moment functional \[CapitalPsi],  defined with \
+moment sequence ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[Mu]\_k, \ k\  \[Element] \ N\_0\)]],
+  ", has only representations with substantially equal  nondecreasing \
+functions \[Phi] of bounded variation, then functional \[CapitalPsi]  is \
+called ",
+  StyleBox["determined",
+    FontSlant->"Italic"],
+  ". Moment sequence ",
+  Cell[BoxData[
+      \(NumberedEquation\`\[Mu]\_k, \ 
+      k\  \[Element] \ N\_\(\(0\)\(\ \)\)\)]],
+  ", is also said to be ",
+  StyleBox["determined",
+    FontSlant->"Italic"],
+  "."
+}], "DefinitionBox",
+  CellTags->{"def4", "mf"}],
+
+Cell["\<\
+Determination of positive definite moment functional \[CapitalPsi]  is of \
+essential interest. Since, if positive definite moment functional \
+\[CapitalPsi]  is not determinated, then extensions of moment functional \
+\[CapitalPsi]  over larger class of functions is not unique. If positive \
+definite moment functional is determined then extension of functional \
+\[CapitalPsi] over class of continuous functions is unique. Unique means that \
+if we take different function \[Phi] for representation then all integrals of \
+continuous functions will be the same.\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell["\<\
+Question of determination of positive definite moment functional \
+\[CapitalPsi]  is not easy one. The question of determination is resolved for \
+the case when supporting set of the positive definite moment functional is \
+bounded.\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Definition 5.",
+    FontWeight->"Bold"],
+  " Set B is called supporting set for positive definite moment functional \
+\[CapitalPsi]  if and only if at all nonnegative and nonidentical to zero \
+polynomials P on the set B, value of \[CapitalPsi]  is positive."
+}], "DefinitionBox",
+  CellTags->{"def5", "mf"}],
+
+Cell["\<\
+When positive definite moment functional \[CapitalPsi] has bounded supporting \
+set then we have following theorem.\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  StyleBox["Theorem 3.",
+    FontWeight->"Bold"],
+  " If supporting set of positive definite moment functional \[CapitalPsi]  \
+is bounded, then \[CapitalPsi]  is determined."
+}], "Theorem",
+  CellTags->{"theorem3", "mf"}],
+
+Cell[TextData[{
+  "This means that for following classes of supported polynomials  ",
+  ButtonBox["Legendre polynomials",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Chebyshev polynomials of the first kind",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Chebyshev polynomials of the second kind",
+    ButtonData:>{"aChebyshevII", "ChebyshevII"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Gegenbauer polynomials",
+    ButtonData:>{"aGegenbauer", "Gegenbauer"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["generalized Gegenbauer polynomials",
+    ButtonData:>{"aGegenbauerG", "GegenbauerG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Jacobi polynomials",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  ",  ",
+  ButtonBox["associated Legendre polynomials",
+    ButtonData:>{"aAssociatedLegendre", "AssociatedLegendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", which has representation of the form ",
+  ButtonBox["equation (4)",
+    ButtonData:>"eq3",
+    ButtonStyle->"Hyperlink"],
+  ", where interval (a,b) is bounded, moment functional is determined."
+}], "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "It is known that in some cases when moment function has representation \
+given with ",
+  ButtonBox["equation (4)",
+    ButtonData:>"eq3",
+    ButtonStyle->"Hyperlink"],
+  " and interval (a,b) is not bounded moment problem is determined also. This \
+is the case with following classes of supported polynomials ",
+  ButtonBox["Laguerre polynomials",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  ",",
+  ButtonBox["generalized Laguerre polynomials",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"],
+  ",",
+  ButtonBox["Hermite polynomials",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ",",
+  ButtonBox["generalized Hermite polynomials",
+    ButtonData:>{"aHermiteG", "HermiteG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Abel polynomials",
+    ButtonData:>{"aAbel", "Abel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Lindelof polynomials",
+    ButtonData:>{"aLindelof", "Lindelof"},
+    ButtonStyle->"AddOnsLink"],
+  ",  ",
+  ButtonBox["Logistic polynomials",
+    ButtonData:>{"aLogistic", "Logistic"},
+    ButtonStyle->"AddOnsLink"],
+  ", It is also known that for ",
+  ButtonBox["Stieltjes-Wigert polynomials",
+    ButtonData:>{"aStieltjesWigert", "StieltjesWigert"},
+    ButtonStyle->"AddOnsLink"],
+  " moment functional is not determined."
+}], "Text",
+  CellTags->"mf"],
+
+Cell["\<\
+In the case moment functional \[CapitalPsi]  is not positive definite then \
+representation of \[CapitalPsi]  can not be unique.\
+\>", "MathCaption",
+  CellTags->"mf"],
+
+Cell["\<\
+There is a function of bounded variation defined on the real line such that \
+all moments are equal to zero. One example of such a function is\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[BoxData[
+    RowBox[{\(\[CapitalPhi] \((x)\)\), "=", 
+      TagBox[
+        StyleBox[
+          RowBox[{"{", 
+            StyleBox[GridBox[{
+                  {\(\[Integral]\_0\%x\ 
+                      sin \((2\ \[Pi]\ log \((t)\))\) 
+                        exp \((\(-log\^2\) \((t)\))\) \[DifferentialD]t, \ 
+                    x \[GreaterEqual] 0\)},
+                  {\(0, \ x < 0\)}
+                  }],
+              ShowAutoStyles->True]}],
+          ShowAutoStyles->False],
+        (#&)]}]], "NumberedEquation",
+  CellTags->"mf"],
+
+Cell["\<\
+So if \[Phi] is some representation of quasi definite moment functional \
+\[CapitalPsi], then also function \[Phi]+\[Lambda]\[CapitalPhi] is \
+representation of that moment functional \[CapitalPsi], where \[Lambda] is \
+complex constant.\
+\>", "Text",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "Problem of determination of moment functional is little more complex when \
+it is considered over subsets in the complex plane. Package supports \
+polynomials orthogonal over some curves in the complex plane. Those are \
+classes of polynomials are ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aGautschiMilovanovic",
+    ButtonData:>{"aGautschiMilovanovic", "GautschiMilovanovic"},
+    ButtonStyle->"AddOnsLink"],
+  StyleBox[". ",
+    FontSlant->"Italic"],
+  " For classes aBessel and aBesselG curve over which polynomials are \
+orthogonal is unit circle, for class aGautschiMilovanovic curve on which \
+polynomials are orthogonal is upper half of the unit circle. "
+}], "MathCaption",
+  CellTags->"mf"],
+
+Cell[TextData[{
+  "According to ",
+  ButtonBox["theorem 3.",
+    ButtonData:>"ttrTheorem3",
+    ButtonStyle->"Hyperlink"],
+  " in the next section, there is, also, function of bounded variation \
+defined on the real line with respect to which those classes of polynomials \
+are orthogonal. This means that moment functionals connected with those \
+classes of orthogonal polynomials are indeterminated. However, if interval of \
+orthogonality is bounded we can say that for all different possible \
+distributions, which all have the same sequence of moments,  integrals of \
+continuous functions are the same."
+}], "Text",
+  CellTags->"mf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Three term recurrence relation", "SubsectionIcon",
+  CellTags->"TTR"],
+
+Cell["\<\
+Basic property of sequences of orthogonal polynomials, is three term \
+recurrence relation they satisfy.\
+\>", "Text",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  StyleBox["Theorem 1.",
+    FontWeight->"Bold"],
+  " Let sequence of monic polynomials ",
+  Cell[BoxData[
+      \(TraditionalForm\`{P\_n}\_\(n = 0\)\%\[Infinity]\)]],
+  ", be sequence of orthogonal polynomials with respect to moment functional \
+\[CapitalPsi] . There are two sequences of complex numbers ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Alpha]\_n\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n \[NotEqual] 0\)]],
+  ", such that\n\t\t\t\t\t",
+  Cell[BoxData[
+      \(TraditionalForm\`\(P\_\(n + 1\)\)(
+          x) = \((x - \[Alpha]\_n)\) \(\(P\_n\)(
+              x)\) - \(\[Beta]\_n\) \(\(P\_\(n - 1\)\)(x)\), \ 
+      n \[Element] \ N, \ P\_0 = 1, \ P\_\(-1\) = 0\)]],
+  ".\nIn the case moment functional \[CapitalPsi]  is real then sequences ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Alpha]\_n\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n\)]],
+  " are real, and if moment functional \[CapitalPsi]  is positive definite \
+then sequence ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n\)]],
+  " is positive."
+}], "Theorem",
+  CellTags->"TTR"],
+
+Cell["\<\
+It is interesting that converse of previous theorem is also true.\
+\>", "Text",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  StyleBox["Theorem 2.",
+    FontWeight->"Bold"],
+  " Let sequence of monic polynomials ",
+  Cell[BoxData[
+      \(TraditionalForm\`{P\_n}\_\(n = 0\)\%\[Infinity]\)]],
+  " satisfy following recurrence relation\n\t\t\t\t\t",
+  Cell[BoxData[
+      \(TraditionalForm\`\(P\_\(n + 1\)\)(
+          x) = \((x - \[Alpha]\_n)\) \(\(P\_n\)(
+              x)\) - \(\[Beta]\_n\) \(\(P\_\(n - 1\)\)(x)\), \ 
+      n \[Element] \ N, \ P\_0 = 1, \ P\_\(-1\) = 0\)]],
+  ", ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n \[NotEqual] 0\)]],
+  ",\nthen there is moment functional \[CapitalPsi]  to which polynomials are \
+orthogonal, and if ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Alpha]\_n\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n \[NotEqual] 0\)]],
+  " are real moment functional \[CapitalPsi]  is real, and if ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Alpha]\_n\)]],
+  " is real and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_\(\(n\)\(\ \)\)\)]],
+  "positive then moment functional \[CapitalPsi]  is positive definite."
+}], "Theorem",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "From the previous theorems we see that it is important that coefficients \
+",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n\)]],
+  " are not equal zero. Case of arbitrary sequences ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Alpha]\_n\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n\)]],
+  " can be characterized with the following theorem."
+}], "Text",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  StyleBox["Theorem 3.",
+    FontWeight->"Bold"],
+  " Let ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Alpha]\_n\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Beta]\_n\)]],
+  "be arbitrary sequences  of complex numbers. Let sequence of polynomials ",
+  Cell[BoxData[
+      \(TraditionalForm\`{P\_n}\_\(n = 0\)\%\[Infinity]\)]],
+  ", satisfy the following recurrence relation\n\t\t\t\t\t",
+  Cell[BoxData[
+      \(TraditionalForm\`\(P\_\(n + 1\)\)(
+          x) = \((x - \[Alpha]\_n)\) \(\(P\_n\)(
+              x)\) - \(\[Beta]\_n\) \(\(P\_\(n - 1\)\)(x)\), \ 
+      n \[Element] \ N, \ P\_0 = 1, \ P\_\(-1\) = 0\)]],
+  ".\nThen there exist complex function \[Phi] of bounded variation, defined \
+on the real line, such that the following is true\n\t\t\t\t\t",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Integral]\_R\ \(\(P\_n\)(x)\)\ \(\(P\_m\)(
+              x)\)\ \[DifferentialD]\(\[Phi](
+                x)\) = \(K\_n\) \[Delta]\_\(n, m\)\)]]
+}], "Theorem",
+  CellTags->{"TTR", "ttrTheorem3"}],
+
+Cell[TextData[{
+  "Three term recurrence relations for supported classes of polynomials are \
+the ",
+  ButtonBox["following",
+    ButtonData:>{"Recurrence relation", "TTR"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "Variety of results are given which connect properties of three term \
+recurrence relation coefficients and ",
+  ButtonBox["supporting sets",
+    ButtonData:>"def5",
+    ButtonStyle->"Hyperlink"],
+  " of  moment functionals. For additional results references are [1], [2] \
+and [3]. "
+}], "Text",
+  CellTags->"TTR"],
+
+Cell["\<\
+Computation of values of orthogonal polynomials can be done using three term \
+recurrence relation. Since, recurrence relation is of second order there are \
+two linearly independent solutions. One of them is class of orthogonal \
+polynomials themselves, the other is usually referred as function of the \
+second kind. Function of the second kind has integral representation of the \
+following form\
+\>", "Text",
+  CellTags->"TTR"],
+
+Cell[BoxData[
+    \(\(F\_n\) \((z)\) = \[Integral]\_R\(\(\( P\_n\) \((x)\)\)\/\(z - 
+                x\)\) \[DifferentialD]\[Phi] \((x)\), \ 
+    n \[Element] \(\(N\_0\)\(.\)\)\)], "NumberedEquation",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "In general, for recurrence equations of the second kind one solution ",
+  Cell[BoxData[
+      \(TraditionalForm\`f\_n\)]],
+  ", is called minimal if "
+}], "Text",
+  CellTags->"TTR"],
+
+Cell[BoxData[
+    \(\(\(lim\+\(n \[Rule] \[Infinity]\)f\_n\/g\_n = 
+      0\)\(,\)\)\)], "NumberedEquation",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "where ",
+  Cell[BoxData[
+      \(TraditionalForm\`g\_n\)]],
+  " is second linearly independent solution, which is called dominant \
+solution. Computation of the solutions of the difference equation can be done \
+numerically stable in this case.  Dominant solution ",
+  Cell[BoxData[
+      \(TraditionalForm\`g\_n\)]],
+  " can be evaluated straight-forward using recurrence relation, minimal \
+solution ",
+  Cell[BoxData[
+      \(TraditionalForm\`f\_n\)]],
+  " can be evaluated using recurrence relation backwards. Calculation \
+backwards is performed in the following way, suppose we want to calculate \
+n-th member of minimal solution. We chose some natural number N>n and put \
+value ",
+  Cell[BoxData[
+      \(TraditionalForm\`f\_N = 0\)]],
+  ", then we use following relation"
+}],
+  CellTags->"TTR"],
+
+Cell[BoxData[
+    \(\(\(y\_\(k + 1\) = \((x - \[Alpha]\_k)\) - \
+\[Beta]\_k\/y\_k\)\(,\)\)\)], "NumberedEquation",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "which can be derived from recurrence equation, to evaluate all members of \
+the minimal solution with index smaller then N. If the value ",
+  Cell[BoxData[
+      \(TraditionalForm\`f\_n\)]],
+  " is evaluated with requested precision evaluation stops, if it is not the \
+case we increase N to bigger number and calculate again, until requested \
+precision is achieved. It can be proved that if the moment problem is \
+determined then orthogonal polynomials are not minimal solution of the three \
+term recurrence relation (see ",
+  "[17]",
+  "), i. e. recurrence relation can be used for stable evaluation of the \
+sequence of orthogonal polynomials. Previous is valid in the whole complex \
+plane. "
+}], "Text",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "If the moment problem is not determined, it happens that sequence of \
+orthogonal polynomials can not be evaluated numerically stable using three \
+term recurrence relation. For example, classes ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  " are minimal solution of the three term recurrence relation. It is \
+important in this case to emphasize that evaluation of the minimal solution \
+using three term recurrence relation backwards can be numerically exhaustive \
+procedure. It is not always practical to compute minimal solution in the \
+requested precision using recurrence relation backwards. Sometimes it is \
+better to use higher precision to achieve requested precision using \
+recurrence relation straight-forward."
+}], "Text",
+  CellTags->"TTR"],
+
+Cell[TextData[{
+  "Function which connects moments and three term recurrence relation \
+coefficients is ",
+  ButtonBox["aChebyshevAlgorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  ", but also ",
+  ButtonBox["aChebyshevAlgorithmModified",
+    ButtonData:>{"aChebyshevAlgorithmModified", "chebyshevAlgModified"},
+    ButtonStyle->"AddOnsLink"],
+  " can be used. For numerical construction of three term recurrence \
+coefficients functions ",
+  ButtonBox["aStieltjesAlgorithm",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aLanczosAlgorithm",
+    ButtonData:>{"aLanczosAlgorithm", "lanczosAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " can be used. General function dealing the three term recurrence \
+coefficients is ",
+  ButtonBox["aThreeTermRecurrence",
+    ButtonData:>{"aThreeTermRecurrence", "TTR"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"TTR"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Differential or difference equation", "SubsectionIcon",
+  CellTags->"dEquation"],
+
+Cell["\<\
+Almost all sequences of orthogonal polynomials satisfy differential or \
+difference equations. \
+\>", "MathCaption",
+  CellTags->"dEquation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zeroes of orthogonal polynomials", "SubsectionIcon",
+  CellTags->"zero"],
+
+Cell["\<\
+Zeroes of orthogonal polynomials are very important for computational \
+purposes. \
+\>", "MathCaption",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "We will first give some results which  characterize distribution of \
+zeroes. For positive definite moment functional zeroes of orthogonal \
+polynomials are simple and lie in the ",
+  StyleBox["supporting set",
+    FontSlant->"Italic"],
+  " of the moment functional. For example, all zeroes of class ",
+  ButtonBox["aLegendre",
+    ButtonStyle->"AddOnsLink"],
+  " are simple and lie in the interval (-1,1). If moment functional has \
+representation given with weighted integral ",
+  ButtonBox["equation (4)",
+    ButtonData:>"eq3",
+    ButtonStyle->"Hyperlink"],
+  " then all zeroes of orthogonal polynomials are inside interval (a,b) if \
+function w is nonnegative and non identically equal zero. In general, if \
+moment functional has representation in the form of the Stieltjes integral \
+with respect to nondecreasing function of bounded variation zeros of \
+orthogonal polynomials are real, simple and all lie in supporting interval \
+for the moment functional. Theorems which proves previous can be found in the \
+[7], [1]. For classes of classical orthogonal polynomials, i.e. ",
+  ButtonBox["Legendre",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Chebyshev",
+    ButtonData:>{"aChebyshev", "Chebyshev"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Gegenbauer",
+    ButtonData:>{"aGegenbauer", "Gegenbauer"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Jacoby",
+    ButtonData:>{"aJacoby", "Jacoby"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Laguerre",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["generalized Laguerre",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Hermite",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ",  more precise results on the distribution of zeroes can be found in \
+[8]."
+}], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "In the case of the quasi definite moment functional distribution of zeroes \
+ is not so simple to describe. General results are not known, only we can \
+state partial results given for the classes of the orthogonal polynomials \
+supported. Zeroes of the classes ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  " are all simple and lie in the unit circle. Zeroes of the class ",
+  ButtonBox["aGautschiMilovanovic",
+    ButtonStyle->"AddOnsLink"],
+  " are also simple and lie in the upper half of the unit disc."
+}], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "For positive definite moment functional, zeroes of orthogonal polynomials \
+can be calculated, numerically stable, using QR algorithm (see [4], [5]). \
+However, zeroes of orthogonal polynomials can be calculated numerically \
+stable using QR algorithm and for some quasi-definite moment functionals. For \
+example, zeroes of polynomials belonging to class ",
+  ButtonBox["aGautschiMilovanovic",
+    ButtonData:>{"aGautschiMilovanovic", "GautschiMilovanovic"},
+    ButtonStyle->"AddOnsLink"],
+  " can be calculated using QR algorithm numerically stable. "
+}], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "For classes supported in the package only zeroes of classes ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  "  can not be calculated using QR algorithm. To calculate zeroes for this \
+classes Pasquini algorithm is used  (see [6]). This algorithm can also be \
+used for calculation of zeroes of other classes of orthogonal polynomials. \
+Pasquini's algorithm can be used to calculate zeroes of class which satisfy \
+second order differential equation of the following form"
+}], "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\(a\_2\) \((x)\) \(P\_n\%''\) \((x)\) + \(a\_1\) \(P\_n\%'\) \((x)\) + \
+\(a\_0\) \(P\_n\) \((x)\) = 0. \)], "NumberedEquation",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "Where coefficients ",
+  Cell[BoxData[
+      \(TraditionalForm\`a\_2\)]],
+  ", ",
+  Cell[BoxData[
+      \(TraditionalForm\`a\_1\)]],
+  "and ",
+  Cell[BoxData[
+      \(TraditionalForm\`a\_0\)]],
+  " can depend on the degree of the polynomial and parameters of the family \
+of orthogonal polynomials also. If in the previous differential equation \
+zeros ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(\(x\_k\)\(\ \)\)\)]],
+  "of polynomial ",
+  Cell[BoxData[
+      \(TraditionalForm\`P\_n\)]],
+  " are simple, replacing x with zero ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_k\)]],
+  " leads to the following system of nonlinear equations"
+}], "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(a\_1\/\(2  a\_2\) + \[Sum]\_\(i = 1, i \[NotEqual] \ k\)\%n 1\/\(x\_k - \
+x\_i\) = 0. \)], "NumberedEquation",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "To solve previous system we have to know good starting values for the \
+Newton-Kantorovich method to be used. It is Pasquini who find good starting \
+values for classes of polynomials ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  " . For other classes of polynomials Pasquini' s algorithm can be used \
+successfully for increasing the number of exact digits for already computed \
+zeroes computed by QR algorithm."
+}], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "For evaluation of zeroes of orthogonal polynomials function ",
+  ButtonBox["aZero",
+    ButtonData:>{"aZero", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " is implemented."
+}], "Text",
+  CellTags->"zero"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Quadrature formulas", "SubsectionIcon",
+  CellTags->"qf"],
+
+Cell[CellGroupData[{
+
+Cell["Interpolation formulas", "SubsubsectionIcon",
+  CellTags->"qf"],
+
+Cell["\<\
+Basic application of the orthogonal polynomials among others is the \
+approximation of the moment functional they are orthogonal to. Idea is as \
+follows, suppose we have to approximate some linear functional \[CapitalPsi]. \
+Usually finite weighted sum is used to approximate this linear functional \
+\>", "MathCaption",
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((f)\) = \[Sum]\_\(i = 1\)\%n\( w\_i\) 
+          f \((x\_i)\)\)\(,\)\)\)], "NumberedEquation",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "where ",
+  Cell[BoxData[
+      \(TraditionalForm\`w\_i\)]],
+  " are called weights, and points ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_i\)]],
+  " are called nodes of the approximation formula. For example, previous \
+approximation formula is used to approximate values of some definite \
+integral, since integral is the linear operator. Equation (13), when its used \
+to approximate integrals is called quadrature rule. In the past, usual choice \
+for the nodes are equidistant points in the interval of integration, and the \
+weights are chosen for the quadrature formula to have maximal algebraic \
+degree of the exactness. "
+}], "Text",
+  CellTags->"qf"],
+
+Cell["\<\
+Definition of the algebraic degree of exactness can be given as follows (see \
+[16], [1]).\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  StyleBox["Definition 1.",
+    FontWeight->"Bold"],
+  " Quadrature formula has algebraic degree of exactness n, if and only if \
+formula is exact for all polynomials with degree less then or equal to n, and \
+it is not exact for some polynomial of exact degree n+1."
+}], "DefinitionBox",
+  CellTags->"qf"],
+
+Cell["\<\
+Chosen this way, weights can be expressed as integrals of terms appearing in \
+the Lagrange interpolation polynomials (see [16]). Because of this property \
+of the weights formulas are said to be of the interpolation type.\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "If in interpolation type quadrature formulas nodes are chosen to be \
+equidistant interpolation formula is called Newton-Cotes quadrature formula. \
+These formulas have some of the weights negative. This has serious \
+implications on the questions of convergence of the sequence of quadrature \
+formulas to the value of the linear functional. There is one function \
+implemented in the package which returns interpolation formula with fixed \
+nodes that is function ",
+  ButtonBox["aFejerNodesWeights",
+    ButtonData:>{"aFejerNodesWeights", "fejer"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Gaussian quadrature rule", "SubsubsectionIcon",
+  CellTags->"qf"],
+
+Cell["\<\
+Further improvement of the quadrature formulas is increasing of the algebraic \
+degree of exactness. Since quadrature formula has 2n free constants maximal \
+algebraic degree of exactness is 2n-1. \
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  StyleBox["Definition 2. ",
+    FontWeight->"Bold"],
+  "Quadrature formulas which have maximal algebraic degree of exactness are \
+called Gaussian quadrature formulas."
+}], "DefinitionBox",
+  CellTags->"qf"],
+
+Cell["\<\
+It is proven that if linear functional \[CapitalPsi]  is definite then nodes \
+of the Gaussian quadrature rules are zeroes of the orthogonal polynomials \
+which are orthogonal with respect to the moment functional \[CapitalPsi]. And \
+weights still can be expressed as integrals in of terms appearing in the \
+Lagrange interpolation polynomial constructed over set of nodes, so Gaussian \
+quadrature formulas are of the interpolation type too.\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell["\<\
+According to the representation theorems we know that we can represent all \
+moment functionals as integrals with respect to some function of bounded \
+variation defined on the real line\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\[CapitalPsi] \((f)\) = \[Integral]\_R 
+          f \(\(\[DifferentialD]\[Phi]\)\(.\)\)\)], "NumberedEquation",
+  CellTags->"qf"],
+
+Cell["\<\
+Then Gaussian quadrature rule can be expressed with the following equation\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\[CapitalPsi] \((f)\) = \[Integral]\_R 
+            f \[DifferentialD]\[Phi] \[TildeTilde] \[Sum]\_\(i = 1\)\%n\( 
+                w\_i\) f \(\((x\_i)\)\(.\)\)\)], "NumberedEquation",
+  CellTags->"qf"],
+
+Cell["\<\
+When function \[Phi] is nondecreasing we know that all zeros of the \
+orthogonal polynomials are simple, real and lie in the interior of the closed \
+interval representing supporting set of the moment functional \[CapitalPsi]. \
+For positive definite moment functional we can state that nodes of the \
+Gaussian quadrature rule are in the in interval of integration. Even more, \
+for positive definite moment functional, we can  state that weights in the \
+Gaussian quadrature rule are all positive, this have strong implication on \
+convergence properties of the Gaussian quadrature rule. For, example, we can \
+state that if supporting interval of the moment functional is bounded then \
+Gaussian quadrature rule converging towards value of the moment functional in \
+any continuous function. \
+\>", "Text",
+  CellTags->"qf"],
+
+Cell["\<\
+Convergence properties of the Gaussian quadrature rule are closely related to \
+determination of the respective moment problem. If the moment functional is \
+not determined then quadrature rule can not be used for approximation of \
+integrals, because the extension of the integral on the wider set of \
+functions then the polynomials is not unique. In this point we have to \
+emphasize that for some functions it is not important for the extension to be \
+unique because for some functions value of integral is the same with respect \
+to all representations of the moment functional. Example, for previous are \
+integrals over bounded set, in which case using Bernstein approximation \
+theorems we can prove that continuous functions have same value of the \
+integral with respect to all representations.\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "Construction of the Guassian quadrature rule usually is done using QR \
+algorithm. QR algorithm, in general, can be used to solve eigensystem problem \
+for the class of symmetric tridiagonal matrix. However, it has been shown \
+that QR algorithm is ill conditioned when it is applied on the complex \
+tridiagonal symmetric matrices. We can state that evaluation of nodes for \
+Gaussian quadrature formula is stable for all classes of polynomials \
+supported except for classes ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  " . As it has been discussed in section ",
+  ButtonBox["Zeroes of orthogonal polynomials",
+    ButtonData:>{"Zeroes", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  StyleBox[" ",
+    FontSlant->"Italic"],
+  "for this classes of polynomials Pasquini's algorithm is used for \
+construction of nodes for Gaussian quadrature rule. Weights of Gaussian \
+quadrature rule can be constructed using eigenvectors of the tridiagonal \
+matrix (see [4], [7], [5]).  Construction of weights using QR algorithm is \
+not stable (see [15]). For purposes of weights construction other methods are \
+used in the package. This methods relying on the three term recurrence \
+relation for class of polynomials it satisfies. "
+}], "Text",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "Function which can be used for construction of Gaussian quadrature rule is \
+",
+  ButtonBox["aGaussianNodesWeights",
+    ButtonData:>{"aGussianNodesWeights", "gaussian"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which construct only nodes for Gausssian quadrature rule is ",
+  ButtonBox["aZero",
+    ButtonData:>{"aZero", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  ", function which construct only weights for Gaussian quadrature rule is ",
+  ButtonBox["aGaussianWeights",
+    ButtonData:>{"aGaussianWeights", "gaussianWeights"},
+    ButtonStyle->"AddOnsLink"],
+  ", construction can also be carried out by ",
+  ButtonBox["aNodesWeights",
+    ButtonData:>{"aNodesWeights", "nw"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Gauss-Radau and Gauss-Lobatto quadrature formulas", "SubsubsectionIcon",
+  CellTags->"qf"],
+
+Cell["\<\
+Gauss-Radau is quadrature rule with maximal algebraic degree of exactness \
+with one fixed node. Gauss-Lobatto quadrature rule is quadrature rule with \
+maximal algebraic degree of exactness with two fixed nodes.\
+\>", "MathCaption",
+  CellTags->"qf"],
+
+Cell["\<\
+Gauss-Radau quadrature rule can be expressed in the following equation\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((f)\) = \[Integral]\_R 
+            f \[DifferentialD]\[Mu] \[TildeTilde] \[Rho]f \((\[Zeta])\) + \
+\[Sum]\_\(i = 1\)\%\(n - 1\)\(w\_i\) 
+              f \((x\_i)\)\)\(,\)\(\ \)\)\)], "NumberedEquation",
+  CellTags->"qf"],
+
+Cell["\<\
+where \[Rho] is weight for the fixed node \[Zeta]. \
+\>", "Text",
+  CellTags->"qf"],
+
+Cell["\<\
+Gauss-Lobatto quadrature rule can be expressed in the following equation\
+\>", "Text",
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\(\(\[CapitalPsi] \((f)\) = \[Integral]\_R 
+            f \[DifferentialD]\[Mu] \[TildeTilde] \(\[Rho]\_1\) 
+            f \((\[Zeta]\_1)\) + \[Sum]\_\(i = 1\)\%\(n - 2\)\(w\_i\) 
+              f \((x\_i)\) + \(\[Rho]\_2\) 
+            f \((\[Zeta]\_2)\)\)\(,\)\)\)], "NumberedEquation",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "where ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_1\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_2\)]],
+  " are wights for the fixed nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Zeta]\_1\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Zeta]\_2\)]],
+  ", respectively. Problem of existence of Gauss-Radau quadrature formulae \
+can be expressed in the simple criterion. Gauss-Radau formula exists if \
+\[Zeta] is not zero of any orthogonal polynomial with degree less then or \
+equal to n-1, orthogonal with respect to measure \[Mu]. Questions of \
+existence of Gauss-Lobatto quadrature formulae is more complicated but it can \
+be stated that Gauss-Lobatto quadrature rule does not exists if ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Zeta]\_1\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Zeta]\_2\)]],
+  " are zeroes of the polynomials of degree less then or equal to n-2 for \
+sequence of polynomials orthogonal with respect to \[Mu]."
+}], "Text",
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "Functions which can be used for construction of Gauss-Radau quadrature \
+rule is ",
+  ButtonBox["aRadauNodesWeights",
+    ButtonData:>{"aRadauNodesWeights", "radau"},
+    ButtonStyle->"AddOnsLink"],
+  ", for Gauss-Lobatto quadrature rule it is function ",
+  ButtonBox["aLobattoNodesWeights",
+    ButtonData:>{"aLobattoNodesWeights", "lobatto"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function ",
+  ButtonBox["aNodesWeights",
+    ButtonData:>{"aNodesWeights", "nw"},
+    ButtonStyle->"AddOnsLink"],
+  " can also be used."
+}], "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Gauss-Kronrod quadrature rules", "SubsubsectionIcon",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell["\<\
+Gauss-Kronrod quadrature rule is quadrature rule constructed first time for \
+Legendre weight function by Kronrod. Gauss-Kronrod quadrature rule has n \
+fixed nodes and n+1 free nodes. Gauss-Kronrod quadrature rule is \
+interpolative quadrature rule. Algebraic degree of exactness is according to \
+previous at least 3n+1. Preassigned nodes in Gauss-Kronrod quadrature rule \
+are nodes for Gaussian quadrature rule. We can express Gauss-Kronrod \
+quadrature rule in the following way\
+\>", "MathCaption",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\[Integral]\_R\ 
+        f \[DifferentialD]\[Mu] = \[Sum]\_\(k = 1\)\%n\( w\_k\) 
+            f \((x\_k)\) + \[Sum]\_\(k = 1\)\%\(n + 1\)\(w\_\(n + k\)\) 
+            f \((y\_k)\) + \(R\_n\) \(\((f; \[Mu])\)\(.\)\)\)], \
+"NumberedEquation",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "Nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_k, \ k\  = 1, \[Ellipsis], \ n\)]],
+  ", are nodes for Gaussian quadrature rule with respect to measure \[Mu]. \
+Nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`y\_k, \ k = 1, \[Ellipsis], \ n + 1\)]],
+  ", are free nodes which have to be determined, from the condition that \
+quadrature rule has maximum degree of exactness, and ",
+  Cell[BoxData[
+      \(TraditionalForm\`w\_k, \ k = 1, \[Ellipsis], 2  n + 1\)]],
+  ", are weights of Gauss-Kronrod quadrature rule. Weights can be expressed \
+using Lagrange interpolation polynomial, so quadrature rule is of \
+interpolative type. Idea behind Gauss-Kronrod quadrature rule is the \
+following:\n1. in the first step we construct Gaussian quadrature rule with \
+respect to measure \[Mu], and we evaluate approximation of the integral, now \
+values of the function f in the nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_k, \ k\  = 1, \[Ellipsis], \ n\)]],
+  " have been calculated.\n2. in the second step Gauss-Kronrod quadrature \
+rule is constructed, since Gauss-Kronrod quadrature rule has among others \
+nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_k, \ k = 1  \[Ellipsis], \ n\)]],
+  " another evaluation of values f at these nodes is not needed.\n3. when \
+integral has been evaluated using Gauss-Kronrod quadrature rule, relative \
+error can be calculated for two approximations of the integral. If relative \
+error is bigger then requested steps 1., 2. and 3. are applied again with \
+bigger n. It is clear that new bigger n has to be at least (3n+1)/2, in order \
+to have formula with bigger algebraic degree of exactness."
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "There are many algorithms which can be used for construction of \
+Gauss-Kronrod quadrature rule, two of them are implemented in the package. \
+One is given in [9] and is called divide and conquer. Algorithm presented in \
+[9] can only be used for construction of Gauss-Kronrod quadrature rule for \
+positive definite moment functional under additional condition that all nodes \
+",
+  Cell[BoxData[
+      \(TraditionalForm\`y\_k, \ k = 1, \[Ellipsis], n + 1\)]],
+  ", are real. Question wether all free nodes in Gauss-Kronrod quadrature \
+rule are real is difficult one. For example it is shown that all free nodes \
+in Gauss-Kronrod quadrature rule constructed for Legendre measure are real. \
+This is important since practically all automatic integrators evaluate \
+integrals using Gauss-Kronrod quadrature rule constructed with respect to \
+Legendre measure. If algorithm is applied on the quasi definite measure or \
+for construction of Gauss-Kronrod rule for which free nodes are not real, \
+implemented function exits without construction. "
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "For quasi definite measure or when free nodes are not real another \
+algorithm can be used for construction. In [10], construction of \
+Gauss-Kronrod quadrature rule is performed by constructing tridiagonal Jacobi \
+matrix which zeroes are nodes of Gauss-Kronrod rule. Algorithm for \
+construction of tridiagonal matrix is called Laurie's algorithm. Once \
+tridiagonal Jacobi matrix is constructed we can use algorithms for \
+construction of Gaussian quadrature rule to construct Gauss-Kronrod \
+quadrature rule. One of the biggest disadvantages of this construction is \
+repeated construction of fixed nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_k, \ k = 1, \[Ellipsis], n\)]],
+  ", in Gauss-Kronrod quadrature rule. Laurie's algorithm can be used for \
+symbolic construction of the three term recurrence coefficients."
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "Function which can be used for construction of Gauss-Kronrod quadrature \
+rule is ",
+  ButtonBox["aKronrodNodesWeights",
+    ButtonData:>{"aKronrodNodesWeights", "kronrod"},
+    ButtonStyle->"AddOnsLink"],
+  ". Both algorithms, Lauries and devide and conquer, for construction are \
+implemented."
+}], "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generalized Gaussian quadrature rules", "SubsubsectionIcon",
+  CellTags->"qf"],
+
+Cell["\<\
+Generalized Gaussian quadrature rule is quadrature rule which includes \
+derivatives of the function, i.e. generalized quadrature rule is of the \
+following form\
+\>", "MathCaption",
+  CellTags->"qf"],
+
+Cell[BoxData[
+    RowBox[{\(\[Integral]\_R\ f \[DifferentialD]\[Mu]\), "=", 
+      RowBox[{\(\[Sum]\_\(\[Nu] = 1\)\%n\(\[Sum]\_\(i = 0\)\%\(2  \
+s\_\[Nu]\)\(A\_\(i, \[Nu]\)\) \(f\^\((i)\)\) \((\[Tau]\_\[Nu])\)\)\), "+", 
+        RowBox[{\(R\_n\), \((f, \[Sigma])\), Cell[
+          ""]}]}]}]], "NumberedEquation",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "where ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Tau]\_\[Nu], \ \[Nu] = 1, \[Ellipsis], n\)]],
+  " are nodes of the quadrature rule and coefficients ",
+  Cell[BoxData[
+      \(TraditionalForm\`A\_\(i, \[Nu]\), \ \[Nu] = 1, \[Ellipsis], n, \ 
+      i = 0, \[Ellipsis], 2\ s\_\[Nu], \)]],
+  " are weights of the quadrature rule. For the convenience with ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Sigma] = \((s\_1, \ s\_2, \ \[Ellipsis], \ 
+          s\_n)\)\)]],
+  " we denote a vector of derivatives which are involved with every node ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(\(\[Tau]\_\[Nu]\)\(.\)\)\)]],
+  " Coefficients ",
+  Cell[BoxData[
+      \(TraditionalForm\`A\_\(i, \[Nu]\)\ \ \[Nu] = 1, \[Ellipsis], n, \ 
+      i = 0, \[Ellipsis], \ 2\ s\_\[Nu], \)]],
+  "  can be calculated using Hermite interpolation polynomial, so quadrature \
+rule is of interpolation type. Since we can choose freely n nodes and ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Sum]\+\(\[Nu] = 1\)\%n 2\ s\_\[Nu] + 1\)]],
+  " weights it is clear that our quadrature rule has algebraic degree of \
+exactness at most ",
+  Cell[BoxData[
+      \(TraditionalForm\`2  n + 2 \(\[Sum]\+\(\[Nu] = 1\)\%n s\_\[Nu]\) - 
+        1. \)]],
+  " Quadrature rule of this type was for the first time considered by \
+Chakalov and Popoviciu. It can be proven that in the case measure \[Mu] is \
+positive definite nodes are unique and are distributed in the supporting set \
+of the measure \[Mu], for reference see [11] or [12]. Case when measure \[Mu] \
+is not definite has not been investigated yet. Unlike the case of Gaussian \
+quadrature rule when all weights were positive in the case of generalized \
+Gaussian quadrature rule some of the weight coefficients can be negative. \
+Case when all ",
+  Cell[BoxData[
+      \(TraditionalForm\`s\_\[Nu], \ \[Nu] = 1, \[Ellipsis], n, \)]],
+  " are equal is quadrature formula which has been first investigated by \
+Turan. In the case when all ",
+  Cell[BoxData[
+      \(TraditionalForm\`s\_\[Nu], \ \[Nu] = 1, \[Ellipsis], n, \)]],
+  " are equal it is common to denote them by simple s, in which case we are \
+talking about s-quadrature rule."
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell["\<\
+It was shown, for example see [11], that nodes of generalized Gaussian \
+quadrature rule for a given positive definite measure \[Mu] are uniquely \
+determined from following system of equations\
+\>", "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[BoxData[
+    \(\[Integral]\_R\ \[Product]\+\(\[Nu] = 1\)\%n\(\((t - \[Tau]\_\[Nu])\)\^\
+\(2  s\_\[Nu] + 1\)\) \(t\^k\) \[DifferentialD]\[Mu] = 0, \ k = 0, 
+    1, \ \[Ellipsis], n - 1, \)], "NumberedEquation",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "and that they lie in the support of measure \[Mu]. However, determination \
+of the nodes ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Tau]\_\[Nu], \ \[Nu] = 1, \[Ellipsis], n, \)]],
+  "is proved to be very hard task for general vector \[Sigma]. Construction \
+of nodes was discussed in several occasions by different authors. One way of \
+construction, for general \[Sigma],  is given in [12], which can be applied \
+on positive definite measures supported on the bounded interval. This method \
+of construction is implemented in the package in the functions ",
+  ButtonBox["aTuranNodes",
+    ButtonData:>{"aTuranNodes", "turanNodes"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aSigmaNodes",
+    ButtonData:>{"aSigmaNodes", "sigmaNodes"},
+    ButtonStyle->"AddOnsLink"],
+  ". There is another method of construction which can be applied to positive \
+definite measures supported on bounded or unbounded sets ",
+  "[14]",
+  ". This algorithm is faster then previous but can be used only for \
+construction of s-quadrature rules. Second algorithm is also implemented in \
+functions ",
+  ButtonBox["aTuranNodes",
+    ButtonData:>{"aTuranNodes", "turanNodes"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aSigmaNodes",
+    ButtonData:>{"aSigmaNodes", "sigmaNodes"},
+    ButtonStyle->"AddOnsLink"],
+  ". However, as it was mentioned second algorithm can be used only for \
+construction of generalized quadrature rule with all ",
+  Cell[BoxData[
+      \(TraditionalForm\`s\_\[Nu], \ \[Nu] = 1, \[Ellipsis], \ n, \)]],
+  " equal. "
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "However numerically stable construction of nodes is not solved yet. It \
+should be no surprise if functions for construction fail on some tasks. For \
+example it is impossible to construct ",
+  ButtonBox["Turan",
+    ButtonData:>{"aTuranNodes", "turanNodes"},
+    ButtonStyle->"AddOnsLink"],
+  " (",
+  ButtonBox["Sigma",
+    ButtonData:>{"aSigmaNodes", "sigmaNodes"},
+    ButtonStyle->"AddOnsLink"],
+  ") quadrature rule for ",
+  ButtonBox["Stieltjes-Wigert",
+    ButtonData:>{"aStieltjesWigert", "StieltjesWigert"},
+    ButtonStyle->"AddOnsLink"],
+  " class of orthogonal polynomials. Also for other classes of orthogonal \
+polynomials if parameter s is big enough (for 15 or more) it is going to be \
+very hard to calculate more then lets say 15 to 20 nodes."
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"],
+
+Cell[TextData[{
+  "Numerically stable construction of weights is solved. Algorithm which can \
+be used for stable construction is given in ",
+  "[13]",
+  " and this algorithm is also implemented in function ",
+  ButtonBox["aSigmaWeights",
+    ButtonData:>{"aSigmaWeights", "sigmaWeights"},
+    ButtonStyle->"AddOnsLink"],
+  ". There are also other functions which can be used for construction ",
+  ButtonBox["aTuranNodesWeights",
+    ButtonData:>{"aTuranNodesWeights", "turan"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aSigmaNodesWeights",
+    ButtonData:>{"aSigmaNodesWeights", "sigma"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellFrame->False,
+  CellTags->"qf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["References", "SubsectionIcon",
+  CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+
+Cell["\<\
+[1]  T. S. Chihara, An Introduction to Orthogonal Polynomials, Gordon and \
+Breach, New York, 1978.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[2] T. S. Chihara, The three term recurrence relation and spectral properties \
+of orthogonal polynomials, In Orthogonal polynomials, (P. Nevai ed.) Kluwer, \
+Dordrecho, 1990, pp. 99-114.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[3] J. Dombrowski, Orthogonal polynomials and functional analysis, In \
+Orthogonal Polynomials, (P. Nevai ed.) Kluwer, Dordrecho, 1990, pp. \
+147-191.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[4] W. Gautschi, Algorithm 726: ORTHPOL - A package of routines for \
+generating orthogonal polynomials and Gauss-type quadrature rules, ACM Trans. \
+Math. Soft., 20 (1994), 21-64.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[5] G.H. Golub, J.H. Welsch, Calculation of Gauss quadrature rule, Math. \
+Comput. v. 23 (1986),  221-230.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[6] L. Pasquini, Accurate computation of the zeroes of the generalised Bessel \
+polynomials, Numer. Math., 86 (2000), 507-538.\
+\>", "MathCaption"],
+
+Cell["\<\
+[7] G.V. Milovanovic, Numerical analisys I, Naucna knjiga, Beograd, 1991 (in \
+serbian).\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[8] G. Szego, Orthogonal polynomials, AMS, Colloquim publications v. 23, \
+1975.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[9] D. Calvetti, G.H. Golub, W.B. Gragg, L. Reichel, Computation of \
+Gauss-Kronrod quadrature rules, Math. Comp., v. 69 (2000), 1035-1052.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[10] D.P. Laurie, Calculation of Gauss-Kronrod quadrature rules, Math. Comp., \
+66 (1997), 1133-1145.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[11] A. Ghizzetti, A. Ossicini, Sull' esistenza e unicita delle formule di \
+quadratura gaussiance, Rend. Mat. 6(8) (1975) 1-15\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[12] G.V. Milovanovic, M.M. Spalevic, Quadrature formulae connected to \
+\[Sigma]-orthogonal polynomials, Journal of Computational and Applied \
+Mathematics, 140(2002), 619-637\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell[TextData[{
+  "[13]",
+  " ",
+  StyleBox["G.V. Milovanovic, M.M. Spalevic: Construction of \
+Chakalov-Popoviciu's type quadrature formulae, Rend. Circ. Mat. Palermo, \
+Serie II, Suppl. 52 (1998), 625-636.",
+    ShowCellBracket->True]
+}], "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell[TextData[{
+  "[14] ",
+  StyleBox["G.V. Milovanovic, M.M. Spalevic, A.S. Cvetkovic: Calculation of \
+Gaussian type quadratures with multiple nodes, Comput. Math. Appl. (to \
+appear).",
+    ShowCellBracket->True]
+}], "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell[TextData[{
+  "[15] ",
+  StyleBox["G.V. Milovanovic, A.S. Cvetkovic: Note on a Construction of \
+Weights in Gaussian quadrature rule, Facta Univ. Ser. Math. Inform. 15, \
+69-83, (2000)",
+    ShowCellBracket->True]
+}], "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[16] G.V. Milovanovic, Numerical analisys II, Naucna knjiga, Beograd, 1991 \
+(in serbian).\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+
+Cell["\<\
+[17] W. Gautschi, Minimal solutions of three-term recurrence relations and \
+orthogonal polynomials, Math. Comp. 36 (1981), 337-342.\
+\>", "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowCellTags->True,
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "mf"->{
+    Cell[2924, 84, 88, 1, 53, "SubsectionIcon",
+      CellTags->"mf"],
+    Cell[3015, 87, 689, 21, 72, "MathCaption",
+      CellTags->"mf"],
+    Cell[3707, 110, 851, 24, 107, "DefinitionBox",
+      CellTags->{"def1", "mf"}],
+    Cell[4561, 136, 309, 12, 39, InheritFromParent,
+      CellTags->{"norm", "mf"}],
+    Cell[4873, 150, 318, 11, 45, "NumberedEquation",
+      CellTags->{"norm", "mf"}],
+    Cell[5194, 163, 210, 7, 39, "Text",
+      CellTags->"mf"],
+    Cell[5407, 172, 226, 5, 39, "Text",
+      CellTags->"mf"],
+    Cell[5636, 179, 157, 3, 57, "NumberedEquation",
+      CellTags->{"eq1", "mf"}],
+    Cell[5796, 184, 762, 17, 100, "Text",
+      CellTags->"mf"],
+    Cell[6561, 203, 161, 3, 47, "NumberedEquation",
+      CellTags->{"eq2", "mf"}],
+    Cell[6725, 208, 400, 11, 56, "Text",
+      CellTags->"mf"],
+    Cell[7128, 221, 656, 20, 58, "Text",
+      CellTags->"mf"],
+    Cell[7787, 243, 174, 3, 58, "NumberedEquation",
+      CellTags->{"eq3", "mf"}],
+    Cell[7964, 248, 162, 4, 39, "Text",
+      CellTags->"mf"],
+    Cell[8129, 254, 608, 16, 90, "DefinitionBox",
+      CellTags->{"def2", "mf"}],
+    Cell[8740, 272, 288, 8, 39, "Text",
+      CellTags->"mf"],
+    Cell[9031, 282, 452, 11, 56, "Text",
+      CellTags->"mf"],
+    Cell[9486, 295, 254, 6, 39, "Text",
+      CellTags->"mf"],
+    Cell[9743, 303, 171, 3, 49, "NumberedEquation",
+      CellTags->{"eq4", "mf"}],
+    Cell[9917, 308, 316, 8, 39, "Text",
+      CellTags->"mf"],
+    Cell[10236, 318, 3128, 94, 124, "Text",
+      CellTags->"mf"],
+    Cell[13367, 414, 923, 26, 73, "Text",
+      CellTags->"mf"],
+    Cell[14293, 442, 632, 15, 75, "Text",
+      CellTags->"mf"],
+    Cell[14928, 459, 152, 3, 49, "NumberedEquation",
+      CellTags->"mf"],
+    Cell[15576, 478, 82, 1, 39, "SubsubsectionIcon",
+      CellTags->"mf"],
+    Cell[15661, 481, 303, 6, 62, "MathCaption",
+      CellTags->"mf"],
+    Cell[15967, 489, 137, 4, 39, "Text",
+      CellTags->"mf"],
+    Cell[16107, 495, 579, 11, 88, "Theorem",
+      CellTags->{"theorem1", "mf"}],
+    Cell[16689, 508, 230, 5, 39, "Text",
+      CellTags->"mf"],
+    Cell[16922, 515, 211, 6, 45, "MathCaption",
+      CellTags->"mf"],
+    Cell[17136, 523, 602, 14, 88, "Theorem",
+      CellTags->{"theorem2", "mf"}],
+    Cell[19224, 580, 85, 1, 39, "SubsubsectionIcon",
+      CellTags->"mf"],
+    Cell[19312, 583, 359, 7, 62, "MathCaption",
+      CellTags->"mf"],
+    Cell[19674, 592, 287, 6, 56, "Text",
+      CellTags->"mf"],
+    Cell[19964, 600, 530, 17, 56, "DefinitionBox",
+      CellTags->{"def3", "mf"}],
+    Cell[20497, 619, 289, 10, 39, "Text",
+      CellTags->"mf"],
+    Cell[20789, 631, 709, 21, 73, "DefinitionBox",
+      CellTags->{"def4", "mf"}],
+    Cell[21501, 654, 606, 10, 73, "Text",
+      CellTags->"mf"],
+    Cell[22110, 666, 274, 6, 56, "Text",
+      CellTags->"mf"],
+    Cell[22387, 674, 336, 7, 56, "DefinitionBox",
+      CellTags->{"def5", "mf"}],
+    Cell[22726, 683, 157, 4, 39, "Text",
+      CellTags->"mf"],
+    Cell[22886, 689, 238, 6, 45, "Theorem",
+      CellTags->{"theorem3", "mf"}],
+    Cell[23127, 697, 1240, 35, 73, "Text",
+      CellTags->"mf"],
+    Cell[24370, 734, 1402, 41, 73, "Text",
+      CellTags->"mf"],
+    Cell[25775, 777, 177, 4, 45, "MathCaption",
+      CellTags->"mf"],
+    Cell[25955, 783, 184, 4, 39, "Text",
+      CellTags->"mf"],
+    Cell[26142, 789, 547, 15, 63, "NumberedEquation",
+      CellTags->"mf"],
+    Cell[26692, 806, 279, 6, 39, "Text",
+      CellTags->"mf"],
+    Cell[26974, 814, 902, 22, 79, "MathCaption",
+      CellTags->"mf"],
+    Cell[27879, 838, 639, 13, 73, "Text",
+      CellTags->"mf"],
+    Cell[67303, 1898, 90, 1, 53, "SubsectionIcon",
+      CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+    Cell[67396, 1901, 184, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67583, 1907, 272, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67858, 1914, 235, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68096, 1921, 265, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68364, 1928, 191, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68718, 1939, 173, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68894, 1945, 165, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69062, 1951, 224, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69289, 1957, 186, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69478, 1963, 212, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69693, 1969, 261, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69957, 1976, 309, 8, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70269, 1986, 288, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70560, 1995, 290, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70853, 2004, 175, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[71031, 2010, 217, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]},
+  "def1"->{
+    Cell[3707, 110, 851, 24, 107, "DefinitionBox",
+      CellTags->{"def1", "mf"}]},
+  "norm"->{
+    Cell[4561, 136, 309, 12, 39, InheritFromParent,
+      CellTags->{"norm", "mf"}],
+    Cell[4873, 150, 318, 11, 45, "NumberedEquation",
+      CellTags->{"norm", "mf"}]},
+  "eq1"->{
+    Cell[5636, 179, 157, 3, 57, "NumberedEquation",
+      CellTags->{"eq1", "mf"}]},
+  "eq2"->{
+    Cell[6561, 203, 161, 3, 47, "NumberedEquation",
+      CellTags->{"eq2", "mf"}]},
+  "eq3"->{
+    Cell[7787, 243, 174, 3, 58, "NumberedEquation",
+      CellTags->{"eq3", "mf"}]},
+  "def2"->{
+    Cell[8129, 254, 608, 16, 90, "DefinitionBox",
+      CellTags->{"def2", "mf"}]},
+  "eq4"->{
+    Cell[9743, 303, 171, 3, 49, "NumberedEquation",
+      CellTags->{"eq4", "mf"}]},
+  "theorem1"->{
+    Cell[16107, 495, 579, 11, 88, "Theorem",
+      CellTags->{"theorem1", "mf"}]},
+  "theorem2"->{
+    Cell[17136, 523, 602, 14, 88, "Theorem",
+      CellTags->{"theorem2", "mf"}]},
+  "def3"->{
+    Cell[19964, 600, 530, 17, 56, "DefinitionBox",
+      CellTags->{"def3", "mf"}]},
+  "def4"->{
+    Cell[20789, 631, 709, 21, 73, "DefinitionBox",
+      CellTags->{"def4", "mf"}]},
+  "def5"->{
+    Cell[22387, 674, 336, 7, 56, "DefinitionBox",
+      CellTags->{"def5", "mf"}]},
+  "theorem3"->{
+    Cell[22886, 689, 238, 6, 45, "Theorem",
+      CellTags->{"theorem3", "mf"}]},
+  "TTR"->{
+    Cell[28567, 857, 75, 1, 53, "SubsectionIcon",
+      CellTags->"TTR"],
+    Cell[28645, 860, 147, 4, 39, "Text",
+      CellTags->"TTR"],
+    Cell[28795, 866, 1128, 31, 112, "Theorem",
+      CellTags->"TTR"],
+    Cell[29926, 899, 108, 3, 39, "Text",
+      CellTags->"TTR"],
+    Cell[30037, 904, 1109, 30, 112, "Theorem",
+      CellTags->"TTR"],
+    Cell[31149, 936, 419, 13, 39, "Text",
+      CellTags->"TTR"],
+    Cell[31571, 951, 1028, 25, 121, "Theorem",
+      CellTags->{"TTR", "ttrTheorem3"}],
+    Cell[32602, 978, 242, 8, 39, "Text",
+      CellTags->"TTR"],
+    Cell[32847, 988, 333, 9, 39, "Text",
+      CellTags->"TTR"],
+    Cell[33183, 999, 441, 8, 56, "Text",
+      CellTags->"TTR"],
+    Cell[33627, 1009, 219, 4, 58, "NumberedEquation",
+      CellTags->"TTR"],
+    Cell[33849, 1015, 200, 6, 39, "Text",
+      CellTags->"TTR"],
+    Cell[34052, 1023, 127, 3, 60, "NumberedEquation",
+      CellTags->"TTR"],
+    Cell[34182, 1028, 822, 21, 73, InheritFromParent,
+      CellTags->"TTR"],
+    Cell[35007, 1051, 133, 3, 60, "NumberedEquation",
+      CellTags->"TTR"],
+    Cell[35143, 1056, 749, 15, 73, "Text",
+      CellTags->"TTR"],
+    Cell[35895, 1073, 937, 19, 90, "Text",
+      CellTags->"TTR"],
+    Cell[36835, 1094, 988, 26, 73, "Text",
+      CellTags->"TTR"],
+    Cell[67303, 1898, 90, 1, 53, "SubsectionIcon",
+      CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+    Cell[67396, 1901, 184, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67583, 1907, 272, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67858, 1914, 235, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68096, 1921, 265, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68364, 1928, 191, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68718, 1939, 173, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68894, 1945, 165, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69062, 1951, 224, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69289, 1957, 186, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69478, 1963, 212, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69693, 1969, 261, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69957, 1976, 309, 8, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70269, 1986, 288, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70560, 1995, 290, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70853, 2004, 175, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[71031, 2010, 217, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]},
+  "ttrTheorem3"->{
+    Cell[31571, 951, 1028, 25, 121, "Theorem",
+      CellTags->{"TTR", "ttrTheorem3"}]},
+  "dEquation"->{
+    Cell[37860, 1125, 86, 1, 53, "SubsectionIcon",
+      CellTags->"dEquation"],
+    Cell[37949, 1128, 151, 4, 45, "MathCaption",
+      CellTags->"dEquation"],
+    Cell[67303, 1898, 90, 1, 53, "SubsectionIcon",
+      CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+    Cell[67396, 1901, 184, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67583, 1907, 272, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67858, 1914, 235, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68096, 1921, 265, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68364, 1928, 191, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68718, 1939, 173, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68894, 1945, 165, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69062, 1951, 224, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69289, 1957, 186, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69478, 1963, 212, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69693, 1969, 261, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69957, 1976, 309, 8, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70269, 1986, 288, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70560, 1995, 290, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70853, 2004, 175, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[71031, 2010, 217, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]},
+  "zero"->{
+    Cell[38137, 1137, 78, 1, 53, "SubsectionIcon",
+      CellTags->"zero"],
+    Cell[38218, 1140, 133, 4, 45, "MathCaption",
+      CellTags->"zero"],
+    Cell[38354, 1146, 1973, 51, 124, "Text",
+      CellTags->"zero"],
+    Cell[40330, 1199, 720, 17, 73, "Text",
+      CellTags->"zero"],
+    Cell[41053, 1218, 605, 11, 73, "Text",
+      CellTags->"zero"],
+    Cell[41661, 1231, 682, 15, 73, "Text",
+      CellTags->"zero"],
+    Cell[42346, 1248, 168, 3, 45, "NumberedEquation",
+      CellTags->"zero"],
+    Cell[42517, 1253, 691, 23, 56, "Text",
+      CellTags->"zero"],
+    Cell[43211, 1278, 150, 3, 60, "NumberedEquation",
+      CellTags->"zero"],
+    Cell[43364, 1283, 626, 15, 56, "Text",
+      CellTags->"zero"],
+    Cell[43993, 1300, 222, 7, 39, "Text",
+      CellTags->"zero"],
+    Cell[67303, 1898, 90, 1, 53, "SubsectionIcon",
+      CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+    Cell[67396, 1901, 184, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67583, 1907, 272, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67858, 1914, 235, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68096, 1921, 265, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68364, 1928, 191, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68718, 1939, 173, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68894, 1945, 165, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69062, 1951, 224, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69289, 1957, 186, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69478, 1963, 212, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69693, 1969, 261, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69957, 1976, 309, 8, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70269, 1986, 288, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70560, 1995, 290, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70853, 2004, 175, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[71031, 2010, 217, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]},
+  "qf"->{
+    Cell[44252, 1312, 63, 1, 53, "SubsectionIcon",
+      CellTags->"qf"],
+    Cell[44340, 1317, 69, 1, 39, "SubsubsectionIcon",
+      CellTags->"qf"],
+    Cell[44412, 1320, 349, 6, 62, "MathCaption",
+      CellTags->"qf"],
+    Cell[44764, 1328, 152, 3, 49, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[44919, 1333, 683, 15, 73, "Text",
+      CellTags->"qf"],
+    Cell[45605, 1350, 132, 4, 39, "Text",
+      CellTags->"qf"],
+    Cell[45740, 1356, 322, 7, 73, "DefinitionBox",
+      CellTags->"qf"],
+    Cell[46065, 1365, 264, 5, 56, "Text",
+      CellTags->"qf"],
+    Cell[46332, 1372, 638, 13, 73, "Text",
+      CellTags->"qf"],
+    Cell[47007, 1390, 71, 1, 39, "SubsubsectionIcon",
+      CellTags->"qf"],
+    Cell[47081, 1393, 239, 5, 39, "Text",
+      CellTags->"qf"],
+    Cell[47323, 1400, 224, 6, 56, "DefinitionBox",
+      CellTags->"qf"],
+    Cell[47550, 1408, 485, 8, 56, "Text",
+      CellTags->"qf"],
+    Cell[48038, 1418, 228, 5, 39, "Text",
+      CellTags->"qf"],
+    Cell[48269, 1425, 149, 3, 57, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[48421, 1430, 116, 3, 39, "Text",
+      CellTags->"qf"],
+    Cell[48540, 1435, 221, 4, 57, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[48764, 1441, 836, 13, 90, "Text",
+      CellTags->"qf"],
+    Cell[49603, 1456, 847, 13, 90, "Text",
+      CellTags->"qf"],
+    Cell[50453, 1471, 1432, 29, 124, "Text",
+      CellTags->"qf"],
+    Cell[51888, 1502, 771, 20, 56, "Text",
+      CellTags->"qf"],
+    Cell[52696, 1527, 96, 1, 39, "SubsubsectionIcon",
+      CellTags->"qf"],
+    Cell[52795, 1530, 261, 5, 62, "MathCaption",
+      CellTags->"qf"],
+    Cell[53059, 1537, 112, 3, 39, "Text",
+      CellTags->"qf"],
+    Cell[53174, 1542, 261, 5, 57, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[53438, 1549, 93, 3, 39, "Text",
+      CellTags->"qf"],
+    Cell[53534, 1554, 114, 3, 39, "Text",
+      CellTags->"qf"],
+    Cell[53651, 1559, 325, 6, 57, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[53979, 1567, 1048, 27, 73, "Text",
+      CellTags->"qf"],
+    Cell[55030, 1596, 567, 16, 56, "Text",
+      CellTags->"qf"],
+    Cell[55634, 1617, 97, 2, 39, "SubsubsectionIcon",
+      CellTags->"qf"],
+    Cell[55734, 1621, 552, 10, 79, "MathCaption",
+      CellTags->"qf"],
+    Cell[56289, 1633, 298, 7, 57, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[56590, 1642, 1719, 33, 182, "Text",
+      CellTags->"qf"],
+    Cell[58312, 1677, 1115, 19, 107, "Text",
+      CellTags->"qf"],
+    Cell[59430, 1698, 898, 16, 90, "Text",
+      CellTags->"qf"],
+    Cell[60331, 1716, 345, 9, 39, "Text",
+      CellTags->"qf"],
+    Cell[60713, 1730, 84, 1, 39, "SubsubsectionIcon",
+      CellTags->"qf"],
+    Cell[60800, 1733, 210, 5, 45, "MathCaption",
+      CellTags->"qf"],
+    Cell[61013, 1740, 351, 7, 57, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[61367, 1749, 2229, 46, 141, "Text",
+      CellTags->"qf"],
+    Cell[63599, 1797, 255, 6, 39, "Text",
+      CellTags->"qf"],
+    Cell[63857, 1805, 252, 5, 65, "NumberedEquation",
+      CellTags->"qf"],
+    Cell[64112, 1812, 1614, 37, 107, "Text",
+      CellTags->"qf"],
+    Cell[65729, 1851, 830, 20, 73, "Text",
+      CellTags->"qf"],
+    Cell[66562, 1873, 692, 19, 56, "Text",
+      CellTags->"qf"],
+    Cell[67303, 1898, 90, 1, 53, "SubsectionIcon",
+      CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+    Cell[67396, 1901, 184, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67583, 1907, 272, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[67858, 1914, 235, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68096, 1921, 265, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68364, 1928, 191, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68718, 1939, 173, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[68894, 1945, 165, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69062, 1951, 224, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69289, 1957, 186, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69478, 1963, 212, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69693, 1969, 261, 5, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[69957, 1976, 309, 8, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70269, 1986, 288, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70560, 1995, 290, 7, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[70853, 2004, 175, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+    Cell[71031, 2010, 217, 4, 45, "MathCaption",
+      CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"mf", 71921, 2035},
+  {"def1", 77351, 2170},
+  {"norm", 77448, 2173},
+  {"eq1", 77631, 2178},
+  {"eq2", 77727, 2181},
+  {"eq3", 77823, 2184},
+  {"def2", 77920, 2187},
+  {"eq4", 78015, 2190},
+  {"theorem1", 78116, 2193},
+  {"theorem2", 78215, 2196},
+  {"def3", 78310, 2199},
+  {"def4", 78407, 2202},
+  {"def5", 78504, 2205},
+  {"theorem3", 78604, 2208},
+  {"TTR", 78697, 2211},
+  {"ttrTheorem3", 81829, 2282},
+  {"dEquation", 81935, 2285},
+  {"zero", 83946, 2324},
+  {"qf", 86580, 2381}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 44, 0, 39, "Subsection"],
+
+Cell[CellGroupData[{
+Cell[1823, 55, 41, 0, 56, "Section"],
+Cell[1867, 57, 1032, 23, 92, "MathCaption"],
+
+Cell[CellGroupData[{
+Cell[2924, 84, 88, 1, 53, "SubsectionIcon",
+  CellTags->"mf"],
+Cell[3015, 87, 689, 21, 72, "MathCaption",
+  CellTags->"mf"],
+Cell[3707, 110, 851, 24, 107, "DefinitionBox",
+  CellTags->{"def1", "mf"}],
+Cell[4561, 136, 309, 12, 39, InheritFromParent,
+  CellTags->{"norm", "mf"}],
+Cell[4873, 150, 318, 11, 45, "NumberedEquation",
+  CellTags->{"norm", "mf"}],
+Cell[5194, 163, 210, 7, 39, "Text",
+  CellTags->"mf"],
+Cell[5407, 172, 226, 5, 39, "Text",
+  CellTags->"mf"],
+Cell[5636, 179, 157, 3, 57, "NumberedEquation",
+  CellTags->{"eq1", "mf"}],
+Cell[5796, 184, 762, 17, 100, "Text",
+  CellTags->"mf"],
+Cell[6561, 203, 161, 3, 47, "NumberedEquation",
+  CellTags->{"eq2", "mf"}],
+Cell[6725, 208, 400, 11, 56, "Text",
+  CellTags->"mf"],
+Cell[7128, 221, 656, 20, 58, "Text",
+  CellTags->"mf"],
+Cell[7787, 243, 174, 3, 58, "NumberedEquation",
+  CellTags->{"eq3", "mf"}],
+Cell[7964, 248, 162, 4, 39, "Text",
+  CellTags->"mf"],
+Cell[8129, 254, 608, 16, 90, "DefinitionBox",
+  CellTags->{"def2", "mf"}],
+Cell[8740, 272, 288, 8, 39, "Text",
+  CellTags->"mf"],
+Cell[9031, 282, 452, 11, 56, "Text",
+  CellTags->"mf"],
+Cell[9486, 295, 254, 6, 39, "Text",
+  CellTags->"mf"],
+Cell[9743, 303, 171, 3, 49, "NumberedEquation",
+  CellTags->{"eq4", "mf"}],
+Cell[9917, 308, 316, 8, 39, "Text",
+  CellTags->"mf"],
+Cell[10236, 318, 3128, 94, 124, "Text",
+  CellTags->"mf"],
+Cell[13367, 414, 923, 26, 73, "Text",
+  CellTags->"mf"],
+Cell[14293, 442, 632, 15, 75, "Text",
+  CellTags->"mf"],
+Cell[14928, 459, 152, 3, 49, "NumberedEquation",
+  CellTags->"mf"],
+Cell[15083, 464, 468, 10, 42, "Text"],
+
+Cell[CellGroupData[{
+Cell[15576, 478, 82, 1, 39, "SubsubsectionIcon",
+  CellTags->"mf"],
+Cell[15661, 481, 303, 6, 62, "MathCaption",
+  CellTags->"mf"],
+Cell[15967, 489, 137, 4, 39, "Text",
+  CellTags->"mf"],
+Cell[16107, 495, 579, 11, 88, "Theorem",
+  CellTags->{"theorem1", "mf"}],
+Cell[16689, 508, 230, 5, 39, "Text",
+  CellTags->"mf"],
+Cell[16922, 515, 211, 6, 45, "MathCaption",
+  CellTags->"mf"],
+Cell[17136, 523, 602, 14, 88, "Theorem",
+  CellTags->{"theorem2", "mf"}],
+Cell[17741, 539, 334, 6, 42, "Text"],
+Cell[18078, 547, 1109, 28, 59, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19224, 580, 85, 1, 39, "SubsubsectionIcon",
+  CellTags->"mf"],
+Cell[19312, 583, 359, 7, 62, "MathCaption",
+  CellTags->"mf"],
+Cell[19674, 592, 287, 6, 56, "Text",
+  CellTags->"mf"],
+Cell[19964, 600, 530, 17, 56, "DefinitionBox",
+  CellTags->{"def3", "mf"}],
+Cell[20497, 619, 289, 10, 39, "Text",
+  CellTags->"mf"],
+Cell[20789, 631, 709, 21, 73, "DefinitionBox",
+  CellTags->{"def4", "mf"}],
+Cell[21501, 654, 606, 10, 73, "Text",
+  CellTags->"mf"],
+Cell[22110, 666, 274, 6, 56, "Text",
+  CellTags->"mf"],
+Cell[22387, 674, 336, 7, 56, "DefinitionBox",
+  CellTags->{"def5", "mf"}],
+Cell[22726, 683, 157, 4, 39, "Text",
+  CellTags->"mf"],
+Cell[22886, 689, 238, 6, 45, "Theorem",
+  CellTags->{"theorem3", "mf"}],
+Cell[23127, 697, 1240, 35, 73, "Text",
+  CellTags->"mf"],
+Cell[24370, 734, 1402, 41, 73, "Text",
+  CellTags->"mf"],
+Cell[25775, 777, 177, 4, 45, "MathCaption",
+  CellTags->"mf"],
+Cell[25955, 783, 184, 4, 39, "Text",
+  CellTags->"mf"],
+Cell[26142, 789, 547, 15, 63, "NumberedEquation",
+  CellTags->"mf"],
+Cell[26692, 806, 279, 6, 39, "Text",
+  CellTags->"mf"],
+Cell[26974, 814, 902, 22, 79, "MathCaption",
+  CellTags->"mf"],
+Cell[27879, 838, 639, 13, 73, "Text",
+  CellTags->"mf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[28567, 857, 75, 1, 53, "SubsectionIcon",
+  CellTags->"TTR"],
+Cell[28645, 860, 147, 4, 39, "Text",
+  CellTags->"TTR"],
+Cell[28795, 866, 1128, 31, 112, "Theorem",
+  CellTags->"TTR"],
+Cell[29926, 899, 108, 3, 39, "Text",
+  CellTags->"TTR"],
+Cell[30037, 904, 1109, 30, 112, "Theorem",
+  CellTags->"TTR"],
+Cell[31149, 936, 419, 13, 39, "Text",
+  CellTags->"TTR"],
+Cell[31571, 951, 1028, 25, 121, "Theorem",
+  CellTags->{"TTR", "ttrTheorem3"}],
+Cell[32602, 978, 242, 8, 39, "Text",
+  CellTags->"TTR"],
+Cell[32847, 988, 333, 9, 39, "Text",
+  CellTags->"TTR"],
+Cell[33183, 999, 441, 8, 56, "Text",
+  CellTags->"TTR"],
+Cell[33627, 1009, 219, 4, 58, "NumberedEquation",
+  CellTags->"TTR"],
+Cell[33849, 1015, 200, 6, 39, "Text",
+  CellTags->"TTR"],
+Cell[34052, 1023, 127, 3, 60, "NumberedEquation",
+  CellTags->"TTR"],
+Cell[34182, 1028, 822, 21, 73, InheritFromParent,
+  CellTags->"TTR"],
+Cell[35007, 1051, 133, 3, 60, "NumberedEquation",
+  CellTags->"TTR"],
+Cell[35143, 1056, 749, 15, 73, "Text",
+  CellTags->"TTR"],
+Cell[35895, 1073, 937, 19, 90, "Text",
+  CellTags->"TTR"],
+Cell[36835, 1094, 988, 26, 73, "Text",
+  CellTags->"TTR"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[37860, 1125, 86, 1, 53, "SubsectionIcon",
+  CellTags->"dEquation"],
+Cell[37949, 1128, 151, 4, 45, "MathCaption",
+  CellTags->"dEquation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[38137, 1137, 78, 1, 53, "SubsectionIcon",
+  CellTags->"zero"],
+Cell[38218, 1140, 133, 4, 45, "MathCaption",
+  CellTags->"zero"],
+Cell[38354, 1146, 1973, 51, 124, "Text",
+  CellTags->"zero"],
+Cell[40330, 1199, 720, 17, 73, "Text",
+  CellTags->"zero"],
+Cell[41053, 1218, 605, 11, 73, "Text",
+  CellTags->"zero"],
+Cell[41661, 1231, 682, 15, 73, "Text",
+  CellTags->"zero"],
+Cell[42346, 1248, 168, 3, 45, "NumberedEquation",
+  CellTags->"zero"],
+Cell[42517, 1253, 691, 23, 56, "Text",
+  CellTags->"zero"],
+Cell[43211, 1278, 150, 3, 60, "NumberedEquation",
+  CellTags->"zero"],
+Cell[43364, 1283, 626, 15, 56, "Text",
+  CellTags->"zero"],
+Cell[43993, 1300, 222, 7, 39, "Text",
+  CellTags->"zero"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[44252, 1312, 63, 1, 53, "SubsectionIcon",
+  CellTags->"qf"],
+
+Cell[CellGroupData[{
+Cell[44340, 1317, 69, 1, 39, "SubsubsectionIcon",
+  CellTags->"qf"],
+Cell[44412, 1320, 349, 6, 62, "MathCaption",
+  CellTags->"qf"],
+Cell[44764, 1328, 152, 3, 49, "NumberedEquation",
+  CellTags->"qf"],
+Cell[44919, 1333, 683, 15, 73, "Text",
+  CellTags->"qf"],
+Cell[45605, 1350, 132, 4, 39, "Text",
+  CellTags->"qf"],
+Cell[45740, 1356, 322, 7, 73, "DefinitionBox",
+  CellTags->"qf"],
+Cell[46065, 1365, 264, 5, 56, "Text",
+  CellTags->"qf"],
+Cell[46332, 1372, 638, 13, 73, "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[47007, 1390, 71, 1, 39, "SubsubsectionIcon",
+  CellTags->"qf"],
+Cell[47081, 1393, 239, 5, 39, "Text",
+  CellTags->"qf"],
+Cell[47323, 1400, 224, 6, 56, "DefinitionBox",
+  CellTags->"qf"],
+Cell[47550, 1408, 485, 8, 56, "Text",
+  CellTags->"qf"],
+Cell[48038, 1418, 228, 5, 39, "Text",
+  CellTags->"qf"],
+Cell[48269, 1425, 149, 3, 57, "NumberedEquation",
+  CellTags->"qf"],
+Cell[48421, 1430, 116, 3, 39, "Text",
+  CellTags->"qf"],
+Cell[48540, 1435, 221, 4, 57, "NumberedEquation",
+  CellTags->"qf"],
+Cell[48764, 1441, 836, 13, 90, "Text",
+  CellTags->"qf"],
+Cell[49603, 1456, 847, 13, 90, "Text",
+  CellTags->"qf"],
+Cell[50453, 1471, 1432, 29, 124, "Text",
+  CellTags->"qf"],
+Cell[51888, 1502, 771, 20, 56, "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[52696, 1527, 96, 1, 39, "SubsubsectionIcon",
+  CellTags->"qf"],
+Cell[52795, 1530, 261, 5, 62, "MathCaption",
+  CellTags->"qf"],
+Cell[53059, 1537, 112, 3, 39, "Text",
+  CellTags->"qf"],
+Cell[53174, 1542, 261, 5, 57, "NumberedEquation",
+  CellTags->"qf"],
+Cell[53438, 1549, 93, 3, 39, "Text",
+  CellTags->"qf"],
+Cell[53534, 1554, 114, 3, 39, "Text",
+  CellTags->"qf"],
+Cell[53651, 1559, 325, 6, 57, "NumberedEquation",
+  CellTags->"qf"],
+Cell[53979, 1567, 1048, 27, 73, "Text",
+  CellTags->"qf"],
+Cell[55030, 1596, 567, 16, 56, "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[55634, 1617, 97, 2, 39, "SubsubsectionIcon",
+  CellTags->"qf"],
+Cell[55734, 1621, 552, 10, 79, "MathCaption",
+  CellTags->"qf"],
+Cell[56289, 1633, 298, 7, 57, "NumberedEquation",
+  CellTags->"qf"],
+Cell[56590, 1642, 1719, 33, 182, "Text",
+  CellTags->"qf"],
+Cell[58312, 1677, 1115, 19, 107, "Text",
+  CellTags->"qf"],
+Cell[59430, 1698, 898, 16, 90, "Text",
+  CellTags->"qf"],
+Cell[60331, 1716, 345, 9, 39, "Text",
+  CellTags->"qf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[60713, 1730, 84, 1, 39, "SubsubsectionIcon",
+  CellTags->"qf"],
+Cell[60800, 1733, 210, 5, 45, "MathCaption",
+  CellTags->"qf"],
+Cell[61013, 1740, 351, 7, 57, "NumberedEquation",
+  CellTags->"qf"],
+Cell[61367, 1749, 2229, 46, 141, "Text",
+  CellTags->"qf"],
+Cell[63599, 1797, 255, 6, 39, "Text",
+  CellTags->"qf"],
+Cell[63857, 1805, 252, 5, 65, "NumberedEquation",
+  CellTags->"qf"],
+Cell[64112, 1812, 1614, 37, 107, "Text",
+  CellTags->"qf"],
+Cell[65729, 1851, 830, 20, 73, "Text",
+  CellTags->"qf"],
+Cell[66562, 1873, 692, 19, 56, "Text",
+  CellTags->"qf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[67303, 1898, 90, 1, 53, "SubsectionIcon",
+  CellTags->{"qf", "mf", "dEquation", "TTR", "zero"}],
+Cell[67396, 1901, 184, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[67583, 1907, 272, 5, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[67858, 1914, 235, 5, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[68096, 1921, 265, 5, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[68364, 1928, 191, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[68558, 1934, 157, 3, 31, "MathCaption"],
+Cell[68718, 1939, 173, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[68894, 1945, 165, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[69062, 1951, 224, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[69289, 1957, 186, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[69478, 1963, 212, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[69693, 1969, 261, 5, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[69957, 1976, 309, 8, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[70269, 1986, 288, 7, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[70560, 1995, 290, 7, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[70853, 2004, 175, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}],
+Cell[71031, 2010, 217, 4, 45, "MathCaption",
+  CellTags->{"dEquation", "mf", "qf", "TTR", "zero"}]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

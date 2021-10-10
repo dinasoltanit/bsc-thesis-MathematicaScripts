@@ -1,0 +1,1893 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     46969,       1182]*)
+(*NotebookOutlinePosition[     68095,       1638]*)
+(*  CellTagsIndexPosition[     67851,       1627]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["OrthogonalPolynomials`TTRCoefficients`", "Subsection",
+  CellTags->"TTRCoefficients"],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"TTRCoefficients"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"TTRCoefficients"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`TTRCoefficients`aThreeTermRecurrence", \
+"Subsection",
+  CellTags->"TTR"],
+
+Cell["\<\
+Function aThreeTermRecurrence has different calling conventions, one of them \
+is\
+\>", "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aThreeTermRecurrence[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", 
+                  RowBox[{
+                    
+                    RowBox[{\(returns\ pure\ function\ which\ represents\ two\
+\), "-", \(element\ list\ of\ three\ term\ recurrence\ relation\ coefficients\
+\ for\ given\ class\ of\ orthogonal\ polynomials\ with\ key\), "-", 
+                      RowBox[{"word", " ", 
+                        StyleBox["clsKeyWord",
+                          "TI"], 
+                        StyleBox["\<\"\"\>",
+                          "\n\"TI\""]}]}], ",", " ", 
+                    RowBox[{
+                    "with", " ", "parameters", " ", "of", " ", "the", " ", 
+                      "class", " ", "set", " ", "to", " ", 
+                      StyleBox["\<\"\"\>",
+                        "\n\"TI\""], 
+                      StyleBox["prm1",
+                        "TI"], 
+                      StyleBox["\<\"\"\>",
+                        "\n\"TI\""]}], ",", " ", 
+                    RowBox[{
+                      StyleBox["\<\"\"\>",
+                        "\n\"\\n\\\"TI\\\"\""], 
+                      StyleBox["\<\"prm2\"\>",
+                        "\n\"TI\""], 
+                      StyleBox["\<\"\"\>",
+                        "\n\"\\n\\\"TI\\\"\""]}], ",", " ", 
+                    RowBox[{
+                      StyleBox["\[Ellipsis]",
+                        "TI"], 
+                      StyleBox["\<\"\"\>",
+                        "\n\"\\n\\\"TI\\\"\""], " ", "if", " ", "there", " ", 
+                      "is", " ", "any", " "}]}]}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"TTR"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"TTR"],
+
+Cell["\<\
+In the example, we use function aThreeTermRecurrence to get three term \
+recurrence relation coefficients\
+\>", "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\(aThreeTermRecurrence[aLegendre]\)[k]\)], "Input",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\(aThreeTermRecurrence[aLaguerre, s]\)[k]\)], "Input",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["Function has also another calling convention", "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aThreeTermRecurrence[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \\\
+\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients for class of orthogonal polynomials given \
+with list of moments \\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \
+\\\"TI\\\"]\\), last argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["Options which can be used with this convention are", "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation, if numerical calculation is perfromed"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine whether to apply numerical version \
+of algorithm or, if set to Symbolic, symbolic version of algorithm"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Extension\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine extension of set of integers used \
+in factorization"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"GaussianIntegers\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("used to determine whether to apply factorization over ring Z+i Z"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Trig\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine whether to apply factorization and \
+cancellation of factors over trigonometric polynomials"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "TTR"}],
+
+Cell[TextData[{
+  "In this format function applies ",
+  ButtonBox["Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " symbolical or numerical  ",
+  " version. Version depends on value of option ",
+  StyleBox["Algorithm",
+    FontSlant->"Italic"],
+  ". Number of three term recurrence relation coefficients returned are ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(\([\)\(n\/2\)\(]\)\)\)]],
+  ", where ",
+  Cell[BoxData[
+      \(TraditionalForm\`n\)]],
+  " is number of moments supplied."
+}], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["Another format of function can be also used", "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aThreeTermRecurrence[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \\\
+\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]Coef\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]Coef\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients for class of orthogonal polynomials given \
+with list of moments \\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \
+\\\"TI\\\"]\\), which are integral of another sequence of orthogonal \
+polynomials given with three term recurrence relation \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]Coef\\\\\\\"\\\", \\\"TP\\\"]\\) and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]Coef\\\\\\\"\\\", \\\"TP\\\"]\\), last \
+argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are \
+options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["Options which can be used with function in this format are", "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply numerical \
+version of algorithm or, if set to Symbolic, symbolic version of algorithm\>"\
+\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Extension\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine extension of set of integers used \
+in factorization"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"GaussianIntegers\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("\<used to determine whether to apply factorization over ring Z+i Z\>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Trig\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply factorization \
+and cancellation of factors over trigonometric polynomials\>"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "TTR"}],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aThreeTermRecurrence",
+    FontSlant->"Italic"],
+  " called in this way applies ",
+  ButtonBox["modified Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithmModified", "chebyshevAlgModified"},
+    ButtonStyle->"AddOnsLink"],
+  " in symbolical or numerical version.  Number of returned three term \
+recurrence coefficients in ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(\([\)\(n\/2\)\(]\)\)\)]],
+  " , if ",
+  Cell[BoxData[
+      \(TraditionalForm\`n\)]],
+  " moments are supplied."
+}], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["\<\
+Function aThreeTermRecurrence can be called in this way, also\
+\>", "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aThreeTermRecurrence[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) is number of \
+coefficients to be returned, and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \\\"TI\\\"]\\) and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \\\"TI\\\"]\\) are nodes and \
+weights of discretized measure to be applied in Stieltjes or Lanczos \
+algorithm, last argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell["Options which can be used with this calling convention are", "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Stieltjes\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("specifies wether to apply Stieltjes algorithm, \
+default, or Lanczos algorithm "\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Called this way function applies ",
+  ButtonBox["Stieltjes",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " or ",
+  ButtonBox["Lanczos",
+    ButtonData:>{"aLanczosAlgorithm", "lanczosAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " algorithm for construction of three term recurrence coefficients."
+}], "Text",
+  CellTags->{"TTR", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`TTRCoefficients`aChebyshevAlgorithm", "Subsection",
+  CellTags->"chebyshevAlg"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aChebyshevAlgorithm",
+    FontSlant->"Italic"],
+  " constructs three term recurrence coefficients from a list of given \
+moments."
+}], "MathCaption",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aChebyshevAlgorithm[\\\\\\\
+\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients for class of orthogonal polynomials given \
+with list of moments \\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \
+\\\"TI\\\"]\\), last argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell["Options which can be used with function are ", "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply numerical \
+version of algorithm or, if set to Symbolic, symbolic version of algorithm\>"\
+\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Extension\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine extension of set of integers used \
+in factorization"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"GaussianIntegers\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("\<used to determine whether to apply factorization over ring Z+i Z\>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Trig\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply factorization \
+and cancellation of factors over trigonometric polynomials\>"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"chebyshevAlg"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"chebyshevAlg"],
+
+Cell[TextData[{
+  "In this example, three term recurrence coefficients are constructed for \
+class of orthogonal polynomials with moments given by ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Mu]\_k = \(\(|\)\(B\_\(k + 2\)\)\(|\)\)\/\(k + \
+2\), \ k\ \[Epsilon]\ N\_0\)]],
+  ", where ",
+  Cell[BoxData[
+      \(TraditionalForm\`B\_k\)]],
+  " are Bernoulli numbers."
+}], "MathCaption",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[BoxData[
+    \(\(mom = 
+        Table[Abs[BernoulliB[k + 2]]/\((k + 2)\), {k, 0, 10}];\)\)], "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[BoxData[
+    \(aChebyshevAlgorithm[mom, Algorithm \[Rule] Symbolic]\)], "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[TextData[{
+  "Since, only first 11 moments are supplied, applied function returns only \
+first 5 three term recurrence coefficients. In general,  if  first ",
+  StyleBox["n",
+    FontSlant->"Italic"],
+  " moments are supplied first ",
+  Cell[BoxData[
+      \(TraditionalForm\`\([n/2]\)\)]],
+  " thee term recurrence coefficients will be returned."
+}], "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[TextData[{
+  "In this example, three term recurrence coefficients are constructed for \
+sum of Abel measure and singular measure  concentrated at point 1 with total \
+mass ",
+  StyleBox["x",
+    FontSlant->"Italic"],
+  "."
+}], "MathCaption",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[BoxData[
+    \(mom = aMoments[aAbel] /@ Range[0, 10] + x\)], "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[BoxData[
+    \(aChebyshevAlgorithm[mom, Algorithm \[Rule] Symbolic]\)], "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+
+Cell[TextData[{
+  "In this example, three term recurrence coefficients are constructed for \
+moments given with ",
+  StyleBox["Sin",
+    FontSlant->"Italic"],
+  " function."
+}], "MathCaption",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(mom = Table[Sin[k\ x], {k, 1, 10}]\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aChebyshevAlgorithm[mom, Algorithm \[Rule] Symbolic, 
+      Trig \[Rule] True]\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "As we can see three term recurrence coefficients can not be constructed, \
+i.e. moment functional associated with previous sequence of moments is not \
+definite. In general, for arbitrary sequence of moments Chebyshev algorithm \
+can not construct three term recurrence coefficients. Three term recurrence \
+coefficients can be constructed for some sequence of moments if the \
+associated moment functional is definite. Other options for function ",
+  StyleBox["aChebyshevAlgorithm",
+    FontSlant->"Italic"],
+  " are options which can be used for construction in symbolical form and \
+have the same meaning as they have for functions ",
+  StyleBox["Factor, Cancel, Together",
+    FontSlant->"Italic"],
+  "."
+}], "Text"],
+
+Cell["\<\
+Chebyshev algorithm is ill-conditioned in most of the cases. This means that \
+number of exact decimal digits in constructed three term recurrence \
+coefficients is smaller then it is in given moments. \
+\>", "MathCaption",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\(mom = N[aMoments[aLegendre] /@ Range[0, 30], 16];\)\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \({al16, be16} = aChebyshevAlgorithm[mom]\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell["\<\
+If the same procedure is repeated  but with  higher working precision, we get\
+\
+\>", "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\(mom = N[aMoments[aLegendre] /@ Range[0, 30], 34];\)\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \({al34, be34} = 
+      aChebyshevAlgorithm[mom, WorkingPrecision \[Rule] 34]\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell["\<\
+The biggest relative error in \[Beta] coefficients is \
+\>", "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(Max[Abs[be16 - be34]/be34]\)], "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "This relative error becomes bigger if we increase number of three term \
+recurrence coefficients to be returned. Chebyshev algorithm is used only if \
+there is no other way for construction of orthogonal polynomials, but \
+Chebyshev algorithm is extremely important in his symbolic version. Better \
+algorithms for numerical construction are ",
+  ButtonBox["modified Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithmModified", "chebyshevAlgModified"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["Stieltjes",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["Lanczos",
+    ButtonData:>{"aLanczosAlgorithm", "lanczosAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " algorithm"
+}], "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+OrthogonalPolynomials`TTRCoefficients`aChebyshevAlgorithmModified\
+\>", "Subsection",
+  CellTags->"chebyshevAlgModified"],
+
+Cell[TextData[{
+  "Function aChebyshevAlgorithmModified returns three term recurrence \
+coefficients for the class of orthogonal polynomials given with sequence of \
+modified moments ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Mu]\_k\)]],
+  ". Modified moments are integrals of another class of orthogonal \
+polynomials with respect measure which three term recurrence coefficients are \
+to be constructed. Assumption is that three term recurrence coefficients of \
+first class of orthogonal polynomials are known. Format of the function is \
+following"
+}], "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"\
+aChebyshevAlgorithmModified[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]Coef\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]Coef\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients for class of orthogonal polynomials given \
+with list of moments \\!\\(\\*StyleBox[\\\"\\\\\\\"moments\\\\\\\"\\\", \
+\\\"TI\\\"]\\), which are integral of another sequence of orthogonal \
+polynomials given with three term recurrence relation \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]Coef\\\\\\\"\\\", \\\"TP\\\"]\\) and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]Coef\\\\\\\"\\\", \\\"TP\\\"]\\), last \
+argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are \
+options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+
+Cell["Options which can be used are", "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Automatic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply numerical \
+version of algorithm or, if set to Symbolic, symbolic version of algorithm\>"\
+\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Extension\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"None\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine extension of set of integers used \
+in factorization"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"GaussianIntegers\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \
+\("\<used to determine whether to apply factorization over ring Z+i Z\>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Trig\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<used to determine whether to apply factorization \
+and cancellation of factors over trigonometric polynomials\>"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"chebyshevAlgModified"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"chebyshevAlgModified"],
+
+Cell["\<\
+We can construct symbolically three term recurrence coefficients for Legendre \
+measure with modified moments give for Chebyshev polynomials of the second \
+kind\
+\>", "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(mom = 
+      Integrate[
+        aChebyshevII[10, x, ReturnList \[Rule] True], {x, \(-1\), 
+          1}]\)], "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell["\<\
+Three term recurrence coefficients for Chebyshev polynomials of the second \
+kind are\
+\>", "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \({alfa, beta} = 
+      Transpose[
+        aThreeTermRecurrence[aChebyshevII] /@ Range[0, 10]]\)], "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "We can now call function with option ",
+  StyleBox["Algorithm",
+    FontSlant->"Italic"],
+  " set to ",
+  StyleBox["Symbolic",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aChebyshevAlgorithmModified[mom, alfa, beta, 
+      Algorithm \[Rule] Symbolic]\)], "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Other options for function ",
+  StyleBox["aChebyshevAlgorithmModified",
+    FontSlant->"Italic"],
+  " are used only for symbolic construction. Those options are the same as \
+options for functions ",
+  StyleBox["Factor, Together, Cancel",
+    FontSlant->"Italic"],
+  ", and they have the same meaning."
+}], "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Integrals of ",
+  ButtonBox["Chebyshev polynomials of the first kind",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  " with respect to ",
+  ButtonBox["Legendre measure",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  " are"
+}], "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(mom = 
+      Integrate[
+        aChebyshevI[10, x, ReturnList \[Rule] True], {x, \(-1\), 
+          1}]\)], "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Three term recurrence coefficients for ",
+  " ",
+  ButtonBox["Chebyshev polynomials of the first kind",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  " are"
+}], "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \({alCheb, beCheb} = 
+      Transpose[aThreeTermRecurrence[aChebyshevI] /@ Range[0, 10]]\)], "Input",\
+
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell["Now modified Chebyshev algorithm can be applied", "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aChebyshevAlgorithmModified[mom, alCheb, beCheb]\)], "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Modified Chebyshev algorithm has, for smart choice of known class of \
+orthogonal polynomials, better numerical stability then ",
+  ButtonBox["Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  ". It can not be expected that for any sequence of known orthogonal \
+polynomials modified Chebyshev algorithm will have good numerical \
+characteristics. We will also mention that if \[Alpha] and \[Beta] \
+coefficients of known orthogonal polynomials are set to zero, modified \
+Chebyshev algorithm becomes ",
+  ButtonBox["Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  ". Bed numerical characteristics of modified Chebyshev algorithm can be \
+overridden with bigger value for option ",
+  StyleBox["WorkingPrecision",
+    FontSlant->"Italic"],
+  ". Better numerical characteristics then modified Chebyshev algorithm has \
+",
+  ButtonBox["Stieltjes",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["Lanczos",
+    ButtonData:>{"aLanczosAlgorithm", "lanczosAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " algorithm."
+}], "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`TTRCoefficients`aStieltjesAlgorithm", "Subsection",
+  CellTags->"stieltjesAlg"],
+
+Cell["\<\
+Function aStieltjesAlgorithm can construct three term recurrence coefficients \
+using Stieltjes algorithm. Format of the function is following\
+\>", "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aStieltjesAlgorithm[\\\\\\\
+\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) is number of \
+coefficients to be returned, and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \\\"TI\\\"]\\) and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \\\"TI\\\"]\\) are nodes and \
+weights of discretized measure to be applied in Stieltjes algorithm, last \
+argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are \
+options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+
+Cell["Options which can be used with Stieltjes algorithm are", "Text",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"stieltjesAlg"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"stieltjesAlg"],
+
+Cell["\<\
+Stieltjes algorithm requires nodes and weights for some measure, for which \
+construction of nodes and weights can be done easy. We will give example of \
+construction three term recurrence using Stieltjes algorithm. Suppose we want \
+to construct three term recurrence coefficients for measure given by\
+\>", "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\[DifferentialD]\[Mu] \((x)\) = \(\[ExponentialE]\^\(-x\^2\)\/\@\(1 + x \
++ x\^2\)\) \[DifferentialD]x, \ 
+    x\[Epsilon] \(\((\(-\[Infinity]\), \[Infinity])\)\(.\)\)\)], "DisplayMath",\
+
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Using nodes and weights constructed for ",
+  ButtonBox["Hermite measure",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  " , in this case Hermite measure is used as discretization measure, we have \
+following calculations"
+}], "Text",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \({n, w} = 
+      aGaussianNodesWeights[500, {aHermite}, Precision \[Rule] 16]\)], "Input",\
+
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aStieltjesAlgorithm[20, n, w/Sqrt[1 + n + n^2]]\)], "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Basic problem in application of Stieltjes algorithm is very big number of \
+nodes and weights required. This is the price we have to pay for small number \
+of decimal digits of mantissa used in calculation. While Stieltjes algorithm \
+uses big number of nodes and weights in calculation ",
+  ButtonBox["Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["modified Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithmModified", "chebyshevAlgModified"},
+    ButtonStyle->"AddOnsLink"],
+  " use big number of decimal digits of mantissa in calculation, but once \
+nodes and weights for discretization measure are calculated three term \
+recurrence coefficients for a variety of measures can be easily constructed. \
+For example, after we calculated 500 nodes and weights for Hermite measure, \
+we can apply this nodes and weights to construct three term recurrence \
+coefficients for family of measures"
+}], "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\[DifferentialD]\[Mu] \((x)\) = \(\[ExponentialE]\^\(-x\^2\)\/\@\(1 + \
+\[Gamma]\ x + \[Delta]\ x\^2\)\) \[DifferentialD]x, \ 
+    x\[Epsilon] \(\((\(-\[Infinity]\), \[Infinity])\)\(.\)\)\)], "DisplayMath",\
+
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[TextData[{
+  "Where \[Gamma] and \[Delta] are chosen for expression under the root to be \
+positive. ",
+  ButtonBox["Lanczos algorithm",
+    ButtonData:>{"aLanczosAlgorithm", "lanczosAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " uses similar algorithm for construction of three term recurrence \
+coefficients, but it has better numerical stability then Stieltjes algorithm, \
+and, unfortunately, larger complexity."
+}], "Text",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell["\<\
+We will emphasize here that Stieltjes algorithm can construct only the same \
+number of three term recurrence coefficients as the given number of nodes and \
+weights.\
+\>", "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`TTRCoefficients`aLanczosAlgorithm", "Subsection",
+  CellTags->"lanczosAlg"],
+
+Cell["\<\
+Function aLanczosAlgorithm uses Lanczos algorithm to construct three term \
+recurrence coefficients. Format of the function is as follows.\
+\>", "MathCaption",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLanczosAlgorithm[\\\\\\\"\
+\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns list of two lists, first \[Alpha] and second \[Beta] \
+three term recurrence coefficients where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) is number of \
+coefficients to be returned, and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \\\"TI\\\"]\\) and \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \\\"TI\\\"]\\) are nodes and \
+weights of discretized measure to be applied in Lanczos algorithm, last \
+argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are \
+options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell["Options which can be used with Lanczos algorithm are", "Text",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"lanczosAlg"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"lanczosAlg"],
+
+Cell["\<\
+Lanczos algorithm requires nodes and weights for some measure, for which \
+construction of nodes and weights can be done easily. We will give example of \
+construction of the three term recurrence coefficients using Lanczos \
+algorithm. Suppose we want to construct three term recurrence coefficients \
+for measure given by\
+\>", "MathCaption",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell[BoxData[
+    \(\[DifferentialD]\[Mu] \((x)\) = \(\[ExponentialE]\^\(-x\)\/\(1 + \((x - \
+2)\)\^2\)\) \[DifferentialD]x, \ 
+    x\[Epsilon] \(\((0, \[Infinity])\)\(.\)\)\)], "DisplayMath",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell[TextData[{
+  "Using nodes and weights constructed for ",
+  ButtonBox["Laguerre measure",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  " , in this case Laguerre measure is used as discretization measure, we \
+have following calculations"
+}], "Text",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell[BoxData[
+    \({n, w} = 
+      aGaussianNodesWeights[500, {aLaguerre}, 
+        Precision \[Rule] 16]\)], "Input",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell[BoxData[
+    \(aLanczosAlgorithm[20, n, w/\((1 + \((n - 2)\)^2)\)]\)], "Input",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell[TextData[{
+  "Basic problem in application of Lanczos algorithm is very big number of \
+nodes and weights required. This is the price we have to pay for small number \
+of decimal digits of mantissa used in calculation. While Lanczos algorithm \
+uses big number of nodes and weights in calculation ",
+  ButtonBox["Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["modified Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithmModified", "chebyshevAlgModified"},
+    ButtonStyle->"AddOnsLink"],
+  " use big number of decimal digits of precision in calculation, but once \
+nodes and weights for discretization measure are calculated, three term \
+recurrence coefficients for a variety of measures can be easily constructed. \
+",
+  ButtonBox["Stieltjes algorithm",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " uses similar algorithm for construction, but has worse numerical \
+stability and has less complexity."
+}], "MathCaption",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+
+Cell["\<\
+We will emphasize here that Lanczos algorithm can construct only the same \
+number of three term recurrence coefficients as the given number of nodes and \
+weights.\
+\>", "MathCaption",
+  ShowCellBracket->True,
+  CellTags->{"TTRCoefficients", "lanczosAlg"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+As an example, three term recurrence coefficients will be constructed for the \
+sequence of orthogonal polynomials which has tenth member with zeores in \
+first ten natural numbers. We have a freedom in choosing weights. Suppose we \
+want weights to all the same and equal to 1. We have\
+\>", "MathCaption",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(n = Range[1, 10]; w = Table[1, {i, 1, 10}];\)], "Input",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aStieltjesAlgorithm[9, n, w]\)], "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aLanczosAlgorithm[9, n, w]\)], "Input",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}],
+
+Cell["If we change weights, we have", "Text",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(\(w = Table[i, {i, 1, 10}];\)\)], "Input",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aStieltjesAlgorithm[9, n, w]\)], "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+
+Cell[BoxData[
+    \(aLanczosAlgorithm[9, n, w]\)], "Input",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+CellGrouping->Manual,
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowCellBracket->True,
+ShowCellTags->True,
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "TTRCoefficients"->{
+    Cell[1776, 53, 91, 1, 53, "Subsection",
+      CellTags->"TTRCoefficients"],
+    Cell[1870, 56, 77, 1, 55, "MathCaption",
+      CellTags->"TTRCoefficients"],
+    Cell[1950, 59, 89, 2, 43, "Input",
+      CellTags->"TTRCoefficients"],
+    Cell[2180, 70, 152, 4, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[2335, 76, 2420, 51, 91, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[4902, 136, 176, 4, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5081, 142, 111, 2, 43, "Input",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5195, 146, 114, 2, 43, "Input",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5312, 150, 107, 1, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5422, 153, 994, 20, 73, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[6419, 175, 106, 1, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[6528, 178, 1933, 33, 271, "Text",
+      CellTags->{"TTRCoefficients", "TTR"}],
+    Cell[8464, 213, 604, 17, 60, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[9071, 232, 106, 1, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[9180, 235, 1522, 28, 91, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[10705, 265, 114, 1, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[10822, 268, 1908, 34, 271, "Text",
+      CellTags->{"TTRCoefficients", "TTR"}],
+    Cell[12733, 304, 585, 17, 60, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[13321, 323, 132, 3, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[13456, 328, 1450, 28, 91, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[14909, 358, 114, 1, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[15026, 361, 1048, 21, 131, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[16077, 384, 409, 11, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[16633, 403, 241, 7, 55, "MathCaption",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[16877, 412, 1002, 20, 73, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[17882, 434, 109, 1, 39, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[17994, 437, 1917, 34, 271, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20076, 480, 434, 11, 61, "MathCaption",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20513, 493, 155, 3, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20671, 498, 134, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20808, 502, 413, 10, 56, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21224, 514, 295, 8, 55, "MathCaption",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21522, 524, 123, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21648, 528, 134, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21785, 532, 241, 7, 55, "MathCaption",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[22029, 541, 116, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[22148, 545, 160, 3, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23053, 566, 282, 5, 72, "MathCaption",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23338, 573, 135, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23476, 577, 121, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23600, 581, 152, 4, 39, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23755, 587, 135, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23893, 591, 157, 3, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[24053, 596, 127, 3, 39, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[24183, 601, 108, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[24294, 605, 829, 19, 73, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[25294, 634, 631, 12, 89, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[25928, 648, 1548, 29, 91, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+    Cell[27479, 679, 102, 1, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[27584, 682, 1925, 34, 271, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+    Cell[29690, 725, 249, 5, 55, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[29942, 732, 194, 5, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30139, 739, 166, 4, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30308, 745, 182, 4, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30493, 751, 239, 8, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30735, 761, 169, 3, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30907, 766, 397, 10, 72, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[31307, 778, 383, 11, 55, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[31693, 791, 193, 5, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[31889, 798, 279, 8, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32171, 808, 178, 4, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32352, 814, 120, 1, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32475, 817, 138, 2, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32616, 821, 1291, 29, 106, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[34054, 858, 222, 4, 55, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[34279, 864, 1447, 28, 73, "Text",
+      CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+    Cell[35729, 894, 119, 1, 39, "Text",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[35851, 897, 788, 17, 91, "Text",
+      CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+    Cell[36804, 923, 383, 6, 72, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37190, 931, 257, 5, 68, "DisplayMath",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37450, 938, 330, 8, 39, "Text",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37783, 948, 160, 4, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37946, 954, 129, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[38078, 958, 1076, 19, 106, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[39157, 979, 277, 5, 69, "DisplayMath",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[39437, 986, 478, 10, 56, "Text",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[39918, 998, 246, 5, 55, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[40307, 1011, 216, 4, 55, "MathCaption",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}],
+    Cell[40526, 1017, 1441, 28, 73, "Text",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[41970, 1047, 115, 1, 39, "Text",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}],
+    Cell[42088, 1050, 786, 17, 91, "Text",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[43039, 1076, 401, 7, 72, "MathCaption",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[43443, 1085, 239, 4, 61, "DisplayMath",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[43685, 1091, 332, 8, 39, "Text",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[44020, 1101, 166, 4, 43, "Input",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[44189, 1107, 131, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[44323, 1111, 1118, 22, 106, "MathCaption",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[45444, 1135, 267, 6, 55, "MathCaption",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[45748, 1146, 380, 6, 72, "MathCaption",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46131, 1154, 139, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46273, 1158, 110, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[46386, 1162, 106, 2, 43, "Input",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}],
+    Cell[46495, 1166, 108, 1, 39, "Text",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46606, 1169, 125, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46734, 1173, 110, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[46847, 1177, 106, 2, 43, "Input",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}]},
+  "TTR"->{
+    Cell[2076, 66, 101, 2, 53, "Subsection",
+      CellTags->"TTR"],
+    Cell[2180, 70, 152, 4, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[2335, 76, 2420, 51, 91, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[4758, 129, 61, 1, 55, "MathCaption",
+      CellTags->"TTR"],
+    Cell[4822, 132, 77, 2, 43, "Input",
+      CellTags->"TTR"],
+    Cell[4902, 136, 176, 4, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5081, 142, 111, 2, 43, "Input",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5195, 146, 114, 2, 43, "Input",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5312, 150, 107, 1, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[5422, 153, 994, 20, 73, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[6419, 175, 106, 1, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[6528, 178, 1933, 33, 271, "Text",
+      CellTags->{"TTRCoefficients", "TTR"}],
+    Cell[8464, 213, 604, 17, 60, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[9071, 232, 106, 1, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[9180, 235, 1522, 28, 91, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[10705, 265, 114, 1, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[10822, 268, 1908, 34, 271, "Text",
+      CellTags->{"TTRCoefficients", "TTR"}],
+    Cell[12733, 304, 585, 17, 60, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[13321, 323, 132, 3, 55, "MathCaption",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[13456, 328, 1450, 28, 91, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[14909, 358, 114, 1, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[15026, 361, 1048, 21, 131, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}],
+    Cell[16077, 384, 409, 11, 39, "Text",
+      CellTags->{"TTR", "TTRCoefficients"}]},
+  "chebyshevAlg"->{
+    Cell[16523, 400, 107, 1, 53, "Subsection",
+      CellTags->"chebyshevAlg"],
+    Cell[16633, 403, 241, 7, 55, "MathCaption",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[16877, 412, 1002, 20, 73, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[17882, 434, 109, 1, 39, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[17994, 437, 1917, 34, 271, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[19914, 473, 70, 1, 55, "MathCaption",
+      CellTags->"chebyshevAlg"],
+    Cell[19987, 476, 86, 2, 43, "Input",
+      CellTags->"chebyshevAlg"],
+    Cell[20076, 480, 434, 11, 61, "MathCaption",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20513, 493, 155, 3, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20671, 498, 134, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[20808, 502, 413, 10, 56, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21224, 514, 295, 8, 55, "MathCaption",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21522, 524, 123, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21648, 528, 134, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+    Cell[21785, 532, 241, 7, 55, "MathCaption",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[22029, 541, 116, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[22148, 545, 160, 3, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23053, 566, 282, 5, 72, "MathCaption",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23338, 573, 135, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23476, 577, 121, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23600, 581, 152, 4, 39, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23755, 587, 135, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[23893, 591, 157, 3, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[24053, 596, 127, 3, 39, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[24183, 601, 108, 2, 43, "Input",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+    Cell[24294, 605, 829, 19, 73, "Text",
+      CellTags->{"chebyshevAlg", "TTRCoefficients"}]},
+  "chebyshevAlgModified"->{
+    Cell[25160, 629, 131, 3, 53, "Subsection",
+      CellTags->"chebyshevAlgModified"],
+    Cell[25294, 634, 631, 12, 89, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[25928, 648, 1548, 29, 91, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+    Cell[27479, 679, 102, 1, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[27584, 682, 1925, 34, 271, "Text",
+      CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+    Cell[29512, 718, 78, 1, 55, "MathCaption",
+      CellTags->"chebyshevAlgModified"],
+    Cell[29593, 721, 94, 2, 43, "Input",
+      CellTags->"chebyshevAlgModified"],
+    Cell[29690, 725, 249, 5, 55, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[29942, 732, 194, 5, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30139, 739, 166, 4, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30308, 745, 182, 4, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30493, 751, 239, 8, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30735, 761, 169, 3, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[30907, 766, 397, 10, 72, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[31307, 778, 383, 11, 55, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[31693, 791, 193, 5, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[31889, 798, 279, 8, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32171, 808, 178, 4, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32352, 814, 120, 1, 39, "Text",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32475, 817, 138, 2, 43, "Input",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+    Cell[32616, 821, 1291, 29, 106, "MathCaption",
+      CellTags->{"chebyshevAlgModified", "TTRCoefficients"}]},
+  "stieltjesAlg"->{
+    Cell[33944, 855, 107, 1, 53, "Subsection",
+      CellTags->"stieltjesAlg"],
+    Cell[34054, 858, 222, 4, 55, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[34279, 864, 1447, 28, 73, "Text",
+      CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+    Cell[35729, 894, 119, 1, 39, "Text",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[35851, 897, 788, 17, 91, "Text",
+      CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+    Cell[36642, 916, 70, 1, 55, "MathCaption",
+      CellTags->"stieltjesAlg"],
+    Cell[36715, 919, 86, 2, 43, "Input",
+      CellTags->"stieltjesAlg"],
+    Cell[36804, 923, 383, 6, 72, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37190, 931, 257, 5, 68, "DisplayMath",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37450, 938, 330, 8, 39, "Text",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37783, 948, 160, 4, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[37946, 954, 129, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[38078, 958, 1076, 19, 106, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[39157, 979, 277, 5, 69, "DisplayMath",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[39437, 986, 478, 10, 56, "Text",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[39918, 998, 246, 5, 55, "MathCaption",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[45748, 1146, 380, 6, 72, "MathCaption",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46131, 1154, 139, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46273, 1158, 110, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+    Cell[46495, 1166, 108, 1, 39, "Text",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46606, 1169, 125, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46734, 1173, 110, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "TTRCoefficients"}]},
+  "lanczosAlg"->{
+    Cell[40201, 1008, 103, 1, 53, "Subsection",
+      CellTags->"lanczosAlg"],
+    Cell[40307, 1011, 216, 4, 55, "MathCaption",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}],
+    Cell[40526, 1017, 1441, 28, 73, "Text",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[41970, 1047, 115, 1, 39, "Text",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}],
+    Cell[42088, 1050, 786, 17, 91, "Text",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[42877, 1069, 72, 1, 55, "MathCaption",
+      CellTags->"lanczosAlg"],
+    Cell[42952, 1072, 84, 2, 43, "Input",
+      CellTags->"lanczosAlg"],
+    Cell[43039, 1076, 401, 7, 72, "MathCaption",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[43443, 1085, 239, 4, 61, "DisplayMath",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[43685, 1091, 332, 8, 39, "Text",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[44020, 1101, 166, 4, 43, "Input",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[44189, 1107, 131, 2, 43, "Input",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[44323, 1111, 1118, 22, 106, "MathCaption",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[45444, 1135, 267, 6, 55, "MathCaption",
+      CellTags->{"TTRCoefficients", "lanczosAlg"}],
+    Cell[45748, 1146, 380, 6, 72, "MathCaption",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46131, 1154, 139, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46386, 1162, 106, 2, 43, "Input",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}],
+    Cell[46495, 1166, 108, 1, 39, "Text",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46606, 1169, 125, 2, 43, "Input",
+      CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+    Cell[46847, 1177, 106, 2, 43, "Input",
+      CellTags->{"lanczosAlg", "TTRCoefficients"}]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"TTRCoefficients", 47672, 1201},
+  {"TTR", 57023, 1394},
+  {"chebyshevAlg", 59009, 1441},
+  {"chebyshevAlgModified", 61511, 1494},
+  {"stieltjesAlg", 63696, 1537},
+  {"lanczosAlg", 65878, 1582}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 91, 1, 53, "Subsection",
+  CellTags->"TTRCoefficients"],
+Cell[1870, 56, 77, 1, 55, "MathCaption",
+  CellTags->"TTRCoefficients"],
+Cell[1950, 59, 89, 2, 43, "Input",
+  CellTags->"TTRCoefficients"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2076, 66, 101, 2, 53, "Subsection",
+  CellTags->"TTR"],
+Cell[2180, 70, 152, 4, 55, "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[2335, 76, 2420, 51, 91, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[4758, 129, 61, 1, 55, "MathCaption",
+  CellTags->"TTR"],
+Cell[4822, 132, 77, 2, 43, "Input",
+  CellTags->"TTR"],
+Cell[4902, 136, 176, 4, 55, "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[5081, 142, 111, 2, 43, "Input",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[5195, 146, 114, 2, 43, "Input",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[5312, 150, 107, 1, 55, "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[5422, 153, 994, 20, 73, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[6419, 175, 106, 1, 39, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[6528, 178, 1933, 33, 271, "Text",
+  CellTags->{"TTRCoefficients", "TTR"}],
+Cell[8464, 213, 604, 17, 60, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[9071, 232, 106, 1, 55, "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[9180, 235, 1522, 28, 91, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[10705, 265, 114, 1, 39, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[10822, 268, 1908, 34, 271, "Text",
+  CellTags->{"TTRCoefficients", "TTR"}],
+Cell[12733, 304, 585, 17, 60, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[13321, 323, 132, 3, 55, "MathCaption",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[13456, 328, 1450, 28, 91, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[14909, 358, 114, 1, 39, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[15026, 361, 1048, 21, 131, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}],
+Cell[16077, 384, 409, 11, 39, "Text",
+  CellTags->{"TTR", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16523, 400, 107, 1, 53, "Subsection",
+  CellTags->"chebyshevAlg"],
+Cell[16633, 403, 241, 7, 55, "MathCaption",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[16877, 412, 1002, 20, 73, "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[17882, 434, 109, 1, 39, "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[17994, 437, 1917, 34, 271, "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[19914, 473, 70, 1, 55, "MathCaption",
+  CellTags->"chebyshevAlg"],
+Cell[19987, 476, 86, 2, 43, "Input",
+  CellTags->"chebyshevAlg"],
+Cell[20076, 480, 434, 11, 61, "MathCaption",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[20513, 493, 155, 3, 43, "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[20671, 498, 134, 2, 43, "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[20808, 502, 413, 10, 56, "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[21224, 514, 295, 8, 55, "MathCaption",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[21522, 524, 123, 2, 43, "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[21648, 528, 134, 2, 43, "Input",
+  CellTags->{"TTRCoefficients", "chebyshevAlg"}],
+Cell[21785, 532, 241, 7, 55, "MathCaption",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[22029, 541, 116, 2, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[22148, 545, 160, 3, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[22311, 550, 739, 14, 76, "Text"],
+Cell[23053, 566, 282, 5, 72, "MathCaption",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[23338, 573, 135, 2, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[23476, 577, 121, 2, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[23600, 581, 152, 4, 39, "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[23755, 587, 135, 2, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[23893, 591, 157, 3, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[24053, 596, 127, 3, 39, "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[24183, 601, 108, 2, 43, "Input",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}],
+Cell[24294, 605, 829, 19, 73, "Text",
+  CellTags->{"chebyshevAlg", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[25160, 629, 131, 3, 53, "Subsection",
+  CellTags->"chebyshevAlgModified"],
+Cell[25294, 634, 631, 12, 89, "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[25928, 648, 1548, 29, 91, "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+Cell[27479, 679, 102, 1, 39, "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[27584, 682, 1925, 34, 271, "Text",
+  CellTags->{"TTRCoefficients", "chebyshevAlgModified"}],
+Cell[29512, 718, 78, 1, 55, "MathCaption",
+  CellTags->"chebyshevAlgModified"],
+Cell[29593, 721, 94, 2, 43, "Input",
+  CellTags->"chebyshevAlgModified"],
+Cell[29690, 725, 249, 5, 55, "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[29942, 732, 194, 5, 43, "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[30139, 739, 166, 4, 39, "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[30308, 745, 182, 4, 43, "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[30493, 751, 239, 8, 39, "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[30735, 761, 169, 3, 43, "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[30907, 766, 397, 10, 72, "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[31307, 778, 383, 11, 55, "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[31693, 791, 193, 5, 43, "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[31889, 798, 279, 8, 39, "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[32171, 808, 178, 4, 43, "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[32352, 814, 120, 1, 39, "Text",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[32475, 817, 138, 2, 43, "Input",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}],
+Cell[32616, 821, 1291, 29, 106, "MathCaption",
+  CellTags->{"chebyshevAlgModified", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[33944, 855, 107, 1, 53, "Subsection",
+  CellTags->"stieltjesAlg"],
+Cell[34054, 858, 222, 4, 55, "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[34279, 864, 1447, 28, 73, "Text",
+  CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+Cell[35729, 894, 119, 1, 39, "Text",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[35851, 897, 788, 17, 91, "Text",
+  CellTags->{"TTRCoefficients", "stieltjesAlg"}],
+Cell[36642, 916, 70, 1, 55, "MathCaption",
+  CellTags->"stieltjesAlg"],
+Cell[36715, 919, 86, 2, 43, "Input",
+  CellTags->"stieltjesAlg"],
+Cell[36804, 923, 383, 6, 72, "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[37190, 931, 257, 5, 68, "DisplayMath",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[37450, 938, 330, 8, 39, "Text",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[37783, 948, 160, 4, 43, "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[37946, 954, 129, 2, 43, "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[38078, 958, 1076, 19, 106, "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[39157, 979, 277, 5, 69, "DisplayMath",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[39437, 986, 478, 10, 56, "Text",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[39918, 998, 246, 5, 55, "MathCaption",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[40201, 1008, 103, 1, 53, "Subsection",
+  CellTags->"lanczosAlg"],
+Cell[40307, 1011, 216, 4, 55, "MathCaption",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}],
+Cell[40526, 1017, 1441, 28, 73, "Text",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[41970, 1047, 115, 1, 39, "Text",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}],
+Cell[42088, 1050, 786, 17, 91, "Text",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[42877, 1069, 72, 1, 55, "MathCaption",
+  CellTags->"lanczosAlg"],
+Cell[42952, 1072, 84, 2, 43, "Input",
+  CellTags->"lanczosAlg"],
+Cell[43039, 1076, 401, 7, 72, "MathCaption",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[43443, 1085, 239, 4, 61, "DisplayMath",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[43685, 1091, 332, 8, 39, "Text",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[44020, 1101, 166, 4, 43, "Input",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[44189, 1107, 131, 2, 43, "Input",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[44323, 1111, 1118, 22, 106, "MathCaption",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}],
+Cell[45444, 1135, 267, 6, 55, "MathCaption",
+  CellTags->{"TTRCoefficients", "lanczosAlg"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[45748, 1146, 380, 6, 72, "MathCaption",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+Cell[46131, 1154, 139, 2, 43, "Input",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+Cell[46273, 1158, 110, 2, 43, "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[46386, 1162, 106, 2, 43, "Input",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}],
+Cell[46495, 1166, 108, 1, 39, "Text",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+Cell[46606, 1169, 125, 2, 43, "Input",
+  CellTags->{"stieltjesAlg", "lanczosAlg", "TTRCoefficients"}],
+Cell[46734, 1173, 110, 2, 43, "Input",
+  CellTags->{"stieltjesAlg", "TTRCoefficients"}],
+Cell[46847, 1177, 106, 2, 43, "Input",
+  CellTags->{"lanczosAlg", "TTRCoefficients"}]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

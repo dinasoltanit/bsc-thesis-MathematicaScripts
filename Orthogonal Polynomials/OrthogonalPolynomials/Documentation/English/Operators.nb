@@ -1,0 +1,1741 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     40466,       1139]*)
+(*NotebookOutlinePosition[     54966,       1497]*)
+(*  CellTagsIndexPosition[     54590,       1481]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["OrthogonalPolynomials`Operators", "Section",
+  CellTags->"Operators"],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"Operators"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"Operators"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aWeight", "Subsection",
+  CellTags->"weight"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aWeight ",
+    FontSlant->"Italic"],
+  StyleBox["is used to retrieve weight function for given class of orthogonal \
+polynomials. Function ",
+    FontVariations->{"CompatibilityType"->0}],
+  StyleBox["aWeight",
+    FontSlant->"Italic"],
+  StyleBox[" will not return value for all supported classes of orthogonal \
+polynomials. Function will return a value only if class of polynomials is \
+orthogonal with respect to absolutely continuous measure.",
+    FontVariations->{"CompatibilityType"->0}]
+}], "MathCaption",
+  CellTags->{"weight", "Operators"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aWeight[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns pure function which represents weight function for the \
+given class of orthogonal polynomials with key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) 
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"weight", "Operators"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"weight"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"weight"],
+
+Cell["\<\
+For example, class of Legendre polynomials has absolutely continuous \
+measure\
+\>", "Text",
+  CellTags->{"weight", "Operators"}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(aWeight[aLegendre]\)[x]\)], "Input",
+  CellLabel->"In[2]:=",
+  CellTags->{"weight", "Operators"}],
+
+Cell[BoxData[
+    \(1\)], "Output",
+  CellLabel->"Out[2]="]
+}, Open  ]],
+
+Cell["but, class of Charlier polynomials has singular measure", "Text",
+  CellTags->{"weight", "Operators"}],
+
+Cell[BoxData[
+    \(\(aWeight[aCharlier, a]\)[x]\)], "Input",
+  CellLabel->"In[2]:=",
+  CellTags->{"weight", "Operators"}],
+
+Cell[TextData[{
+  "Classes of supported polynomials with absolutely continuous measures are:  \
+",
+  ButtonBox["aLegendre",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLaguerre",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLaguerreG",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aHermite",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aHermiteG",
+    ButtonData:>{"aHermiteG", "HermiteG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aGegenbauer",
+    ButtonData:>{"aGegenabuer", "Gegenabuer"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aGegenbauerG",
+    ButtonData:>{"aGegenabuerG", "GegenbauerG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aJacobi",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aChebyshevI",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aChebyshevII",
+    ButtonData:>{"aChebyshevII", "ChebyshevII"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLindelof",
+    ButtonData:>{"aLindelof", "Lindelof"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aAbel",
+    ButtonData:>{"aAbel", "Abel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aAssociatedLegendre",
+    ButtonData:>{"aAssociatedLegendre", "AssociatedLegendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aCarlitz",
+    ButtonData:>{"aCarlitz", "Carlitz"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLogistic",
+    ButtonData:>{"aLogistic", "Logistic"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aStieltjesWigert",
+    ButtonData:>{"aStieltjesWigert", "StieltjesWigert"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aGautschiMilovanovic",
+    ButtonData:>{"aGautschiMilovanovic", "GautschiMilovanovic"},
+    ButtonStyle->"AddOnsLink"],
+  ". Polynomials supported in the package with singular measure is ",
+  ButtonBox["aCharlier",
+    ButtonData:>{"aCharlier", "Charlier"},
+    ButtonStyle->"AddOnsLink"],
+  ". "
+}], "Text",
+  CellTags->{"weight", "Operators"}]
+}, Open  ]],
+
+Cell[TextData[{
+  "For classes of polynomials, which do not have absolutely continuous \
+measure, information about measure can be retrieved using function ",
+  ButtonBox["aSupport",
+    ButtonData:>{"aSupport", "support"},
+    ButtonStyle->"AddOnsLink"],
+  ". "
+}], "MathCaption"],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aNumerator", "Subsection",
+  CellTags->"numerator"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aNumerator ",
+    FontSlant->"Italic"],
+  "is used to retrieve numerator polynomial for some sequence of orthogonal \
+polynomials. All sequences of orthogonal polynomials have numerator \
+polynomial."
+}], "MathCaption",
+  CellTags->{"Operators", "numerator"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aNumerator[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"\
+\[Ellipsis]}\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\
+\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"num\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\"\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\" returns pure function \
+which represents numerator polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), with degree of \
+numeration \\!\\(\\*StyleBox[\\\"\\\\\\\"num\\\\\\\"\\\", \\\"TI\\\"]\\), for \
+given class of orthogonal polynomials with key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any, forth argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "numerator"}],
+
+Cell[TextData[{
+  "Options of function ",
+  StyleBox["aNumerator",
+    FontSlant->"Italic"],
+  " are "
+}], "Text",
+  CellTags->{"Operators", "numerator"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation. This option affects calculation only if argument of the \
+pure function is numeric."\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ReturnList\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("specifies wether to return only polynomial  of \
+requested degree or all polynomials of degree less then or equal to requested \
+degree"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "numerator"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"numerator"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"numerator"],
+
+Cell["\<\
+It is known that numerator polynomial of order k for Legendre polynomials is \
+associated Legendre polynomial with parameter \[Nu] set to k. Previous can be \
+illustrated in the following  example\
+\>", "Text",
+  CellTags->{"Operators", "numerator"}],
+
+Cell[BoxData[
+    \(Expand[\(aNumerator[3, {aLegendre}, 2, ReturnList \[Rule] True]\)[x] - 
+        aAssociatedLegendre[3, 2, x, ReturnList \[Rule] True]]\)], "Input",
+  CellLabel->"In[2]:=",
+  CellTags->{"Operators", "numerator"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aKernel", "Subsection",
+  CellTags->"kernel"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aKernel",
+    FontSlant->"Italic"],
+  " returns Kernel polynomial for given class of orthogonal polynomials."
+}], "MathCaption"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aKernel[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"\
+\[Ellipsis]}\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\
+\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"k\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\"\\\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\" returns pure function \
+which represents Kernel polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), taken at the \
+point \\!\\(\\*StyleBox[\\\"\\\\\\\"k\\\\\\\"\\\", \\\"TI\\\"]\\), for given \
+class of orthogonal polynomials with key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any, forth argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "kernel"}],
+
+Cell[TextData[{
+  "Options of function ",
+  StyleBox["aKernel",
+    FontSlant->"Italic"],
+  " are "
+}], "Text",
+  CellTags->{"Operators", "kernel"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation. This option affects calculation only if argument of the \
+pure function is numeric."\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Numerator\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"0\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("determines order of numeration of polynomial to be \
+returned"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "kernel"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"kernel"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"kernel"],
+
+Cell["\<\
+This returns kernel polynomial at point k for Legendre polynomial \
+\>", "Text",
+  CellTags->{"kernel", "Operators"}],
+
+Cell[BoxData[
+    \(Collect[\(aKernel[3, {aLegendre}, 2]\)[x], x]\)], "Input",
+  CellLabel->"In[10]:=",
+  CellTags->{"kernel", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aMoments", "Subsection",
+  CellTags->"moments"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aMoments",
+    FontSlant->"Italic"],
+  " returns moments for the given class of orthogonal polynomials. Sequence \
+of moments is defined as integral of  sequence of powers. Function has \
+following format."
+}], "MathCaption",
+  CellTags->{"moments", "Operators"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aMoments[\\\\\\\"\\\", \\\
+\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\
+\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"\
+\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns pure function which represents moments for given class \
+of orthogonal polynomials with key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "moments"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"moments"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"moments"],
+
+Cell["\<\
+We can get moments for generalized Laguerre polynomials in the following \
+manner\
+\>", "MathCaption",
+  CellTags->{"moments", "Operators"}],
+
+Cell[BoxData[
+    \(\(aMoments[aLaguerreG, s]\)[n]\)], "Input",
+  CellLabel->"In[14]:=",
+  CellTags->{"moments", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aSupport", "Subsection",
+  CellTags->"support"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aSupport",
+    FontSlant->"Italic"],
+  " returns information of supporting set for measures which are not \
+supported on the interval. Function ",
+  StyleBox["aSupport",
+    FontSlant->"Italic"],
+  " has the following format."
+}], "MathCaption",
+  CellTags->"support"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aSupport[\\\\\\\"\\\", \\\
+\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\
+\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"\
+\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns information about supporting set or set on which \
+polynomials are orthogonal for given class of orthogonal polynomials with \
+key-word \\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\), with parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any 
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "support"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"support"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"support"],
+
+Cell[TextData[{
+  "Class of Charlier polynomials has measure supported on set of all \
+nonnegative integers, in this case ",
+  StyleBox["aSupport",
+    FontSlant->"Italic"],
+  " is pure function"
+}], "MathCaption",
+  CellTags->{"support", "Operators"}],
+
+Cell[BoxData[
+    \(\(aSupport[aCharlier, a]\)[4.6]\)], "Input",
+  CellLabel->"In[28]:=",
+  CellTags->{"support", "Operators"}],
+
+Cell[TextData[{
+  "Information about supporting set is returned in form of message, and also \
+part of supporting set is returned if argument of function ",
+  StyleBox["aSupport",
+    FontSlant->"Italic"],
+  " is number. However, if argument of function is not number expression is \
+returned."
+}], "Text",
+  CellTags->{"support", "Operators"}],
+
+Cell[BoxData[
+    \(\(aSupport[aCharlier, a]\)[n]\)], "Input",
+  CellLabel->"In[26]:=",
+  CellTags->{"support", "Operators"}],
+
+Cell[TextData[{
+  "Information of this type is returned for class of polynomials  ",
+  ButtonBox["aCharlier",
+    ButtonData:>{"aCharlier", "Charlier"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->{"support", "Operators"}],
+
+Cell["\<\
+Classes of polynomials which are orthogonal to some subset of complex plane \
+return only message about set of orthogonality\
+\>", "MathCaption",
+  CellTags->{"support", "Operators"}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(aSupport[aGautschiMilovanovic, \[Lambda]]\)], "Input",
+  CellLabel->"In[29]:=",
+  CellTags->{"support", "Operators"}],
+
+Cell[BoxData[
+    \(aGautschiMilovanovic::"supp" \(\(:\)\(\ \)\) 
+      "Upper half of the unit circle."\)], "Message",
+  CellLabel->"From In[29]:=",
+  CellTags->{"support", "Operators"}]
+}, Open  ]],
+
+Cell[TextData[{
+  "This classes of polynomials are ",
+  ButtonBox["aBessel",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aBesselG",
+    ButtonData:>{"aBeselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["aGautschiMilovanovic",
+    ButtonData:>{"aGautschiNilovanovic", "GautschiMilovanovic"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->{"support", "Operators"}],
+
+Cell[TextData[{
+  "For classes of polynomials, orthogonal with respect to absolutely \
+continuous measures on some interval of real numbers, function ",
+  StyleBox["aSupport ",
+    FontSlant->"Italic"],
+  "is not supported",
+  StyleBox[". ",
+    FontSlant->"Italic"],
+  StyleBox["For this polynomial classes, function ",
+    FontVariations->{"CompatibilityType"->0}],
+  ButtonBox["aGetInterval",
+    ButtonData:>{"aGetInterval", "getInterval"},
+    ButtonStyle->"AddOnsLink"],
+  StyleBox[" returns interval of orthogonality.",
+    FontVariations->{"CompatibilityType"->0}]
+}], "MathCaption",
+  CellTags->{"support", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aGetInterval", "Subsection",
+  CellTags->"getInterval"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aGetInterval",
+    FontSlant->"Italic"],
+  " returns interval of orthogonality for given class of polynomials. \
+Function has following format."
+}], "MathCaption",
+  CellTags->{"getInterval", "Operators"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGetInterval[\\\\\\\"\\\",\
+ \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\\(\\*StyleBox[\\\"\\\\\\\"\
+\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns information about interval on which polynomials are \
+orthogonal for given class of orthogonal polynomials with key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\), with \
+parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any 
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "getInterval"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"getInterval"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"getInterval"],
+
+Cell["\<\
+For polynomials orthogonal on interval of real line function returns interval \
+of orthogonality\
+\>", "MathCaption",
+  CellTags->{"getInterval", "Operators"}],
+
+Cell[BoxData[
+    \(aGetInterval[aChebyshevI]\)], "Input",
+  CellLabel->"In[30]:=",
+  CellTags->{"getInterval", "Operators"}],
+
+Cell[TextData[{
+  "Classes of polynomials on which function ",
+  StyleBox["aGetInterval",
+    FontSlant->"Italic"],
+  " can be applied are:   ",
+  ButtonBox["aLegendre",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLaguerre",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLaguerreG",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aHermite",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aHermiteG",
+    ButtonData:>{"aHermiteG", "HermiteG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aGegenbauer",
+    ButtonData:>{"aGegenabuer", "Gegenabuer"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aGegenbauerG",
+    ButtonData:>{"aGegenabuerG", "GegenbauerG"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aJacobi",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aChebyshevI",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aChebyshevII",
+    ButtonData:>{"aChebyshevII", "ChebyshevII"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLindelof",
+    ButtonData:>{"aLindelof", "Lindelof"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aAbel",
+    ButtonData:>{"aAbel", "Abel"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aAssociatedLegendre",
+    ButtonData:>{"aAssociatedLegendre", "AssociatedLegendre"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aCarlitz",
+    ButtonData:>{"aCarlitz", "Carlitz"},
+    ButtonStyle->"AddOnsLink"],
+  ", ",
+  ButtonBox["aLogistic",
+    ButtonData:>{"aLogistic", "Logistic"},
+    ButtonStyle->"AddOnsLink"],
+  ", and ",
+  ButtonBox["aStieltjesWigert",
+    ButtonData:>{"aStieltjesWigert", "StieltjesWigert"},
+    ButtonStyle->"AddOnsLink"],
+  ". "
+}], "Text",
+  CellTags->{"getInterval", "Operators"}],
+
+Cell[TextData[{
+  "For other classes of orthogonal polynomials, which are not orthogonal on \
+an interval of real line, function ",
+  ButtonBox["aSupport",
+    ButtonData:>{"aSupport", "support"},
+    ButtonStyle->"AddOnsLink"],
+  " can be used to get set of orthogonality."
+}], "Text",
+  CellTags->{"getInterval", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aDistribution", "Subsection",
+  CellTags->"distribution"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aDistribution",
+    FontSlant->"Italic"],
+  " returns distribution function for orthogonal polynomials which are \
+orthogonal with respect to singular measure. Function has following format."
+}], "MathCaption",
+  CellTags->{"Operators", "distribution"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aDistribution[\\\\\\\"\\\"\
+, \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns information of distribution function representing \
+measure with respect to which polynomials are orthogonal for given class of \
+orthogonal polynomials with key-word \\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\
+\\\\\\\"\\\", \\\"TI\\\"]\\), with parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any 
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "distribution"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"distribution"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"distribution"],
+
+Cell[TextData[{
+  "Function aDistribution can be applied only on classes of polynomials which \
+are orthogonal with respect to singular measure, and there is only one class: \
+",
+  ButtonBox["aCharlier.",
+    ButtonData:>{"aCharlier", "Charlier"},
+    ButtonStyle->"AddOnsLink"],
+  "  In this case message is returned about measure of each one element set."
+}], "MathCaption",
+  CellTags->{"Operators", "distribution"}],
+
+Cell[BoxData[
+    \(\(aDistribution[aCharlier, a]\)[n]\)], "Input",
+  CellLabel->"In[39]:=",
+  CellTags->{"Operators", "distribution"}],
+
+Cell[TextData[{
+  "For classes of polynomials which have absolutely continuous measure, \
+function ",
+  ButtonBox["aWeight",
+    ButtonData:>{"aWeight", "weight"},
+    ButtonStyle->"AddOnsLink"],
+  " returns weight function."
+}], "MathCaption",
+  CellTags->{"Operators", "distribution"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aNorm", "Subsection",
+  CellTags->"norm"],
+
+Cell["\<\
+Function aNorm returns norm of specified class of orthogonal polynomials. \
+Function has following format.\
+\>", "MathCaption"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aNorm[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns pure function which represents norm for given class of \
+orthogonal polynomials with key-word \\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\
+\\\\\\\"\\\", \\\"TI\\\"]\\), with parameters of the class set to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "norm"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"norm"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"norm"],
+
+Cell[TextData[{
+  "All classes of orthogonal polynomials have norm. For example, this is norm \
+for class ",
+  StyleBox["aGautschiMilovanovic",
+    FontSlant->"Italic"]
+}], "MathCaption",
+  CellTags->{"norm", "Operators"}],
+
+Cell[BoxData[
+    \(\(aNorm[aGautschiMilovanovic, \[Lambda]]\)[n]\)], "Input",
+  CellLabel->"In[40]:=",
+  CellTags->{"norm", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aChangeInterval", "Subsection",
+  CellTags->"changeInterval"],
+
+Cell[TextData[{
+  "Function",
+  StyleBox[" aChangeInterval ",
+    FontSlant->"Italic"],
+  "changes interval for given quadrature rule. Function has following \
+format."
+}], "MathCaption",
+  CellTags->{"changeInterval", "Operators"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aChangeInterval[\\\\\\\"\\\
+\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{{leftOld\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"rightOld}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{leftNew\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"rightNew}}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" changes interval from \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"leftOld\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"rightOld\\\\\\\"\\\", \\\"TI\\\"]\\) to \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"leftNew\\\\\\\"\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"rightNew\\\\\\\"\\\", \\\"TI\\\"]\\), for the \
+quadrature rule given with nodes \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"nds\\\\\\\"\\\", \\\"TI\\\"]\\) and weights \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"wts\\\\\\\"\\\", \\\"TI\\\"]\\), last argument \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "changeInterval"}],
+
+Cell["Function have following options.", "Text"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "changeInterval"}],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"changeInterval"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"changeInterval"],
+
+Cell["\<\
+We can construct Gegenbauer quadrature rule and transform it to set of \
+nonnegative real numbers\
+\>", "MathCaption",
+  CellTags->{"changeInterval", "Operators"}],
+
+Cell[BoxData[
+    \(\({n, w} = aGaussianNodesWeights[2, {aGegenbauer, 4}];\)\)], "Input",
+  CellLabel->"In[17]:=",
+  CellTags->{"changeInterval", "Operators"}],
+
+Cell[BoxData[
+    \(aChangeInterval[n, w, {{\(-1\), 1}, {0, Infinity}}]\)], "Input",
+  CellLabel->"In[18]:=",
+  CellTags->{"changeInterval", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`Operators`aMakePolynomial", "Subsection",
+  CellTags->"makePolynomial"],
+
+Cell[TextData[{
+  "Function",
+  StyleBox[" aMakePolynomial",
+    FontSlant->"Italic"],
+  " constructs orthogonal polynomial from given sequences of three term \
+recurrence coefficients. Function has following format."
+}], "MathCaption",
+  CellTags->{"Operators", "makePolynomial"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aMakePolynomial[\\\\\\\"\\\
+\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\)\
+\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns polynomial of degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\
+\\\"\\\", \\\"TI\\\"]\\) constructed from sequences of three term recurrence \
+coefficients \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), in the point \\!\\(\\*StyleBox[\\\"\\\\\\\"x\\\\\\\"\\\", \
+\\\"TI\\\"]\\), last argument \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\) are options
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"Operators", "makePolynomial"}],
+
+Cell["Function has following options.", "Text",
+  CellTags->{"Operators", "makePolynomial"}],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", "\<\"used to set length of mantissa in calculation\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ReturnList\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine wether to return only polynomial \
+of specified degree, or list of all polynomials with degree less then or \
+equal to requested"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Numerator\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"0\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"determines order of numerator polynomial to be \
+returned\"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text"],
+
+Cell["This starts the package", "MathCaption",
+  CellTags->"makePolynomial"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"makePolynomial"],
+
+Cell["For sequences given by the following", "MathCaption",
+  CellTags->{"makePolynomial", "Operators"}],
+
+Cell[BoxData[
+    \(alpha = {0, 0, 0, 0, 0}; beta = {0, 0, 0, 0, 0};\)], "Input",
+  CellLabel->"In[22]:=",
+  CellTags->{"makePolynomial", "Operators"}],
+
+Cell["members of sequence of orthogonal polynomials are powers", "Text",
+  CellTags->{"makePolynomial", "Operators"}],
+
+Cell[BoxData[
+    \(aMakePolynomial[4, alpha, beta, x, ReturnList \[Rule] True]\)], "Input",\
+
+  CellLabel->"In[23]:=",
+  CellTags->{"makePolynomial", "Operators"}]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+CellGrouping->Manual,
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowCellBracket->True,
+ShowCellTags->True,
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Operators"->{
+    Cell[1776, 53, 75, 1, 70, "Section",
+      CellTags->"Operators"],
+    Cell[1854, 56, 71, 1, 55, "MathCaption",
+      CellTags->"Operators"],
+    Cell[1928, 59, 107, 3, 43, "Input",
+      CellTags->"Operators"],
+    Cell[2158, 70, 594, 14, 72, "MathCaption",
+      CellTags->{"weight", "Operators"}],
+    Cell[2755, 86, 1351, 26, 73, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[4287, 122, 139, 4, 39, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[4451, 130, 119, 3, 43, "Input",
+      CellTags->{"weight", "Operators"}],
+    Cell[4647, 140, 108, 1, 39, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[4758, 143, 122, 3, 43, "Input",
+      CellTags->{"weight", "Operators"}],
+    Cell[4883, 148, 2452, 84, 73, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[7748, 249, 302, 8, 55, "MathCaption",
+      CellTags->{"Operators", "numerator"}],
+    Cell[8053, 259, 1933, 34, 91, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[9989, 295, 154, 6, 39, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[10146, 303, 1186, 23, 169, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[11519, 336, 260, 5, 39, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[11782, 343, 231, 4, 43, "Input",
+      CellTags->{"Operators", "numerator"}],
+    Cell[12310, 362, 1913, 34, 91, "Text",
+      CellTags->{"Operators", "kernel"}],
+    Cell[14226, 398, 148, 6, 39, "Text",
+      CellTags->{"Operators", "kernel"}],
+    Cell[14377, 406, 1104, 22, 129, "Text",
+      CellTags->{"Operators", "kernel"}],
+    Cell[15662, 438, 127, 3, 39, "Text",
+      CellTags->{"kernel", "Operators"}],
+    Cell[15792, 443, 140, 3, 43, "Input",
+      CellTags->{"kernel", "Operators"}],
+    Cell[16057, 454, 306, 8, 55, "MathCaption",
+      CellTags->{"moments", "Operators"}],
+    Cell[16366, 464, 1358, 27, 73, "Text",
+      CellTags->{"Operators", "moments"}],
+    Cell[17907, 501, 150, 4, 55, "MathCaption",
+      CellTags->{"moments", "Operators"}],
+    Cell[18060, 507, 126, 3, 43, "Input",
+      CellTags->{"moments", "Operators"}],
+    Cell[18625, 530, 1396, 27, 73, "Text",
+      CellTags->{"Operators", "support"}],
+    Cell[20204, 567, 252, 7, 55, "MathCaption",
+      CellTags->{"support", "Operators"}],
+    Cell[20459, 576, 127, 3, 43, "Input",
+      CellTags->{"support", "Operators"}],
+    Cell[20589, 581, 344, 8, 56, "Text",
+      CellTags->{"support", "Operators"}],
+    Cell[20936, 591, 125, 3, 43, "Input",
+      CellTags->{"support", "Operators"}],
+    Cell[21064, 596, 240, 7, 39, "Text",
+      CellTags->{"support", "Operators"}],
+    Cell[21307, 605, 193, 4, 55, "MathCaption",
+      CellTags->{"support", "Operators"}],
+    Cell[21525, 613, 137, 3, 43, "Input",
+      CellTags->{"support", "Operators"}],
+    Cell[21665, 618, 187, 4, 34, "Message",
+      CellTags->{"support", "Operators"}],
+    Cell[21867, 625, 451, 15, 39, "Text",
+      CellTags->{"support", "Operators"}],
+    Cell[22321, 642, 629, 16, 72, "MathCaption",
+      CellTags->{"support", "Operators"}],
+    Cell[23083, 666, 248, 7, 55, "MathCaption",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[23334, 675, 1391, 27, 73, "Text",
+      CellTags->{"Operators", "getInterval"}],
+    Cell[24916, 712, 169, 4, 55, "MathCaption",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[25088, 718, 125, 3, 43, "Input",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[25216, 723, 1989, 70, 56, "Text",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[27208, 795, 328, 8, 39, "Text",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[27671, 811, 296, 7, 55, "MathCaption",
+      CellTags->{"Operators", "distribution"}],
+    Cell[27970, 820, 1437, 27, 73, "Text",
+      CellTags->{"Operators", "distribution"}],
+    Cell[29600, 857, 419, 9, 72, "MathCaption",
+      CellTags->{"Operators", "distribution"}],
+    Cell[30022, 868, 135, 3, 43, "Input",
+      CellTags->{"Operators", "distribution"}],
+    Cell[30160, 873, 287, 8, 55, "MathCaption",
+      CellTags->{"Operators", "distribution"}],
+    Cell[30706, 894, 1347, 26, 73, "Text",
+      CellTags->{"Operators", "norm"}],
+    Cell[32230, 930, 222, 6, 55, "MathCaption",
+      CellTags->{"norm", "Operators"}],
+    Cell[32455, 938, 138, 3, 43, "Input",
+      CellTags->{"norm", "Operators"}],
+    Cell[32732, 949, 232, 7, 55, "MathCaption",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[32967, 958, 1893, 34, 73, "Text",
+      CellTags->{"Operators", "changeInterval"}],
+    Cell[34914, 996, 784, 17, 91, "Text",
+      CellTags->{"Operators", "changeInterval"}],
+    Cell[35895, 1023, 173, 4, 55, "MathCaption",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[36071, 1029, 159, 3, 43, "Input",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[36233, 1034, 154, 3, 43, "Input",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[36526, 1045, 281, 7, 55, "MathCaption",
+      CellTags->{"Operators", "makePolynomial"}],
+    Cell[36810, 1054, 1514, 28, 73, "Text",
+      CellTags->{"Operators", "makePolynomial"}],
+    Cell[38327, 1084, 92, 1, 39, "Text",
+      CellTags->{"Operators", "makePolynomial"}],
+    Cell[39905, 1121, 104, 1, 55, "MathCaption",
+      CellTags->{"makePolynomial", "Operators"}],
+    Cell[40012, 1124, 151, 3, 43, "Input",
+      CellTags->{"makePolynomial", "Operators"}],
+    Cell[40166, 1129, 117, 1, 39, "Text",
+      CellTags->{"makePolynomial", "Operators"}],
+    Cell[40286, 1132, 164, 4, 43, "Input",
+      CellTags->{"makePolynomial", "Operators"}]},
+  "weight"->{
+    Cell[2072, 67, 83, 1, 53, "Subsection",
+      CellTags->"weight"],
+    Cell[2158, 70, 594, 14, 72, "MathCaption",
+      CellTags->{"weight", "Operators"}],
+    Cell[2755, 86, 1351, 26, 73, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[4109, 114, 68, 1, 55, "MathCaption",
+      CellTags->"weight"],
+    Cell[4180, 117, 104, 3, 43, "Input",
+      CellTags->"weight"],
+    Cell[4287, 122, 139, 4, 39, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[4451, 130, 119, 3, 43, "Input",
+      CellTags->{"weight", "Operators"}],
+    Cell[4647, 140, 108, 1, 39, "Text",
+      CellTags->{"weight", "Operators"}],
+    Cell[4758, 143, 122, 3, 43, "Input",
+      CellTags->{"weight", "Operators"}],
+    Cell[4883, 148, 2452, 84, 73, "Text",
+      CellTags->{"weight", "Operators"}]},
+  "numerator"->{
+    Cell[7656, 246, 89, 1, 53, "Subsection",
+      CellTags->"numerator"],
+    Cell[7748, 249, 302, 8, 55, "MathCaption",
+      CellTags->{"Operators", "numerator"}],
+    Cell[8053, 259, 1933, 34, 91, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[9989, 295, 154, 6, 39, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[10146, 303, 1186, 23, 169, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[11335, 328, 71, 1, 55, "MathCaption",
+      CellTags->"numerator"],
+    Cell[11409, 331, 107, 3, 43, "Input",
+      CellTags->"numerator"],
+    Cell[11519, 336, 260, 5, 39, "Text",
+      CellTags->{"Operators", "numerator"}],
+    Cell[11782, 343, 231, 4, 43, "Input",
+      CellTags->{"Operators", "numerator"}]},
+  "kernel"->{
+    Cell[12050, 352, 83, 1, 53, "Subsection",
+      CellTags->"kernel"],
+    Cell[12310, 362, 1913, 34, 91, "Text",
+      CellTags->{"Operators", "kernel"}],
+    Cell[14226, 398, 148, 6, 39, "Text",
+      CellTags->{"Operators", "kernel"}],
+    Cell[14377, 406, 1104, 22, 129, "Text",
+      CellTags->{"Operators", "kernel"}],
+    Cell[15484, 430, 68, 1, 55, "MathCaption",
+      CellTags->"kernel"],
+    Cell[15555, 433, 104, 3, 43, "Input",
+      CellTags->"kernel"],
+    Cell[15662, 438, 127, 3, 39, "Text",
+      CellTags->{"kernel", "Operators"}],
+    Cell[15792, 443, 140, 3, 43, "Input",
+      CellTags->{"kernel", "Operators"}]},
+  "moments"->{
+    Cell[15969, 451, 85, 1, 53, "Subsection",
+      CellTags->"moments"],
+    Cell[16057, 454, 306, 8, 55, "MathCaption",
+      CellTags->{"moments", "Operators"}],
+    Cell[16366, 464, 1358, 27, 73, "Text",
+      CellTags->{"Operators", "moments"}],
+    Cell[17727, 493, 69, 1, 55, "MathCaption",
+      CellTags->"moments"],
+    Cell[17799, 496, 105, 3, 43, "Input",
+      CellTags->"moments"],
+    Cell[17907, 501, 150, 4, 55, "MathCaption",
+      CellTags->{"moments", "Operators"}],
+    Cell[18060, 507, 126, 3, 43, "Input",
+      CellTags->{"moments", "Operators"}]},
+  "support"->{
+    Cell[18223, 515, 85, 1, 53, "Subsection",
+      CellTags->"support"],
+    Cell[18311, 518, 311, 10, 55, "MathCaption",
+      CellTags->"support"],
+    Cell[18625, 530, 1396, 27, 73, "Text",
+      CellTags->{"Operators", "support"}],
+    Cell[20024, 559, 69, 1, 55, "MathCaption",
+      CellTags->"support"],
+    Cell[20096, 562, 105, 3, 43, "Input",
+      CellTags->"support"],
+    Cell[20204, 567, 252, 7, 55, "MathCaption",
+      CellTags->{"support", "Operators"}],
+    Cell[20459, 576, 127, 3, 43, "Input",
+      CellTags->{"support", "Operators"}],
+    Cell[20589, 581, 344, 8, 56, "Text",
+      CellTags->{"support", "Operators"}],
+    Cell[20936, 591, 125, 3, 43, "Input",
+      CellTags->{"support", "Operators"}],
+    Cell[21064, 596, 240, 7, 39, "Text",
+      CellTags->{"support", "Operators"}],
+    Cell[21307, 605, 193, 4, 55, "MathCaption",
+      CellTags->{"support", "Operators"}],
+    Cell[21525, 613, 137, 3, 43, "Input",
+      CellTags->{"support", "Operators"}],
+    Cell[21665, 618, 187, 4, 34, "Message",
+      CellTags->{"support", "Operators"}],
+    Cell[21867, 625, 451, 15, 39, "Text",
+      CellTags->{"support", "Operators"}],
+    Cell[22321, 642, 629, 16, 72, "MathCaption",
+      CellTags->{"support", "Operators"}]},
+  "getInterval"->{
+    Cell[22987, 663, 93, 1, 53, "Subsection",
+      CellTags->"getInterval"],
+    Cell[23083, 666, 248, 7, 55, "MathCaption",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[23334, 675, 1391, 27, 73, "Text",
+      CellTags->{"Operators", "getInterval"}],
+    Cell[24728, 704, 73, 1, 55, "MathCaption",
+      CellTags->"getInterval"],
+    Cell[24804, 707, 109, 3, 43, "Input",
+      CellTags->"getInterval"],
+    Cell[24916, 712, 169, 4, 55, "MathCaption",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[25088, 718, 125, 3, 43, "Input",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[25216, 723, 1989, 70, 56, "Text",
+      CellTags->{"getInterval", "Operators"}],
+    Cell[27208, 795, 328, 8, 39, "Text",
+      CellTags->{"getInterval", "Operators"}]},
+  "distribution"->{
+    Cell[27573, 808, 95, 1, 53, "Subsection",
+      CellTags->"distribution"],
+    Cell[27671, 811, 296, 7, 55, "MathCaption",
+      CellTags->{"Operators", "distribution"}],
+    Cell[27970, 820, 1437, 27, 73, "Text",
+      CellTags->{"Operators", "distribution"}],
+    Cell[29410, 849, 74, 1, 55, "MathCaption",
+      CellTags->"distribution"],
+    Cell[29487, 852, 110, 3, 43, "Input",
+      CellTags->"distribution"],
+    Cell[29600, 857, 419, 9, 72, "MathCaption",
+      CellTags->{"Operators", "distribution"}],
+    Cell[30022, 868, 135, 3, 43, "Input",
+      CellTags->{"Operators", "distribution"}],
+    Cell[30160, 873, 287, 8, 55, "MathCaption",
+      CellTags->{"Operators", "distribution"}]},
+  "norm"->{
+    Cell[30484, 886, 79, 1, 53, "Subsection",
+      CellTags->"norm"],
+    Cell[30706, 894, 1347, 26, 73, "Text",
+      CellTags->{"Operators", "norm"}],
+    Cell[32056, 922, 66, 1, 55, "MathCaption",
+      CellTags->"norm"],
+    Cell[32125, 925, 102, 3, 43, "Input",
+      CellTags->"norm"],
+    Cell[32230, 930, 222, 6, 55, "MathCaption",
+      CellTags->{"norm", "Operators"}],
+    Cell[32455, 938, 138, 3, 43, "Input",
+      CellTags->{"norm", "Operators"}]},
+  "changeInterval"->{
+    Cell[32630, 946, 99, 1, 53, "Subsection",
+      CellTags->"changeInterval"],
+    Cell[32732, 949, 232, 7, 55, "MathCaption",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[32967, 958, 1893, 34, 73, "Text",
+      CellTags->{"Operators", "changeInterval"}],
+    Cell[34914, 996, 784, 17, 91, "Text",
+      CellTags->{"Operators", "changeInterval"}],
+    Cell[35701, 1015, 76, 1, 55, "MathCaption",
+      CellTags->"changeInterval"],
+    Cell[35780, 1018, 112, 3, 43, "Input",
+      CellTags->"changeInterval"],
+    Cell[35895, 1023, 173, 4, 55, "MathCaption",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[36071, 1029, 159, 3, 43, "Input",
+      CellTags->{"changeInterval", "Operators"}],
+    Cell[36233, 1034, 154, 3, 43, "Input",
+      CellTags->{"changeInterval", "Operators"}]},
+  "makePolynomial"->{
+    Cell[36424, 1042, 99, 1, 53, "Subsection",
+      CellTags->"makePolynomial"],
+    Cell[36526, 1045, 281, 7, 55, "MathCaption",
+      CellTags->{"Operators", "makePolynomial"}],
+    Cell[36810, 1054, 1514, 28, 73, "Text",
+      CellTags->{"Operators", "makePolynomial"}],
+    Cell[38327, 1084, 92, 1, 39, "Text",
+      CellTags->{"Operators", "makePolynomial"}],
+    Cell[39711, 1113, 76, 1, 55, "MathCaption",
+      CellTags->"makePolynomial"],
+    Cell[39790, 1116, 112, 3, 43, "Input",
+      CellTags->"makePolynomial"],
+    Cell[39905, 1121, 104, 1, 55, "MathCaption",
+      CellTags->{"makePolynomial", "Operators"}],
+    Cell[40012, 1124, 151, 3, 43, "Input",
+      CellTags->{"makePolynomial", "Operators"}],
+    Cell[40166, 1129, 117, 1, 39, "Text",
+      CellTags->{"makePolynomial", "Operators"}],
+    Cell[40286, 1132, 164, 4, 43, "Input",
+      CellTags->{"makePolynomial", "Operators"}]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Operators", 41163, 1158},
+  {"weight", 46733, 1285},
+  {"numerator", 47549, 1306},
+  {"kernel", 48314, 1325},
+  {"moments", 48967, 1342},
+  {"support", 49555, 1357},
+  {"getInterval", 50826, 1388},
+  {"distribution", 51625, 1407},
+  {"norm", 52341, 1424},
+  {"changeInterval", 52827, 1437},
+  {"makePolynomial", 53660, 1456}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 75, 1, 70, "Section",
+  CellTags->"Operators"],
+Cell[1854, 56, 71, 1, 55, "MathCaption",
+  CellTags->"Operators"],
+Cell[1928, 59, 107, 3, 43, "Input",
+  CellTags->"Operators"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2072, 67, 83, 1, 53, "Subsection",
+  CellTags->"weight"],
+Cell[2158, 70, 594, 14, 72, "MathCaption",
+  CellTags->{"weight", "Operators"}],
+Cell[2755, 86, 1351, 26, 73, "Text",
+  CellTags->{"weight", "Operators"}],
+Cell[4109, 114, 68, 1, 55, "MathCaption",
+  CellTags->"weight"],
+Cell[4180, 117, 104, 3, 43, "Input",
+  CellTags->"weight"],
+Cell[4287, 122, 139, 4, 39, "Text",
+  CellTags->{"weight", "Operators"}],
+
+Cell[CellGroupData[{
+Cell[4451, 130, 119, 3, 43, "Input",
+  CellTags->{"weight", "Operators"}],
+Cell[4573, 135, 59, 2, 27, "Output"]
+}, Open  ]],
+Cell[4647, 140, 108, 1, 39, "Text",
+  CellTags->{"weight", "Operators"}],
+Cell[4758, 143, 122, 3, 43, "Input",
+  CellTags->{"weight", "Operators"}],
+Cell[4883, 148, 2452, 84, 73, "Text",
+  CellTags->{"weight", "Operators"}]
+}, Open  ]],
+Cell[7350, 235, 281, 7, 41, "MathCaption"],
+
+Cell[CellGroupData[{
+Cell[7656, 246, 89, 1, 53, "Subsection",
+  CellTags->"numerator"],
+Cell[7748, 249, 302, 8, 55, "MathCaption",
+  CellTags->{"Operators", "numerator"}],
+Cell[8053, 259, 1933, 34, 91, "Text",
+  CellTags->{"Operators", "numerator"}],
+Cell[9989, 295, 154, 6, 39, "Text",
+  CellTags->{"Operators", "numerator"}],
+Cell[10146, 303, 1186, 23, 169, "Text",
+  CellTags->{"Operators", "numerator"}],
+Cell[11335, 328, 71, 1, 55, "MathCaption",
+  CellTags->"numerator"],
+Cell[11409, 331, 107, 3, 43, "Input",
+  CellTags->"numerator"],
+Cell[11519, 336, 260, 5, 39, "Text",
+  CellTags->{"Operators", "numerator"}],
+Cell[11782, 343, 231, 4, 43, "Input",
+  CellTags->{"Operators", "numerator"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12050, 352, 83, 1, 53, "Subsection",
+  CellTags->"kernel"],
+Cell[12136, 355, 171, 5, 41, "MathCaption"],
+Cell[12310, 362, 1913, 34, 91, "Text",
+  CellTags->{"Operators", "kernel"}],
+Cell[14226, 398, 148, 6, 39, "Text",
+  CellTags->{"Operators", "kernel"}],
+Cell[14377, 406, 1104, 22, 129, "Text",
+  CellTags->{"Operators", "kernel"}],
+Cell[15484, 430, 68, 1, 55, "MathCaption",
+  CellTags->"kernel"],
+Cell[15555, 433, 104, 3, 43, "Input",
+  CellTags->"kernel"],
+Cell[15662, 438, 127, 3, 39, "Text",
+  CellTags->{"kernel", "Operators"}],
+Cell[15792, 443, 140, 3, 43, "Input",
+  CellTags->{"kernel", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[15969, 451, 85, 1, 53, "Subsection",
+  CellTags->"moments"],
+Cell[16057, 454, 306, 8, 55, "MathCaption",
+  CellTags->{"moments", "Operators"}],
+Cell[16366, 464, 1358, 27, 73, "Text",
+  CellTags->{"Operators", "moments"}],
+Cell[17727, 493, 69, 1, 55, "MathCaption",
+  CellTags->"moments"],
+Cell[17799, 496, 105, 3, 43, "Input",
+  CellTags->"moments"],
+Cell[17907, 501, 150, 4, 55, "MathCaption",
+  CellTags->{"moments", "Operators"}],
+Cell[18060, 507, 126, 3, 43, "Input",
+  CellTags->{"moments", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[18223, 515, 85, 1, 53, "Subsection",
+  CellTags->"support"],
+Cell[18311, 518, 311, 10, 55, "MathCaption",
+  CellTags->"support"],
+Cell[18625, 530, 1396, 27, 73, "Text",
+  CellTags->{"Operators", "support"}],
+Cell[20024, 559, 69, 1, 55, "MathCaption",
+  CellTags->"support"],
+Cell[20096, 562, 105, 3, 43, "Input",
+  CellTags->"support"],
+Cell[20204, 567, 252, 7, 55, "MathCaption",
+  CellTags->{"support", "Operators"}],
+Cell[20459, 576, 127, 3, 43, "Input",
+  CellTags->{"support", "Operators"}],
+Cell[20589, 581, 344, 8, 56, "Text",
+  CellTags->{"support", "Operators"}],
+Cell[20936, 591, 125, 3, 43, "Input",
+  CellTags->{"support", "Operators"}],
+Cell[21064, 596, 240, 7, 39, "Text",
+  CellTags->{"support", "Operators"}],
+Cell[21307, 605, 193, 4, 55, "MathCaption",
+  CellTags->{"support", "Operators"}],
+
+Cell[CellGroupData[{
+Cell[21525, 613, 137, 3, 43, "Input",
+  CellTags->{"support", "Operators"}],
+Cell[21665, 618, 187, 4, 34, "Message",
+  CellTags->{"support", "Operators"}]
+}, Open  ]],
+Cell[21867, 625, 451, 15, 39, "Text",
+  CellTags->{"support", "Operators"}],
+Cell[22321, 642, 629, 16, 72, "MathCaption",
+  CellTags->{"support", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[22987, 663, 93, 1, 53, "Subsection",
+  CellTags->"getInterval"],
+Cell[23083, 666, 248, 7, 55, "MathCaption",
+  CellTags->{"getInterval", "Operators"}],
+Cell[23334, 675, 1391, 27, 73, "Text",
+  CellTags->{"Operators", "getInterval"}],
+Cell[24728, 704, 73, 1, 55, "MathCaption",
+  CellTags->"getInterval"],
+Cell[24804, 707, 109, 3, 43, "Input",
+  CellTags->"getInterval"],
+Cell[24916, 712, 169, 4, 55, "MathCaption",
+  CellTags->{"getInterval", "Operators"}],
+Cell[25088, 718, 125, 3, 43, "Input",
+  CellTags->{"getInterval", "Operators"}],
+Cell[25216, 723, 1989, 70, 56, "Text",
+  CellTags->{"getInterval", "Operators"}],
+Cell[27208, 795, 328, 8, 39, "Text",
+  CellTags->{"getInterval", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[27573, 808, 95, 1, 53, "Subsection",
+  CellTags->"distribution"],
+Cell[27671, 811, 296, 7, 55, "MathCaption",
+  CellTags->{"Operators", "distribution"}],
+Cell[27970, 820, 1437, 27, 73, "Text",
+  CellTags->{"Operators", "distribution"}],
+Cell[29410, 849, 74, 1, 55, "MathCaption",
+  CellTags->"distribution"],
+Cell[29487, 852, 110, 3, 43, "Input",
+  CellTags->"distribution"],
+Cell[29600, 857, 419, 9, 72, "MathCaption",
+  CellTags->{"Operators", "distribution"}],
+Cell[30022, 868, 135, 3, 43, "Input",
+  CellTags->{"Operators", "distribution"}],
+Cell[30160, 873, 287, 8, 55, "MathCaption",
+  CellTags->{"Operators", "distribution"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[30484, 886, 79, 1, 53, "Subsection",
+  CellTags->"norm"],
+Cell[30566, 889, 137, 3, 41, "MathCaption"],
+Cell[30706, 894, 1347, 26, 73, "Text",
+  CellTags->{"Operators", "norm"}],
+Cell[32056, 922, 66, 1, 55, "MathCaption",
+  CellTags->"norm"],
+Cell[32125, 925, 102, 3, 43, "Input",
+  CellTags->"norm"],
+Cell[32230, 930, 222, 6, 55, "MathCaption",
+  CellTags->{"norm", "Operators"}],
+Cell[32455, 938, 138, 3, 43, "Input",
+  CellTags->{"norm", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[32630, 946, 99, 1, 53, "Subsection",
+  CellTags->"changeInterval"],
+Cell[32732, 949, 232, 7, 55, "MathCaption",
+  CellTags->{"changeInterval", "Operators"}],
+Cell[32967, 958, 1893, 34, 73, "Text",
+  CellTags->{"Operators", "changeInterval"}],
+Cell[34863, 994, 48, 0, 25, "Text"],
+Cell[34914, 996, 784, 17, 91, "Text",
+  CellTags->{"Operators", "changeInterval"}],
+Cell[35701, 1015, 76, 1, 55, "MathCaption",
+  CellTags->"changeInterval"],
+Cell[35780, 1018, 112, 3, 43, "Input",
+  CellTags->"changeInterval"],
+Cell[35895, 1023, 173, 4, 55, "MathCaption",
+  CellTags->{"changeInterval", "Operators"}],
+Cell[36071, 1029, 159, 3, 43, "Input",
+  CellTags->{"changeInterval", "Operators"}],
+Cell[36233, 1034, 154, 3, 43, "Input",
+  CellTags->{"changeInterval", "Operators"}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[36424, 1042, 99, 1, 53, "Subsection",
+  CellTags->"makePolynomial"],
+Cell[36526, 1045, 281, 7, 55, "MathCaption",
+  CellTags->{"Operators", "makePolynomial"}],
+Cell[36810, 1054, 1514, 28, 73, "Text",
+  CellTags->{"Operators", "makePolynomial"}],
+Cell[38327, 1084, 92, 1, 39, "Text",
+  CellTags->{"Operators", "makePolynomial"}],
+Cell[38422, 1087, 1286, 24, 133, "Text"],
+Cell[39711, 1113, 76, 1, 55, "MathCaption",
+  CellTags->"makePolynomial"],
+Cell[39790, 1116, 112, 3, 43, "Input",
+  CellTags->"makePolynomial"],
+Cell[39905, 1121, 104, 1, 55, "MathCaption",
+  CellTags->{"makePolynomial", "Operators"}],
+Cell[40012, 1124, 151, 3, 43, "Input",
+  CellTags->{"makePolynomial", "Operators"}],
+Cell[40166, 1129, 117, 1, 39, "Text",
+  CellTags->{"makePolynomial", "Operators"}],
+Cell[40286, 1132, 164, 4, 43, "Input",
+  CellTags->{"makePolynomial", "Operators"}]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

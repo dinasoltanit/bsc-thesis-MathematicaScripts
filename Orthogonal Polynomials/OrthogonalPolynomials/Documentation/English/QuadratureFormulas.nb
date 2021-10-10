@@ -1,0 +1,3933 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[    107089,       2769]*)
+(*NotebookOutlinePosition[    127677,       3356]*)
+(*  CellTagsIndexPosition[    127222,       3337]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["OrthogonalPolynomials`NodesWeights`aZero", "Subsection",
+  CellTags->"zero"],
+
+Cell["\<\
+Function aZero has several calling formats. One calling format is following\
+\>", "MathCaption",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aZero[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"stValues\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"dFunction\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns zeroes for orthogonal polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"stValues\\\\\\\"\\\", \\\"TI\\\"]\\) is vector \
+of starting values for zeroes, \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"dFunction\\\\\\\"\\\", \\\"TI\\\"]\\) is pure \
+function made of coefficients for differential equation polynomials satisfy, \
+forth argument,  \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\), are options. \"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"zero"],
+
+Cell["With this calling format following options can be used", "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation."\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("used to set number of decimal digits in \
+the result to be returned."\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("determines the maximal number of iterations to be used \
+for achiveing requested precision in Newton-Kantorovich method "\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "This format of function can be used excluseivly for classes of orthogonal \
+polynomials which satisfy second order differential equation. Third parameter \
+in the calling format depends on the differential equation polynomials \
+satisfy. With this calling format function uses ",
+  ButtonBox["Pasquini's algorithm",
+    ButtonData:>{"Zeroes", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " for construction of zeroes. "
+}], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "There is also another calling format for the ",
+  Cell[BoxData[
+      \(TraditionalForm\`function\)]]
+}], "MathCaption",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aZero[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns zeroes for orthogonal polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \\\"TT\\\"]\\) and \\!\\(\
+\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \\\"TT\\\"]\\) are vectors of \
+three term recurrence coefficients for the given class of orthogonal \
+polynomials, forth argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"zero"],
+
+Cell["Options which can used with this calling format are", "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to set number of decimal digits \
+in the result to be returned.\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("determines the maximal number of iterations to be used \
+for achiveing requested precision "\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "With this calling format, function ",
+  StyleBox["aZero ",
+    FontSlant->"Italic"],
+  "uses ",
+  ButtonBox["QR algorithm",
+    ButtonData:>{"Zeroes", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " for construction of zeroes, applied on the Jacobi matrix constructed from \
+three term recurrrence coefficients. It has to be noted that for all classes \
+of orthogonal polynomials construction of zeroes using QR algorithm is not \
+numerically stable. For example, for class of Bessel polynomials QR algorithm \
+is ill-conditioned. This ill-conditioning does affect number of iterations \
+for construction but affect results of QR algorithm, results returned by QR \
+algorithm are inaccurate. In this casses ",
+  ButtonBox["Pasquini's algorithm",
+    ButtonData:>{"Zeroes", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " should be used for construction."
+}], "Text",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "There is also another format for the function ",
+  StyleBox["aZero",
+    FontSlant->"Italic"],
+  " which can be used "
+}], "MathCaption",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aZero[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns zeroes for orthogonal polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), given with the \
+key-word \\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) \
+with parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any,
+forth argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"zero"],
+
+Cell["Options which can be used with this calling format are", "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to set number of decimal digits \
+in the result to be returned.\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("determines the maximal number of iterations to be used \
+for achiveing requested precision "\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aQR\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("determines the algorithm to be used for construction \
+of zeroes, there are two choices QR and Pasquini's algorithm"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"zero"],
+
+Cell["This starts package", "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"zero"],
+
+Cell["\<\
+We can use function aZero to construct zeroes for all supported classes of \
+orthogonal polynomials.\
+\>", "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(aZero[10, {aJacobi, \(-9\)/10, 1}, Precision \[Rule] 16, 
+      WorkingPrecision \[Rule] 20]\)], "Input",
+  CellTags->"zero"],
+
+Cell["\<\
+For Bessel polynomials, however, QR algorithm is ill-conditioned, Pasquini's \
+algorithm have to be used.\
+\>", "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(nBesselQR = aZero[50, {aBesselG, 10}, Precision \[Rule] 16]\)], "Input",\
+
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(ListPlot[\({Re[#1], Im[#1]} &\) /@ nBesselQR]\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(nBesselPasquini = 
+      aZero[30, {aBesselG, 10}, Precision \[Rule] 16, 
+        Algorithm \[Rule] aPasquini]\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(ListPlot[\({Re[#1], Im[#1]} &\) /@ nBesselPasquini]\)], "Input",
+  CellTags->"zero"],
+
+Cell["\<\
+After evaluation of all previous cells, difference in constructed zeroes is \
+evident.\
+\>", "Text",
+  CellTags->"zero"],
+
+Cell["\<\
+For classes of orthogonal polynomials which are not supported, and for which \
+three term recurrence coefficients are known zeroes of orthogonal polynomials \
+can be constructed using another calling format.\
+\>", "MathCaption",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "In this example three term recurrence coefficients are constructed  for \
+weight function ",
+  Cell[BoxData[
+      \(TraditionalForm\`Exp[\(-x\^4\)]\)]],
+  " on (0,\[Infinity]), using ",
+  ButtonBox["Stieltjes procedure",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"],
+  ", and then we calculate zeroes. For discretization measure we use ",
+  ButtonBox["Fejer quadrature rule",
+    ButtonData:>{"aFejerNodesWeights", "fejer"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\({nF, wF} = aFejerNodesWeights[100];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\({n03, w03} = 
+        aChangeInterval[nF, wF, {{\(-1\), 1}, {0, 3}}];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\({n36, w36} = 
+        aChangeInterval[nF, wF, {{\(-1\), 1}, {3, 6}}];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\({n69, w69} = 
+        aChangeInterval[nF, wF, {{\(-1\), 1}, {6, 9}}];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\({n9Inf, w9Inf} = 
+        aChangeInterval[nF, wF, {{\(-1\), 1}, {9, Infinity}}];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[{
+    \(\(n = Join[n03, n36, n69, n9Inf];\)\), "\[IndentingNewLine]", 
+    \(\(w = Exp[\(-n^4\)] Join[w03, w36, w69, w9Inf];\)\)}], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\({al, be} = aStieltjesAlgorithm[20, n, w];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(aZero[10, al, be, Precision \[Rule] 16]\)], "Input",
+  CellTags->"zero"],
+
+Cell["\<\
+Third calling format can be used for construction of zeroes using Pasquini's \
+algorithm, but also can be used for obtaining zeroes with more accurate \
+digits. For example, in the previous example we constructed zeroes of \
+generalized Bessel polynomial with parameter of the family 10 using \
+Pasquini's algorithm. \
+\>", "MathCaption",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(\(nBesselPasquini = 
+        aZero[50, {aBesselG, 10}, Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"zero"],
+
+Cell[TextData[{
+  "To get these zeroes with more exact digits then 16, we can use third \
+calling format for the function ",
+  StyleBox["aZero",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(f = \((\(aBesselG["\<pas\>", 10]\)[5])\)[\([2]\)]\)], "Input",
+  CellTags->"zero"],
+
+Cell[BoxData[
+    \(aZero[50, nBesselPasquini, f, WorkingPrecision \[Rule] 34, 
+      Precision \[Rule] 34]\)], "Input",
+  CellTags->"zero"],
+
+Cell["\<\
+This method for increasing precision in already calculated zeroes of \
+orthogonal polynomials can be used for other classes of orthogonal \
+polynomials, which satisfy differential equation of the second order.\
+\>", "Text",
+  CellTags->"zero"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aGaussianNodesWeights", "Subsection",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aGaussianNodesWeights",
+    FontSlant->"Italic"],
+  " constructs ",
+  ButtonBox["Gaussian quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  " for given ",
+  ButtonBox["moment functional",
+    ButtonData:>{"Moment functional and orthogonality", "mf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has two different calling formats."
+}], "MathCaption",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGaussianNodesWeights[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), for class of \
+orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"gaussian"],
+
+Cell["Options which can be used with calling format are", "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to set number of decimal digits \
+in the result to be returned.\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("\<determines the maximal number of iterations to be \
+used for achieving requested precision \>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aQR\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("determines the algorithm to be used for construction \
+of zeroes, there are two choices QR and Pasquini's algorithm"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ModifiedAlgorithm\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"True\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", "\<\"determines the algorithm to be used for \
+construction of weights\"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "There is also another calling format for the function ",
+  StyleBox["aGaussianNodesWeights.",
+    FontSlant->"Italic"]
+}], "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGaussianNodesWeights[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\"\>", "\<\" returns zeroes for orthogonal polynomial of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \\\"TT\\\"]\\) and \\!\\(\
+\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \\\"TT\\\"]\\) are vectors of \
+three term recurrence coefficients for the given class of orthogonal \
+polynomials, forth argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"gaussian"],
+
+Cell["Options which can be used with this calling format are", "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to set number of decimal digits \
+in the result to be returned.\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("\<determines the maximal number of iterations to be \
+used for achieving requested precision \>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ModifiedAlgorithm\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"True\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", "\<\"determines the algorithm to be used for \
+construction of weights\"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "Option ",
+  StyleBox["Algorithm",
+    FontSlant->"Italic"],
+  " determines algorithm to be used in construction of nodes for Gaussian \
+quadrature rule, there are two choices QR algorithm and Pasquini's algorithm. \
+Function simply calls function ",
+  ButtonBox["aZero",
+    ButtonData:>{"aZero", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " for construction of nodes. Option ",
+  StyleBox["Algorithm",
+    FontSlant->"Italic"],
+  " can be used only with supported classes of orthogonal polynomials with \
+first calling format. Options ",
+  StyleBox["ModifiedAlgorithm",
+    FontSlant->"Italic"],
+  " determines algorithm for ",
+  ButtonBox["construction of weights",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  " when QR algorithm is used for construction of nodes. There are two ways \
+for construction of weights one based on eigenvectors of tridiagonal matrix \
+and the other based on the three term recurrence equation. In the most cases \
+second algorithm is more accurate, but the first one is faster. If option ",
+  StyleBox["ModifiedAlgorithm",
+    FontSlant->"Italic"],
+  " is set to False, precision in constructing weights is not measured. If \
+option ",
+  StyleBox["ModifiedAlgorithm",
+    FontSlant->"Italic"],
+  " is set then precision in constructed weights is measured."
+}], "Text",
+  CellTags->"gaussian"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"gaussian"],
+
+Cell["\<\
+In this example we construct Gaussian quadrature rule for Legendre measure \
+and we calculate some integrals\
+\>", "MathCaption",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n5, w5} = 
+        aGaussianNodesWeights[5, {aLegendre}, 
+          Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n10, w10} = 
+        aGaussianNodesWeights[10, {aLegendre}, 
+          Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n15, w15} = 
+        aGaussianNodesWeights[15, {aLegendre}, 
+          Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n20, w20} = 
+        aGaussianNodesWeights[20, {aLegendre}, 
+          Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n25, w25} = 
+        aGaussianNodesWeights[25, {aLegendre}, 
+          Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\(\((\((#1[\([1]\)])\) . \((\((Sin[
+                    2\ #1[\([2]\)]])\)^2)\))\) &\) /@ {{w5, n5}, {w10, 
+          n10}, {w15, n15}, {w20, n20}, {w25, n25}}\)], "Input",
+  CellTags->"gaussian"],
+
+Cell["\<\
+As we can see convergence is very fast. However, there are examples when more \
+nodes are needed to encounter convergence property. It is enough to change \
+frequency of the function Sin to get bad convergence properties.\
+\>", "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\(\((\((#1[\([1]\)])\) . \((\((Sin[
+                    1000\ #1[\([2]\)]])\)^2)\))\) &\) /@ {{w5, n5}, {w10, 
+          n10}, {w15, n15}, {w20, n20}, {w25, n25}}\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "We can also construct Gaussian quadrature rule for some sequence of \
+orthogonal polynomials which are not supported in the package. For example, \
+we can construct Gaussian quadrature rule for ",
+  ButtonBox["moment functional",
+    ButtonData:>{"Moment functional and orthogonality", "mf"},
+    ButtonStyle->"AddOnsLink"],
+  " given by "
+}], "MathCaption",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\[CapitalPsi] \((f)\) = \[Integral]\_\(-1\)\%1 
+          f \((x)\)\ x\ Exp[\[ImaginaryI]\ m\ \[Pi]\ x] \[DifferentialD]x, \ 
+    m\  \[Element] \ \(\(N\)\(.\)\)\)], "DisplayMath",
+  CellTags->"gaussian"],
+
+Cell["\<\
+Using partial integration rule we can get following recurrence relation for \
+the moments\
+\>", "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\[Mu]\_k = \(-\(k\/\(\[ImaginaryI]\ m\ \[Pi]\)\)\) \[Mu]\_\(k - 1\) + \
+\(\((\(-1\))\)\^m\) \(1 - \((\(-1\))\)\^k\)\/\(\[ImaginaryI]\ m\ \[Pi]\), \ \
+\[Mu]\_0 = \(2 \((\(-1\))\)\^m\)\/\(\[ImaginaryI]\ m\ \[Pi]\)\)], \
+"DisplayMath",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "We are now able to use ",
+  ButtonBox["Chebyshev algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"],
+  " for construction of ",
+  ButtonBox["three term recurrence coefficients",
+    ButtonData:>{"Recurrence relation", "TTR"},
+    ButtonStyle->"AddOnsLink"],
+  ", with m, for example, equal to 100"
+}], "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\(mom[m_, k_] := 
+        Module[{ret}, \[IndentingNewLine]ret = {2 \((\(-1\))\)^
+                    m/\((I\ m\ Pi)\)}; \[IndentingNewLine]For[i = 2, 
+            i \[LessEqual] 
+              k, \(i++\), \[IndentingNewLine]\(AppendTo[ret, 
+                Together[\(-i\)/\((I\ m\ Pi)\) 
+                      ret[\([\(-1\)]\)] + \((\(-1\))\)^
+                        m \((1 - \((\(-1\))\)^
+                              i)\)/\((I\ m\ Pi)\)]];\)]; \
+\[IndentingNewLine]Return[ret];];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        aChebyshevAlgorithm[mom[100, 61], 
+          WorkingPrecision \[Rule] 1000];\)\)], "Input",
+  CellTags->"gaussian"],
+
+Cell["We are now able to construct Gaussian quadrature rule", "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n5, w5} = 
+        aGaussianNodesWeights[5, al, be, Precision \[Rule] 16];\)\)], "Input",\
+
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n10, w10} = 
+        aGaussianNodesWeights[10, al, be, Precision \[Rule] 16];\)\)], "Input",\
+
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n15, w15} = 
+        aGaussianNodesWeights[15, al, be, Precision \[Rule] 16];\)\)], "Input",\
+
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n20, w20} = 
+        aGaussianNodesWeights[20, al, be, Precision \[Rule] 16];\)\)], "Input",\
+
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n25, w25} = 
+        aGaussianNodesWeights[25, al, be, Precision \[Rule] 16];\)\)], "Input",\
+
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\({n30, w30} = 
+        aGaussianNodesWeights[30, al, be, Precision \[Rule] 16];\)\)], "Input",\
+
+  CellTags->"gaussian"],
+
+Cell["It is now easy to evaluate integral of the following form", "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\[Integral]\_\(-1\)\%1 f \((x)\) 
+        x\ Exp[\[ImaginaryI]\ x\ 100\ \[Pi]] \
+\(\(\[DifferentialD]x\)\(.\)\)\)], "DisplayMath",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "Integral with ",
+  Cell[BoxData[
+      \(TraditionalForm\`f(x) = e\^x\)]]
+}], "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\(\((\((#1[\([1]\)])\) . \((Exp[#1[\([2]\)]])\))\) &\) /@ {{w5, 
+          n5}, {w10, n10}, {w15, n15}, {w20, n20}, {w25, n25}, {w30, 
+          n30}}\)], "Input",
+  CellTags->"gaussian"],
+
+Cell[TextData[{
+  "Integral with ",
+  Cell[BoxData[
+      \(TraditionalForm\`f(x) = 1\/\(\((x - 10)\)\^2 + 1\/100\)\)]]
+}], "Text",
+  CellTags->"gaussian"],
+
+Cell[BoxData[
+    \(\(\((\((#1[\([1]\)])\) . \((1/\((\((#1[\([2]\)] - 10)\)^2 + 
+                    1/100)\))\))\) &\) /@ {{w5, n5}, {w10, n10}, {w15, 
+          n15}, {w20, n20}, {w25, n25}, {w30, n30}}\)], "Input",
+  CellTags->"gaussian"],
+
+Cell["\<\
+We can further increase parameter m. For m sufficiently large, NIntegrate can \
+not be used for evaluation.\
+\>", "MathCaption",
+  CellTags->"gaussian"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aGaussianWeights", "Subsection",
+  CellTags->"gaussianWeights"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aGaussianWeights",
+    FontSlant->"Italic"],
+  " can be used for construction of weights in the ",
+  ButtonBox["Gaussian quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  " . Format of the function is following "
+}], "Text",
+  CellTags->"gaussianWeights"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aGaussianWeights[\\\\\\\"\
+\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"nodes\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\"\>", "\<\" returns weights for Gaussian quadrature rule for \
+orthogonal polynomial of degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\), where \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\) are lists of three term recurrence coefficients for the given \
+class of orthogonal polynomials, \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"nodes\\\\\\\"\\\", \\\"TT\\\"]\\) are nodes for \
+Gaussian quadrature rule, fifth argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\
+\\\\\"\\\", \\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"gaussianWeights"],
+
+Cell[TextData[{
+  "Options for function ",
+  StyleBox["aGaussianWeights",
+    FontSlant->"Italic"],
+  " are the following"
+}], "Text",
+  CellTags->"gaussianWeights"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to control precision of the \
+returned weights\"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"gaussianWeights"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"gaussianWeights"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"gaussianWeights"],
+
+Cell[TextData[{
+  "We are able to construct weights independently of nodes. With function ",
+  ButtonBox["aZero",
+    ButtonData:>{"aZero", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " we can construct nodes and then construct weights."
+}], "Text",
+  CellTags->"gaussianWeights"],
+
+Cell[BoxData[
+    \(\(n = aZero[10, {aLegendre}, Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"gaussianWeights"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 20]];\)\)], "Input",
+  CellTags->"gaussianWeights"],
+
+Cell[BoxData[
+    \(aGaussianWeights[10, al, be, n]\)], "Input",
+  CellTags->"gaussianWeights"],
+
+Cell[TextData[{
+  "In cases when ",
+  ButtonBox["Pasquini's algorithm",
+    ButtonData:>{"Zeroes", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  " is used for construction of nodes, we can construct weights using ",
+  ButtonBox["aGaussianWeights",
+    ButtonData:>{"aGaussianWeights", "gaussianWeights"},
+    ButtonStyle->"AddOnsLink"],
+  ". Gaussian quadrature rule can be constructed separately using functions \
+",
+  ButtonBox["aZero ",
+    ButtonData:>{"aZero", "zero"},
+    ButtonStyle->"AddOnsLink"],
+  "and ",
+  ButtonBox["aGaussianWeights",
+    ButtonData:>{"aGaussianWeights", "gaussianWeights"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"gaussianWeights"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aRadauNodesWeights", "Subsection",
+  CellTags->"radau"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aRadauNodesWeights ",
+    FontSlant->"Italic"],
+  "can be used for construction of ",
+  ButtonBox["Gauss-Radau quadrature rule.",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  " Function has the following format"
+}], "Text",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aRadauNodesWeights[\\\\\\\
+\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"fNode\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\"\>", "\<\" returns Gauss-Radau quadrature rule for orthogonal \
+polynomial of degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\
+\\), where \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \\\"TT\\\"]\\) \
+and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \\\"TT\\\"]\\) are \
+lists of three term recurrence coefficients for the given class of orthogonal \
+polynomials, \\!\\(\\*StyleBox[\\\"\\\\\\\"fNode\\\\\\\"\\\", \\\"TT\\\"]\\) \
+is fixed node for Gauss-Radau quadrature rule, fifth argument, \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"radau"],
+
+Cell["\<\
+Options which can be used with function aRadauNodesWeights are \
+\>", "Text",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to set number of decimal digits \
+in the result to be returned.\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("\<determines the maximal number of iterations to be \
+used for achieving requested precision \>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ModifiedAlgorithm\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"True\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", "\<\"determines the algorithm to be used for \
+construction of weights\"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"radau"],
+
+Cell[TextData[{
+  "Gauss-Radau quadrature rule is constructed by construction of equivalent \
+Gaussian quadrature rule, for suitably modified coefficients of ",
+  ButtonBox["three term recurrence relation",
+    ButtonData:>{"Recurrence relation", "TTR"},
+    ButtonStyle->"AddOnsLink"],
+  ". Options are equivalent as options for ",
+  ButtonBox["aGaussianNodesWeights",
+    ButtonData:>{"aGaussianNodesWeights", "gaussian"},
+    ButtonStyle->"AddOnsLink"],
+  ". "
+}], "Text",
+  CellTags->"radau"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"radau"],
+
+Cell["\<\
+This constructs Gauss-Radau quadrature rule for Legendre measure with fixed \
+node in point 1.\
+\>", "Text",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \({al, be} = Transpose[aLegendre["\<ttr\>"] /@ Range[0, 10]]\)], "Input",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \(aRadauNodesWeights[10, al, be, 1, Precision \[Rule] 16]\)], "Input",
+  CellTags->"radau"],
+
+Cell["\<\
+Fixed node can be inside of the set on which polynomials are orthogonal, but \
+in some cases, when fixed point is zero of orthogonal polynomials, this can \
+lead to impossible construction.\
+\>", "Text",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \(\(n = aZero[10, {aLegendre}, Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \(aRadauNodesWeights[10, al, be, n[\([1]\)], Precision -> 16]\)], "Input",\
+
+  CellTags->"radau"],
+
+Cell[TextData[{
+  "Nodes of Gauss-Radau quadrature rule can also be constructed using ",
+  ButtonBox["Christoffel modification algorithms",
+    ButtonData:>{"aModify", "modify"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \({alM, beM} = aModify[10, {aLinear, 2}, {aLegendre}]\)], "Input",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \(aGaussianNodesWeights[10, alM, beM, Precision -> 16]\)], "Input",
+  CellTags->"radau"],
+
+Cell[BoxData[
+    \(aRadauNodesWeights[10, al, be, 2, Precision -> 16]\)], "Input",
+  CellTags->"radau"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aLobattoNodesWeights", "Subsection",
+  CellTags->"lobatto"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aLobattoNodesWeights",
+    FontSlant->"Italic"],
+  " can be used for construction of ",
+  ButtonBox["Gauss-Lobatto quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has following calling format"
+}], "Text",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLobattoNodesWeights[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"fNode1\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"fNode2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\"\>", "\<\" returns Gauss-Lobatto quadrature rule for \
+orthogonal polynomial of degree \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\), where \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\) are lists of three term recurrence coefficients for the given \
+class of orthogonal polynomials, \\!\\(\\*StyleBox[\\\"\\\\\\\"fNode1\\\\\\\"\
+\\\", \\\"TT\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"fNode2\\\\\\\"\\\", \\\
+\"TT\\\"]\\) are fixed nodes for Gauss-Lobatto quadrature rule, sixth \
+argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), are \
+options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"lobatto"],
+
+Cell[TextData[{
+  "Options which can be used with function ",
+  StyleBox["aLobattoNodesWeights",
+    FontSlant->"Italic"],
+  " are the following."
+}], "Text",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", "\<\"used to set number of decimal digits \
+in the result to be returned.\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"30\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", \("\<determines the maximal number of iterations to be \
+used for achieving requested precision \>"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ModifiedAlgorithm\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"True\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", "\<\"determines the algorithm to be used for \
+construction of weights\"\>"}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"lobatto"],
+
+Cell[TextData[{
+  "Gauss-Lobatto quadrature rule is constructed by construction of equivalent \
+Gaussian quadrature rule, for suitably modified coefficients of ",
+  ButtonBox["three term recurrence relation",
+    ButtonData:>{"Recurrence relation", "TTR"},
+    ButtonStyle->"AddOnsLink"],
+  ". Options are equivalent as options for ",
+  ButtonBox["aGaussianNodesWeights",
+    ButtonData:>{"aGaussianNodesWeights", "gaussian"},
+    ButtonStyle->"AddOnsLink"],
+  ". "
+}], "Text",
+  CellTags->"lobatto"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"lobatto"],
+
+Cell["\<\
+We can construct Gauss-Lobatto quadrature rule for Legendre measure\
+\>", "Text",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 20]];\)\)], "Input",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(aLobattoNodesWeights[10, al, be, \(-1\), 1, 
+      Precision \[Rule] 16]\)], "Input",
+  CellTags->"lobatto"],
+
+Cell[TextData[{
+  "Construction of nodes can also be done using ",
+  ButtonBox["aGaussianNodesWeights",
+    ButtonData:>{"aGaussianNodesWeights", "gaussian"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["Christoffel modification algorithms",
+    ButtonData:>{"aModify", "modify"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(aLobattoNodesWeights[10, al, be, \(-1\), 1, 
+      Precision \[Rule] 16]\)], "Input",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(\({alM, beM} = aModify[18, {aLinear, 1}, {aLegendre}];\)\)], "Input",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(\({alM, beM} = aModify[17, {aLinear, \(-1\)}, alM, beM];\)\)], "Input",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(aGaussianNodesWeights[10, alM, beM, Precision \[Rule] 16]\)], "Input",
+  CellTags->"lobatto"],
+
+Cell["\<\
+Construction can also be performed in the cases when fixed nodes are in the \
+set on which polynomials are orthogonal. But in this cases construction may \
+be impossible.\
+\>", "Text",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(\(n = aZero[10, {aLegendre}, Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"lobatto"],
+
+Cell[BoxData[
+    \(aLobattoNodesWeights[10, al, be, n[\([1]\)], n[\([2]\)]]\)], "Input",
+  CellTags->"lobatto"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aLaurie", "Subsection",
+  CellTags->"laurie"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aLaurie",
+    FontSlant->"Italic"],
+  " constructs three term recurrence coefficients from which can be \
+constructed ",
+  ButtonBox["Gauss-Kronrod quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  " as ",
+  ButtonBox["Gaussian quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has following format"
+}], "MathCaption",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLaurie[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\"\>", "\<\" returns three term recurrence coefficients from \
+which can be constructed Gauss-Kronrod quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \\\"TT\\\"]\\) and \\!\\(\
+\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \\\"TT\\\"]\\) are lists of \
+three term recurrence coefficients for the given class of orthogonal \
+polynomials, forth argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"laurie"],
+
+Cell["Options which can be used with function are", "Text",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation. This option takes effects only when option Algorithm is \
+set to Automatic"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Symbolic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("\<determines whether to apply numerical version of \
+algorithm, set as default value, or symbolical version when option has to be \
+set\>"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"laurie"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"laurie"],
+
+Cell[TextData[{
+  "We can use function ",
+  StyleBox["aLaurie ",
+    FontSlant->"Italic"],
+  "determine the existence question for Gauss-Kronrod quadrature rule. To \
+exist means to have all nodes inside interval of orthogonality for positive \
+definite moment functional."
+}], "Text",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLaguerreG["\<ttr\>", s] /@ Range[0, 20]];\)\)], "Input",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    \(aLaurie[5, al, be, Symbolic \[Rule] True]\)], "Input",
+  CellTags->"laurie"],
+
+Cell["\<\
+We can see that in this case for three term recurrence coefficients which are \
+returned by Laurie's algorithm moment functional is not positive definite for \
+all values of s. But we can also see that in the Legendre case moment \
+functional which is returned by Laurie's algorithm is positive definite (all \
+returned \[Beta] coefficients are positive).\
+\>", "Text",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 20]];\)\)], "Input",
+  CellTags->"laurie"],
+
+Cell[BoxData[
+    \(aLaurie[10, al, be, Symbolic \[Rule] True]\)], "Input",
+  CellTags->"laurie"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aKronrodNodesWeights", "Subsection",
+  CellTags->"kronrod"],
+
+Cell[TextData[{
+  "Function aKronrodNodesWeights returns ",
+  ButtonBox["Gauss-Kronrod quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has following calling format.",
+  " "
+}], "MathCaption",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aKronrodNodesWeights[\\\\\
+\\\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\
+\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TT\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\"\>", "\<\" returns Gauss-Kronrod quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\), where \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \\\"TT\\\"]\\) and \\!\\(\
+\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \\\"TT\\\"]\\) are lists of \
+three term recurrence coefficients for the given class of orthogonal \
+polynomials, forth argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\), are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"kronrod"],
+
+Cell[TextData[{
+  "Options which can be used with function ",
+  StyleBox["aKronrodNodesWeights",
+    FontSlant->"Italic"],
+  " are the following"
+}], "Text",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation. This option takes effects only when option Algorithm is \
+set to Automatic"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal \
+digits to be returned in the result"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Accuracy\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-9\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set maximal number of iterations to be used for \
+achieving requested precision and accuracy"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Algorithm\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aLaurie\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set algorithm for construction, default \
+value is Laurie's algorithm, alternatively devide and conquer algorithm can \
+be used but only in cases when Gauss-Kronrod quadrature rule has all nodes in \
+the interval of orthogonality"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Symbolic\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("only affects calculations when option Algorithm is \
+set to aLaurie, if the option is set, symbolic version of Laurie's algorithm \
+is applied "\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"kronrod"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[TextData[{
+  "In case when algorithm divide and conquer is used function returns ",
+  ButtonBox["Gaussian",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  " and ",
+  ButtonBox["Gauss-Kronrod quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Both of them can be applied to evaluate an integral. In this example we \
+calculate integral "
+}], "Text",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(\(\(\t\t\t\t\t\t\t\t\)\(\[Integral]\_\(-1\)\%1\( Sin\^2\) \((3  
+            x)\) \[DifferentialD]x\)\)\)], "DisplyMath",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 30]];\)\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \({{nG, wG}, {nGK, wGK}} = 
+      aKronrodNodesWeights[10, al, be, Precision \[Rule] 16, 
+        Algorithm \[Rule] aDevideConquer]\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(wG . \((Sin[3  nG])\)^2\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(wGK . \((Sin[3  nGK])\)^2\)], "Input",
+  CellTags->"kronrod"],
+
+Cell["\<\
+If Gauss-Kronrod quadrature rule does not have all nodes real then divide and \
+conquer algorithm can not be used.\
+\>", "Text",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLaguerre["\<ttr\>"] /@ Range[0, 20]];\)\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(aKronrodNodesWeights[10, al, be, Precision \[Rule] 16, 
+      Algorithm \[Rule] aDevideConquer]\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[TextData[{
+  "In the case ",
+  ButtonBox["Laurie's algorithm",
+    ButtonData:>{"aLaurie", "laurie"},
+    ButtonStyle->"AddOnsLink"],
+  " is used only nodes and weights for Gauss-Kronrod quadrature rule are \
+returned"
+}], "Text",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \({n, w} = 
+      aKronrodNodesWeights[10, al, be, Precision \[Rule] 16]\)], "Input",
+  CellTags->"kronrod"],
+
+Cell["\<\
+Even with the complex nodes Gauss-Kronrod quadrature rule can be applied for \
+evaluation of integrals.\
+\>", "Text",
+  CellTags->"kronrod"],
+
+Cell[BoxData[
+    \(w . ArcTan[n]\)], "Input",
+  CellTags->"kronrod"],
+
+Cell[TextData[{
+  "Using option ",
+  StyleBox["Symbolic",
+    FontSlant->"Italic"],
+  " we can force three term recurrence coefficients to be evaluated in \
+arithmetic of infinite precision, but this process can be computationally \
+exhaustive for big number of nodes."
+}], "Text",
+  CellTags->"kronrod"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aTuranNodesWeights", "Subsection",
+  CellTags->"turan"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aTuranNodesWeights",
+    FontSlant->"Italic"],
+  " returns ",
+  ButtonBox["generalized Gaussian quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has the following format."
+}], "MathCaption",
+  CellTags->"turan"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aTuranNodesWeights[\\\\\\\
+\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \\\"TI\\\"]\\), 
+for class of orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"turan"]
+}, Open  ]],
+
+Cell["Options which can be used with this function are", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aTuranNodes", "Subsection",
+  CellTags->"turanNodes"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aTuranNodes",
+    FontSlant->"Italic"],
+  " returns nodes for ",
+  ButtonBox["generalized Gaussian quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has the following format."
+}], "MathCaption",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aTuranNodes[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns nodes for generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \\\"TI\\\"]\\), 
+for class of orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"turanNodes"],
+
+Cell[TextData[{
+  "Options which can be used with function ",
+  StyleBox["aTuranNodes",
+    FontSlant->"Italic"],
+  " are the following"
+}], "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal \
+digits to be returned in the result"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Accuracy\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-9\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"100\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set maximal number of iterations to be used \
+for achieving requested precision and accuracy"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"InternalPrecision\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"6\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits to be \
+achieved in the trailing results"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"InternalAccuracy\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"7\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero in the tailing results"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ReturnList\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"used to determine whether to return all trailing \
+results or not\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Start\\\\\\\"\\\", \\\"MR\
+\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"{2,3}\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("affects calculation only when option IncreaseDegree \
+is set,  and determines degrees of starting polynomials in the process of \
+construction "\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IncreaseDegree\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"True\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine algorithm for construction, \
+whether to increase degree of polynomial with fixed s, or to increase \
+parameter s with fixed degree of polynomial"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"turanNodes", "turan"}],
+
+Cell[TextData[{
+  "There are in general two algorithms which can be used for construction of \
+nodes for generalized Gaussian quadrature rule. This two algorithms can be \
+chosen with option ",
+  StyleBox["IncreaseDegree",
+    FontSlant->"Italic"],
+  ". If option is set algorithm which constructs nodes over increasing degree \
+of polynomial is used with fixed s. If option is not set algorithm which \
+constructs nodes over increasing s is used with fixed number of nodes is \
+used. First algorithm is much faster, second algorithm is faster only for s=1 \
+or maybe 2. Also, second algorithm, one with increasing s, can not be used \
+for measures with unbounded supporting set."
+}], "Text",
+  CellTags->{"turanNodes", "turan"}],
+
+Cell[TextData[{
+  "For additional information on algorithms used for construction of nodes \
+function ",
+  ButtonBox["aTuranNodes",
+    ButtonData:>{"aTuranNodes", "turanNodes"},
+    ButtonStyle->"AddOnsLink"],
+  " should be seen."
+}], "Text",
+  CellTags->"turan"],
+
+Cell[TextData[{
+  "There is also another calling format for function ",
+  StyleBox["aTuranNodes",
+    FontSlant->"Italic"],
+  "."
+}], "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aTuranNodes[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Tau]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns nodes for generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with value \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"s\\\\\\\"\\\", \\\"TI\\\"]\\), 
+for class of orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any, where \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Tau]\\\\\\\"\\\", \
+\\\"TI\\\"]\\) is list of starting values for construction,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"turanNodes"],
+
+Cell["Options which can be used with this calling format are", "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal \
+digits to be returned in the result"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Accuracy\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-9\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set maximal number of iterations to be used for \
+achieving requested precision and accuracy"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"turanNodes"],
+
+Cell["\<\
+This calling format is used only for increasing precision of already \
+constructed nodes.\
+\>", "Text",
+  CellTags->"turanNodes"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->{"turanNodes", "turan"}],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->{"turanNodes", "turan"}],
+
+Cell[TextData[{
+  "We can construct nodes with parameter s=10 for ",
+  ButtonBox["Chebyshev measure of the first kind",
+    ButtonData:>{"aChebyshevI", "chebyshev"},
+    ButtonStyle->"AddOnsLink"],
+  ", which are the same for all s, using algorithm with increassing s"
+}], "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    \(aTuranNodes[10, {aChebyshevI}, 10, Precision \[Rule] 16, 
+      IncreaseDegree \[Rule] False]\)], "Input",
+  CellTags->"turanNodes"],
+
+Cell["\<\
+This can also be done for algorithm with increasing degree of polynomial\
+\>", "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    \(aTuranNodes[10, {aChebyshevI}, 10, Precision \[Rule] 16]\)], "Input",
+  CellTags->"turanNodes"],
+
+Cell["\<\
+But for Laguerre measure algorithm with increasing s can not be used, because \
+convergence can not be established. This is also the case with other classes \
+of orthogonal polynomials with unbounded supporting set.\
+\>", "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    \(aTuranNodes[10, {aLaguerre}, 10, Precision \[Rule] 16, 
+      IncreaseDegree \[Rule] False]\)], "Input",
+  CellTags->"turanNodes"],
+
+Cell["\<\
+With algorithm with increasing degree this construction can be done easily\
+\>", "Text",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    \(aTuranNodes[10, {aLaguerre}, 10, Precision \[Rule] 16]\)], "Input",
+  CellTags->"turanNodes"],
+
+Cell[TextData[{
+  "There are some cases when construction can not be done starting with \
+polynomials of degree 2 and 3 or when convergence can be much faster if we \
+start with polynomials of higher degree. For example, for class of ",
+  ButtonBox["Jacobi polynomials",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"],
+  " in extremely asymmetric case we should use option ",
+  StyleBox["Start",
+    FontSlant->"Italic"],
+  " set to 3 and 4 for construction."
+}], "MathCaption",
+  CellTags->"turanNodes"],
+
+Cell[BoxData[
+    \(aTuranNodes[10, {aJacobi, \(-9\)/10, 10}, 10, Start \[Rule] {3, 4}, 
+      Precision \[Rule] 16]\)], "Input",
+  CellTags->"turanNodes"],
+
+Cell[TextData[{
+  "This phenomenon is due to high nonlinearity which can be encountered at \
+the beginning of construction when first four nodes are constructed. It \
+should be emphasized that in some cases using algorithm with increasing \
+degree in order to achieve convergence option ",
+  StyleBox["Start",
+    FontSlant->"Italic"],
+  " has to be set to values bigger then 2 and 3."
+}], "Text",
+  CellTags->"turanNodes"],
+
+Cell[TextData[{
+  "For construction of weights once nodes are constructed function ",
+  ButtonBox["aSigmaWeights",
+    ButtonData:>{"aSigmaWeights", "sigmaWeights"},
+    ButtonStyle->"AddOnsLink"],
+  " can be used."
+}], "MathCaption",
+  CellTags->"turanNodes"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+We can use function aTuranNodesWeights for construction of generalized \
+Gaussian quadrature rules and with results to evaluate integrals.\
+\>", "Text",
+  CellTags->"turan"],
+
+Cell[BoxData[
+    \(\({n, w} = 
+        aTuranNodesWeights[8, {aChebyshevI}, 4, 
+          Precision \[Rule] 16];\)\)], "Input",
+  CellTags->"turan"],
+
+Cell[BoxData[
+    \(Plus @@ 
+      Table[\((w[\([i + 1]\)])\) . \((\((D[x\ Sin[11  x], {x, i}])\) /. 
+              x \[Rule] n)\), {i, 0, 8}]\)], "Input",
+  CellTags->"turan"]
+}, Open  ]],
+
+Cell["\<\
+We will also emphasize that algebraic degree of exactness for formula which \
+has n nodes and includes 2s derivative is 2(s+1)n-1, for previous formula \
+this equals 79.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aSigmaNodesWeights", "Subsection",
+  CellTags->"sigma"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aSigmaNodesWeights",
+    FontSlant->"Italic"],
+  " can be for construction of ",
+  StyleBox["generalized Gaussian quadrature rule",
+    FontSlant->"Italic"],
+  ". Function has the following format"
+}], "Text",
+  CellTags->"sigma"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aSigmaNodesWeights[\\\\\\\
+\"\\\", \\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \\\"TI\\\"]\\), \
+
+for class of orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"sigma"],
+
+Cell[TextData[{
+  "Options which can be used with function ",
+  StyleBox["aSigmaNodesWeights",
+    FontSlant->"Italic"],
+  " are"
+}], "Text",
+  CellTags->"sigma"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aSigmaNodes", "Subsection",
+  CellTags->"sigmaNodes"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aSigmaNodes",
+    FontSlant->"Italic"],
+  " can be used for construction of nodes for ",
+  ButtonBox["generalized Gaussian quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has following format."
+}], "Text",
+  CellTags->"sigmaNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aSigmaNodes[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns nodes for generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with \
+parameter \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \\\"TI\\\"]\\), \
+
+for class of orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"sigmaNodes"],
+
+Cell["Options which can be used with this format of function are", "Text",
+  CellTags->"sigmaNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal \
+digits to be returned in the result"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Accuracy\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-9\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"100\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set maximal number of iterations to be used \
+for achieving requested precision and accuracy"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"InternalPrecision\\\\\\\"\
+\\\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"6\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits to be \
+achieved in the trailing results"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"InternalAccuracy\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"7\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero in the tailing results"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"ReturnList\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"False\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", "\<\"used to determine whether to return all trailing \
+results or not\"\>"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Start\\\\\\\"\\\", \\\"MR\
+\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"{2,3}\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("affects calculation only when option IncreaseDegree \
+is set,  and determines degrees of starting polynomials in the process of \
+construction "\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IncreaseDegree\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"True\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to determine algorithm for construction, wether \
+to increase degree of polynomial with fixed s, or to increase parameter s \
+with fixed degree of polynomial"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->{"sigmaNodes", "sigma"}],
+
+Cell[TextData[{
+  "Meaning of options is the same as for function ",
+  ButtonBox["aTuranNodes",
+    ButtonData:>{"aTuranNodes", "turanNodes"},
+    ButtonStyle->"AddOnsLink"],
+  " . In the part of construction generalized Gaussian quadrature rule is \
+made for maximal value of s which appear in vector \[Sigma], then values of \
+coordinates in \[Sigma] are depressed. "
+}], "Text",
+  CellTags->{"sigmaNodes", "sigma"}],
+
+Cell["\<\
+Another format can be used for increasing precision of results\
+\>", "Text",
+  CellTags->"sigmaNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"aSigmaNodes[\\\\\\\"\\\", \
+\\\"MR\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"{clsKeyWord\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \\!\
+\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \\\"TI\\\"]\\)\\!\\(\\*StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\) 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]}\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Tau]\\\\\\\"\\\", \
+\\\"TP\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\",\\\\\\\"\\\", \\\"MR\\\"]\\)
+\\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \
+\\\"TI\\\"]\\)\\!\\(\\*StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\", \\\"MR\\\"]\\)
+\"\>", "\<\" returns nodes for generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with vector \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \\\"TI\\\"]\\),
+for class of orthogonal polynomials given with the key-word \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"clsKeyWord\\\\\\\"\\\", \\\"TI\\\"]\\) with \
+parameters of the class \\!\\(\\*StyleBox[\\\"\\\\\\\"prm1\\\\\\\"\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"\\\\\\\"prm2\\\\\\\"\\\", \
+\\\"TI\\\"]\\), 
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Ellipsis]\\\\\\\"\\\", \\\"TI\\\"]\\) if \
+there is any, where \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Tau]\\\\\\\"\\\", \
+\\\"TI\\\"]\\) is list of starting values for construction,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"sigmaNodes"],
+
+Cell["With this format following options can be used", "Text",
+  CellTags->"sigmaNodes"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Precision\\\\\\\"\\\", \\\
+\"MR\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-10\\\
+\\\\\"\\\", \\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal \
+digits to be returned in the result"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Accuracy\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision-9\\\\\\\"\\\", \
+\\\"MR\\\"]\\) \"\>", \("used to set number of exact decimal digits after \
+decimal point in representing zero"\)},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"IterationDepth\\\\\\\"\\\"\
+, \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set maximal number of iterations to be used for \
+achieving requested precision and accuracy"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"sigmaNodes"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->{"sigmaNodes", "sigma"}],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->{"sigmaNodes", "sigma"}],
+
+Cell["\<\
+We can construct generalized Gaussian quadrature rule for Legendre measure \
+with vector \[Sigma] =(1,2,2,2), for example.\
+\>", "Text",
+  CellTags->"sigmaNodes"],
+
+Cell[BoxData[
+    \(aSigmaNodes[4, {aLegendre}, {1, 2, 2, 2}, Precision -> 16]\)], "Input",
+  CellTags->"sigmaNodes"],
+
+Cell[TextData[{
+  "Once nodes are constructed weights can be constructed using function ",
+  ButtonBox["aSigmaWeights",
+    ButtonData:>{"aSigmaWeights", "sigmaWeights"},
+    ButtonStyle->"AddOnsLink"],
+  "."
+}], "Text",
+  CellTags->"sigmaNodes"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+We can construct generalized Gaussian quadrature rule and evaluate \
+integrals\
+\>", "Text",
+  CellTags->"sigma"],
+
+Cell[BoxData[
+    \({n, w} = 
+      aSigmaNodesWeights[4, {aLegendre}, {1, 2, 1, 2}, Precision \[Rule] 16, 
+        IncreaseDegree \[Rule] False]\)], "Input",
+  CellTags->"sigma"],
+
+Cell[BoxData[
+    \(Plus @@ 
+      Table[\((w[\([i + 1]\)])\) . \((\((D[x\ Sin[4  x], {x, i}])\) /. 
+              x \[Rule] n)\), {i, 0, 4}]\)], "Input",
+  CellTags->"sigma"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aSigmaWeights", "Subsection",
+  CellTags->"sigmaWeights"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aSigmaWeights",
+    FontSlant->"Italic"],
+  " can be used for construction of weights of ",
+  ButtonBox["generalized Gaussian quadrature rule",
+    ButtonData:>{"aSigmaWeights", "sigmaWeights"},
+    ButtonStyle->"AddOnsLink"],
+  ", when nodes are constructed. Function has the following format."
+}], "Text",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\* StyleBox[\\\"\\\\\\\"aSigmaWeights[\\\\\\\"\\\
+\",\\n\\\"MR\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\\\
+\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* StyleBox[\\\"\\\\\\\"\[Alpha]\
+\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* StyleBox[\\\"\\\\\\\"\
+\[Sigma]\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"\[Tau]\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\
+\\\\\\\"]\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \"\>", "\<\" returns weights for \
+generalized Gaussian quadrature rule of degree \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \\\"TI\\\"]\\) and with vector \
+\\!\\(\\*StyleBox[\\\"\\\\\\\"\[Sigma]\\\\\\\"\\\", \\\"TI\\\"]\\),
+for class of orthogonal polynomials given with three term recurrence \
+coefficients \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Alpha]\\\\\\\"\\\", \
+\\\"TP\\\"]\\) and \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\", \
+\\\"TP\\\"]\\), where \\!\\(\\*StyleBox[\\\"\\\\\\\"\[Tau]\\\\\\\"\\\", \
+\\\"TI\\\"]\\) is list of starting values for construction,
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"sigmaWeights"],
+
+Cell["There is only one option for this function", "Text",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"sigmaWeights"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"sigmaWeights"],
+
+Cell[TextData[{
+  "Using function ",
+  ButtonBox["aSigmaNodes",
+    ButtonData:>{"aSigmaNodes", "sigmaNodes"},
+    ButtonStyle->"AddOnsLink"],
+  " we can construct nodes for generalized Gaussian quadrature rule."
+}], "Text",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    \(n = 
+      aSigmaNodes[4, {aLegendre}, {1, 2, 2, 2}, 
+        Precision \[Rule] 16]\)], "Input",
+  CellTags->"sigmaWeights"],
+
+Cell["We can now construct weights", "Text",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    \(\({al, be} = 
+        Transpose[aLegendre["\<ttr\>"] /@ Range[0, 50]];\)\)], "Input",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    \(aSigmaWeights[4, al, be, {1, 2, 2, 2}, n]\)], "Input",
+  CellTags->"sigmaWeights"],
+
+Cell["\<\
+It should be noted that number of three term recurrence coefficients needed \
+for construction equals to\
+\>", "Text",
+  CellTags->"sigmaWeights"],
+
+Cell[BoxData[
+    \(\(\(\t\t\t\t\t\t\)\(\(\([\(2 \((s + 1)\) n - 1\)\/2]\) + 
+      1\)\(,\)\)\)\)], "DisplayMath",
+  CellTags->"sigmaWeights"],
+
+Cell["\<\
+where n is number of nodes and s is maximal coordinate in vector \[Sigma].\
+\>", "Text",
+  CellTags->"sigmaWeights"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aFejerNodesWeights", "Subsection",
+  CellTags->"fejer"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aFejerNodesWeights",
+    FontSlant->"Italic"],
+  " can be used for construction of ",
+  ButtonBox["Fejer quadrature rule",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"],
+  ". Function has following format."
+}], "Text",
+  CellTags->"fejer"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\* \
+StyleBox[\\\"\\\\\\\"aFejerNodesWeights[\\\\\\\"\\\",\\n\\\"MR\\\"]\\)\\!\\(\\\
+* StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\
+\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\)  \\!\\(\\* StyleBox[\\\"\\\\\\\"ops\\\
+\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\"]\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \"\>", "\<\" returns \
+Fejer quadrature rule with \\!\\(\\*StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\", \
+\\\"TI\\\"]\\) nodes 
+last argument, \\!\\(\\*StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\", \\\"TI\\\"]\\), \
+are options.
+\"\>"}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"fejer"],
+
+Cell["There is only one option", "Text",
+  CellTags->"fejer"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"option name\\\\\\\"\\\", \
+\\\"TI\\\"]\\) \"\>", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"default \
+value\\\\\\\"\\\", \\\"TI\\\"]\\) \"\>", "\[Null]"},
+                {"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"WorkingPrecision\\\\\\\"\\\
+\", \\\"MR\\\"]\\) \"\>", \
+"\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"$MachinePrecision\\\\\\\"\\\", \\\"MR\\\"]\
+\\) \"\>", \("used to set number of decimal digits of working precision \
+during calculation"\)}
+                },
+              ColumnAlignments->{Left}],
+            GridBoxOptions->{RowLines->{True, False}}]],
+        "3ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"fejer"],
+
+Cell["This starts package", "MathCaption",
+  CellTags->"fejer"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"fejer"],
+
+Cell["\<\
+We can construct Fejer quadrature rule and use it for evaluation of integrals\
+\
+\>", "Text",
+  CellTags->"fejer"],
+
+Cell[BoxData[
+    \({n, w} = aFejerNodesWeights[100]\)], "Input",
+  CellTags->"fejer"],
+
+Cell[BoxData[
+    \(w . Exp[n]\)], "Input",
+  CellTags->"fejer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OrthogonalPolynomials`NodesWeights`aNodesWeights", "Subsection",
+  CellTags->"nw"],
+
+Cell[TextData[{
+  "Function ",
+  StyleBox["aNodesWeights",
+    FontSlant->"Italic"],
+  " can be used for construction of any quadrature rule supported in the \
+package. Function has following format"
+}], "Text",
+  CellTags->"nw"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\* StyleBox[\\\"\\\\\\\"aNodesWeights[\\\\\\\"\\\
+\",\\n\\\"MR\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\\\
+\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"{name\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* StyleBox[\\\
+\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"polyOps}\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\"\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* StyleBox[\\\"\\\
+\\\\\"type\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\
+\\\\\\\"]\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \"\>", 
+                  RowBox[{
+                    RowBox[{
+                    "returns", " ", "nodes", " ", "and", " ", "weights", " ", 
+                      "for", " ", "quadrature", " ", "rule", " ", "of", " ", 
+                      "degree", " ", "n", 
+                      StyleBox[
+                        RowBox[{
+                          StyleBox[" ",
+                            "TI"], " "}]], "specified", " ", "with", " ", 
+                      "type"}], " ", ",", 
+                    " ", \(for\ class\ specified\ with\ name\ with\ \
+parameters\ polyOps\ ops\ are\ options . \ 
+                        Type\ can\ be\ one\ of\ the\ \(following : \ 
+                        aGaussian\)\), ",", " ", "aRadau", ",", " ", 
+                    "aLobatto", ",", " ", "aKronrod", ",", " ", "aTuran", ",",
+                     " ", \(aSigma\ in\ which\ case\ Gaussian\), ",", " ", 
+                    "Radau", ",", " ", "Lobatto", ",", " ", "Kronrod", ",", 
+                    " ", \(Turan\ or\ Sigma\ quadrature\ rule\ is\ \
+constructed\), ",", " ", \(\(respectively\)\(.\)\(\ \)\)}]}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"nw"],
+
+Cell[TextData[{
+  "Set of options which can be requested depends strongly on type of \
+quadrature rule which is required to be constructed. In case Gauss quadrature \
+rule is to be constructed list of options is the same as for ",
+  ButtonBox["aGaussianNodesWeights",
+    ButtonData:>{"aGaussianNodesWeights", "gaussian"},
+    ButtonStyle->"AddOnsLink"],
+  ". In case Radau quadrature rule is to be constructed options are the same \
+as for ",
+  ButtonBox["aRadauNodesWeights",
+    ButtonData:>{"aRadauNodesWeights", "radau"},
+    ButtonStyle->"AddOnsLink"],
+  ". In case Lobatto quadrature rule is to be constructed set of options is \
+the same as for function ",
+  ButtonBox["aLobattoNodesWeights",
+    ButtonData:>{"aLobattoNodesWeights", "lobatto"},
+    ButtonStyle->"AddOnsLink"],
+  ". In case Kronrod quadrature rule is constructed set of options is the \
+same as for function ",
+  ButtonBox["aKronrodNodesWeights",
+    ButtonData:>{"aKronrodNodesWeights", "kronrod"},
+    ButtonStyle->"AddOnsLink"],
+  ". In case Turan quadrature rule is to be constructed set of options is the \
+same as for the function ",
+  ButtonBox["aTuranNodesWeights",
+    ButtonData:>{"aTuranNodesWeights", "turan"},
+    ButtonStyle->"AddOnsLink"],
+  ". In case sigma  quadrature rule is to be constructed set of options is \
+the same as for the function ",
+  ButtonBox["aSigmaNodesWeights",
+    ButtonData:>{"aSigmaNodesWeights", "sigma"},
+    ButtonStyle->"AddOnsLink"],
+  ". "
+}], "Text",
+  CellTags->"nw"],
+
+Cell[TextData[{
+  "In case Radau quadrature rule is constructed we need to put at the place \
+of first option ",
+  ButtonBox["fixed point",
+    ButtonData:>{"aRadauNodesWeights", "radau"},
+    ButtonStyle->"AddOnsLink"],
+  " in Radau quadrature rule."
+}], "Text",
+  CellTags->"nw"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellLabel->"In[1]:=",
+  CellTags->"nw"],
+
+Cell[BoxData[
+    \(aNodesWeights[10, {aChebyshevI}, aRadau, 2, Precision -> 16]\)], "Input",\
+
+  CellLabel->"In[2]:=",
+  CellTags->"nw"],
+
+Cell[TextData[{
+  "In case Lobatto quadrature rule is constructed we need to put at the place \
+of first two options ",
+  ButtonBox["fixed points",
+    ButtonData:>{"aLobattoNodesWeights", "lobatto"},
+    ButtonStyle->"AddOnsLink"],
+  " in Lobatto quadrature rule."
+}], "Text",
+  CellTags->"nw"],
+
+Cell[BoxData[
+    \(<< OrthogonalPolynomials`\)], "Input",
+  CellTags->"nw"],
+
+Cell[BoxData[
+    \(aNodesWeights[10, {aChebyshevII}, aLobatto, \(-2\), 2, 
+      Precision -> 16]\)], "Input",
+  CellLabel->"In[3]:=",
+  CellTags->"nw"],
+
+Cell["There is also one more format in which function can be used", "Text",
+  CellTags->"nw"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {"\<\"\\!\\(\\* StyleBox[\\\"\\\\\\\"aNodesWeights[\\\\\\\"\\\
+\",\\n\\\"MR\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\"n\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\\\
+\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* StyleBox[\\\"\\\\\\\"\[Alpha]\
+\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"\[Beta]\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* StyleBox[\
+\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* StyleBox[\\\"\\\\\\\"\\\
+\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* StyleBox[\\\"\\\\\\\"\\\\\\\"\\\",\\n\\\
+\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"type\\\\\\\"\\\",\\n\\\"TP\\\"]\\)\\!\\(\\* \
+StyleBox[\\\"\\\\\\\",\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \\!\\(\\* \
+StyleBox[\\\"\\\\\\\"ops\\\\\\\"\\\",\\n\\\"TI\\\"]\\)\\!\\(\\* StyleBox[\\\"\
+\\\\\\\"]\\\\\\\"\\\",\\n\\\"MR\\\"]\\) \"\>", 
+                  RowBox[{
+                    RowBox[{
+                    "returns", " ", "nodes", " ", "and", " ", "weights", " ", 
+                      "for", " ", "quadrature", " ", "rule", " ", "of", " ", 
+                      "degree", " ", "n", 
+                      StyleBox[
+                        RowBox[{
+                          StyleBox[" ",
+                            "TI"], " "}]], "specified", " ", "with", " ", 
+                      "type"}], " ", ",", 
+                    " ", \(for\ class\ specified\ with\ three\ term\ \
+recurrence\ coefficients\ \[Alpha]\ and\ \[Beta] . \ \ Type\ can\ be\ one\ of\
+\ the\ \(following : \ aGaussian\)\), ",", " ", "aRadau", ",", " ", 
+                    "aLobatto", ",", " ", "aKronrod", ",", " ", "aTuran", ",",
+                     " ", \(aSigma\ in\ which\ case\ Gaussian\), ",", " ", 
+                    "Radau", ",", " ", "Lobatto", ",", " ", "Kronrod", ",", 
+                    " ", \(Turan\ or\ Sigma\ quadrature\ rule\ is\ \
+constructed\), ",", " ", \(\(respectively\)\(.\)\(\ \)\)}]}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"nw"]
+}, Open  ]],
+
+Cell[TextData[{
+  "Options which can be applied, again, strongly depend on the type of \
+quadrature rule which is required, as with previous format. However, if \
+quadrature rule of type ",
+  ButtonBox["aTuran",
+    ButtonData:>{"aTuranNodesWeights", "turan"},
+    ButtonStyle->"Hyperlink"],
+  " or ",
+  ButtonBox["aSigma",
+    ButtonData:>{"aSigmaNodesWeights", "sigma"},
+    ButtonStyle->"Hyperlink"],
+  " are constructed than option IncreaseDegree is not active when this format \
+of aNodesWeights is used. In such calls construction is always done using \
+IncreaseDegree option set to False."
+}], "Text",
+  CellTags->"nw"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+CellGrouping->Manual,
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowCellTags->True,
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "zero"->{
+    Cell[1776, 53, 82, 1, 53, "Subsection",
+      CellTags->"zero"],
+    Cell[1861, 56, 126, 3, 55, "MathCaption",
+      CellTags->"zero"],
+    Cell[1990, 61, 1378, 26, 73, "Text",
+      CellTags->"zero"],
+    Cell[3371, 89, 90, 1, 39, "Text",
+      CellTags->"zero"],
+    Cell[3464, 92, 1337, 25, 191, "Text",
+      CellTags->"zero"],
+    Cell[4804, 119, 468, 10, 56, "Text",
+      CellTags->"zero"],
+    Cell[5275, 131, 159, 5, 55, "MathCaption",
+      CellTags->"zero"],
+    Cell[5437, 138, 1346, 26, 73, "Text",
+      CellTags->"zero"],
+    Cell[6786, 166, 87, 1, 39, "Text",
+      CellTags->"zero"],
+    Cell[6876, 169, 1311, 25, 171, "Text",
+      CellTags->"zero"],
+    Cell[8190, 196, 899, 20, 90, "Text",
+      CellTags->"zero"],
+    Cell[9092, 218, 176, 6, 55, "MathCaption",
+      CellTags->"zero"],
+    Cell[9271, 226, 1701, 33, 73, "Text",
+      CellTags->"zero"],
+    Cell[10975, 261, 90, 1, 39, "Text",
+      CellTags->"zero"],
+    Cell[11068, 264, 1610, 29, 211, "Text",
+      CellTags->"zero"],
+    Cell[12681, 295, 55, 1, 39, "Text",
+      CellTags->"zero"],
+    Cell[12739, 298, 78, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[12820, 302, 144, 4, 39, "Text",
+      CellTags->"zero"],
+    Cell[12967, 308, 145, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[13115, 313, 149, 4, 39, "Text",
+      CellTags->"zero"],
+    Cell[13267, 319, 114, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[13384, 324, 98, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[13485, 328, 163, 4, 43, "Input",
+      CellTags->"zero"],
+    Cell[13651, 334, 104, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[13758, 338, 130, 4, 39, "Text",
+      CellTags->"zero"],
+    Cell[13891, 344, 258, 5, 72, "MathCaption",
+      CellTags->"zero"],
+    Cell[14152, 351, 557, 15, 56, "Text",
+      CellTags->"zero"],
+    Cell[14712, 368, 92, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[14807, 372, 126, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[14936, 377, 126, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[15065, 382, 126, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[15194, 387, 137, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[15334, 392, 173, 3, 63, "Input",
+      CellTags->"zero"],
+    Cell[15510, 397, 98, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[15611, 401, 92, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[15706, 405, 368, 7, 72, "MathCaption",
+      CellTags->"zero"],
+    Cell[16077, 414, 132, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[16212, 419, 201, 6, 39, "Text",
+      CellTags->"zero"],
+    Cell[16416, 427, 102, 2, 43, "Input",
+      CellTags->"zero"],
+    Cell[16521, 431, 140, 3, 43, "Input",
+      CellTags->"zero"],
+    Cell[16664, 436, 253, 5, 56, "Text",
+      CellTags->"zero"]},
+  "gaussian"->{
+    Cell[16954, 446, 102, 1, 53, "Subsection",
+      CellTags->"gaussian"],
+    Cell[17059, 449, 467, 14, 55, "MathCaption",
+      CellTags->"gaussian"],
+    Cell[17529, 465, 1750, 34, 73, "Text",
+      CellTags->"gaussian"],
+    Cell[19282, 501, 89, 1, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[19374, 504, 1880, 33, 251, "Text",
+      CellTags->"gaussian"],
+    Cell[21257, 539, 173, 5, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[21433, 546, 1366, 26, 73, "Text",
+      CellTags->"gaussian"],
+    Cell[22802, 574, 94, 1, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[22899, 577, 1581, 29, 211, "Text",
+      CellTags->"gaussian"],
+    Cell[24483, 608, 1379, 33, 107, "Text",
+      CellTags->"gaussian"],
+    Cell[25865, 643, 66, 1, 55, "MathCaption",
+      CellTags->"gaussian"],
+    Cell[25934, 646, 82, 2, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[26019, 650, 163, 4, 55, "MathCaption",
+      CellTags->"gaussian"],
+    Cell[26185, 656, 152, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[26340, 662, 155, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[26498, 668, 155, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[26656, 674, 155, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[26814, 680, 155, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[26972, 686, 216, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[27191, 692, 269, 5, 56, "Text",
+      CellTags->"gaussian"],
+    Cell[27463, 699, 219, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[27685, 705, 401, 9, 72, "MathCaption",
+      CellTags->"gaussian"],
+    Cell[28089, 716, 224, 4, 58, "DisplayMath",
+      CellTags->"gaussian"],
+    Cell[28316, 722, 137, 4, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[28456, 728, 276, 5, 61, "DisplayMath",
+      CellTags->"gaussian"],
+    Cell[28735, 735, 401, 11, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[29139, 748, 544, 11, 123, "Input",
+      CellTags->"gaussian"],
+    Cell[29686, 761, 157, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[29846, 767, 93, 1, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[29942, 770, 138, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[30083, 776, 141, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[30227, 782, 141, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[30371, 788, 141, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[30515, 794, 141, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[30659, 800, 141, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[30803, 806, 97, 1, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[30903, 809, 174, 4, 58, "DisplayMath",
+      CellTags->"gaussian"],
+    Cell[31080, 815, 128, 5, 39, "Text",
+      CellTags->"gaussian"],
+    Cell[31211, 822, 207, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[31421, 828, 155, 5, 51, "Text",
+      CellTags->"gaussian"],
+    Cell[31579, 835, 241, 4, 43, "Input",
+      CellTags->"gaussian"],
+    Cell[31823, 841, 162, 4, 55, "MathCaption",
+      CellTags->"gaussian"]},
+  "gaussianWeights"->{
+    Cell[32022, 850, 104, 1, 53, "Subsection",
+      CellTags->"gaussianWeights"],
+    Cell[32129, 853, 347, 10, 39, "Text",
+      CellTags->"gaussianWeights"],
+    Cell[32479, 865, 1629, 30, 91, "Text",
+      CellTags->"gaussianWeights"],
+    Cell[34111, 897, 165, 6, 39, "Text",
+      CellTags->"gaussianWeights"],
+    Cell[34279, 905, 1026, 21, 109, "Text",
+      CellTags->"gaussianWeights"],
+    Cell[35308, 928, 73, 1, 55, "MathCaption",
+      CellTags->"gaussianWeights"],
+    Cell[35384, 931, 89, 2, 43, "Input",
+      CellTags->"gaussianWeights"],
+    Cell[35476, 935, 279, 7, 39, "Text",
+      CellTags->"gaussianWeights"],
+    Cell[35758, 944, 117, 2, 43, "Input",
+      CellTags->"gaussianWeights"],
+    Cell[35878, 948, 136, 3, 43, "Input",
+      CellTags->"gaussianWeights"],
+    Cell[36017, 953, 95, 2, 43, "Input",
+      CellTags->"gaussianWeights"],
+    Cell[36115, 957, 683, 20, 56, "Text",
+      CellTags->"gaussianWeights"]},
+  "radau"->{
+    Cell[36835, 982, 96, 1, 53, "Subsection",
+      CellTags->"radau"],
+    Cell[36934, 985, 323, 10, 39, "Text",
+      CellTags->"radau"],
+    Cell[37260, 997, 1617, 29, 91, "Text",
+      CellTags->"radau"],
+    Cell[38880, 1028, 108, 3, 39, "Text",
+      CellTags->"radau"],
+    Cell[38991, 1033, 1578, 29, 211, "Text",
+      CellTags->"radau"],
+    Cell[40572, 1064, 496, 12, 56, "Text",
+      CellTags->"radau"],
+    Cell[41071, 1078, 63, 1, 55, "MathCaption",
+      CellTags->"radau"],
+    Cell[41137, 1081, 79, 2, 43, "Input",
+      CellTags->"radau"],
+    Cell[41219, 1085, 139, 4, 39, "Text",
+      CellTags->"radau"],
+    Cell[41361, 1091, 112, 2, 43, "Input",
+      CellTags->"radau"],
+    Cell[41476, 1095, 109, 2, 43, "Input",
+      CellTags->"radau"],
+    Cell[41588, 1099, 234, 5, 39, "Text",
+      CellTags->"radau"],
+    Cell[41825, 1106, 107, 2, 43, "Input",
+      CellTags->"radau"],
+    Cell[41935, 1110, 115, 3, 43, "Input",
+      CellTags->"radau"],
+    Cell[42053, 1115, 249, 7, 39, "Text",
+      CellTags->"radau"],
+    Cell[42305, 1124, 105, 2, 43, "Input",
+      CellTags->"radau"],
+    Cell[42413, 1128, 106, 2, 43, "Input",
+      CellTags->"radau"],
+    Cell[42522, 1132, 104, 2, 43, "Input",
+      CellTags->"radau"]},
+  "lobatto"->{
+    Cell[42663, 1139, 100, 1, 53, "Subsection",
+      CellTags->"lobatto"],
+    Cell[42766, 1142, 333, 10, 39, "Text",
+      CellTags->"lobatto"],
+    Cell[43102, 1154, 1831, 33, 91, "Text",
+      CellTags->"lobatto"],
+    Cell[44936, 1189, 181, 6, 39, "Text",
+      CellTags->"lobatto"],
+    Cell[45120, 1197, 1580, 29, 211, "Text",
+      CellTags->"lobatto"],
+    Cell[46703, 1228, 500, 12, 56, "Text",
+      CellTags->"lobatto"],
+    Cell[47206, 1242, 65, 1, 55, "MathCaption",
+      CellTags->"lobatto"],
+    Cell[47274, 1245, 81, 2, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[47358, 1249, 114, 3, 39, "Text",
+      CellTags->"lobatto"],
+    Cell[47475, 1254, 128, 3, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[47606, 1259, 128, 3, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[47737, 1264, 364, 11, 39, "Text",
+      CellTags->"lobatto"],
+    Cell[48104, 1277, 128, 3, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[48235, 1282, 112, 2, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[48350, 1286, 114, 2, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[48467, 1290, 113, 2, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[48583, 1294, 217, 5, 39, "Text",
+      CellTags->"lobatto"],
+    Cell[48803, 1301, 109, 2, 43, "Input",
+      CellTags->"lobatto"],
+    Cell[48915, 1305, 112, 2, 43, "Input",
+      CellTags->"lobatto"]},
+  "laurie"->{
+    Cell[49064, 1312, 86, 1, 53, "Subsection",
+      CellTags->"laurie"],
+    Cell[49153, 1315, 493, 15, 72, "MathCaption",
+      CellTags->"laurie"],
+    Cell[49649, 1332, 1411, 27, 91, "Text",
+      CellTags->"laurie"],
+    Cell[51063, 1361, 81, 1, 39, "Text",
+      CellTags->"laurie"],
+    Cell[51147, 1364, 1159, 23, 169, "Text",
+      CellTags->"laurie"],
+    Cell[52309, 1389, 64, 1, 55, "MathCaption",
+      CellTags->"laurie"],
+    Cell[52376, 1392, 104, 3, 43, "Input",
+      CellTags->"laurie"],
+    Cell[52483, 1397, 307, 8, 56, "Text",
+      CellTags->"laurie"],
+    Cell[52793, 1407, 131, 3, 43, "Input",
+      CellTags->"laurie"],
+    Cell[52927, 1412, 96, 2, 43, "Input",
+      CellTags->"laurie"],
+    Cell[53026, 1416, 401, 7, 56, "Text",
+      CellTags->"laurie"],
+    Cell[53430, 1425, 127, 3, 43, "Input",
+      CellTags->"laurie"],
+    Cell[53560, 1430, 97, 2, 43, "Input",
+      CellTags->"laurie"]},
+  "kronrod"->{
+    Cell[53694, 1437, 100, 1, 53, "Subsection",
+      CellTags->"kronrod"],
+    Cell[53797, 1440, 277, 8, 55, "MathCaption",
+      CellTags->"kronrod"],
+    Cell[54077, 1450, 1358, 26, 73, "Text",
+      CellTags->"kronrod"],
+    Cell[55438, 1478, 180, 6, 39, "Text",
+      CellTags->"kronrod"],
+    Cell[55621, 1486, 2456, 43, 367, "Text",
+      CellTags->"kronrod"],
+    Cell[58080, 1531, 65, 1, 55, "MathCaption",
+      CellTags->"kronrod"],
+    Cell[58148, 1534, 81, 2, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[58232, 1538, 461, 12, 56, "Text",
+      CellTags->"kronrod"],
+    Cell[58696, 1552, 164, 3, 52, "DisplyMath",
+      CellTags->"kronrod"],
+    Cell[58863, 1557, 128, 3, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[58994, 1562, 185, 4, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[59182, 1568, 79, 2, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[59264, 1572, 81, 2, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[59348, 1576, 161, 4, 39, "Text",
+      CellTags->"kronrod"],
+    Cell[59512, 1582, 128, 3, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[59643, 1587, 151, 3, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[59797, 1592, 258, 8, 39, "Text",
+      CellTags->"kronrod"],
+    Cell[60058, 1602, 126, 3, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[60187, 1607, 150, 4, 39, "Text",
+      CellTags->"kronrod"],
+    Cell[60340, 1613, 69, 2, 43, "Input",
+      CellTags->"kronrod"],
+    Cell[60412, 1617, 304, 8, 39, "Text",
+      CellTags->"kronrod"]},
+  "turan"->{
+    Cell[60753, 1630, 96, 1, 53, "Subsection",
+      CellTags->"turan"],
+    Cell[60852, 1633, 316, 10, 55, "MathCaption",
+      CellTags->"turan"],
+    Cell[61171, 1645, 1957, 37, 73, "Text",
+      CellTags->"turan"],
+    Cell[65801, 1751, 3129, 52, 427, "Text",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[68933, 1805, 729, 13, 90, "Text",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[69665, 1820, 264, 8, 39, "Text",
+      CellTags->"turan"],
+    Cell[74184, 1922, 79, 1, 55, "MathCaption",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[74266, 1925, 95, 2, 43, "Input",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[77146, 2015, 183, 4, 39, "Text",
+      CellTags->"turan"],
+    Cell[77332, 2021, 149, 4, 43, "Input",
+      CellTags->"turan"],
+    Cell[77484, 2027, 176, 4, 43, "Input",
+      CellTags->"turan"]},
+  "turanNodes"->{
+    Cell[63232, 1689, 94, 1, 53, "Subsection",
+      CellTags->"turanNodes"],
+    Cell[63329, 1692, 324, 10, 55, "MathCaption",
+      CellTags->"turanNodes"],
+    Cell[63656, 1704, 1965, 37, 91, "Text",
+      CellTags->"turanNodes"],
+    Cell[65624, 1743, 174, 6, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[65801, 1751, 3129, 52, 427, "Text",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[68933, 1805, 729, 13, 90, "Text",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[69932, 1830, 167, 6, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[70102, 1838, 2205, 40, 91, "Text",
+      CellTags->"turanNodes"],
+    Cell[72310, 1880, 96, 1, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[72409, 1883, 1630, 31, 211, "Text",
+      CellTags->"turanNodes"],
+    Cell[74042, 1916, 139, 4, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[74184, 1922, 79, 1, 55, "MathCaption",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[74266, 1925, 95, 2, 43, "Input",
+      CellTags->{"turanNodes", "turan"}],
+    Cell[74364, 1929, 306, 7, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[74673, 1938, 152, 3, 43, "Input",
+      CellTags->"turanNodes"],
+    Cell[74828, 1943, 122, 3, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[74953, 1948, 115, 2, 43, "Input",
+      CellTags->"turanNodes"],
+    Cell[75071, 1952, 265, 5, 56, "Text",
+      CellTags->"turanNodes"],
+    Cell[75339, 1959, 150, 3, 43, "Input",
+      CellTags->"turanNodes"],
+    Cell[75492, 1964, 124, 3, 39, "Text",
+      CellTags->"turanNodes"],
+    Cell[75619, 1969, 113, 2, 43, "Input",
+      CellTags->"turanNodes"],
+    Cell[75735, 1973, 527, 12, 72, "MathCaption",
+      CellTags->"turanNodes"],
+    Cell[76265, 1987, 155, 3, 43, "Input",
+      CellTags->"turanNodes"],
+    Cell[76423, 1992, 423, 9, 56, "Text",
+      CellTags->"turanNodes"],
+    Cell[76849, 2003, 260, 7, 55, "MathCaption",
+      CellTags->"turanNodes"]},
+  "sigma"->{
+    Cell[77893, 2042, 96, 1, 53, "Subsection",
+      CellTags->"sigma"],
+    Cell[77992, 2045, 273, 9, 39, "Text",
+      CellTags->"sigma"],
+    Cell[78268, 2056, 1973, 38, 73, "Text",
+      CellTags->"sigma"],
+    Cell[80244, 2096, 162, 6, 39, "Text",
+      CellTags->"sigma"],
+    Cell[82967, 2165, 3128, 52, 427, "Text",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[86098, 2219, 418, 9, 56, "Text",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[90580, 2313, 79, 1, 55, "MathCaption",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[90662, 2316, 95, 2, 43, "Input",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[91338, 2342, 123, 4, 39, "Text",
+      CellTags->"sigma"],
+    Cell[91464, 2348, 179, 4, 43, "Input",
+      CellTags->"sigma"],
+    Cell[91646, 2354, 175, 4, 43, "Input",
+      CellTags->"sigma"]},
+  "sigmaNodes"->{
+    Cell[80443, 2107, 94, 1, 53, "Subsection",
+      CellTags->"sigmaNodes"],
+    Cell[80540, 2110, 337, 10, 39, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[80880, 2122, 1981, 38, 91, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[82864, 2162, 100, 1, 39, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[82967, 2165, 3128, 52, 427, "Text",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[86098, 2219, 418, 9, 56, "Text",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[86519, 2230, 112, 3, 39, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[86634, 2235, 2219, 40, 91, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[88856, 2277, 88, 1, 39, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[88947, 2280, 1630, 31, 211, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[90580, 2313, 79, 1, 55, "MathCaption",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[90662, 2316, 95, 2, 43, "Input",
+      CellTags->{"sigmaNodes", "sigma"}],
+    Cell[90760, 2320, 172, 4, 39, "Text",
+      CellTags->"sigmaNodes"],
+    Cell[90935, 2326, 117, 2, 43, "Input",
+      CellTags->"sigmaNodes"],
+    Cell[91055, 2330, 246, 7, 39, "Text",
+      CellTags->"sigmaNodes"]},
+  "sigmaWeights"->{
+    Cell[91858, 2363, 98, 1, 53, "Subsection",
+      CellTags->"sigmaWeights"],
+    Cell[91959, 2366, 378, 10, 39, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[92340, 2378, 1857, 34, 91, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[94200, 2414, 86, 1, 39, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[94289, 2417, 767, 17, 91, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[95059, 2436, 70, 1, 55, "MathCaption",
+      CellTags->"sigmaWeights"],
+    Cell[95132, 2439, 86, 2, 43, "Input",
+      CellTags->"sigmaWeights"],
+    Cell[95221, 2443, 252, 7, 39, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[95476, 2452, 144, 4, 43, "Input",
+      CellTags->"sigmaWeights"],
+    Cell[95623, 2458, 72, 1, 39, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[95698, 2461, 133, 3, 43, "Input",
+      CellTags->"sigmaWeights"],
+    Cell[95834, 2466, 102, 2, 43, "Input",
+      CellTags->"sigmaWeights"],
+    Cell[95939, 2470, 156, 4, 39, "Text",
+      CellTags->"sigmaWeights"],
+    Cell[96098, 2476, 143, 3, 58, "DisplayMath",
+      CellTags->"sigmaWeights"],
+    Cell[96244, 2481, 126, 3, 39, "Text",
+      CellTags->"sigmaWeights"]},
+  "fejer"->{
+    Cell[96407, 2489, 96, 1, 53, "Subsection",
+      CellTags->"fejer"],
+    Cell[96506, 2492, 314, 10, 39, "Text",
+      CellTags->"fejer"],
+    Cell[96823, 2504, 860, 20, 51, "Text",
+      CellTags->"fejer"],
+    Cell[97686, 2526, 61, 1, 39, "Text",
+      CellTags->"fejer"],
+    Cell[97750, 2529, 760, 17, 91, "Text",
+      CellTags->"fejer"],
+    Cell[98513, 2548, 63, 1, 55, "MathCaption",
+      CellTags->"fejer"],
+    Cell[98579, 2551, 79, 2, 43, "Input",
+      CellTags->"fejer"],
+    Cell[98661, 2555, 124, 4, 39, "Text",
+      CellTags->"fejer"],
+    Cell[98788, 2561, 86, 2, 43, "Input",
+      CellTags->"fejer"],
+    Cell[98877, 2565, 64, 2, 43, "Input",
+      CellTags->"fejer"]},
+  "nw"->{
+    Cell[98978, 2572, 88, 1, 53, "Subsection",
+      CellTags->"nw"],
+    Cell[99069, 2575, 229, 7, 39, "Text",
+      CellTags->"nw"],
+    Cell[99301, 2584, 2262, 42, 111, "Text",
+      CellTags->"nw"],
+    Cell[101566, 2628, 1490, 34, 107, "Text",
+      CellTags->"nw"],
+    Cell[103059, 2664, 281, 8, 39, "Text",
+      CellTags->"nw"],
+    Cell[103343, 2674, 100, 3, 43, "Input",
+      CellTags->"nw"],
+    Cell[103446, 2679, 137, 4, 43, "Input",
+      CellTags->"nw"],
+    Cell[103586, 2685, 295, 8, 39, "Text",
+      CellTags->"nw"],
+    Cell[103884, 2695, 76, 2, 43, "Input",
+      CellTags->"nw"],
+    Cell[103963, 2699, 153, 4, 43, "Input",
+      CellTags->"nw"],
+    Cell[104119, 2705, 93, 1, 39, "Text",
+      CellTags->"nw"],
+    Cell[104215, 2708, 2229, 41, 111, "Text",
+      CellTags->"nw"],
+    Cell[106459, 2752, 626, 15, 56, "Text",
+      CellTags->"nw"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"zero", 107758, 2787},
+  {"gaussian", 110529, 2870},
+  {"gaussianWeights", 113584, 2955},
+  {"radau", 114543, 2980},
+  {"lobatto", 115805, 3017},
+  {"laurie", 117178, 3056},
+  {"kronrod", 118117, 3083},
+  {"turan", 119637, 3126},
+  {"turanNodes", 120495, 3149},
+  {"sigma", 122427, 3200},
+  {"sigmaNodes", 123276, 3223},
+  {"sigmaWeights", 124458, 3254},
+  {"fejer", 125620, 3285},
+  {"nw", 126324, 3306}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 82, 1, 53, "Subsection",
+  CellTags->"zero"],
+Cell[1861, 56, 126, 3, 55, "MathCaption",
+  CellTags->"zero"],
+Cell[1990, 61, 1378, 26, 73, "Text",
+  CellTags->"zero"],
+Cell[3371, 89, 90, 1, 39, "Text",
+  CellTags->"zero"],
+Cell[3464, 92, 1337, 25, 191, "Text",
+  CellTags->"zero"],
+Cell[4804, 119, 468, 10, 56, "Text",
+  CellTags->"zero"],
+Cell[5275, 131, 159, 5, 55, "MathCaption",
+  CellTags->"zero"],
+Cell[5437, 138, 1346, 26, 73, "Text",
+  CellTags->"zero"],
+Cell[6786, 166, 87, 1, 39, "Text",
+  CellTags->"zero"],
+Cell[6876, 169, 1311, 25, 171, "Text",
+  CellTags->"zero"],
+Cell[8190, 196, 899, 20, 90, "Text",
+  CellTags->"zero"],
+Cell[9092, 218, 176, 6, 55, "MathCaption",
+  CellTags->"zero"],
+Cell[9271, 226, 1701, 33, 73, "Text",
+  CellTags->"zero"],
+Cell[10975, 261, 90, 1, 39, "Text",
+  CellTags->"zero"],
+Cell[11068, 264, 1610, 29, 211, "Text",
+  CellTags->"zero"],
+Cell[12681, 295, 55, 1, 39, "Text",
+  CellTags->"zero"],
+Cell[12739, 298, 78, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[12820, 302, 144, 4, 39, "Text",
+  CellTags->"zero"],
+Cell[12967, 308, 145, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[13115, 313, 149, 4, 39, "Text",
+  CellTags->"zero"],
+Cell[13267, 319, 114, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[13384, 324, 98, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[13485, 328, 163, 4, 43, "Input",
+  CellTags->"zero"],
+Cell[13651, 334, 104, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[13758, 338, 130, 4, 39, "Text",
+  CellTags->"zero"],
+Cell[13891, 344, 258, 5, 72, "MathCaption",
+  CellTags->"zero"],
+Cell[14152, 351, 557, 15, 56, "Text",
+  CellTags->"zero"],
+Cell[14712, 368, 92, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[14807, 372, 126, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[14936, 377, 126, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[15065, 382, 126, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[15194, 387, 137, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[15334, 392, 173, 3, 63, "Input",
+  CellTags->"zero"],
+Cell[15510, 397, 98, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[15611, 401, 92, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[15706, 405, 368, 7, 72, "MathCaption",
+  CellTags->"zero"],
+Cell[16077, 414, 132, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[16212, 419, 201, 6, 39, "Text",
+  CellTags->"zero"],
+Cell[16416, 427, 102, 2, 43, "Input",
+  CellTags->"zero"],
+Cell[16521, 431, 140, 3, 43, "Input",
+  CellTags->"zero"],
+Cell[16664, 436, 253, 5, 56, "Text",
+  CellTags->"zero"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16954, 446, 102, 1, 53, "Subsection",
+  CellTags->"gaussian"],
+Cell[17059, 449, 467, 14, 55, "MathCaption",
+  CellTags->"gaussian"],
+Cell[17529, 465, 1750, 34, 73, "Text",
+  CellTags->"gaussian"],
+Cell[19282, 501, 89, 1, 39, "Text",
+  CellTags->"gaussian"],
+Cell[19374, 504, 1880, 33, 251, "Text",
+  CellTags->"gaussian"],
+Cell[21257, 539, 173, 5, 39, "Text",
+  CellTags->"gaussian"],
+Cell[21433, 546, 1366, 26, 73, "Text",
+  CellTags->"gaussian"],
+Cell[22802, 574, 94, 1, 39, "Text",
+  CellTags->"gaussian"],
+Cell[22899, 577, 1581, 29, 211, "Text",
+  CellTags->"gaussian"],
+Cell[24483, 608, 1379, 33, 107, "Text",
+  CellTags->"gaussian"],
+Cell[25865, 643, 66, 1, 55, "MathCaption",
+  CellTags->"gaussian"],
+Cell[25934, 646, 82, 2, 43, "Input",
+  CellTags->"gaussian"],
+Cell[26019, 650, 163, 4, 55, "MathCaption",
+  CellTags->"gaussian"],
+Cell[26185, 656, 152, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[26340, 662, 155, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[26498, 668, 155, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[26656, 674, 155, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[26814, 680, 155, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[26972, 686, 216, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[27191, 692, 269, 5, 56, "Text",
+  CellTags->"gaussian"],
+Cell[27463, 699, 219, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[27685, 705, 401, 9, 72, "MathCaption",
+  CellTags->"gaussian"],
+Cell[28089, 716, 224, 4, 58, "DisplayMath",
+  CellTags->"gaussian"],
+Cell[28316, 722, 137, 4, 39, "Text",
+  CellTags->"gaussian"],
+Cell[28456, 728, 276, 5, 61, "DisplayMath",
+  CellTags->"gaussian"],
+Cell[28735, 735, 401, 11, 39, "Text",
+  CellTags->"gaussian"],
+Cell[29139, 748, 544, 11, 123, "Input",
+  CellTags->"gaussian"],
+Cell[29686, 761, 157, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[29846, 767, 93, 1, 39, "Text",
+  CellTags->"gaussian"],
+Cell[29942, 770, 138, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[30083, 776, 141, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[30227, 782, 141, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[30371, 788, 141, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[30515, 794, 141, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[30659, 800, 141, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[30803, 806, 97, 1, 39, "Text",
+  CellTags->"gaussian"],
+Cell[30903, 809, 174, 4, 58, "DisplayMath",
+  CellTags->"gaussian"],
+Cell[31080, 815, 128, 5, 39, "Text",
+  CellTags->"gaussian"],
+Cell[31211, 822, 207, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[31421, 828, 155, 5, 51, "Text",
+  CellTags->"gaussian"],
+Cell[31579, 835, 241, 4, 43, "Input",
+  CellTags->"gaussian"],
+Cell[31823, 841, 162, 4, 55, "MathCaption",
+  CellTags->"gaussian"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[32022, 850, 104, 1, 53, "Subsection",
+  CellTags->"gaussianWeights"],
+Cell[32129, 853, 347, 10, 39, "Text",
+  CellTags->"gaussianWeights"],
+Cell[32479, 865, 1629, 30, 91, "Text",
+  CellTags->"gaussianWeights"],
+Cell[34111, 897, 165, 6, 39, "Text",
+  CellTags->"gaussianWeights"],
+Cell[34279, 905, 1026, 21, 109, "Text",
+  CellTags->"gaussianWeights"],
+Cell[35308, 928, 73, 1, 55, "MathCaption",
+  CellTags->"gaussianWeights"],
+Cell[35384, 931, 89, 2, 43, "Input",
+  CellTags->"gaussianWeights"],
+Cell[35476, 935, 279, 7, 39, "Text",
+  CellTags->"gaussianWeights"],
+Cell[35758, 944, 117, 2, 43, "Input",
+  CellTags->"gaussianWeights"],
+Cell[35878, 948, 136, 3, 43, "Input",
+  CellTags->"gaussianWeights"],
+Cell[36017, 953, 95, 2, 43, "Input",
+  CellTags->"gaussianWeights"],
+Cell[36115, 957, 683, 20, 56, "Text",
+  CellTags->"gaussianWeights"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[36835, 982, 96, 1, 53, "Subsection",
+  CellTags->"radau"],
+Cell[36934, 985, 323, 10, 39, "Text",
+  CellTags->"radau"],
+Cell[37260, 997, 1617, 29, 91, "Text",
+  CellTags->"radau"],
+Cell[38880, 1028, 108, 3, 39, "Text",
+  CellTags->"radau"],
+Cell[38991, 1033, 1578, 29, 211, "Text",
+  CellTags->"radau"],
+Cell[40572, 1064, 496, 12, 56, "Text",
+  CellTags->"radau"],
+Cell[41071, 1078, 63, 1, 55, "MathCaption",
+  CellTags->"radau"],
+Cell[41137, 1081, 79, 2, 43, "Input",
+  CellTags->"radau"],
+Cell[41219, 1085, 139, 4, 39, "Text",
+  CellTags->"radau"],
+Cell[41361, 1091, 112, 2, 43, "Input",
+  CellTags->"radau"],
+Cell[41476, 1095, 109, 2, 43, "Input",
+  CellTags->"radau"],
+Cell[41588, 1099, 234, 5, 39, "Text",
+  CellTags->"radau"],
+Cell[41825, 1106, 107, 2, 43, "Input",
+  CellTags->"radau"],
+Cell[41935, 1110, 115, 3, 43, "Input",
+  CellTags->"radau"],
+Cell[42053, 1115, 249, 7, 39, "Text",
+  CellTags->"radau"],
+Cell[42305, 1124, 105, 2, 43, "Input",
+  CellTags->"radau"],
+Cell[42413, 1128, 106, 2, 43, "Input",
+  CellTags->"radau"],
+Cell[42522, 1132, 104, 2, 43, "Input",
+  CellTags->"radau"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[42663, 1139, 100, 1, 53, "Subsection",
+  CellTags->"lobatto"],
+Cell[42766, 1142, 333, 10, 39, "Text",
+  CellTags->"lobatto"],
+Cell[43102, 1154, 1831, 33, 91, "Text",
+  CellTags->"lobatto"],
+Cell[44936, 1189, 181, 6, 39, "Text",
+  CellTags->"lobatto"],
+Cell[45120, 1197, 1580, 29, 211, "Text",
+  CellTags->"lobatto"],
+Cell[46703, 1228, 500, 12, 56, "Text",
+  CellTags->"lobatto"],
+Cell[47206, 1242, 65, 1, 55, "MathCaption",
+  CellTags->"lobatto"],
+Cell[47274, 1245, 81, 2, 43, "Input",
+  CellTags->"lobatto"],
+Cell[47358, 1249, 114, 3, 39, "Text",
+  CellTags->"lobatto"],
+Cell[47475, 1254, 128, 3, 43, "Input",
+  CellTags->"lobatto"],
+Cell[47606, 1259, 128, 3, 43, "Input",
+  CellTags->"lobatto"],
+Cell[47737, 1264, 364, 11, 39, "Text",
+  CellTags->"lobatto"],
+Cell[48104, 1277, 128, 3, 43, "Input",
+  CellTags->"lobatto"],
+Cell[48235, 1282, 112, 2, 43, "Input",
+  CellTags->"lobatto"],
+Cell[48350, 1286, 114, 2, 43, "Input",
+  CellTags->"lobatto"],
+Cell[48467, 1290, 113, 2, 43, "Input",
+  CellTags->"lobatto"],
+Cell[48583, 1294, 217, 5, 39, "Text",
+  CellTags->"lobatto"],
+Cell[48803, 1301, 109, 2, 43, "Input",
+  CellTags->"lobatto"],
+Cell[48915, 1305, 112, 2, 43, "Input",
+  CellTags->"lobatto"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[49064, 1312, 86, 1, 53, "Subsection",
+  CellTags->"laurie"],
+Cell[49153, 1315, 493, 15, 72, "MathCaption",
+  CellTags->"laurie"],
+Cell[49649, 1332, 1411, 27, 91, "Text",
+  CellTags->"laurie"],
+Cell[51063, 1361, 81, 1, 39, "Text",
+  CellTags->"laurie"],
+Cell[51147, 1364, 1159, 23, 169, "Text",
+  CellTags->"laurie"],
+Cell[52309, 1389, 64, 1, 55, "MathCaption",
+  CellTags->"laurie"],
+Cell[52376, 1392, 104, 3, 43, "Input",
+  CellTags->"laurie"],
+Cell[52483, 1397, 307, 8, 56, "Text",
+  CellTags->"laurie"],
+Cell[52793, 1407, 131, 3, 43, "Input",
+  CellTags->"laurie"],
+Cell[52927, 1412, 96, 2, 43, "Input",
+  CellTags->"laurie"],
+Cell[53026, 1416, 401, 7, 56, "Text",
+  CellTags->"laurie"],
+Cell[53430, 1425, 127, 3, 43, "Input",
+  CellTags->"laurie"],
+Cell[53560, 1430, 97, 2, 43, "Input",
+  CellTags->"laurie"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[53694, 1437, 100, 1, 53, "Subsection",
+  CellTags->"kronrod"],
+Cell[53797, 1440, 277, 8, 55, "MathCaption",
+  CellTags->"kronrod"],
+Cell[54077, 1450, 1358, 26, 73, "Text",
+  CellTags->"kronrod"],
+Cell[55438, 1478, 180, 6, 39, "Text",
+  CellTags->"kronrod"],
+Cell[55621, 1486, 2456, 43, 367, "Text",
+  CellTags->"kronrod"],
+Cell[58080, 1531, 65, 1, 55, "MathCaption",
+  CellTags->"kronrod"],
+Cell[58148, 1534, 81, 2, 43, "Input",
+  CellTags->"kronrod"],
+Cell[58232, 1538, 461, 12, 56, "Text",
+  CellTags->"kronrod"],
+Cell[58696, 1552, 164, 3, 52, "DisplyMath",
+  CellTags->"kronrod"],
+Cell[58863, 1557, 128, 3, 43, "Input",
+  CellTags->"kronrod"],
+Cell[58994, 1562, 185, 4, 43, "Input",
+  CellTags->"kronrod"],
+Cell[59182, 1568, 79, 2, 43, "Input",
+  CellTags->"kronrod"],
+Cell[59264, 1572, 81, 2, 43, "Input",
+  CellTags->"kronrod"],
+Cell[59348, 1576, 161, 4, 39, "Text",
+  CellTags->"kronrod"],
+Cell[59512, 1582, 128, 3, 43, "Input",
+  CellTags->"kronrod"],
+Cell[59643, 1587, 151, 3, 43, "Input",
+  CellTags->"kronrod"],
+Cell[59797, 1592, 258, 8, 39, "Text",
+  CellTags->"kronrod"],
+Cell[60058, 1602, 126, 3, 43, "Input",
+  CellTags->"kronrod"],
+Cell[60187, 1607, 150, 4, 39, "Text",
+  CellTags->"kronrod"],
+Cell[60340, 1613, 69, 2, 43, "Input",
+  CellTags->"kronrod"],
+Cell[60412, 1617, 304, 8, 39, "Text",
+  CellTags->"kronrod"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[60753, 1630, 96, 1, 53, "Subsection",
+  CellTags->"turan"],
+Cell[60852, 1633, 316, 10, 55, "MathCaption",
+  CellTags->"turan"],
+Cell[61171, 1645, 1957, 37, 73, "Text",
+  CellTags->"turan"]
+}, Open  ]],
+Cell[63143, 1685, 64, 0, 25, "Text"],
+
+Cell[CellGroupData[{
+Cell[63232, 1689, 94, 1, 53, "Subsection",
+  CellTags->"turanNodes"],
+Cell[63329, 1692, 324, 10, 55, "MathCaption",
+  CellTags->"turanNodes"],
+Cell[63656, 1704, 1965, 37, 91, "Text",
+  CellTags->"turanNodes"],
+Cell[65624, 1743, 174, 6, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[65801, 1751, 3129, 52, 427, "Text",
+  CellTags->{"turanNodes", "turan"}],
+Cell[68933, 1805, 729, 13, 90, "Text",
+  CellTags->{"turanNodes", "turan"}],
+Cell[69665, 1820, 264, 8, 39, "Text",
+  CellTags->"turan"],
+Cell[69932, 1830, 167, 6, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[70102, 1838, 2205, 40, 91, "Text",
+  CellTags->"turanNodes"],
+Cell[72310, 1880, 96, 1, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[72409, 1883, 1630, 31, 211, "Text",
+  CellTags->"turanNodes"],
+Cell[74042, 1916, 139, 4, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[74184, 1922, 79, 1, 55, "MathCaption",
+  CellTags->{"turanNodes", "turan"}],
+Cell[74266, 1925, 95, 2, 43, "Input",
+  CellTags->{"turanNodes", "turan"}],
+Cell[74364, 1929, 306, 7, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[74673, 1938, 152, 3, 43, "Input",
+  CellTags->"turanNodes"],
+Cell[74828, 1943, 122, 3, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[74953, 1948, 115, 2, 43, "Input",
+  CellTags->"turanNodes"],
+Cell[75071, 1952, 265, 5, 56, "Text",
+  CellTags->"turanNodes"],
+Cell[75339, 1959, 150, 3, 43, "Input",
+  CellTags->"turanNodes"],
+Cell[75492, 1964, 124, 3, 39, "Text",
+  CellTags->"turanNodes"],
+Cell[75619, 1969, 113, 2, 43, "Input",
+  CellTags->"turanNodes"],
+Cell[75735, 1973, 527, 12, 72, "MathCaption",
+  CellTags->"turanNodes"],
+Cell[76265, 1987, 155, 3, 43, "Input",
+  CellTags->"turanNodes"],
+Cell[76423, 1992, 423, 9, 56, "Text",
+  CellTags->"turanNodes"],
+Cell[76849, 2003, 260, 7, 55, "MathCaption",
+  CellTags->"turanNodes"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[77146, 2015, 183, 4, 39, "Text",
+  CellTags->"turan"],
+Cell[77332, 2021, 149, 4, 43, "Input",
+  CellTags->"turan"],
+Cell[77484, 2027, 176, 4, 43, "Input",
+  CellTags->"turan"]
+}, Open  ]],
+Cell[77675, 2034, 193, 4, 25, "Text"],
+
+Cell[CellGroupData[{
+Cell[77893, 2042, 96, 1, 53, "Subsection",
+  CellTags->"sigma"],
+Cell[77992, 2045, 273, 9, 39, "Text",
+  CellTags->"sigma"],
+Cell[78268, 2056, 1973, 38, 73, "Text",
+  CellTags->"sigma"],
+Cell[80244, 2096, 162, 6, 39, "Text",
+  CellTags->"sigma"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[80443, 2107, 94, 1, 53, "Subsection",
+  CellTags->"sigmaNodes"],
+Cell[80540, 2110, 337, 10, 39, "Text",
+  CellTags->"sigmaNodes"],
+Cell[80880, 2122, 1981, 38, 91, "Text",
+  CellTags->"sigmaNodes"],
+Cell[82864, 2162, 100, 1, 39, "Text",
+  CellTags->"sigmaNodes"],
+Cell[82967, 2165, 3128, 52, 427, "Text",
+  CellTags->{"sigmaNodes", "sigma"}],
+Cell[86098, 2219, 418, 9, 56, "Text",
+  CellTags->{"sigmaNodes", "sigma"}],
+Cell[86519, 2230, 112, 3, 39, "Text",
+  CellTags->"sigmaNodes"],
+Cell[86634, 2235, 2219, 40, 91, "Text",
+  CellTags->"sigmaNodes"],
+Cell[88856, 2277, 88, 1, 39, "Text",
+  CellTags->"sigmaNodes"],
+Cell[88947, 2280, 1630, 31, 211, "Text",
+  CellTags->"sigmaNodes"],
+Cell[90580, 2313, 79, 1, 55, "MathCaption",
+  CellTags->{"sigmaNodes", "sigma"}],
+Cell[90662, 2316, 95, 2, 43, "Input",
+  CellTags->{"sigmaNodes", "sigma"}],
+Cell[90760, 2320, 172, 4, 39, "Text",
+  CellTags->"sigmaNodes"],
+Cell[90935, 2326, 117, 2, 43, "Input",
+  CellTags->"sigmaNodes"],
+Cell[91055, 2330, 246, 7, 39, "Text",
+  CellTags->"sigmaNodes"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[91338, 2342, 123, 4, 39, "Text",
+  CellTags->"sigma"],
+Cell[91464, 2348, 179, 4, 43, "Input",
+  CellTags->"sigma"],
+Cell[91646, 2354, 175, 4, 43, "Input",
+  CellTags->"sigma"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[91858, 2363, 98, 1, 53, "Subsection",
+  CellTags->"sigmaWeights"],
+Cell[91959, 2366, 378, 10, 39, "Text",
+  CellTags->"sigmaWeights"],
+Cell[92340, 2378, 1857, 34, 91, "Text",
+  CellTags->"sigmaWeights"],
+Cell[94200, 2414, 86, 1, 39, "Text",
+  CellTags->"sigmaWeights"],
+Cell[94289, 2417, 767, 17, 91, "Text",
+  CellTags->"sigmaWeights"],
+Cell[95059, 2436, 70, 1, 55, "MathCaption",
+  CellTags->"sigmaWeights"],
+Cell[95132, 2439, 86, 2, 43, "Input",
+  CellTags->"sigmaWeights"],
+Cell[95221, 2443, 252, 7, 39, "Text",
+  CellTags->"sigmaWeights"],
+Cell[95476, 2452, 144, 4, 43, "Input",
+  CellTags->"sigmaWeights"],
+Cell[95623, 2458, 72, 1, 39, "Text",
+  CellTags->"sigmaWeights"],
+Cell[95698, 2461, 133, 3, 43, "Input",
+  CellTags->"sigmaWeights"],
+Cell[95834, 2466, 102, 2, 43, "Input",
+  CellTags->"sigmaWeights"],
+Cell[95939, 2470, 156, 4, 39, "Text",
+  CellTags->"sigmaWeights"],
+Cell[96098, 2476, 143, 3, 58, "DisplayMath",
+  CellTags->"sigmaWeights"],
+Cell[96244, 2481, 126, 3, 39, "Text",
+  CellTags->"sigmaWeights"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[96407, 2489, 96, 1, 53, "Subsection",
+  CellTags->"fejer"],
+Cell[96506, 2492, 314, 10, 39, "Text",
+  CellTags->"fejer"],
+Cell[96823, 2504, 860, 20, 51, "Text",
+  CellTags->"fejer"],
+Cell[97686, 2526, 61, 1, 39, "Text",
+  CellTags->"fejer"],
+Cell[97750, 2529, 760, 17, 91, "Text",
+  CellTags->"fejer"],
+Cell[98513, 2548, 63, 1, 55, "MathCaption",
+  CellTags->"fejer"],
+Cell[98579, 2551, 79, 2, 43, "Input",
+  CellTags->"fejer"],
+Cell[98661, 2555, 124, 4, 39, "Text",
+  CellTags->"fejer"],
+Cell[98788, 2561, 86, 2, 43, "Input",
+  CellTags->"fejer"],
+Cell[98877, 2565, 64, 2, 43, "Input",
+  CellTags->"fejer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[98978, 2572, 88, 1, 53, "Subsection",
+  CellTags->"nw"],
+Cell[99069, 2575, 229, 7, 39, "Text",
+  CellTags->"nw"],
+Cell[99301, 2584, 2262, 42, 111, "Text",
+  CellTags->"nw"],
+Cell[101566, 2628, 1490, 34, 107, "Text",
+  CellTags->"nw"],
+Cell[103059, 2664, 281, 8, 39, "Text",
+  CellTags->"nw"],
+Cell[103343, 2674, 100, 3, 43, "Input",
+  CellTags->"nw"],
+Cell[103446, 2679, 137, 4, 43, "Input",
+  CellTags->"nw"],
+Cell[103586, 2685, 295, 8, 39, "Text",
+  CellTags->"nw"],
+Cell[103884, 2695, 76, 2, 43, "Input",
+  CellTags->"nw"],
+Cell[103963, 2699, 153, 4, 43, "Input",
+  CellTags->"nw"],
+Cell[104119, 2705, 93, 1, 39, "Text",
+  CellTags->"nw"],
+Cell[104215, 2708, 2229, 41, 111, "Text",
+  CellTags->"nw"]
+}, Open  ]],
+Cell[106459, 2752, 626, 15, 56, "Text",
+  CellTags->"nw"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

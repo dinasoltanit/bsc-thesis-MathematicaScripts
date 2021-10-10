@@ -1,0 +1,1065 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     15131,        512]*)
+(*NotebookOutlinePosition[     31767,        936]*)
+(*  CellTagsIndexPosition[     28112,        836]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["OrthogonalPolynomials", "IndexSection",
+  CellTags->"MasterIndexHeading"],
+
+Cell[TextData[{
+  "Legendre polynomials,  ",
+  ButtonBox["Legendre polynomials",
+    ButtonData:>{"aLegendre", "Legendre"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Legendre polynomials", "aLegendre"}],
+
+Cell[TextData[{
+  "Chebyshev polynomials of the first kind,  ",
+  ButtonBox["Chebyshev polynomials of the first kind",
+    ButtonData:>{"aChebyshevI", "ChebyshevI"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Chebyshev polynomials of the first kind", "aChebyshevI"}],
+
+Cell[TextData[{
+  "Chebsyhev polynomials of the second kind,  ",
+  ButtonBox["Chebyshev polynomialas of the second kind",
+    ButtonData:>{"aChebyshevII", "ChebyshevII"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Chebyshev polynomials of the second kind", "aChebyshevII"}],
+
+Cell[TextData[{
+  "Jacobi polynomials,  ",
+  ButtonBox["Jacobi polynomials",
+    ButtonData:>{"aJacobi", "Jacobi"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Jacobi polynomials", "aJacobi"}],
+
+Cell[TextData[{
+  "Abel polynomials,  ",
+  ButtonBox["Abel polynomials",
+    ButtonData:>{"aAbel", "Abel"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Abel polynomials", "aAbel"}],
+
+Cell[TextData[{
+  "Associted Legendre polynomials,  ",
+  ButtonBox["Associated Legendre polynomials",
+    ButtonData:>{"aAssociatedLegendre", "AssociatedLegendre"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Associated Legendre polynomials", "aAssociatedLegendre"}],
+
+Cell[TextData[{
+  "Carlitz polynomials,  ",
+  ButtonBox["Carlitz polynomials",
+    ButtonData:>{"aCarlitz", "Carlitz"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Carlitz polynomials", "aCarlitz"}],
+
+Cell[TextData[{
+  "Gegenbauer polynomials,  ",
+  ButtonBox["Gegenabuer polynomials",
+    ButtonData:>{"aGegenbauer", "Gegenbauer"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Gegenbauer polynomials", "aGegenbauer"}],
+
+Cell[TextData[{
+  "Generalized Gegenbauer polynomials,  ",
+  ButtonBox["Generalized Gegenbauer polynomials",
+    ButtonData:>{"aGegenbauerG", "GegenbauerG"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Generalized Gegenbauer polynomials", "aGegenbauerG"}],
+
+Cell[TextData[{
+  "Hermite polynomials,  ",
+  ButtonBox["Hermite polynomials",
+    ButtonData:>{"aHermite", "Hermite"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Hermite polynomials", "aHermite"}],
+
+Cell[TextData[{
+  "Generalized Hermite polynomials,  ",
+  ButtonBox["Generalized Hermite polynomials",
+    ButtonData:>{"aHermiteG", "Hermite"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Generalized Hermite polynomials", "aHermiteG"}],
+
+Cell[TextData[{
+  "Laguerre polynomials,  ",
+  ButtonBox["Laguerre polynomials",
+    ButtonData:>{"aLaguerre", "Laguerre"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Laguerre polynomials", "aLaguerre"}],
+
+Cell[TextData[{
+  "Laguerre polynomials,  ",
+  ButtonBox["Generalized Laguerre polynomials",
+    ButtonData:>{"aLaguerreG", "LaguerreG"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Generalized Laguerre polynomials", "aLaguerreG"}],
+
+Cell[TextData[{
+  "Lindelof polynomials,  ",
+  ButtonBox["Lindelof polynomials",
+    ButtonData:>{"aLindelof", "Lindelof"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Lindelof polynomials", "aLindelof"}],
+
+Cell[TextData[{
+  "Logistic polynomials,  ",
+  ButtonBox["Logistic polynomials",
+    ButtonData:>{"aLogistic", "Logistic"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Logistic polynomials", "aLogistic"}],
+
+Cell[TextData[{
+  "Stieltjes-Wigert polynomials,  ",
+  ButtonBox["Stieltjes-Wigert polynomials",
+    ButtonData:>{"aStieltjesWigert", "StieltjesWigert"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Stieltjes-Wigert polynomials", "aStieltjesWigert"}],
+
+Cell[TextData[{
+  "Bessel polynomials,  ",
+  ButtonBox["Bessel polynomials",
+    ButtonData:>{"aBessel", "Bessel"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Bessel polynomials", "aBessel"}],
+
+Cell[TextData[{
+  "Generalized Bessel polynomials,  ",
+  ButtonBox["Bessel polynomials",
+    ButtonData:>{"aBesselG", "BesselG"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Generalized Bessel polynomials", "aBesselG"}],
+
+Cell[TextData[{
+  "Gautschi-Milovanovic polynomials,  ",
+  ButtonBox["Gautschi-Milovanovic polynomials",
+    ButtonData:>{"aGautschiMilovanovic", "GautchiMilovanovic"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Gautschi-Milovanovic polynomials", "aGautschiMilovanovic"}],
+
+Cell[TextData[{
+  "Charlier polynomials,  ",
+  ButtonBox["Charlier polynomials",
+    ButtonData:>{"aCharlier", "Charlier"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Charlier polynomials", "aCharlier"}],
+
+Cell[TextData[{
+  "Weight function,  ",
+  ButtonBox["Weight function",
+    ButtonData:>{"aWeight", "weight"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Weight function", "aWeight"}],
+
+Cell[TextData[{
+  "Numerator polynomials,  ",
+  ButtonBox["Numerator polynomials",
+    ButtonData:>{"aNumerator", "numerator"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Numerator polynomials", "Associated polynomials", "aNumerator"}],\
+
+
+Cell[TextData[{
+  "Kernel polynomials,  ",
+  ButtonBox["Kernel polynomials",
+    ButtonData:>{"aKernel", "kernel"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Kernel polynomials", "aKernel"}],
+
+Cell[TextData[{
+  "Moments,  ",
+  ButtonBox["Moments",
+    ButtonData:>{"aMoments", "moments"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aMoments"],
+
+Cell[TextData[{
+  "Supporting set,  ",
+  ButtonBox["Support",
+    ButtonData:>{"aSupport", "support"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Supporting set", "Support of discrete measure"}],
+
+Cell[TextData[{
+  "Interval of orthogonality,  ",
+  ButtonBox["Interval of orthogonality",
+    ButtonData:>{"aGetInterval", "getInterval"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Interval of orthogonality", "aGetInterval"}],
+
+Cell[TextData[{
+  "Distribution function,  ",
+  ButtonBox["Distribution function",
+    ButtonData:>{"aDistribution", "distribution"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{
+  "Distribution function", "Masses of discrete measure", "aDistribution"}],
+
+Cell[TextData[{
+  "Norm of orthogonal polynomials,  ",
+  ButtonBox["Norm of orthogonal polynomials",
+    ButtonData:>{"aNorm", "norm"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aNorm"],
+
+Cell[TextData[{
+  "Changing interval of orthogonality,  ",
+  ButtonBox["Changing interval of orthogonality",
+    ButtonData:>{"aChangeInterval", "changeInterval"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"Changing interval of orthogonality", "aChangeInterval"}],
+
+Cell[TextData[{
+  "Evaluating polynomials,  ",
+  ButtonBox["Evaluating polynomials",
+    ButtonData:>{"aMakePolynomial", "makePolynomial"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aMakePolynomial"],
+
+Cell[TextData[{
+  "Three term recurrence coefficients,  ",
+  ButtonBox["Three term recurrence coefficients",
+    ButtonData:>{"aThreeTermRecurrence", "TTR"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aThreeTermRecurrence", "Three term recurrence coefficients"}],
+
+Cell[TextData[{
+  "Chebyshev Algorithm,  ",
+  ButtonBox["Chebyshev Algorithm",
+    ButtonData:>{"aChebyshevAlgorithm", "chebyshevAlg"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aChebyshevAlgorihtm", "Chebyshev Algorithm"}],
+
+Cell[TextData[{
+  "Modified Chebyshev Algorithm,  ",
+  ButtonBox["Modified Chebyshev Algorithm",
+    ButtonData:>{"aChebyshevAlgorithmModified", "chebyshevAlgModified"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aChebyshevAlgorihtmModified", "Modified Chebyshev Algorithm"}],
+
+Cell[TextData[{
+  "Lanczos Algorithm,  ",
+  ButtonBox["Lanczos Algorithm",
+    ButtonData:>{"aLanczosAlgorithm", "lanczosAlg"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aLanczosAlgorihtm", "Lanczos Algorithm"}],
+
+Cell[TextData[{
+  "Stieltjes Algorithm,  ",
+  ButtonBox["Stieltjes Algorithm",
+    ButtonData:>{"aStieltjesAlgorithm", "stieltjesAlg"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aStieltjesAlgorihtm", "Stieltjes Algorithm"}],
+
+Cell[TextData[{
+  "Christoffel modifications,  ",
+  ButtonBox["Christoffel modifications",
+    ButtonData:>{"aChristoffelAlgorithm", "ChristoffelAlgorithm"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aChristoffelAlgorihtm", "Christoffel Algorithm"}],
+
+Cell[TextData[{
+  "Christoffel modifications,  ",
+  ButtonBox["Christoffel modifications",
+    ButtonData:>{"aModify", "modify"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aModify", "Christoffel modifications"}],
+
+Cell[TextData[{
+  "Zeros of orthogonal polynomials,  ",
+  ButtonBox["Zeros of orthogonal polynomials",
+    ButtonData:>{"aZero", "zero"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aZero", "Zeros of orthogonal polynomials"}],
+
+Cell[TextData[{
+  "Gaussian quadrature rule,  ",
+  ButtonBox["Gaussian quadrature rule",
+    ButtonData:>{"aGaussianNodesWeights", "gaussian"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->{"aGaussianNodesWeights", "Gaussian quadrature rule"}],
+
+Cell[TextData[{
+  "Weights in Gaussian quadrature rule,  ",
+  ButtonBox["Weights in Gaussian quadrature rule",
+    ButtonData:>{"aGaussianWeights", "gaussianWeights"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aGaussianWeights"],
+
+Cell[TextData[{
+  "Radau quadrature rule,  ",
+  ButtonBox["Radau quadrature rule",
+    ButtonData:>{"aRadauNodesWeights", "radau"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aRadauNodesWeights"],
+
+Cell[TextData[{
+  "Lobatto quadrature rule,  ",
+  ButtonBox["Lobatto quadrature rule",
+    ButtonData:>{"aLobattoNodesWeights", "lobatto"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aLobattoNodesWeights"],
+
+Cell[TextData[{
+  "Lauries algortihm,  ",
+  ButtonBox["Lauries algorithm",
+    ButtonData:>{"aLaurie", "laurie"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aLaurie"],
+
+Cell[TextData[{
+  "Kronrod quadrature rule,  ",
+  ButtonBox["Kronrod quadrature rule",
+    ButtonData:>{"aKronrodNodesWeights", "kronrod"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aKronrodNodesWeights"],
+
+Cell[TextData[{
+  "Turan quadrature rule,  ",
+  ButtonBox["Turan quadrature rule",
+    ButtonData:>{"aTuranNodesWeights", "turan"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aTuranNodesWeights"],
+
+Cell[TextData[{
+  "Turan quadrature rule, nodes,  ",
+  ButtonBox["Turan quadrature rule, nodes",
+    ButtonData:>{"aTuranNodes", "turanNodes"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aTuranNodes"],
+
+Cell[TextData[{
+  "Sigma quadrature rule,  ",
+  ButtonBox["Sigma quadrature rule",
+    ButtonData:>{"aSigmaNodesWeights", "sigma"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aSigmaNodesWeights"],
+
+Cell[TextData[{
+  "Sigma quadrature rule, nodes,  ",
+  ButtonBox["Sigma quadrature rule, nodes",
+    ButtonData:>{"aSigmaNodes", "sigmaNodes"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aSigmaNodes"],
+
+Cell[TextData[{
+  "Sigma quadrature rule, weights,  ",
+  ButtonBox["Sigma quadrature rule, weights",
+    ButtonData:>{"aSigmaWeights", "sigmaWeights"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aSigmaWeights"],
+
+Cell[TextData[{
+  "Fejer quadrature rule, ",
+  ButtonBox["Fejer quadrature rule",
+    ButtonData:>{"aFejerNodesWeights", "fejer"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aFejerNodesWeights"],
+
+Cell[TextData[{
+  "Quadrature rule, ",
+  ButtonBox["Quadrature rule",
+    ButtonData:>{"aNodesWeights", "nw"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aNodesWeights"],
+
+Cell[TextData[{
+  "Moment functional and orthogonality, ",
+  ButtonBox["Moment functional and orthogonality",
+    ButtonData:>{"Moment functional and orthogonality", "mf"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"Moment functional and orthogonality"],
+
+Cell[TextData[{
+  "Three term recurrence relation, ",
+  ButtonBox["Three term recurrence relation",
+    ButtonData:>{"Recurrence relation", "TTR"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"Recurrence relation"],
+
+Cell[TextData[{
+  "Zeros of orthogonal polynomials, ",
+  ButtonBox["Zeros of orthogonal polynomials",
+    ButtonData:>{"Zeroes", "zero"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"Zeroes"],
+
+Cell[TextData[{
+  "Quadrature formulas, ",
+  ButtonBox["Quadrature formulas",
+    ButtonData:>{"Quadrature formulas", "qf"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"Quadrature formulas"],
+
+Cell[TextData[{
+  "Orthogonality relations, ",
+  ButtonBox["Orthogonality relations",
+    ButtonData:>{"Orthogonality equations", "OrthEquation"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"Orthogonality equations"],
+
+Cell[TextData[{
+  "Norms of orthogonal polynomials, ",
+  ButtonBox["Norms of orthogonal polynomials",
+    ButtonData:>{"Norms of orthogonal polynomials", "Norm"},
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aNodesWeights"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowSize->{1016, 668},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "MasterIndexHeading"->{
+    Cell[1754, 51, 79, 1, 42, "IndexSection",
+      CellTags->"MasterIndexHeading"]},
+  "Legendre polynomials"->{
+    Cell[1836, 54, 218, 6, 17, "Index",
+      CellTags->{"Legendre polynomials", "aLegendre"}]},
+  "aLegendre"->{
+    Cell[1836, 54, 218, 6, 17, "Index",
+      CellTags->{"Legendre polynomials", "aLegendre"}]},
+  "Chebyshev polynomials of the first kind"->{
+    Cell[2057, 62, 281, 6, 17, "Index",
+      CellTags->{"Chebyshev polynomials of the first kind", "aChebyshevI"}]},
+  "aChebyshevI"->{
+    Cell[2057, 62, 281, 6, 17, "Index",
+      CellTags->{"Chebyshev polynomials of the first kind", "aChebyshevI"}]},
+  "Chebyshev polynomials of the second kind"->{
+    Cell[2341, 70, 288, 6, 17, "Index",
+      CellTags->{
+      "Chebyshev polynomials of the second kind", "aChebyshevII"}]},
+  "aChebyshevII"->{
+    Cell[2341, 70, 288, 6, 17, "Index",
+      CellTags->{
+      "Chebyshev polynomials of the second kind", "aChebyshevII"}]},
+  "Jacobi polynomials"->{
+    Cell[2632, 78, 206, 6, 17, "Index",
+      CellTags->{"Jacobi polynomials", "aJacobi"}]},
+  "aJacobi"->{
+    Cell[2632, 78, 206, 6, 17, "Index",
+      CellTags->{"Jacobi polynomials", "aJacobi"}]},
+  "Abel polynomials"->{
+    Cell[2841, 86, 194, 6, 17, "Index",
+      CellTags->{"Abel polynomials", "aAbel"}]},
+  "aAbel"->{
+    Cell[2841, 86, 194, 6, 17, "Index",
+      CellTags->{"Abel polynomials", "aAbel"}]},
+  "Associated Legendre polynomials"->{
+    Cell[3038, 94, 280, 6, 17, "Index",
+      CellTags->{"Associated Legendre polynomials", "aAssociatedLegendre"}]},
+  "aAssociatedLegendre"->{
+    Cell[3038, 94, 280, 6, 17, "Index",
+      CellTags->{"Associated Legendre polynomials", "aAssociatedLegendre"}]},
+  "Carlitz polynomials"->{
+    Cell[3321, 102, 212, 6, 17, "Index",
+      CellTags->{"Carlitz polynomials", "aCarlitz"}]},
+  "aCarlitz"->{
+    Cell[3321, 102, 212, 6, 17, "Index",
+      CellTags->{"Carlitz polynomials", "aCarlitz"}]},
+  "Gegenbauer polynomials"->{
+    Cell[3536, 110, 230, 6, 17, "Index",
+      CellTags->{"Gegenbauer polynomials", "aGegenbauer"}]},
+  "aGegenbauer"->{
+    Cell[3536, 110, 230, 6, 17, "Index",
+      CellTags->{"Gegenbauer polynomials", "aGegenbauer"}]},
+  "Generalized Gegenbauer polynomials"->{
+    Cell[3769, 118, 269, 6, 17, "Index",
+      CellTags->{"Generalized Gegenbauer polynomials", "aGegenbauerG"}]},
+  "aGegenbauerG"->{
+    Cell[3769, 118, 269, 6, 17, "Index",
+      CellTags->{"Generalized Gegenbauer polynomials", "aGegenbauerG"}]},
+  "Hermite polynomials"->{
+    Cell[4041, 126, 212, 6, 17, "Index",
+      CellTags->{"Hermite polynomials", "aHermite"}]},
+  "aHermite"->{
+    Cell[4041, 126, 212, 6, 17, "Index",
+      CellTags->{"Hermite polynomials", "aHermite"}]},
+  "Generalized Hermite polynomials"->{
+    Cell[4256, 134, 250, 6, 17, "Index",
+      CellTags->{"Generalized Hermite polynomials", "aHermiteG"}]},
+  "aHermiteG"->{
+    Cell[4256, 134, 250, 6, 17, "Index",
+      CellTags->{"Generalized Hermite polynomials", "aHermiteG"}]},
+  "Laguerre polynomials"->{
+    Cell[4509, 142, 218, 6, 17, "Index",
+      CellTags->{"Laguerre polynomials", "aLaguerre"}]},
+  "aLaguerre"->{
+    Cell[4509, 142, 218, 6, 17, "Index",
+      CellTags->{"Laguerre polynomials", "aLaguerre"}]},
+  "Generalized Laguerre polynomials"->{
+    Cell[4730, 150, 245, 6, 17, "Index",
+      CellTags->{"Generalized Laguerre polynomials", "aLaguerreG"}]},
+  "aLaguerreG"->{
+    Cell[4730, 150, 245, 6, 17, "Index",
+      CellTags->{"Generalized Laguerre polynomials", "aLaguerreG"}]},
+  "Lindelof polynomials"->{
+    Cell[4978, 158, 218, 6, 17, "Index",
+      CellTags->{"Lindelof polynomials", "aLindelof"}]},
+  "aLindelof"->{
+    Cell[4978, 158, 218, 6, 17, "Index",
+      CellTags->{"Lindelof polynomials", "aLindelof"}]},
+  "Logistic polynomials"->{
+    Cell[5199, 166, 218, 6, 17, "Index",
+      CellTags->{"Logistic polynomials", "aLogistic"}]},
+  "aLogistic"->{
+    Cell[5199, 166, 218, 6, 17, "Index",
+      CellTags->{"Logistic polynomials", "aLogistic"}]},
+  "Stieltjes-Wigert polynomials"->{
+    Cell[5420, 174, 263, 6, 17, "Index",
+      CellTags->{"Stieltjes-Wigert polynomials", "aStieltjesWigert"}]},
+  "aStieltjesWigert"->{
+    Cell[5420, 174, 263, 6, 17, "Index",
+      CellTags->{"Stieltjes-Wigert polynomials", "aStieltjesWigert"}]},
+  "Bessel polynomials"->{
+    Cell[5686, 182, 206, 6, 17, "Index",
+      CellTags->{"Bessel polynomials", "aBessel"}]},
+  "aBessel"->{
+    Cell[5686, 182, 206, 6, 17, "Index",
+      CellTags->{"Bessel polynomials", "aBessel"}]},
+  "Generalized Bessel polynomials"->{
+    Cell[5895, 190, 233, 6, 17, "Index",
+      CellTags->{"Generalized Bessel polynomials", "aBesselG"}]},
+  "aBesselG"->{
+    Cell[5895, 190, 233, 6, 17, "Index",
+      CellTags->{"Generalized Bessel polynomials", "aBesselG"}]},
+  "Gautschi-Milovanovic polynomials"->{
+    Cell[6131, 198, 286, 6, 17, "Index",
+      CellTags->{
+      "Gautschi-Milovanovic polynomials", "aGautschiMilovanovic"}]},
+  "aGautschiMilovanovic"->{
+    Cell[6131, 198, 286, 6, 17, "Index",
+      CellTags->{
+      "Gautschi-Milovanovic polynomials", "aGautschiMilovanovic"}]},
+  "Charlier polynomials"->{
+    Cell[6420, 206, 218, 6, 17, "Index",
+      CellTags->{"Charlier polynomials", "aCharlier"}]},
+  "aCharlier"->{
+    Cell[6420, 206, 218, 6, 17, "Index",
+      CellTags->{"Charlier polynomials", "aCharlier"}]},
+  "Weight function"->{
+    Cell[6641, 214, 197, 6, 17, "Index",
+      CellTags->{"Weight function", "aWeight"}]},
+  "aWeight"->{
+    Cell[6641, 214, 197, 6, 17, "Index",
+      CellTags->{"Weight function", "aWeight"}]},
+  "Numerator polynomials"->{
+    Cell[6841, 222, 250, 6, 17, "Index",
+      CellTags->{
+      "Numerator polynomials", "Associated polynomials", "aNumerator"}]},
+  "Associated polynomials"->{
+    Cell[6841, 222, 250, 6, 17, "Index",
+      CellTags->{
+      "Numerator polynomials", "Associated polynomials", "aNumerator"}]},
+  "aNumerator"->{
+    Cell[6841, 222, 250, 6, 17, "Index",
+      CellTags->{
+      "Numerator polynomials", "Associated polynomials", "aNumerator"}]},
+  "Kernel polynomials"->{
+    Cell[7096, 231, 206, 6, 17, "Index",
+      CellTags->{"Kernel polynomials", "aKernel"}]},
+  "aKernel"->{
+    Cell[7096, 231, 206, 6, 17, "Index",
+      CellTags->{"Kernel polynomials", "aKernel"}]},
+  "aMoments"->{
+    Cell[7305, 239, 163, 6, 17, "Index",
+      CellTags->"aMoments"]},
+  "Supporting set"->{
+    Cell[7471, 247, 209, 6, 17, "Index",
+      CellTags->{"Supporting set", "Support of discrete measure"}]},
+  "Support of discrete measure"->{
+    Cell[7471, 247, 209, 6, 17, "Index",
+      CellTags->{"Supporting set", "Support of discrete measure"}]},
+  "Interval of orthogonality"->{
+    Cell[7683, 255, 242, 6, 17, "Index",
+      CellTags->{"Interval of orthogonality", "aGetInterval"}]},
+  "aGetInterval"->{
+    Cell[7683, 255, 242, 6, 17, "Index",
+      CellTags->{"Interval of orthogonality", "aGetInterval"}]},
+  "Distribution function"->{
+    Cell[7928, 263, 266, 7, 17, "Index",
+      CellTags->{
+      "Distribution function", "Masses of discrete measure", 
+        "aDistribution"}]},
+  "Masses of discrete measure"->{
+    Cell[7928, 263, 266, 7, 17, "Index",
+      CellTags->{
+      "Distribution function", "Masses of discrete measure", 
+        "aDistribution"}]},
+  "aDistribution"->{
+    Cell[7928, 263, 266, 7, 17, "Index",
+      CellTags->{
+      "Distribution function", "Masses of discrete measure", 
+        "aDistribution"}]},
+  "aNorm"->{
+    Cell[8197, 272, 200, 6, 17, "Index",
+      CellTags->"aNorm"]},
+  "Changing interval of orthogonality"->{
+    Cell[8400, 280, 278, 6, 17, "Index",
+      CellTags->{"Changing interval of orthogonality", "aChangeInterval"}]},
+  "aChangeInterval"->{
+    Cell[8400, 280, 278, 6, 17, "Index",
+      CellTags->{"Changing interval of orthogonality", "aChangeInterval"}]},
+  "aMakePolynomial"->{
+    Cell[8681, 288, 214, 6, 17, "Index",
+      CellTags->"aMakePolynomial"]},
+  "aThreeTermRecurrence"->{
+    Cell[8898, 296, 277, 6, 17, "Index",
+      CellTags->{
+      "aThreeTermRecurrence", "Three term recurrence coefficients"}]},
+  "Three term recurrence coefficients"->{
+    Cell[8898, 296, 277, 6, 17, "Index",
+      CellTags->{
+      "aThreeTermRecurrence", "Three term recurrence coefficients"}]},
+  "aChebyshevAlgorihtm"->{
+    Cell[9178, 304, 239, 6, 17, "Index",
+      CellTags->{"aChebyshevAlgorihtm", "Chebyshev Algorithm"}]},
+  "Chebyshev Algorithm"->{
+    Cell[9178, 304, 239, 6, 17, "Index",
+      CellTags->{"aChebyshevAlgorihtm", "Chebyshev Algorithm"}]},
+  "aChebyshevAlgorihtmModified"->{
+    Cell[9420, 312, 290, 6, 17, "Index",
+      CellTags->{
+      "aChebyshevAlgorihtmModified", "Modified Chebyshev Algorithm"}]},
+  "Modified Chebyshev Algorithm"->{
+    Cell[9420, 312, 290, 6, 17, "Index",
+      CellTags->{
+      "aChebyshevAlgorihtmModified", "Modified Chebyshev Algorithm"}]},
+  "aLanczosAlgorihtm"->{
+    Cell[9713, 320, 227, 6, 17, "Index",
+      CellTags->{"aLanczosAlgorihtm", "Lanczos Algorithm"}]},
+  "Lanczos Algorithm"->{
+    Cell[9713, 320, 227, 6, 17, "Index",
+      CellTags->{"aLanczosAlgorihtm", "Lanczos Algorithm"}]},
+  "aStieltjesAlgorihtm"->{
+    Cell[9943, 328, 239, 6, 17, "Index",
+      CellTags->{"aStieltjesAlgorihtm", "Stieltjes Algorithm"}]},
+  "Stieltjes Algorithm"->{
+    Cell[9943, 328, 239, 6, 17, "Index",
+      CellTags->{"aStieltjesAlgorihtm", "Stieltjes Algorithm"}]},
+  "aChristoffelAlgorihtm"->{
+    Cell[10185, 336, 265, 6, 17, "Index",
+      CellTags->{"aChristoffelAlgorihtm", "Christoffel Algorithm"}]},
+  "Christoffel Algorithm"->{
+    Cell[10185, 336, 265, 6, 17, "Index",
+      CellTags->{"aChristoffelAlgorihtm", "Christoffel Algorithm"}]},
+  "aModify"->{
+    Cell[10453, 344, 227, 6, 17, "Index",
+      CellTags->{"aModify", "Christoffel modifications"}]},
+  "Christoffel modifications"->{
+    Cell[10453, 344, 227, 6, 17, "Index",
+      CellTags->{"aModify", "Christoffel modifications"}]},
+  "aZero"->{
+    Cell[10683, 352, 239, 6, 17, "Index",
+      CellTags->{"aZero", "Zeros of orthogonal polynomials"}]},
+  "Zeros of orthogonal polynomials"->{
+    Cell[10683, 352, 239, 6, 17, "Index",
+      CellTags->{"aZero", "Zeros of orthogonal polynomials"}]},
+  "aGaussianNodesWeights"->{
+    Cell[10925, 360, 254, 6, 17, "Index",
+      CellTags->{"aGaussianNodesWeights", "Gaussian quadrature rule"}]},
+  "Gaussian quadrature rule"->{
+    Cell[10925, 360, 254, 6, 17, "Index",
+      CellTags->{"aGaussianNodesWeights", "Gaussian quadrature rule"}]},
+  "aGaussianWeights"->{
+    Cell[11182, 368, 243, 6, 17, "Index",
+      CellTags->"aGaussianWeights"]},
+  "aRadauNodesWeights"->{
+    Cell[11428, 376, 209, 6, 17, "Index",
+      CellTags->"aRadauNodesWeights"]},
+  "aLobattoNodesWeights"->{
+    Cell[11640, 384, 219, 6, 17, "Index",
+      CellTags->"aLobattoNodesWeights"]},
+  "aLaurie"->{
+    Cell[11862, 392, 180, 6, 17, "Index",
+      CellTags->"aLaurie"]},
+  "aKronrodNodesWeights"->{
+    Cell[12045, 400, 219, 6, 17, "Index",
+      CellTags->"aKronrodNodesWeights"]},
+  "aTuranNodesWeights"->{
+    Cell[12267, 408, 209, 6, 17, "Index",
+      CellTags->"aTuranNodesWeights"]},
+  "aTuranNodes"->{
+    Cell[12479, 416, 214, 6, 17, "Index",
+      CellTags->"aTuranNodes"]},
+  "aSigmaNodesWeights"->{
+    Cell[12696, 424, 209, 6, 17, "Index",
+      CellTags->"aSigmaNodesWeights"]},
+  "aSigmaNodes"->{
+    Cell[12908, 432, 214, 6, 17, "Index",
+      CellTags->"aSigmaNodes"]},
+  "aSigmaWeights"->{
+    Cell[13125, 440, 224, 6, 17, "Index",
+      CellTags->"aSigmaWeights"]},
+  "aFejerNodesWeights"->{
+    Cell[13352, 448, 208, 6, 17, "Index",
+      CellTags->"aFejerNodesWeights"]},
+  "aNodesWeights"->{
+    Cell[13563, 456, 183, 6, 17, "Index",
+      CellTags->"aNodesWeights"],
+    Cell[14892, 504, 235, 6, 17, "Index",
+      CellTags->"aNodesWeights"]},
+  "Moment functional and orthogonality"->{
+    Cell[13749, 464, 267, 6, 17, "Index",
+      CellTags->"Moment functional and orthogonality"]},
+  "Recurrence relation"->{
+    Cell[14019, 472, 226, 6, 17, "Index",
+      CellTags->"Recurrence relation"]},
+  "Zeroes"->{
+    Cell[14248, 480, 203, 6, 17, "Index",
+      CellTags->"Zeroes"]},
+  "Quadrature formulas"->{
+    Cell[14454, 488, 203, 6, 17, "Index",
+      CellTags->"Quadrature formulas"]},
+  "Orthogonality equations"->{
+    Cell[14660, 496, 229, 6, 17, "Index",
+      CellTags->"Orthogonality equations"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"MasterIndexHeading", 15772, 528},
+  {"Legendre polynomials", 15886, 531},
+  {"aLegendre", 16000, 534},
+  {"Chebyshev polynomials of the first kind", 16144, 537},
+  {"aChebyshevI", 16281, 540},
+  {"Chebyshev polynomials of the second kind", 16447, 543},
+  {"aChebyshevII", 16594, 547},
+  {"Jacobi polynomials", 16747, 551},
+  {"aJacobi", 16855, 554},
+  {"Abel polynomials", 16972, 557},
+  {"aAbel", 17074, 560},
+  {"Associated Legendre polynomials", 17202, 563},
+  {"aAssociatedLegendre", 17347, 566},
+  {"Carlitz polynomials", 17492, 569},
+  {"aCarlitz", 17604, 572},
+  {"Gegenbauer polynomials", 17730, 575},
+  {"aGegenbauer", 17851, 578},
+  {"Generalized Gegenbauer polynomials", 17995, 581},
+  {"aGegenbauerG", 18130, 584},
+  {"Hermite polynomials", 18272, 587},
+  {"aHermite", 18384, 590},
+  {"Generalized Hermite polynomials", 18519, 593},
+  {"aHermiteG", 18645, 596},
+  {"Laguerre polynomials", 18782, 599},
+  {"aLaguerre", 18897, 602},
+  {"Generalized Laguerre polynomials", 19035, 605},
+  {"aLaguerreG", 19164, 608},
+  {"Lindelof polynomials", 19303, 611},
+  {"aLindelof", 19418, 614},
+  {"Logistic polynomials", 19544, 617},
+  {"aLogistic", 19659, 620},
+  {"Stieltjes-Wigert polynomials", 19793, 623},
+  {"aStieltjesWigert", 19930, 626},
+  {"Bessel polynomials", 20069, 629},
+  {"aBessel", 20178, 632},
+  {"Generalized Bessel polynomials", 20310, 635},
+  {"aBesselG", 20433, 638},
+  {"Gautschi-Milovanovic polynomials", 20580, 641},
+  {"aGautschiMilovanovic", 20736, 645},
+  {"Charlier polynomials", 20892, 649},
+  {"aCharlier", 21007, 652},
+  {"Weight function", 21128, 655},
+  {"aWeight", 21234, 658},
+  {"Numerator polynomials", 21354, 661},
+  {"Associated polynomials", 21517, 665},
+  {"aNumerator", 21668, 669},
+  {"Kernel polynomials", 21827, 673},
+  {"aKernel", 21936, 676},
+  {"aMoments", 22046, 679},
+  {"Supporting set", 22139, 682},
+  {"Support of discrete measure", 22284, 685},
+  {"Interval of orthogonality", 22427, 688},
+  {"aGetInterval", 22553, 691},
+  {"Distribution function", 22688, 694},
+  {"Masses of discrete measure", 22871, 699},
+  {"aDistribution", 23041, 704},
+  {"aNorm", 23203, 709},
+  {"Changing interval of orthogonality", 23313, 712},
+  {"aChangeInterval", 23454, 715},
+  {"aMakePolynomial", 23595, 718},
+  {"aThreeTermRecurrence", 23701, 721},
+  {"Three term recurrence coefficients", 23873, 725},
+  {"aChebyshevAlgorihtm", 24030, 729},
+  {"Chebyshev Algorithm", 24164, 732},
+  {"aChebyshevAlgorihtmModified", 24306, 735},
+  {"Modified Chebyshev Algorithm", 24473, 739},
+  {"aLanczosAlgorihtm", 24629, 743},
+  {"Lanczos Algorithm", 24757, 746},
+  {"aStieltjesAlgorihtm", 24887, 749},
+  {"Stieltjes Algorithm", 25021, 752},
+  {"aChristoffelAlgorihtm", 25157, 755},
+  {"Christoffel Algorithm", 25298, 758},
+  {"aModify", 25425, 761},
+  {"Christoffel modifications", 25560, 764},
+  {"aZero", 25675, 767},
+  {"Zeros of orthogonal polynomials", 25820, 770},
+  {"aGaussianNodesWeights", 25955, 773},
+  {"Gaussian quadrature rule", 26102, 776},
+  {"aGaussianWeights", 26241, 779},
+  {"aRadauNodesWeights", 26347, 782},
+  {"aLobattoNodesWeights", 26457, 785},
+  {"aLaurie", 26556, 788},
+  {"aKronrodNodesWeights", 26655, 791},
+  {"aTuranNodesWeights", 26765, 794},
+  {"aTuranNodes", 26866, 797},
+  {"aSigmaNodesWeights", 26967, 800},
+  {"aSigmaNodes", 27068, 803},
+  {"aSigmaWeights", 27164, 806},
+  {"aFejerNodesWeights", 27267, 809},
+  {"aNodesWeights", 27370, 812},
+  {"Moment functional and orthogonality", 27566, 817},
+  {"Recurrence relation", 27692, 820},
+  {"Zeroes", 27789, 823},
+  {"Quadrature formulas", 27886, 826},
+  {"Orthogonality equations", 28000, 829}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 79, 1, 42, "IndexSection",
+  CellTags->"MasterIndexHeading"],
+Cell[1836, 54, 218, 6, 17, "Index",
+  CellTags->{"Legendre polynomials", "aLegendre"}],
+Cell[2057, 62, 281, 6, 17, "Index",
+  CellTags->{"Chebyshev polynomials of the first kind", "aChebyshevI"}],
+Cell[2341, 70, 288, 6, 17, "Index",
+  CellTags->{"Chebyshev polynomials of the second kind", "aChebyshevII"}],
+Cell[2632, 78, 206, 6, 17, "Index",
+  CellTags->{"Jacobi polynomials", "aJacobi"}],
+Cell[2841, 86, 194, 6, 17, "Index",
+  CellTags->{"Abel polynomials", "aAbel"}],
+Cell[3038, 94, 280, 6, 17, "Index",
+  CellTags->{"Associated Legendre polynomials", "aAssociatedLegendre"}],
+Cell[3321, 102, 212, 6, 17, "Index",
+  CellTags->{"Carlitz polynomials", "aCarlitz"}],
+Cell[3536, 110, 230, 6, 17, "Index",
+  CellTags->{"Gegenbauer polynomials", "aGegenbauer"}],
+Cell[3769, 118, 269, 6, 17, "Index",
+  CellTags->{"Generalized Gegenbauer polynomials", "aGegenbauerG"}],
+Cell[4041, 126, 212, 6, 17, "Index",
+  CellTags->{"Hermite polynomials", "aHermite"}],
+Cell[4256, 134, 250, 6, 17, "Index",
+  CellTags->{"Generalized Hermite polynomials", "aHermiteG"}],
+Cell[4509, 142, 218, 6, 17, "Index",
+  CellTags->{"Laguerre polynomials", "aLaguerre"}],
+Cell[4730, 150, 245, 6, 17, "Index",
+  CellTags->{"Generalized Laguerre polynomials", "aLaguerreG"}],
+Cell[4978, 158, 218, 6, 17, "Index",
+  CellTags->{"Lindelof polynomials", "aLindelof"}],
+Cell[5199, 166, 218, 6, 17, "Index",
+  CellTags->{"Logistic polynomials", "aLogistic"}],
+Cell[5420, 174, 263, 6, 17, "Index",
+  CellTags->{"Stieltjes-Wigert polynomials", "aStieltjesWigert"}],
+Cell[5686, 182, 206, 6, 17, "Index",
+  CellTags->{"Bessel polynomials", "aBessel"}],
+Cell[5895, 190, 233, 6, 17, "Index",
+  CellTags->{"Generalized Bessel polynomials", "aBesselG"}],
+Cell[6131, 198, 286, 6, 17, "Index",
+  CellTags->{"Gautschi-Milovanovic polynomials", "aGautschiMilovanovic"}],
+Cell[6420, 206, 218, 6, 17, "Index",
+  CellTags->{"Charlier polynomials", "aCharlier"}],
+Cell[6641, 214, 197, 6, 17, "Index",
+  CellTags->{"Weight function", "aWeight"}],
+Cell[6841, 222, 250, 6, 17, "Index",
+  CellTags->{
+  "Numerator polynomials", "Associated polynomials", "aNumerator"}],
+Cell[7096, 231, 206, 6, 17, "Index",
+  CellTags->{"Kernel polynomials", "aKernel"}],
+Cell[7305, 239, 163, 6, 17, "Index",
+  CellTags->"aMoments"],
+Cell[7471, 247, 209, 6, 17, "Index",
+  CellTags->{"Supporting set", "Support of discrete measure"}],
+Cell[7683, 255, 242, 6, 17, "Index",
+  CellTags->{"Interval of orthogonality", "aGetInterval"}],
+Cell[7928, 263, 266, 7, 17, "Index",
+  CellTags->{
+  "Distribution function", "Masses of discrete measure", "aDistribution"}],
+Cell[8197, 272, 200, 6, 17, "Index",
+  CellTags->"aNorm"],
+Cell[8400, 280, 278, 6, 17, "Index",
+  CellTags->{"Changing interval of orthogonality", "aChangeInterval"}],
+Cell[8681, 288, 214, 6, 17, "Index",
+  CellTags->"aMakePolynomial"],
+Cell[8898, 296, 277, 6, 17, "Index",
+  CellTags->{"aThreeTermRecurrence", "Three term recurrence coefficients"}],
+Cell[9178, 304, 239, 6, 17, "Index",
+  CellTags->{"aChebyshevAlgorihtm", "Chebyshev Algorithm"}],
+Cell[9420, 312, 290, 6, 17, "Index",
+  CellTags->{"aChebyshevAlgorihtmModified", "Modified Chebyshev Algorithm"}],
+Cell[9713, 320, 227, 6, 17, "Index",
+  CellTags->{"aLanczosAlgorihtm", "Lanczos Algorithm"}],
+Cell[9943, 328, 239, 6, 17, "Index",
+  CellTags->{"aStieltjesAlgorihtm", "Stieltjes Algorithm"}],
+Cell[10185, 336, 265, 6, 17, "Index",
+  CellTags->{"aChristoffelAlgorihtm", "Christoffel Algorithm"}],
+Cell[10453, 344, 227, 6, 17, "Index",
+  CellTags->{"aModify", "Christoffel modifications"}],
+Cell[10683, 352, 239, 6, 17, "Index",
+  CellTags->{"aZero", "Zeros of orthogonal polynomials"}],
+Cell[10925, 360, 254, 6, 17, "Index",
+  CellTags->{"aGaussianNodesWeights", "Gaussian quadrature rule"}],
+Cell[11182, 368, 243, 6, 17, "Index",
+  CellTags->"aGaussianWeights"],
+Cell[11428, 376, 209, 6, 17, "Index",
+  CellTags->"aRadauNodesWeights"],
+Cell[11640, 384, 219, 6, 17, "Index",
+  CellTags->"aLobattoNodesWeights"],
+Cell[11862, 392, 180, 6, 17, "Index",
+  CellTags->"aLaurie"],
+Cell[12045, 400, 219, 6, 17, "Index",
+  CellTags->"aKronrodNodesWeights"],
+Cell[12267, 408, 209, 6, 17, "Index",
+  CellTags->"aTuranNodesWeights"],
+Cell[12479, 416, 214, 6, 17, "Index",
+  CellTags->"aTuranNodes"],
+Cell[12696, 424, 209, 6, 17, "Index",
+  CellTags->"aSigmaNodesWeights"],
+Cell[12908, 432, 214, 6, 17, "Index",
+  CellTags->"aSigmaNodes"],
+Cell[13125, 440, 224, 6, 17, "Index",
+  CellTags->"aSigmaWeights"],
+Cell[13352, 448, 208, 6, 17, "Index",
+  CellTags->"aFejerNodesWeights"],
+Cell[13563, 456, 183, 6, 17, "Index",
+  CellTags->"aNodesWeights"],
+Cell[13749, 464, 267, 6, 17, "Index",
+  CellTags->"Moment functional and orthogonality"],
+Cell[14019, 472, 226, 6, 17, "Index",
+  CellTags->"Recurrence relation"],
+Cell[14248, 480, 203, 6, 17, "Index",
+  CellTags->"Zeroes"],
+Cell[14454, 488, 203, 6, 17, "Index",
+  CellTags->"Quadrature formulas"],
+Cell[14660, 496, 229, 6, 17, "Index",
+  CellTags->"Orthogonality equations"],
+Cell[14892, 504, 235, 6, 17, "Index",
+  CellTags->"aNodesWeights"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
